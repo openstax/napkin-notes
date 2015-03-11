@@ -1,9 +1,8 @@
-
 There are a couple bits of information that need to be communicated between BE and FE for this sprint.
 
 # Try another Problem, Refresh my Memory
 
-[Story u388 Student chooses â€œtry another problemâ€ / â€œrefresh my memoryâ€ / â€œmove onâ€ ---- Frontend](https://www.pivotaltracker.com/story/show/89970276)
+Dante: [Story u388 Student chooses â€œtry another problemâ€ / â€œrefresh my memoryâ€ / â€œmove onâ€ ---- Frontend](https://www.pivotaltracker.com/story/show/89970276)
 
 Not all exercises will have both options (I think) so it is important to indicate that in the JSON somehow.
 
@@ -57,21 +56,21 @@ Then, the step can be updated via the same `PATCH` to `./steps/2` with `{free_re
 
 # iReading Analytics
 
-[Story u318 Teacher views iReading class-aggregate analytics ---- Start - Completed coutns](https://www.pivotaltracker.com/story/show/89970238)
+Nathan: [Story u318 Teacher views iReading class-aggregate analytics ---- Start - Completed coutns](https://www.pivotaltracker.com/story/show/89970238)
 
 See https://gist.github.com/philschatz/8276bb3d6fe0b69e65e6
 
 
 # Current role
 
-[Condition components based on user Role  Render FE per logged-in userâ€™s role (student, teacher). related to u303 and u363](https://www.pivotaltracker.com/story/show/88795230)
+JP/Joe: [Condition components based on user Role  Render FE per logged-in userâ€™s role (student, teacher). related to u303 and u363](https://www.pivotaltracker.com/story/show/88795230)
 
 I'm suggesting a route in `GET /api/user` which yields `{role: "teacher"}`.
 
 
 # Delete an iReading
 
-[Delete an iReading](https://www.pivotaltracker.com/story/show/88796236)
+Dante: [Delete an iReading](https://www.pivotaltracker.com/story/show/88796236)
 
 Just `DELETE /api/plans/123` which yields a 200?
 
