@@ -30,6 +30,7 @@ STATS_DATA =
     id:123
     number: "4.1"
     title: "Force"
+  student_count: 4 # Number of students that answered questions on this topic (page). Used mostly for spaced-practice
   correct_count: 12
   incorrect_count: 3
   previous_attempt: STATS_DATA # Optional. Used for spaced practice
