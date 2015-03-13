@@ -1,6 +1,8 @@
 Just some brainstorming.
 
+
 /api/my_courses
+```ruby
 [
   {
     name: 'Physics',
@@ -26,3 +28,4 @@ Just some brainstorming.
   }
 
 ]
+```
