@@ -10,7 +10,7 @@ Tasks:
   * Follow instructions at http://docs.travis-ci.com/user/caching/ to turn on bundler caching
 3. If for some reason we can't get bundler caching to work automatically (it should work)...
   1. Consider adding and using https://github.com/data-axle/bundle_cache to run our own bundle cache.  This would require setting up an AWS bucket for this purpose along with limited credentials that can only access that bucket.  If we go this route, we should estimate the AWS costs, specifically focused on transferring data (if gems are huge it could get expensive)
-  2. Or if that alternative doesn't work or is too much of a pain, at least make sure that bundler is retrying its install.  This can be done by adding an explicit `--retry=6` option to the `bundle install` line (as in http://goo.gl/eZT9kq) or by using `bundler_args: --retry=6` which is probably better.  Note that if we have explicit `bundle install`s, we'll need to move their other options to `bundler_args` too.
+2. Make sure that bundler is retrying its install if it times out (this is useful even if we are caching, because when we update the gemfile it has to pull the gems again to refresh the cache).  This can be done by adding an explicit `--retry=6` option to the `bundle install` line (as in http://goo.gl/eZT9kq) or by using `bundler_args: --retry=6` which is probably better.  Note that if we have explicit `bundle install`s, we'll need to move their other options to `bundler_args` too.
 
 Do these things for at least these repos:
 
