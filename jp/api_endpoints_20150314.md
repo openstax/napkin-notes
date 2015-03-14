@@ -40,7 +40,8 @@ POST   /courses/:course_id/plans/:plan_id/publish
 
 Several of our endpoints are "role-aware", that is, they accept optional role information in the URL.  
 So far, these endpoints are only `GET`s.  If the role information is not provided, the backend should 
-assume that the calling user's default role made the call.  Any role-aware endpoint should return
+assume that the calling user's default role made the call.  The default role may vary depending on the 
+endpoint specified.  Any role-aware endpoint should return
 the current role identifying information, in addition to the role type (e.g. 'student', 'teacher', etc)
 if the role identifying information doesn't already include it.  It is the frontend's responsibility
 to remember the user's current role information (likely in memory and not just in the URL as not all
