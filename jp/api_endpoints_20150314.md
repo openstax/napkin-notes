@@ -50,3 +50,9 @@ endpoint URLs are role-aware).
 The "role information" in the URL only needs to be an ID.  The backend can figure out the type of
 the role if needed.  However, if it is helpful, the role information can be a type and an ID, e.g.
 `(/:role_type/:role_id)` instead of `(/:role_id)`.
+
+Open Questions:
+
+1. (paraphrased from chat w/ KB) Should we not just be explicit about providing role information in the URL?  
+   If the backend sees /courses/123 and says "hey the default role for this user in this endpoint is
+   teacher #456", why not just start out at the beginning by having the FE call /courses/123/teacher/456?
