@@ -29,6 +29,12 @@ Like the URL/param approaches, the role is passed in the HTTP request, just in t
 
 *Example:* `http://tutor.openstax.org/api/courses/123/dashboard (with 'role=teacher456' in header)`
 
+### Meaninful urls/endpoints, all roles are considered for access
+
+The server stores all roles in the DB (which it will have to anyway).  Meaninful endpoints are constructed such as `courses/123/dashboard/student` or `courses/123/dashboard/instructor`  The server will evaluate each role that the logged in user has and grant access if any of them are are valid for the endpoint.
+
+The BE could provide the FE with a list of roles the user has as part of the page bootstrapping.  Hopefully the FE could use the list to come up with site navigation that would make sense for a user with the given set of roles.
+
 ## Tradeoffs
 
 ### Tradeoff features
@@ -41,13 +47,13 @@ Like the URL/param approaches, the role is passed in the HTTP request, just in t
 
 ### Which methods have which features
 
-|   | Feature                           | DB/Session         | URL | ?=param | HTTP header |
-|---|-----------------------------------|--------------------|-----|---------|-------------|
-| 1 | Clearer / simpler URLs            | Yes                | No  | Kinda   | Yes         |
-| 2 | Share links                       | Kinda <sup>1</sup> | No  | No      | No          |
-| 3 | Different roles in different tabs | No                 | Yes | Yes     | Yes         |
-| 4 | Pages bookmarkable                | No                 | Yes | Yes     | No          |
-| 5 | Who manages / gets the work       | BE                 | FE  | FE      | FE          |
+|   | Feature                           | DB/Session         | URL | ?=param | HTTP header |CheckAllRoles|
+|---|-----------------------------------|--------------------|-----|---------|-------------|--------------
+| 1 | Clearer / simpler URLs            | Yes                | No  | Kinda   | Yes         | Yes         |
+| 2 | Share links                       | Kinda <sup>1</sup> | No  | No      | No          | Yes         |
+| 3 | Different roles in different tabs | No                 | Yes | Yes     | Yes         | Yes         |
+| 4 | Pages bookmarkable                | No                 | Yes | Yes     | No          | Yes         |
+| 5 | Who manages / gets the work       | BE                 | FE  | FE      | FE          | BE/FE?      |
 
 <sup>1</sup> Sharing links will probably work, but in the same way that DB/Session role storage doesn't allow bookmarking, sharing links won't always work.
 
@@ -59,5 +65,5 @@ Like the URL/param approaches, the role is passed in the HTTP request, just in t
 | URL         | http://tutor.openstax.org/api/teacher/456/dashboard |
 | ?=param     | http://tutor.openstax.org/api/courses/123/dashboard?role=teacher456 |
 | HTTP header | http://tutor.openstax.org/api/courses/123/dashboard (with 'role=teacher456' in header) |
-
+| CheckAll    | http://tutor.openstax.org/api/courses/123/dashboard/teacher |
 
