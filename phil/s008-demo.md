@@ -18,6 +18,7 @@
 5. finish the practice
 6. try a new practice
 7. Click on Task 3
+  - Point out that it came from cnx (special markup)
 8. Step through until "Try another"
   - point out the "Video" step
 9. Click "Try another"
