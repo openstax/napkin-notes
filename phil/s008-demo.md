@@ -33,3 +33,8 @@
 1. Show course list has buttons for teacher and student
 2. click the student task list
   - point out the newly-created task
+
+# Biglearn Practice widget
+
+1. switch tutor-server branch to `jpslav-s8-bl-int`
+2. go directly to http://localhost:3001/courses/1/practice/
