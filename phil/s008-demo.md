@@ -6,6 +6,7 @@
   - add custom title
   - click "Dashboard" (to show confirm dialog)
 4. save/publish iReading
+  - include "Force" for the video
 5. View plan list
 
 # Log in as Student
@@ -20,11 +21,11 @@
 7. Click on Task 3
   - Point out that it came from cnx (special markup)
 8. Step through until "Try another"
-  - point out the "Video" step
 9. Click "Try another"
 10. Answer a question
 11. Refresh the page and point out the task resumed
-
+12. Open the demo task
+  - show video (cnx iframe)
 (something here about some exercises being spaced????)
 
 # Log in as Teacher_and_Student
