@@ -37,4 +37,5 @@
 # Biglearn Practice widget
 
 1. switch tutor-server branch to `jpslav-s8-bl-int`
-2. go directly to http://localhost:3001/courses/1/practice/
+2. run `bundle install && rake db:drop db:migrate db:seed sprint:008pwreal && rails `
+3. go directly to http://localhost:3001/courses/1/practice/
