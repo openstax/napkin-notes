@@ -17,12 +17,12 @@
 4. reload the page (show the practice resumed)
 5. finish the practice
 6. try a new practice
-
 7. Click on Task 3
 8. Step through until "Try another"
   - point out the "Video" step
 9. Click "Try another"
 10. Answer a question
+11. Refresh the page and point out the task resumed
 
 (something here about some exercises being spaced????)
 
