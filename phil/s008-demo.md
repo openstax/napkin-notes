@@ -20,6 +20,7 @@
 
 7. Click on Task 3
 8. Step through until "Try another"
+  - point out the "Video" step
 9. Click "Try another"
 10. Answer a question
 
