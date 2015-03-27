@@ -5,7 +5,7 @@ instead of SQLite as we now do.
 
 I've opened a WIP PR to do so at: https://github.com/openstax/tutor-server/pull/139  It's very much still "in-progress" since the specs are still failing, but the migrations do succeed.
 
-The Pivitol card assigned is: https://github.com/openstax/tutor-server/pull/139
+The Pivitol card assigned is: https://www.pivotaltracker.com/story/show/91198928
 
 This will allow us to easily verify that the migrations and more advanced queries we're writing will work in production just as they do in our development environments.  It'll also position us to use some of the more advanced features of Postgresql if we choose to.
 
@@ -20,16 +20,16 @@ I'm considering configuring the `test` and `development` blocks of the database.
 ```yaml
 default: &default
   adapter: postgresql
-  username: <%= ENV['OX_TUTOR_DB_USER'] || 'ox_tutor' %>
-  password: <%= ENV['OX_TUTOR_DB_PASS'] || 'ox_tutor_secret_password' %>
+  username: <%= ENV['OXT_DB_USER'] || 'ox_tutor' %>
+  password: <%= ENV['OXT_DB_PASS'] || 'ox_tutor_secret_password' %>
 
 development:
   <<: *default
-  database: <%= ENV['OX_TUTOR_DEV_DB_NAME'] || 'ox_tutor_dev' %>
+  database: <%= ENV['OXT_DEV_DB'] || 'ox_tutor_dev' %>
 
 test:
   <<: *default
-  database: <%= ENV['OX_TUTOR_TEST_DB_NAME'] || 'ox_tutor_test' %>
+  database: <%= ENV['OXT_TEST_DB'] || 'ox_tutor_test' %>
 ```
 
 #### Proposed documentation for README file
@@ -40,7 +40,7 @@ OpenStax Tutor uses the Postgresql database.  You'll need to install and configu
 
 Or using homebrew on OSX
 
-`brew install postgresql`
+`brew install postgresql` or install from http://postgresapp.com
 
 Once installed, create a user and database.  By default Tutor will expect a database named 'ox_tutor_{dev,test}' owned by user 'ox_tutor' who has a password 'ox_tutor_secret_password'.  These can be overridden by setting environmental variables in your ~/.bash_profile or ~/.zshenv.  See the config/database.yml for details.
 
