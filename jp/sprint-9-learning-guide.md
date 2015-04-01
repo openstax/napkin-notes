@@ -36,4 +36,4 @@ The representers should help with the above.
 
 Nathan is working on implementing the following -- you should use it when he's done.
 
-https://github.com/openstax/napkin-notes/blob/master/jp/verify_of_get_default_course_role.md
+https://github.com/openstax/napkin-notes/blob/master/jp/verify_or_get_default_course_role.md
