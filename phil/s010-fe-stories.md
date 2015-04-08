@@ -1,3 +1,7 @@
+FE stories ordered by dependencies so they can be worked on in parallel.
+
+# All stories by Epic
+
 Epic e013 T-View-Dashboard
 - [3] u305 Teacher Views Monthly calendar
 - [XXX] u307 Teacher Views List form of their dashboard
@@ -67,9 +71,6 @@ Epic e015 T-View-iReading
 - [3] u326 Teacher Views HW Problems with interleaved class stats and individual
 - [2] u320 Teacher views one student's performance on iReading
 - [2] u327 Teacher Views status of a student's particular HW assignment
-FE stories ordered by dependencies so they can be worked on in parallel.
-
-# All stories by Epic
 
 Epic e028 S-Do-iReading
 - [2] u388 Student chooses "try another problem" / "refresh my memory" / "move on"
