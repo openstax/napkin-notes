@@ -44,10 +44,4 @@ At the due date.
 
 When the due date has passed, a student can click on their homework and step through their work. Clicking on the HW link should not show which were correct/incorrect or the feedback. If they change an answer after the due date, we should warn that "your original answer will show, as well as this answer with the time that you changed it" and give them the option to "save new answer", or "cancel (leave old answer)".
 
-The score in the interface will change to **late**. The student's feedback will still be available. If they click the feedback, they will get the feedback warning. If they continue and view the feedback, then their score will change to **(x/y late)**. The logic behind this rigamarole is that we don't want them to be able to continue to change their answers one at a time until they see their score bump up. But once they view feedback, they will have all the answers anyway and we show their score.
-
- - What does a **teacher see when hw is late**?
-
-The teacher will see (late) next to the HW, they will see the date and time at which the student viewed feedback, and the review of the HW will show which problems were late. The teacher will be able to view free responses and choices that were before the due date, and after. 
-
 
