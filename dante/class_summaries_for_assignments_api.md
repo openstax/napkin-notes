@@ -157,8 +157,9 @@ Alternatively, we can create the `stats` route and a `detailed_stats` route.
                 "content_html": {
                     "type": "string"
                 },
-                "correct": { // Alternative: "correctness" or "credit", "type": "number"
-                    "type": "boolean"
+                "correct": {
+                    "type": "boolean",
+                    "_comment": "Alternatively, correctness or credit with type: number"
                 },
                 "selected_count": {
                     "type": "integer"
