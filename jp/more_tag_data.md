@@ -8,12 +8,12 @@ tag names and descriptions that we should also import while importing the book.
 
 To the `Tag` class in the `Content` subsystem, add the following columns:
 
-1. **name** a string
-2. **description** a text field
+1. **name**: a string, may be null
+2. **description**: a text field, may be null
 
 Add a `chapter_section` method to `Tag` that extracts the chapter and section (e.g. `"5.2"`) from
 `lo` type tags using a regular expression matcher. E.g. for `ost-tag-lo-k12phys-ch04-s01-lo01` the
-`chapter_section` is `"4.1"`.
+`chapter_section` is `"4.1"`.  For non-`lo` tags, return `nil`.
 
 ## Extract extra tag information when importing books
 
@@ -44,7 +44,7 @@ Create a `TagRepresenter` to that has the following properties:
 5. **type**: the tag type, can be verbatim the tag type from the ActiveRecord enum as a string
 2. **name**: the tag name, e.g. `(4C)`
 3. **description**: the tag description
-4. **chapter_section**: the `chapter_section` or what was previously called `path`, will only
+4. **chapter_section**: the `"5.2"` value or what was previously called `path`, will only
    exist for `lo` type tags.
 
 ## ExerciseRepresenter
@@ -52,7 +52,7 @@ Create a `TagRepresenter` to that has the following properties:
 Modify the `ExerciseRepresenter` to output a `collection :tags` using the `TagRepresenter`.
 
 To support the possibility that one exercise matches multiple pages in the book, remove
-current code changes that add `path` to exercises.  The `chapter_section` property of the
+current code changes that add `path` to exercise classes.  The `chapter_section` property of the
 `lo` tags will be sufficient for what the frontend needs, and since an exercise can have
 multiple LOs that means that it can also effectively have multiple `chapter_section` fields,
 one per tag.
