@@ -16,9 +16,12 @@ Mockup: http://mockups.openstax.org/Tutor_MVP_v2/#p=turn_in_page
 ## Features and Behaviors
 
 - Alpha 
-  - Turn in button is informational only. It doesn't prevent continued work.
+  - Turn in button is informational only. It doesn't prevent continued work. Name might change after user testing or might just be a page with information.
+  - Students do NOT see feedback while they are working the HW
   - HW is turned in automatically upon the due date
-  - Student feedback is available at the due date and records when it is viewed. 
+    - The score shows on the dashboard
+    - Clicking the HW again will show feedback as you click through problems (like feedback)
+  - Student feedback is available at the due date and records when it is viewed. - Click on the HW link to view feedback (works just like i-reading)
 - MVP
  - When a student clicks on the feedback link for a particular HW for the first time, they get a message that the time they view the feedback is being recorded, it might affect ability to turn in late work, and lets them continue or cancel.
  - Students can work problems and change answers after the due date.
@@ -34,7 +37,8 @@ Turn in is informational only. When a student clicks on the button, we want to t
 
 ### What happens when a **HW due date is reached**?
 
-The assignment is submitted and the score (3 of 5 correct) is available to students on their dashboard and in their score-book (performance book). 
+- The assignment is submitted and the score (3 of 5 correct) is available to students on their dashboard and in their score-book (performance book). 
+- "Feedback available" text shows next to the HW
 
 ### When can a student **see feedback** about their problems?
 
