@@ -1,6 +1,6 @@
 # Learning Guide JSON
 
-`GET /api/courses/1/stats`
+`GET /api/courses/1/guide`
 
 ```coffee
 title: 'Physics'
