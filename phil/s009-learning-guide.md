@@ -4,7 +4,8 @@
 
 ```coffee
 title: 'Physics'
-groups: [
+page_ids: [ 234, 345, 456 ]
+children: [
   { id:123, title: 'Kinematics', chapter_section: '5'
     questions_answered_count: 50
     current_level: 0.5
