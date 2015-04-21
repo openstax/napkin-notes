@@ -1,21 +1,17 @@
 # Class summaries for assignments
 
-Current, stats are shown in the `GET /api/plans/:id` route when the plan is published.
-I propose, instead, to display stats only in a `GET /api/plans/:id/stats` route.
-That way, we separate the route for reading the plan settings and the route for viewing the stats.
-This also makes it so the FE has to call only one route (the stats route)
-in order to display the class summary pages.
+Current, stats are shown in the `GET /api/plans/:id` route when the plan is published. I propose,
+instead, to display stats only in the `GET /api/plans/:id/events`, as well as in a new
+`GET /api/plans/:id/review` route. That way, we separate the route for reading the plan settings
+and the route for viewing the stats. This also makes it so the FE has to call only one route per
+page displayed.
 
-The stats route will be called from the calendar and from the class summary pages.
-It will contain the output of the CalculateTaskPlanStats routine,
-augmented to also include how many students picked each multiple choice answer
-(for each exercise step), as well as the "big movers", "struggling" and "getting it" students.
+The events route will be called from the calendar. It will contain the output of the
+CalculateTaskPlanStats routine. The review route will be called from the class summary for an
+assignment and will contain the output of CalculateTaskPlanStats routine, augmented to also
+include how many students picked each multiple choice answer (for each exercise).
 
-Alternatively, we can create the `stats` route and a `detailed_stats` route.
-`stats` would display what is currently shown in `GET /api/plans/:id`, while
-`detailed_stats` would display the new structure, with the fields necessary for the class summary.
-
-`GET /api/plans/:id/stats`
+`GET /api/plans/:id/review`
 ```JSON
 {
     "type": "object",
@@ -35,6 +31,12 @@ Alternatively, we can create the `stats` route and a `detailed_stats` route.
         "taskPlanPeriodStats": {
             "type": "object",
             "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
                 "mean_grade_percent": {
                     "type": "integer",
                     "minimum": 0,
@@ -48,18 +50,6 @@ Alternatively, we can create the `stats` route and a `detailed_stats` route.
                 },
                 "partially_complete_count": {
                     "type": "integer"
-                },
-                "period": {
-                    "type": "object",
-                    "properties": {
-                        "id": {
-                            "type": "integer"
-                        },
-                        "title": {
-                            "type": "string"
-                        }
-                    },
-                    "additionalProperties": false
                 },
                 "current_pages": {
                     "type": "array",
@@ -109,24 +99,6 @@ Alternatively, we can create the `stats` route and a `detailed_stats` route.
                         "$ref": "#/definitions/exerciseStepStatistics"
                     }
                 },
-                "large_change_students": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/studentStatistics"
-                    }
-                },
-                "low_performance_students": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/studentStatistics"
-                    }
-                },
-                "high_performance_students": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/studentStatistics"
-                    }
-                },
                 "previous_attempt": {
                     "$ref": "#/definitions/pageTaskStatistics"
                 }
@@ -162,30 +134,6 @@ Alternatively, we can create the `stats` route and a `detailed_stats` route.
                     "_comment": "Alternatively, correctness or credit with type: number"
                 },
                 "selected_count": {
-                    "type": "integer"
-                }
-            },
-            "additionalProperties": false
-        },
-        "studentStatistics": {
-            "type": "object",
-            "properties": {
-                "assignments": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/studentAssignmentStatistics"
-                    }
-                }
-            },
-            "additionalProperties": false
-        },
-        "studentAssignmentStatistics": {
-            "type": "object",
-            "properties": {
-                "total_count": {
-                    "type": "integer"
-                },
-                "correct_count": {
                     "type": "integer"
                 }
             },
