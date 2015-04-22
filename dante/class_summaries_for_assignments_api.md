@@ -1,10 +1,10 @@
 # Class summaries for assignments
 
 Current, stats are shown in the `GET /api/plans/:id` route when the plan is published. I propose,
-instead, to display stats only in the `GET /api/plans/:id/events`, as well as in a new
-`GET /api/plans/:id/review` route. That way, we separate the route for reading the plan settings
-and the route for viewing the stats. This also makes it so the FE has to call only one route per
-page displayed.
+instead, to display stats only in the `GET /api/plans/:id/events` (calendar route, being worked
+on elsewhere), as well as in a new `GET /api/plans/:id/review` route. That way, we separate the
+route for reading the plan settings and the route for viewing the stats. This also makes it so
+the FE has to call only one route per page displayed.
 
 The events route will be called from the calendar. It will contain the output of the
 CalculateTaskPlanStats routine. The review route will be called from the class summary for an
