@@ -6,10 +6,9 @@ on elsewhere), as well as in a new `GET /api/plans/:id/review` route. That way, 
 route for reading the plan settings and the route for viewing the stats. This also makes it so
 the FE has to call only one route per page displayed.
 
-The events route will be called from the calendar. It will contain the output of the
-CalculateTaskPlanStats routine. The review route will be called from the class summary for an
-assignment and will contain the output of CalculateTaskPlanStats routine, augmented to also
-include how many students picked each multiple choice answer (for each exercise).
+The review route will be called from the class summary for an assignment and will contain the
+output of CalculateTaskPlanStats routine, augmented to also include how many students picked each
+multiple choice answer (for each exercise step).
 
 `GET /api/plans/:id/review`
 ```JSON
