@@ -28,6 +28,6 @@ IR(\*),PW(\*),HW(Y) |   n  |  n   | FR |  y  |  y  |  y
                     |   y  |  y   | FB |  -  |  -  |  y
       HW(N)         |   n  |  n   | FR |  y  |  y  |  -
                     |   y  |  n   | MC |  -  |  y  |  -
-                    |   y  |  y   | FB |  -  |  y  |  -
+                    |   y  |  y   | MC |  -  |  y  |  -
 
 
