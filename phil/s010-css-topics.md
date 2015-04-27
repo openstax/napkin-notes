@@ -37,3 +37,9 @@
 
 - should allow CSS cascading? (opens up !important)
 - run on all tests?
+
+## Naming/organization methods ideas
+
+- [BEM and SMACSS](http://www.sitepoint.com/bem-smacss-advice-from-developers/)
+- [BEM](https://en.bem.info/method/definitions/)
+- [SUIT naming conventions](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md)
