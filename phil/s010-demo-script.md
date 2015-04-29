@@ -52,6 +52,7 @@
 - Student dashboard for "This week" HW that has all questions answered should:
   - not have feedback link yet
   - still be clickable (to change answers)
+- Learning Guide SVG assets need to be in CSS. See https://github.com/openstax/tutor-js/pull/151#discussion_r29336508
 
 
 # Corresponding bits from https://www.pivotaltracker.com/epic/show/1704862
