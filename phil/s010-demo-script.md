@@ -43,7 +43,7 @@
 
 
 
-Notes for next sprint:
+# Notes for next sprint
 
 - dashboard does not re-fetch data (need to always .load and let API cache)
 - why does glossary show up in "iReading 3 # 3"?
