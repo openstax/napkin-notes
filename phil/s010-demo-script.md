@@ -67,6 +67,7 @@
   - In HW Builder: "Introduction" is still in the list
   - why does glossary show up in "iReading 3 # 3"?
   - FE: dashboard does not re-fetch data (need to always .load and let API cache)
+  - Tagging: Need to discuss sims being tagged as `<a>` instead of `<iframe>` RE https://github.com/Connexions/webview/pull/1055
 
 
 # Corresponding bits from https://www.pivotaltracker.com/epic/show/1704862
