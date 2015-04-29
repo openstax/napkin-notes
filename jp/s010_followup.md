@@ -39,3 +39,7 @@
 
 * Need to fix the schema printer to be able to handle cases where the decorator is chosen differently for different items in a list, e.g. https://github.com/openstax/tutor-server/blob/master/app/controllers/api/v1/courses/dashboard_representer.rb#L114-L123
 * Used to be some way to do this with an Uber callable
+
+## tutor-server issues
+
+1. Look through recent tutor-server issues -- there are some small things to be done there.
