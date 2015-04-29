@@ -65,8 +65,8 @@
 
 ### BE'ish
   - In HW Builder: "Introduction" is still in the list
-  - dashboard does not re-fetch data (need to always .load and let API cache)
   - why does glossary show up in "iReading 3 # 3"?
+  - FE: dashboard does not re-fetch data (need to always .load and let API cache)
 
 
 # Corresponding bits from https://www.pivotaltracker.com/epic/show/1704862
