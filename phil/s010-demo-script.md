@@ -52,8 +52,8 @@
 - Student dashboard for "This week" HW that has all questions answered should:
   - not have feedback link yet
   - still be clickable (to change answers)
-- Learning Guide SVG assets need to be in CSS. See https://github.com/openstax/tutor-js/pull/151#discussion_r29336508
-
+- Learning Guide: SVG assets need to be in CSS. See https://github.com/openstax/tutor-js/pull/151#discussion_r29336508
+- Calendar: Bug. Items on the 1st day of the next month show up: https://cloud.githubusercontent.com/assets/253202/7392809/34af30c8-ee58-11e4-9b74-0f2854291b2f.png
 
 # Corresponding bits from https://www.pivotaltracker.com/epic/show/1704862
 
