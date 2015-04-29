@@ -19,6 +19,8 @@
 
 - go back to Dashboard
 - point out "View Feedback" and "View Recovery"
+  - HW 3#3 says answered but not in the Feedback/Recovery because not graded
+- re-click HW and change answers
 
 
 # SIGN OUT
@@ -47,7 +49,9 @@ Notes for next sprint:
 - why does glossary show up in "iReading 3 # 3"?
 - what should happen when student clicks around a HW and answers a question? - should it go to the 1st unanswered question or the next question?
 - bug when going back (browser back) to the calendar from a Plan. does not repopulate the calendar
-
+- Student dashboard for "This week" HW that has all questions answered should:
+  - not have feedback link yet
+  - still be clickable (to change answers)
 
 
 # Corresponding bits from https://www.pivotaltracker.com/epic/show/1704862
