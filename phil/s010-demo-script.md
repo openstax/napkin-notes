@@ -23,7 +23,7 @@
 - re-click HW and change answers
 
 
-# SIGN OUT
+# SIGN IN AS TEACHER
 
 - Log in as teacher
 - go to calendar
