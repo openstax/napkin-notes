@@ -46,14 +46,24 @@
 # Notes for next sprint
 
 - what should happen when student clicks around a HW and answers a question? - should it go to the 1st unanswered question or the next question?
-- bug when going back (browser back) to the calendar from a Plan. does not repopulate the calendar
-- Student dashboard for "This week" HW that has all questions answered should:
+
+### Student dashboard
+
+- for "This week" HW that has all questions answered should:
   - not have feedback link yet
   - still be clickable (to change answers)
-- Learning Guide: SVG assets need to be in CSS. See https://github.com/openstax/tutor-js/pull/151#discussion_r29336508
-- Calendar: Bug. Items on the 1st day of the next month show up: https://cloud.githubusercontent.com/assets/253202/7392809/34af30c8-ee58-11e4-9b74-0f2854291b2f.png
 
-- BE'ish
+### Learning Guide
+  - SVG assets need to be in CSS. See https://github.com/openstax/tutor-js/pull/151#discussion_r29336508
+
+### Calendar
+  - Bug. Items on the 1st day of the next month show up: https://cloud.githubusercontent.com/assets/253202/7392809/34af30c8-ee58-11e4-9b74-0f2854291b2f.png
+  - when going back (browser back) to the calendar from a Plan. does not repopulate the calendar
+
+### Exercise Builder
+  - If I add a new HW, add some problems, and then press “Save as Draft”, go back to the calendar, and click the HW only the title seems to be saved (there is no due date and no problems selected)
+
+### BE'ish
   - In HW Builder: "Introduction" is still in the list
   - dashboard does not re-fetch data (need to always .load and let API cache)
   - why does glossary show up in "iReading 3 # 3"?
