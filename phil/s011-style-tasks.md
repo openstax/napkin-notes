@@ -1,6 +1,8 @@
+Things that may need more info from BE are marked `<BE>`
+
 - `app` (Globals)
   - toolbar hide on scroll
-  - Show student name <JP>
+  - Show student name <BE>
   - Show current course
 
 - `dashboard` (Course list dashboard)
@@ -14,7 +16,7 @@
 
 - `course/student/task` (Student doing an iReading or HW)
   - book content
-    - chapter title <JP>
+    - chapter title <BE>
     - image scaling
     - worked example
     - sims
@@ -23,13 +25,13 @@
   - breadcrumb
     - icons
     - pin breadcrumbs
-  - SP icon/personalized <JP>
+  - SP icon/personalized <BE>
   - exercise transitions?
 
 - `course/student/practice`
   - icon for practice
   - beginning and exit messages
-  - test that you get instant feedback <JP>
+  - test that you get instant feedback <BE>
 
 - `course/student/guide` (Student Learning Guide)
   - how to move around
@@ -42,13 +44,13 @@
   - slight aesthetic
   - popup
     - same colors
-    - # of students next to sections <JP>
+    - # of students next to sections <BE>
     - student threshold before showing bar
     - how to handle many bars (scrolling modal)?
 
 - `course/teacher/homework` (HW Builder)
   ~10 tasks
-  - remove publish button some times <JP>
+  - remove publish button some times <BE>
   - major tweaks
   - accordion doesn't work
   - exercise selections
