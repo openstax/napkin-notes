@@ -103,6 +103,7 @@ Update the existing performance book endpoint to contain the existing list of ex
 
 1. We'll be doing periods soon, but not right now.  For right now, we can have all student data in one spreadsheet.  Later, each period will be its own sheet within the overall workbook.
 2. Filename should have course name and generation date in it.
+3. We've had good luck with the `carrierwave` gem in the past for handling files.
 
 ## Things we can worry about later
 
