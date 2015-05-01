@@ -95,6 +95,10 @@ File::GetFiles[owner: a_course, category: 'teacher-performance']
 
 Rails 4.2 has ActiveJob now for dealing with background jobs, but we still need to choose an implementation that backs it up.  Would be good to hear a summary of the options and the pros and cons of each.
 
+## Performance Book Endpoint
+
+Update the existing performance book endpoint to contain the existing list of exports.  That way, when the FE brings up the performance book they don't need to make a separate query to get the exports that are already available.
+
 ## Notes
 
 1. We'll be doing periods soon, but not right now.  For right now, we can have all student data in one spreadsheet.  Later, each period will be its own sheet within the overall workbook.
