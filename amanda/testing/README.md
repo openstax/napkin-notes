@@ -2,9 +2,9 @@
 
 Tests break down to
 
-1. **rendering** a component,
-1. doing some **actions** (optional), and
-1. **checking** the DOM for expected content.
+1. [**rendering** a component](#rendering-our-components),
+1. [doing some **actions**](#actions) (optional), and
+1. [**checking** the DOM](#checks) for expected content.
 
 ## Rendering our components
 
