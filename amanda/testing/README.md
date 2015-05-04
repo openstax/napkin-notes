@@ -106,6 +106,24 @@ Tests break down to
 * [Calendar Spec](https://github.com/openstax/tutor-js/blob/master/test/components/course-calendar.spec.coffee)
 
 
+## Oddities
+
+  * catch done?
+
+  ```coffee
+  blahblahblah
+    .then((result) ->
+      done()
+    ).catch(done)
+  ```
+
+  [Why?](https://lostechies.com/derickbailey/2012/08/17/asynchronous-unit-tests-with-mocha-promises-and-winjs/)
+
+    * catches when our tests have errors and runs the mocha done to show errors and end failed test
+
+    * Ours is a little different since Promise.done is not part of the official [ES6 promises spec](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+
 ## Discussions
 
 ### Testing using `classes` vs `refs`
