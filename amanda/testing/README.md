@@ -56,7 +56,7 @@ Tests break down to
 
   * React uses "Synthetic events"
 
-    Using regular/JavaScript's event triggers during testing mostly don't work.
+    Using regular/JavaScript's event triggers during testing mostly doesn't work.
 
 ### Solution
 
