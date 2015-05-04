@@ -55,6 +55,10 @@ and the PE remains forever fixed.
 
 The PEs are drawn from an exercise pool created from the current HW's LOs.
 
+## Kevin's Comments
+
+We need to consider that allowing students to "game" the PEs opens up the possibility that we won't gather *any* meaningful personalization data - just imagine if *every* student games the PE selection by sandbagging their preliminary answers to the CEs.  Is this an acceptable risk from business/product/research POVs?  For Alpha?  For the fall?
+
 ## Drew/Lakshmi Notes
 
 The big issue with this:
@@ -81,6 +85,3 @@ Pros:  No need to collect data on the current homework to assign personalized pr
 
 Cons:  Personalized problem will cover different topics than those covered on the current HW.  This could potentially confound spacing effects on the spaced practice problems.
 
-## Kevin's Comments
-
-We need to consider that allowing students to "game" the PEs opens up the possibility that we won't gather *any* meaningful personalization data - just imagine if *every* student games the PE selection by sandbagging their preliminary answers to the CEs.  Is this an acceptable risk from business/product/research POVs?  For Alpha?  For the fall?
