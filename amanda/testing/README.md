@@ -150,7 +150,8 @@ describe 'component being tested', ->
         done()
       , done)
 
-    # Using chainable actions and checks means you can easily compose your tests to carry out a longer sequence of actions (i.e. completing several steps in a task) before performing a check.
+    # Using chainable actions and checks means you can easily compose your tests to carry out a
+    # longer sequence of actions (i.e. completing several steps in a task) before performing a check.
 
 ```
 
@@ -191,6 +192,8 @@ describe 'component being tested', ->
 
 ### Log rendered DOM node or component to console/terminal
 
+### Karma Chrome Debugger Runner something or other...
+
 ## Discussions
 
 ### Testing using `classes` vs `refs`
@@ -205,6 +208,30 @@ describe 'component being tested', ->
 
     * Could be solved partially with stuff like `React.addons.TestUtils.findRenderedComponentWithType` and other `TestUtils` functions
 
+### When to write tests?
+
+  * Before coding?
+
+    * Difficult to do for components
+
+  * After coding?
+
+    * I've been writing tests while and/or after coding
+
+    * Complete component tests before I move my PR out of WIP
+
+  * End of sprint
+
+
+### Coding tests vs coding components time
+
+  * After getting over initial humps of how the heck do we test, and getting the utils set up, not that much time actually.
+
+    * Per component, some initial set up for getting actions and checks right for the component.
+
+    * Composing and writing additional tests are very easy.
+
+  * < 20% -- @nathanstitt
 
 ## Resources
 
