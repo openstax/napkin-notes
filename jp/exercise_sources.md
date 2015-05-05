@@ -19,8 +19,6 @@ Add `source` and `related_content` components to exercise step JSON:
   source: "spaced", # can be "teacher", "personalized", "spaced" or not set
   related_content: [ # we could make it not be an array / could be not set
     {
-      id: "23",
-      type: "page",
       title: "Force and motion",
       chapter_section: "4.1"
     }
