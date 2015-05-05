@@ -105,10 +105,58 @@ Tests break down to
 
 * [Calendar Spec](https://github.com/openstax/tutor-js/blob/master/test/components/course-calendar.spec.coffee)
 
+* A Pattern
+
+```coffee
+describe 'component being tested', ->
+  beforeEach (done) ->
+    # load stores as needed
+    routerStub
+      .goTo('route')
+      .then (result) ->
+        # assign params to result as needed
+        @result = result
+        # @result now has access to component, div, state, history, and router
+        done()
+      , done) # catch done
+
+  afterEach ->
+    # unmount DOM node
+    routerStub.unmount()
+
+    # reset stores
+
+  it 'should render as expected', ->
+    # If tests are simple and do not require multiple actions and checks, they can be performed synchronously
+    {div, component} = @result
+
+    expect(div.querySelector('div h1')).to.not.be.null
+
+    MatchingComponent = React.addons.TestUtils.findRenderedComponentWithType(component, ComponentExpectedToRender)
+
+    expect(MatchingComponent).to.be.an('object')
+    # reset stores
+
+  it 'can also be tested using chained promises', (done) ->
+    # assume check methods and action methods are promises
+    checks
+      .checkForTitle(@result)
+      .then(actions.clickContinue)
+      .then(checks.checkForExpectedPanel)
+      .then(actions.fillOutTextarea)
+      .then(actions.clickSubmit)
+      .then(checks.checkForExpectedResult)
+      .then( ->
+        done()
+      , done)
+
+    # Using chainable actions and checks means you can easily compose your tests to carry out a longer sequence of actions (i.e. completing several steps in a task) before performing a check.
+
+```
 
 ## Oddities
 
-  * catch done?
+### Catch done?
 
   ```coffee
   blahblahblah
@@ -116,12 +164,32 @@ Tests break down to
       done()
     ).catch(done)
   ```
+  or
 
-[Why?](https://lostechies.com/derickbailey/2012/08/17/asynchronous-unit-tests-with-mocha-promises-and-winjs/)
+  ```coffee
+  blahblahblah
+    .then( ->
+      done()
+    , done)
+  ```
 
-* catches when our tests have errors and runs the mocha done to show errors and end failed test
-* Ours is a little different since Promise.done is not part of the official [ES6 promises spec](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+  * [Why?](https://lostechies.com/derickbailey/2012/08/17/asynchronous-unit-tests-with-mocha-promises-and-winjs/)
 
+    * `done` needs to be called without arguments on success
+
+    * catches when our tests have errors and runs the mocha `done` to show errors and end failed test
+
+    * Ours is a little different from what's in the blog since Promise.done is not part of the official [ES6 promises spec](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+
+### [component.forceUpdate](https://facebook.github.io/react/docs/component-api.html#forceupdate) or [component.setState](https://github.com/openstax/tutor-js/blob/master/test/components/student-dashboard.spec.coffee#L40)
+
+  * After some actions or after some updates are expected, component won't render for some reason.  These are two ways to force a re-render.
+
+
+## Debugging tests
+
+### Log rendered DOM node or component to console/terminal
 
 ## Discussions
 
