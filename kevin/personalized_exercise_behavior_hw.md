@@ -61,27 +61,74 @@ We need to consider that allowing students to "game" the PEs opens up the possib
 
 ## Drew/Lakshmi Notes
 
-The big issue with this:
+## The most useful / correct approach
 
-The above approach will use the responses that students have saved to a question, which may or may not be the same as the final answers that they choose to submit. In the best case, these saved answers to the questions will adequately reflect the understanding of the student and allow the ML algorithms to recommend well-tailored problems.  In the worst case, students may realize that by saving incorrect answers (and thus, looking like they have poor understanding) will allow them to get an easy personalized question.  Student who game the system in this way will receive little benefit from the personalized question.  Additionally, it will cause the data that we collect to be misleading.
+The above approach will use the responses that students have saved to
+a question, which may or may not be the same as the final answers that
+they choose to submit.  We should rely only on submitted answers when
+choosing personalized questions.  Saved answers will likely be of
+poorer quality (since students will know they can update/edit later).
+Further, relying on saved answers may result in students attempting to
+game the system by initially providing wrong answers to questions in
+order to get an easier personalized question.  Using saved answers to
+generate personalized questions will ultimately result in reduced
+educational benefit to students and may additionally cause the data
+that we collect on personalized questions to be misleading to the
+research team.
 
-To overcome this limitation we suggest one of the following plans for the Fall 2015 product, in order from best solution to worst solution:
+Requiring students to submit their answers to unlock the personalized
+questions will require changes to the student workflow and these
+details will need to be worked out.  We would inform students that the
+personalied question will unlock only after they have submitted their
+responses to the core questions and require them to complete all work
+(including the personalized problem) by the homework due date.  A less
+desirable, though, workable, solution would be to give an extended
+amount of time after the homework due date that would allow students
+to complete the personalized problem.
 
-Option 1:  Students will be required to submit their answers to the core problems before unlocking the personalized problem.  This would essentially divide the homework into two parts with the first part being the set of fixed problems and the second being the set of personalized problems.  
+## Alternatives
 
-Pros:  The option matches the intended functionality of personalized practice while removing the ability of students to easily game the system.
+There are several alternatives that we consider that would allow us to
+keep the same user workflow that we have established for alpha.
+However, these options carry with them a number of severe limtiations.
+We include these only for completeness:
 
-Cons:  Requires a major change in student workflow.  Students would need to budget additional time to do their assignment without knowing what personalized problem they will receive.  Students in the past have suggested that they do not like this workflow.  It would be possible as well to make the personalized problem a separate homework assignment with its own independent due data but this is also a large departure from the current user workflow.
 
-Option 2:  Recommend personalized problems on the current LO, but use history on previous questions only in recommending that question.
+### Alternative 1
 
-Pros:  Personalized problem on a given homework assignment can be generated using all previous data and would not require any data from the current assignment.  This eliminates the gaming problem.
+Recommend personalized problems on the current LO, but use history on
+previous questions only in recommending that question.
 
-Cons:  We will have no data on the current LO when assigning the personalized problem.  Our current SPARFA-TAG algorithm cannot be used in this scenario and we would need to use a different algorithm (e.g., SPARFA-LITE) to carry out the recommendation process.  SPARFA-LITE can blend in old questions and use them to do prediction but it is still not clear if this prediction will be reliable.  Further analysis would be needed to determine if this option can work well.
+#### Pros
 
-Option 3: Do personalized problems on LOs explored in previous homeworks.  Like option 2, this gets around the issue of having no data on the current LO.  
+Personalized problem on a given homework assignment can be generated
+using all previous data and would not require any data from the
+current assignment.  This eliminates the gaming problem.
 
-Pros:  No need to collect data on the current homework to assign personalized problems.
+#### Cons
 
-Cons:  Personalized problem will cover different topics than those covered on the current HW.  This could potentially confound spacing effects on the spaced practice problems.
+We will have no data on the current LO when assigning the personalized
+problem.  Our current SPARFA-TAG algorithm cannot be used in this
+scenario and we would need to use a different algorithm (e.g.,
+SPARFA-LITE) to carry out the recommendation process.  SPARFA-LITE can
+blend in old questions and use them to do prediction but it is still
+not clear how reliable this recommendation would be.  Further analysis
+would be needed to determine if this option can even be viable.
 
+
+### Alternative 2
+
+Do personalized problems on LOs explored in previous homeworks.  Like
+option 2, this gets around the issue of having no data on the current
+LO.
+
+#### Pros
+
+No need to collect data on the current homework to assign personalized
+problems.
+
+#### Cons
+
+Personalized problem will cover different topics than those covered on
+the current HW.  This could potentially confound spacing effects on
+the spaced practice problems.
