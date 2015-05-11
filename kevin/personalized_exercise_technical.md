@@ -1,6 +1,6 @@
 ## Applicability
 
-Personalized exercises appear only to Homework assignments.
+Personalized exercises appear only in Homework assignments.
 
 ## Workflow
 
