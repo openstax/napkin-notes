@@ -22,7 +22,7 @@ The schema for `placeholder`s looks like this:
 
 ```ruby
 {:type=>:object,
- :required=>[:id, :task_id, :type, :is_completed, :related_content],
+ :required=>[:id, :task_id, :type, :group, :is_completed, :related_content, :placeholder_for],
  :properties=>
   {:id              =>{:type=>"string"},
    :task_id         =>{:type=>"string",  :description=>"The id of the Task"},
