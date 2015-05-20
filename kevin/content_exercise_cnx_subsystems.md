@@ -25,9 +25,9 @@ Content::  (Content::Book::??)
     | 1..*
   Chapter (can be "invisible" placeholder - intro pages)
     | 0..*
-  Page
-    | 0..*
-  PageLo
+  Page -------------+
+    | 0..*          | 1..*
+  PageLo          PageFragment
     | 0..*
   PageExercise (we assign these to avoid ambiguity)
     | 0..*
