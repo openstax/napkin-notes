@@ -12,7 +12,7 @@ Jotting this down while it's fresh in my mind, apologies for inevitable typos.
 
  * Because of this the store is loaded multiple times.
 
- * Once the store finishes the first load, the component will notice that there's only a single course and role, and immediatly redirect.
+ * Once the store finishes the first load, the component will notice that there's only a single course and role, and immediatly redirect to the student or teacher dashboard.
 
  * The second (or third) load will eventually finish but the component is unmounted.  Actually unmounted is good since that'll be a harmless action, but if it's in the process of unmounting, it'll attempt to re-render once again.
 
