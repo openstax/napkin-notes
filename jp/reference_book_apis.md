@@ -25,3 +25,4 @@ The backend needs to be changed to store the previous and next page in Content::
 ## Questions
 
 1. The frontend never needs to display a book part (CNX "collection") right?  (assuming pages (CNX "modules") are sufficient, if a user clicks on a chapter the FE can just display the first module?)
+2. Do we want to include tags present on each page in the JSON? (for what purpose I don't know yet)
