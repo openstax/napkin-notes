@@ -6,7 +6,7 @@ The API to query to the TOC is already complete: https://tutor-demo.openstax.org
 
 Here's the candidate API endpoint for pulling page content.
 
-`/api/courses/23/page/46`
+`/api/page/46`
 
 ```ruby
 {
@@ -22,10 +22,12 @@ Here's the candidate API endpoint for pulling page content.
 ## Backend Tasks
 
 1. The backend needs to be changed to store the previous and next page in Content::Models::Page.
-2. Do we need all within-book links in the pages to go to other reference book pages instead of to CNX?  If so what does the FE need that link to look like?
+2. For right now, read access to the page API does not need to be restricted.
 
 
 ## Questions
 
 1. The frontend never needs to display a book part (CNX "collection") right?  (assuming pages (CNX "modules") are sufficient, if a user clicks on a chapter the FE can just display the first module?)
 2. Do we want to include tags present on each page in the JSON? (for what purpose I don't know yet)
+3. Do we need all within-book links in the pages to go to other reference book pages instead of to CNX?  If so what does the FE need that link to look like?
+
