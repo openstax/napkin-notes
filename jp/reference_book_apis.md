@@ -19,7 +19,10 @@ Here's the candidate API endpoint for pulling page content.
 }
 ```
 
-The backend needs to be changed to store the previous and next page in Content::Models::Page.
+## Backend Tasks
+
+1. The backend needs to be changed to store the previous and next page in Content::Models::Page.
+2. Do we need all within-book links in the pages to go to other reference book pages instead of to CNX?  If so what does the FE need that link to look like?
 
 
 ## Questions
