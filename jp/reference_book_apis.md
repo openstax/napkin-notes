@@ -28,7 +28,7 @@ The `title`, `chapter_section`, previous and next links, etc will be read from t
 
 1. Store the CNX UUID and version in Content::Models::{Page, BookPart}.
 2. For right now, read access to the page API does not need to be restricted.
-3. During import, convert all links to pages outside of the imported book to absolute URLs; this will require looking at the collection before import and building a table of all modules inside the book so we can know which are internal and which are external.
+3. During import, convert all link urls to absolute urls, except for urls pointing to the book being imported, which should be converted to reference view urls; this will require looking at the collection before import and building a table of all modules inside the book so we can know which are internal and which are external.
 
 ## Questions
 
