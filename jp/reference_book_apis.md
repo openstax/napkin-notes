@@ -6,7 +6,7 @@ The API to query to the TOC is already complete: https://tutor-demo.openstax.org
 
 Here's the candidate API endpoint for pulling page content.
 
-`/api/page/:uuid(:version)`
+`/api/pages/:uuid(:version)`
 
 e.g.
 
