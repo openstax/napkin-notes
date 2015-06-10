@@ -9,10 +9,9 @@ Exercises::V1::
 ```
 
 ```
-Cnx::V1::  (are these really distinct?  should there be only one model?)
-  BookPart
-  
-  Page
+Cnx::V1::
+  Collection (aka Book)
+  Module     (aka Page)
 ```
 
 Next, we convert `Cnx` and `Exercises` models into `Content` models, which represent the abstractions `Tutor` uses:
@@ -21,7 +20,7 @@ Next, we convert `Cnx` and `Exercises` models into `Content` models, which repre
 Content::  (Content::Book::??)
   Book
     | 1..*
-  Unit (can be "invisible" placeholder - book without units)
+  Unit (can be "invisible" placeholder - CNX::Book without units)
     | 1..*
   Chapter (can be "invisible" placeholder - intro pages)
     | 0..*
