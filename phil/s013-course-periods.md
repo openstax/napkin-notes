@@ -1,4 +1,4 @@
-Screens: 
+Screens:
 
 - Calendar Popup (read-only)
 - Roster (Read-only)
@@ -21,17 +21,36 @@ default_due_time: ??
 default_open_time: ??????
 ```
 
-# HW Builder
+# HW Builder (also iReading Builder)
 
 Initial `POST`: contains period times
 Saving:
 
 ```coffee
-PATCH /plans/1 with { periods: [ {id: , due_at: , opens_at: } ] }
+PATCH /plans/1 with { tasking_plans: [ {target_id: , target_type:, due_at: , opens_at: } ] }
+```
+
+e.g.
+
+```coffee
+{ tasking_plans: [ { target_id: "42", target_type: "period", due_at: timestamp_here, opens_at: timestamp_here } ] }
 ```
 
 # Dashboard / Calendar
 need the endpoint to have the same due time / tasking information as HW builder (parallel to how we are moving due_at from task plan to tasking plan)
+
+```coffee
+{
+  ...
+  tasking_plans: [
+    target_id: "42",
+    target_type: "period",
+    opens_at: blah,
+    due_at: blah
+  ]
+  ...
+}
+```
 
 # Calendar Popup
 
@@ -58,7 +77,7 @@ in the export for BE
    period: { id, name: },
    data_heading: {},   # same as existing
    student_data: []    # same as existing
-  },  # repeat this for each period 
+  },  # repeat this for each period
 ]
 ```
 
