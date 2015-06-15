@@ -17,7 +17,7 @@ Update the `Tasks::Models::TaskPlan` model to have the following internal valida
 
 ## API Changes
 
-When the FE wants to publish a plan, they will set a `is_publish_requested` field to `true` in the JSON.  The BE won't save this flag per se but will instead mark the time the request was received in `publish_last_requested_at` when it processes.  Both `is_publish_requested` and `publish_last_requested_at` will be available in the plan output JSON.
+When the FE wants to publish a plan, they will set a `is_publish_requested` field to `true` in the JSON.  The BE won't save this flag per se but will instead mark the time the request was received in `publish_last_requested_at` when it processes.  Both `is_publish_requested` and `publish_last_requested_at` will be available in the plan output JSON (the former will be set to `true` if the latter is not `null`).
 
 If they FE ever sends `is_publish_requested` to `false` after it has been `true`, the BE will either ignore or error -- up to Dante.
 
