@@ -4,7 +4,7 @@
 
 ### Attributes
 
-In addition to its current `published_at` timestamp, add a `publish_last_requested_at` timestamp.  The FE will populate this latter parameter when they want to start the publish process.  They cannot set an `is_published` flag per se because the plan won't really be published until the distribution of the tasks from it is complete.  Also, timestamps are somewhat better than booleans for the backend in terms of indexing and meaning.  Decision to make: they could set an `is_published_requested` flag and the BE will set the timestamp.
+In addition to its current `published_at` timestamp, add a `publish_last_requested_at` timestamp.
 
 ### Validations
 
@@ -14,6 +14,12 @@ Update the `Tasks::Models::TaskPlan` model to have the following internal valida
 2. Can change anything before any Task is open.
 3. Cannot set `publish_last_requested_at` to nil after set.  Once published has been requested, all future saves of the plan will either error out or republish the plan.
 4. Take the settings validations in the `DistributeTasks`- / assistant-land and put the validation check into `TaskPlan` (can this be done?).  We want to be able to check that `TaskPlan` settings are valid when saved, not just when we move to build tasks from it.  See https://github.com/openstax/tutor-server/pull/353#discussion_r32327735.
+
+## API Changes
+
+When the FE wants to publish a plan, they will set a `is_publish_requested` field to `true` in the JSON.  The BE won't save this flag per se but will instead mark the time the request was received in `publish_last_requested_at` when it processes.  Both `is_publish_requested` and `publish_last_requested_at` will be available in the plan output JSON.
+
+If they FE ever sends `is_publish_requested` to `false` after it has been `true`, the BE will either ignore or error -- up to Dante.
 
 ## On plan publish...
 
