@@ -83,12 +83,17 @@ in the export for BE
 
 # Roster
 
+The endpoint is `/courses/42/students`
+
 ```coffee
 [
   {
-    name: “Jimmy”
-    period_id: 32
-    role_id: 78
+    id: "34"               # The ID of the student record, later used in /students/123
+    first_name: "Jimmy"
+    last_name: "Tudeski"
+    name: "Jimmy Tudeski"
+    period_id: "32"        # all IDs are strings for FE
+    role_id: "78"          # The role ID, used for masquerading as a student
   }
 ]
 ```
