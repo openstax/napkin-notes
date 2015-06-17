@@ -38,3 +38,11 @@
 
 - Cannot select "All Periods"
 - Cannot Save Draft
+
+
+# Did not get to
+
+- Read-only roster
+- Periods in perf report
+- Excel Export 
+- Teacher views learning guide (by period)
