@@ -40,7 +40,7 @@
 - Cannot Save Draft
 
 
-# Did not get to
+# Not Started
 
 - Read-only roster
 - Periods in perf report
