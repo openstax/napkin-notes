@@ -9,7 +9,7 @@
   - Periods (add diff due dates)
   - Styling: 'Total Problems'
   - Styling: Exercise images
-  - Required fields were added but fell out last-min
+  - Required fields were added but fell out last-min https://github.com/openstax/tutor-js/pull/398
 - Calendar spans multiple days when period due dates are diff
 - Past dates on date picker
 - Performance Report sorts
