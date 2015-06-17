@@ -26,7 +26,7 @@
 - Squashed Invariant errors
 
 
-Bugs:
+# Bugs
 
 - Performance report has "Uncaught TypeError: Cannot read property 'isNameSort' of null" bug
 - Probably due to /courses and /courses/1 returning diff JSON
