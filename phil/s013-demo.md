@@ -1,4 +1,6 @@
-# Teacher
+# Stuff to Demo
+
+## Teacher
 
 - Calendar
   - ellipses
@@ -16,7 +18,7 @@
 - Reference book (Teacher Edition toggle)
 
 
-# Student
+## Student
 
 - Stepping through HW now has "Loading..." in Continue button
 - Many steps adjusts the margin
