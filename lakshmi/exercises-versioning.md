@@ -12,21 +12,21 @@ potential solutions for them.
 
 1.  When does an exercise get a new version?
 
-    a)  Whenever the content is updated
-    b)  When the question changes "significantly"
+    1.  Whenever the content is updated
+    2.  When the question changes "significantly"
 
-    Option (b) is preferable as it allows us to correct typos and
+    Option (ii) is preferable as it allows us to correct typos and
     other minor errors while not causing ripple effects across the
     system.
 
 2.  What do we do with older versions?
 
-    a)  Mark them as obsolete
-    b)  Don't do anything special and let the end user systems exclude
+    1.  Mark them as obsolete
+    2.  Don't do anything special and let the end user systems exclude
         them if and when necessary
-    c)  One of the above based on the actual change
+    3.  One of the above based on the actual change
 
-    Option (a) is preferable as it avoids the issue of two versions of
+    Option (i) is preferable as it avoids the issue of two versions of
     the same exercise coexisting.
 
 
