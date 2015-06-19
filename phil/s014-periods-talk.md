@@ -33,7 +33,7 @@ Cons:
 
 /cousrses: `{ periods: [ {id: , name: } ] }`
 
-HW builder: `{ tasking_plans: [ {target_id: ,  target_type: , due_at: } ] }`
+HW builder: `... { tasking_plans: [ {target_id: ,  target_type: , due_at: } ] }`
 
 Quick-look plan stats: `... { periods: [ {id: , ... } ] }`
 
