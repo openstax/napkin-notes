@@ -31,7 +31,7 @@ Cons:
 
 # Formats:
 
-/user/courses/1: `{ periods: [ {id: , name: } ] }`
+/user/courses: `{ periods: [ {id: , name: } ] }`
 
 HW builder: `... { tasking_plans: [ {target_id: ,  target_type: , due_at: } ] }`
 
