@@ -35,9 +35,9 @@ Cons:
 
 HW builder: `... { tasking_plans: [ {target_id: ,  target_type: , due_at: } ] }`
 
-Quick-look plan stats: `... { periods: [ {id: , ... } ] }`
+Quick-look plan stats: `... { periods: [ {id: , name: , ... } ] }`
 
-Class Aggregate review stats: `... { periods: [ {id: , ... } ] }`
+Class Aggregate review stats: `... { periods: [ {id: , name: , ... } ] }`
 
 learning guide: `[ { period: { id: , name: }, stats: { ... } } ]`
 
