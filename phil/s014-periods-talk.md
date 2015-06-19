@@ -41,6 +41,9 @@ Class Aggregate review stats: `... { periods: [ {id: , name: , ... } ] }`
 
 learning guide: `[ { period: { id: , name: }, stats: { ... } } ]`
 
+learning guide2: `{ periods: [ {id: , name: , ... } ] }`
+
+
 roster: `[ { name: , period_id: , role_id: } ]`
 
 
