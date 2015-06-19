@@ -37,6 +37,12 @@ HW builder: `{ tasking_plans: [ {target_id: ,  target_type: , due_at: } ] }`
 
 Quick-look plan stats: `{ periods: [ {id: , ... } ] }`
 
-roster: 
+Class Aggregate review stats: `{ periods: [ {id: , exercises: ... } ] }`
+
 learning guide: `[ { period: { id: , name: }, stats: { ... } } ]`
+
+
+roster: 
+
+
 per report:
