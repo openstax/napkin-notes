@@ -19,6 +19,16 @@ potential solutions for them.
     other minor errors while not causing ripple effects across the
     system.
 
+    [Edit: After discussions with JP]
+
+    The above can be accomplished by:
+
+    1.  Mutating an existing version for minor updates and creating
+        new versions for major updates (or)
+    2.  Creating new versions for minor updates and creating new
+        exercises for major updates.  This involves changing the
+        canonical exercise id to not have version qualifiers.
+
 2.  What do we do with older versions?
 
     1.  Mark them as obsolete
