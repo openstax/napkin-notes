@@ -31,12 +31,12 @@ Cons:
 
 # Formats:
 
-/cousrses: { periods: [ {id: , name: } ] }
+/cousrses: `{ periods: [ {id: , name: } ] }`
 
-HW builder: { tasking_plans: [ {target_id: ,  target_type: , due_at: } ] }
+HW builder: `{ tasking_plans: [ {target_id: ,  target_type: , due_at: } ] }`
 
-plan-stats: { periods: [ {id: , name: , stats: } ] }
+Quick-look plan stats: `{ periods: [ {id: , ... } ] }`
 
 roster: 
-learning guide: [ { period: { id: , name: }, stats: { ... } } ]
+learning guide: `[ { period: { id: , name: }, stats: { ... } } ]`
 per report:
