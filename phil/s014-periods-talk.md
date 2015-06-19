@@ -25,3 +25,4 @@ Cons:
 - need to retrieve list of periods first (serial retrieval, not parallel)
 - unclear what happens on URL endpoints when `./periods/1` is removed
 - More complicated store
+- May need to remember period in the URL (esp for Learning Guide)
