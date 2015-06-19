@@ -81,6 +81,19 @@ in the export for BE
 ]
 ```
 
+# Learning Guide
+
+```coffee
+[
+ {
+   period: { id, name: },
+   stats: {
+     # whatever is currently in the learning guide now
+   }
+  },  # repeat this for each period
+]
+```
+
 # Roster
 
 ```coffee
