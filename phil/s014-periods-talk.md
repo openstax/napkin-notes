@@ -26,3 +26,17 @@ Cons:
 - unclear what happens on URL endpoints when `./periods/1` is removed
 - More complicated store
 - May need to remember period in the URL (esp for Learning Guide)
+
+
+
+# Formats:
+
+/cousrses: { periods: [ {id: , name: } ] }
+
+HW builder: { tasking_plans: [ {target_id: ,  target_type: , due_at: } ] }
+
+plan-stats: { periods: [ {id: , name: , stats: } ] }
+
+roster: 
+learning guide: [ { period: { id: , name: }, stats: { ... } } ]
+per report:
