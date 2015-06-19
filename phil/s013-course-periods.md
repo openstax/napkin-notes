@@ -5,6 +5,37 @@ Screens:
 - Performance book (Read-only)
 - HW Builder (Edit other things based on periods)
 
+# 2 Options
+
+## getting all periods in 1 call
+
+Pros:
+
+- 1 request, 1 store
+
+Cons:
+
+- lots of (unused) bits to retrieve
+- URL has different JSON format for student and teacher
+- cache invalidation is more complicated and occurs more frequently
+
+
+## separate calls for each period data
+
+*(Not doing this one)*
+
+Pros:
+
+- JSON has same format
+- Only retrieve the period when clicked
+
+Cons:
+
+- need to retrieve list of periods first (serial retrieval, not parallel)
+- unclear what happens on URL endpoints when `./periods/1` is removed
+- More complicated store
+- May need to remember period in the URL (esp for Learning Guide)
+
 
 # List of Periods
 
@@ -13,13 +44,18 @@ Screens:
 ```coffee
 title:
 periods: [ {
-  id:
+  id: "1"
   name: # 3 char (readonly)
 } ]
 timezone:
 default_due_time: ??
 default_open_time: ??????
 ```
+
+Update/Delete:
+
+`POST /courses/1/periods` with `{name: }` and `DELETE /courses/1/periods/1` (What happens to students in that period?)
+
 
 # HW Builder (also iReading Builder)
 
@@ -54,44 +90,64 @@ need the endpoint to have the same due time / tasking information as HW builder 
 
 # Calendar Popup
 
-Decision: Needs discussion w/ UX
-
 ```coffee
-{periods: [ {id: , name: , stats: } ] }
+stats: [ {period_id: "1", ... } ]    # where ... is stats-specific data
 ```
 
-period break up of https://tutor-demo.openstax.org/api/docs/v1/task_plans/stats
+# Class Aggregate review stats
+
+(same as Calendar Popup but with different `...`)
+
+
+# Learning Guide
+
+`GET /courses/1/guides` (or `teacher_guide`?)
+
 ```coffee
-[ { period: { id, name }, stats: ... } ]
+[
+  { period_id: "1", ... }
+  # More periods here
+]
 ```
 
 # Performance Report
 
-rolled up to course?
+rolled up to course? No. Only by period.
 https://tutor-demo.openstax.org/api/docs/v1/courses/performance
 in the export for BE
 
 ```coffee
 [
  {
-   period: { id, name: },
-   data_heading: {},   # same as existing
+   period_id: "1"
+   data_heading: {}   # same as existing
    student_data: []    # same as existing
-  },  # repeat this for each period
+  }
+  # repeat this for each period
 ]
 ```
 
+
 # Roster
+
+`GET /courses/1/roster`
 
 ```coffee
 [
   {
-    name: “Jimmy”
     period_id: 32
+    name: “Jimmy”
     role_id: 78
   }
 ]
 ```
+
+Update/Add/Delete:
+
+- `POST /courses/1/roster` with `{name: , student_id? }`
+- `PATCH /courses/1/roster/78?` with `{name: , period_id: }`
+- `DELETE /courses/1/roster/78`
+
 
 # Questions
 
