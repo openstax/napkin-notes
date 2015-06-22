@@ -5,7 +5,7 @@ Currently the FE loads two endpoints every time it's loaded, both of which depen
 
 I propose we merge the two endpoints into just the `/api/user` endpoint, with format:
 
-```json
+```js
 
 {
   name: "Bob Smith"
