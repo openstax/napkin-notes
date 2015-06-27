@@ -192,7 +192,7 @@ PATCH  | .../periods/1 {title} | u356
 DELETE | .../periods/1 | u356
 PATCH  | .../periods [ id1, id2 ] | u357
 
-PATCH  | .../students/345 {period} | u358
+POST   | .../students {period, first_name, last_name} | u358
 DELETE | .../students/345 | u359
 PATCH  | .../students/345 {period} | u360
 PATCH  | .../students/345 {name} | u361
