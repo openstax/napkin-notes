@@ -13,4 +13,4 @@ While they lack much descriptive text, the titles indicate that the teacher shou
  * Removes a student: https://www.pivotaltracker.com/story/show/97232564
    * implemented in WIP PR: https://github.com/openstax/tutor-js/pull/417
  * Moves a student between periods: https://www.pivotaltracker.com/story/show/97232570
-   * implemented in WIP PR: https://github.com/openstax/tutor-js/pull/417
+   * implemented in WIP PR: https://github.com/openstax/tutor-js/pull/417  However the card lists behaviour that isn't supported such as still showing the student in the old period with grayed out text.
