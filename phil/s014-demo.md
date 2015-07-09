@@ -28,3 +28,39 @@
 - Editing draft removes Due date
 - if TaskPlan is only assigned to 1 period then other period tabs should be disabled
   - impacts calendar popup, class aggregate view
+
+## Calendar
+
+- How is a draft determined?
+- Handle state when is_publish_requested is true but TaskPlan isn't published yet
+
+
+## HW Builder
+
+- validation (open/due dates, and for each period)
+- opensAt should be today by default
+- Test Disabling Delete after opensAt
+- Test Disable adding more exercises/Readings after opensAt date
+- Disable editing opensAt after opensAt (I think. Maybe confirm w/ Fred?)
+
+
+## Bio content (maybe BE)
+
+- remove units
+  - from chapter_section
+  - sections should be a single module, not a chapter
+
+
+## Roster
+
+- remove unsupported buttons (reset pass, add student)
+
+## Learning Guide
+
+- styling the list is staggered (see demo) maybe fixed with new mockup (no Edit button)
+- buttons should create a new Practice (with page_ids)
+
+
+## Phil
+
+Figure out how to test various states for TaskPlans, Tasks (overdue but can still answer), Exports
