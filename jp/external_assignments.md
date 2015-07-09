@@ -6,7 +6,7 @@ External assignments are assignments that outside of the normal Tutor collection
 
 Most of the stuff in the mockup is generic task plan stuff (all of the stuff above the URL), and not something you'll need to worry about (tho FE folks will).
 
-`TaskPlan`s have a `settings` JSON field that holds information specific to certain kinds of `TaskPlan`s.  The `settings` object for an external assignment will for the moment just have a `url` string field.  Keep in mind this doesn't mean that `TaskPlan` changes -- it is just a vessel for the `settings` populated by the FE.  But what we will need is an assistant to process these `TaskPlan`s, and it'll be the thing that checks for and uses the `url` field.
+`TaskPlan`s have a `settings` JSON field that holds information specific to certain kinds of `TaskPlan`s.  The `settings` object for an external assignment will for the moment just have a `external_url` string field.  Keep in mind this doesn't mean that `TaskPlan` changes -- it is just a vessel for the `settings` populated by the FE.  But what we will need is an assistant to process these `TaskPlan`s, and it'll be the thing that checks for and uses the `external_url` field.
 
 ## External Assignment Assistant / Task Step
 
