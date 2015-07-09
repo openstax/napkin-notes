@@ -42,6 +42,7 @@
 - Test Disabling Delete after opensAt
 - Test Disable adding more exercises/Readings after opensAt date
 - Disable editing opensAt after opensAt (I think. Maybe confirm w/ Fred?)
+- ref [Assignment Management Behavior](https://docs.google.com/document/d/1CAyWKf-t2X5F79WtSR3SwGDZ1721ibvkLvRWqI20EyM/edit)
 
 
 ## Bio content (maybe BE)
