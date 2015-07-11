@@ -45,11 +45,11 @@ In one browser, open `http://localhost:3001/newrelic`.  You should see a NewReli
 
 In another browser, log in to the Physics course as the teacher.  Click on the first iReading on the calendar to bring up the quick look analytics (which will trigger the `CalculateTaskPlanStats`).  After it loads, refresh the NewRelic browser.  You should see a table with the stats api listed:
 
-![Table](https://www.dropbox.com/s/sahp2yalwp5y7rn/Screenshot%202015-07-11%2010.47.43.png?dl=0)
+https://www.dropbox.com/s/sahp2yalwp5y7rn/Screenshot%202015-07-11%2010.47.43.png?dl=0
 
 Clicking on the link, you'll see a summary of the call:
 
-![Summary of call](https://www.dropbox.com/s/fwt0i9ld8pn9k94/Screenshot%202015-07-11%2010.48.11.png?dl=0)
+https://www.dropbox.com/s/fwt0i9ld8pn9k94/Screenshot%202015-07-11%2010.48.11.png?dl=0
 
 This isn't all that helpful because by default NewRelic only profiles down to the controller method.  If you clicked on the "Details" link you'd see some more information about the DB queries but it wouldn't really help us figure out where the problems lie.
 
@@ -77,7 +77,7 @@ Then I restarted the server (maybe not required depending on how Rails auto relo
 
 Now we see more details:
 
-![Details after tracing](https://www.dropbox.com/s/nr1dqt4m8tewbgv/Screenshot%202015-07-11%2010.53.13.png?dl=0)
+https://www.dropbox.com/s/nr1dqt4m8tewbgv/Screenshot%202015-07-11%2010.53.13.png?dl=0
 
 And we see that 40% of the time is spent in `get_page_for_tasked_exercise`, [seen here](https://github.com/openstax/tutor-server/blob/1a0cbe89302d4b91b4bfc2d984e9e17f3600c5b4/app/routines/calculate_task_plan_stats.rb#L99-L101).  This is no surprise in that we already knew this was a suboptimal way to get pages from tasked exercises (albeit the only way currently).
 
