@@ -2,66 +2,41 @@
 
 This note is concerned with what to do in tutor-server when moving students from period to period and when deleting students from a course.
 
-## Desired Behavior
+## Desired Behavior for Students
 
-Once a user has been added to a period as student, the record of that user's student membership in that period shall be maintained throughout the duration of the course.
+### Dashboard 
 
-* **Exception:** a student record can be deleted if that student has no data associated with it, e.g. if a teacher moves Jimmy accidentally from period 1 to period 2 and then back to period 1 (correcting their accidental move), it would be ok to delete Jimmy's student record in period 2.
-* **Possible Implication:** `Student` objects don't move from period to period.  If a user is moved from period 1 to period 2, they end up with an inactive `Student` record in period 1 and an active `Student` record in period 2.  If a user is removed from a period, their `Student` record is not actually actually deleted but just marked inactive.
-
-  Maybe talking about `Student` like this isn't appropriate for this document as there may be a different design solution to handle these behaviors and ramifications.
-
-Teachers are shown the hist
-
-## Specific Ramifications
-
-### Student Role Listings
-
-`/api/courses` and `/api/courses/1` should limit the student roles returned to those that are active.  This means that a user will not be shown an option to view a course through the dropped / inactive student role.
-
-### Performance report
-
-**For Students**
-
-* **Ideally:** users see their performance from any period they've been a part of, all in one table (means moved students will see tasks from different periods at one time)
-* **Fine for now:** just show users their student performance for their active period (means moved students will not see some of their history)
-
-**For Teachers**
-
-* Show a student's performance report in each period they've been a part of (means that a user whose period has changed mid-semester will have half of their tasks show up in one period's performance report and the other half in another period's performance report).
+The student sees all of their tasks, no matter which period they were assigned through.  The student can work a task sourced from a prior period as long as that task is still open.
 
 ### Learning Guide
 
-**For Students**
+The student's learning guide is computed from all tasks they have worked, regardless of the period from which they were sourced.
 
-* **Ideally:** users see their performance across all tasks they've completed in the course, regardless of which periods they have been in.
-* **Fine for now:** users see their performance only in their current active period.
+## Desired Behavior for Teacher
 
-**For Teachers**
+### Quick Look Analytics on Calendar
 
-Since this learning guide is already filtered by period, I don't think any changes are needed here.
+This UI shows analytics on a `TaskPlan`'s `Tasks` for a given period.  The data is limited to those tasks assigned to students in that period (at the time of distribution).
 
-### Viewing / Working Tasks
+### Learning Guide
 
-A student should be able to view and work any task that they were ever assigned (e.g. a student is moved while in the middle of an assignment, they should be able to complete it even though they are no longer in the period from which that task originated).
+The learning guide shows CLUEs and worked exercise counts by book/chapter/section across all students in a period.
 
-### Distributing Tasks
+*Here do we maybe want each period learning guide to reflect the CLUEs/counts of all students currently in the period?  (seems more useful for a teacher to get analytics on the complete histories of students currently in a given period, even if those histories span multiple periods).*
 
-When a student moves from one period to another, there could be tasks that have been published for that new period but not yet released.  For any future task plan that is assigned to the period into which the student is moving and that has been published but is not yet open, distribute that task to the student (otherwise he'll be left out).
+### Performance Report
 
-Once a student is inactive in a period, no more tasks that are assigned to that period should be distributed to that inactive student.
+The performance report shows completion and correctness for student tasks, grouped by period.  The data in any one period should be limited to tasks that were assigned to students who were members of that period at the time of the task distribution.
 
-### Dashboard
+Means students who have moved will end up with partially-complete performance report rows in multiple periods.
 
-**For Students**
 
-* **Ideally:** A user would see all of their tasks, regardless of which period they came from
-* **Fine for now:** A user can just their tasks for their active period, and if we need to help them get direct access to an incomplete task in an old period we as admins can send a link.
+## Implementation
 
-**For Teachers**
+Don't want to have multiple Students / multiple roles.  Having one student is nice because then we have a natural place to put Student information, e.g. Karen's `deidentifier` for surveys, later `student_specified_id`, `educator_specified_id`, etc.  
 
-Nothing special.
+All we need is essentially what we currently have.  A course has multiple periods, a student belongs to one period, and a student maps to a role.  This approach completely addresses the student's needs.  Long term, I think we'll want an `Enrollment` or `PeriodRegistration` object to map a `Student` to a `Period` so that we can have a history of when a student was in which period, support student-initiated registration requests, etc.  But for now, we can just stick with our `period_id` foreign key in `Student`:
 
-### Quick Look Analytics
+https://www.dropbox.com/s/63y50tobu1ya0km/Screenshot%202015-07-15%2008.55.02.png?dl=0
 
-I don't think there's much special here.  Quick look analytics on a teacher's calendar are already filtered by period and by task plan, so I think we can just continue to count like we are?
+For the teacher, we have the added requirement to know which tasks were assigned to students in which periods at the time of distribution. Since we are not going to have one `Role` per period, we need to track this mapping separately.  For this we add a PeriodTasking join table in the Task SS.  It maps `Tasking`s to `Period`s at the time a task is saved in `DistributeTasks`.  This join table can then be used in the performane report and quick look analytics to select the appropriate `Tasks`.  
