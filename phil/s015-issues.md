@@ -30,6 +30,7 @@
 
 # Student Dashboard
 
+- Learning Guide widget
 - Show Late logic for HW/iReading
 - Should not use Physics colors and then switch to bio colors on load
 
