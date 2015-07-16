@@ -16,6 +16,7 @@
 - Show dates in header
 - handle empty cells (if a student switches periods mid-semester)
 - Show externals
+- Link to learning guide for a student (needs API call suffixed with `/roles/[STUDENT_ID]`
 
 
 # HW Builder
