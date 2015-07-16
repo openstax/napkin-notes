@@ -31,6 +31,7 @@
 # Student Dashboard
 
 - Show Late logic for HW/iReading
+- Should not use Physics colors and then switch to bio colors on load
 
 
 # Student HW/Ireading Steps
