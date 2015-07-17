@@ -7,6 +7,7 @@
 * currently, no assurance that different versions of the same exercse are "equivalent"
   * what "equivalent" means could differ by consumer
   * or worse, "equivalent" could be conditional
+  * this sort of decision shouldn't be Exercises' concern
 * currently, no assurance that different exercises (much less versions) are NOT "equivalent"
 
 ## Exchange
@@ -31,9 +32,9 @@
   * if exercise versions are NOT interchangable, Tutor could be showing the wrong exercise
 
 # Fundamental Conflicts
-  * Exercises, Tutor, Exchange need to know *exactly* what exercise content is being referenced
-    * failure to do so will result in loss of history/information/reproducability
-  * BigLearn wants to combined all versions of an exercise into one
-    * failure to do so could result in severe lack of decision-making knowledge
-    * failure to do so could result in "duplicate" questions, since multiple versions of the same question could be suggested
-    * if exercises should not be combined, though, suggestions could be poor
+* Exercises, Tutor, Exchange need to know *exactly* what exercise content is being referenced
+  * failure to do so will result in loss of history/information/reproducability
+* BigLearn wants to combined all versions of an exercise into one
+  * failure to do so could result in severe lack of decision-making knowledge
+  * failure to do so could result in "duplicate" questions, since multiple versions of the same question could be suggested
+  * if exercises should not be combined, though, suggestions could be poor
