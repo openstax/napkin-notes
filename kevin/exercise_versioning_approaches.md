@@ -1,5 +1,11 @@
 # Overview
 
+There are three ways (that I can think of) to ensure reproducibility:
+
+* immutable remote resources referenced by URI with version
+* mutable, but "equivalent", remote resource referenced by URI without version
+* create local copy of remote resource
+
 ## Exercises
 * creates new exercise version with every edit
   * value after the `@` symbol changes
