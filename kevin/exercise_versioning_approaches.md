@@ -33,7 +33,7 @@
   * if exercise versions are NOT interchangable, Tutor could be showing the wrong exercise
 
 # Fundamental Conflicts
-* Exercises, Tutor, Exchange need to know *exactly* what exercise content is being referenced
+* Exercises, Tutor, Exchange need to know (at least sometimes, if not always) *exactly* what exercise content is being referenced
   * failure to do so will result in loss of history/information/reproducability
 * BigLearn wants to combined all versions of an exercise into one
   * failure to do so could result in severe lack of decision-making knowledge
