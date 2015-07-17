@@ -1,4 +1,4 @@
-## Overview
+# Overview
 
 ## Exercises
 * creates new exercise version with every edit
@@ -24,3 +24,16 @@
 
 ## BigLearn
 
+* given exact exercise versions and tags by Tutor
+* outputs are filtered by tags
+* what happens if two versions of the same exercise are given to BL (due to, say, a content update in Tutor)?
+  * if exercise version ARE interchangable, Tutor could ignore the suggested exercise version and just show the latest
+  * if exercise versions are NOT interchangable, Tutor could be showing the wrong exercise
+
+# Fundamental Conflicts
+  * Exercises, Tutor, Exchange need to know *exactly* what exercise content is being referenced
+    * failure to do so will result in loss of history/information/reproducability
+  * BigLearn wants to combined all versions of an exercise into one
+    * failure to do so could result in severe lack of decision-making knowledge
+    * failure to do so could result in "duplicate" questions, since multiple versions of the same question could be suggested
+    * if exercises should not be combined, though, suggestions could be poor
