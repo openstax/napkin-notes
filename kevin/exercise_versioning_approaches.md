@@ -38,3 +38,7 @@
   * failure to do so could result in severe lack of decision-making knowledge
   * failure to do so could result in "duplicate" questions, since multiple versions of the same question could be suggested
   * if exercises should not be combined, though, suggestions could be poor
+* It seems that BigLearn is the only part of the system that might want to combined exercise versions (?)
+  * but then again, maybe it doesn't
+  * or maybe it does, but conditionally
+  * basically, whether or not to combine is an internal BigLearn processing decision
