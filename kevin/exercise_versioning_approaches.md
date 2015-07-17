@@ -22,6 +22,7 @@
 * task content must be stable and reproducable
 * potential need for auditing / dispute resolution
 * indirectly (directly?) used for research
+* the version of an exercise that Tutor references during content import is an internal processing decision
 
 ## BigLearn
 
