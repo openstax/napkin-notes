@@ -33,7 +33,7 @@
   * conceptual/content changes
     * despite assurances, it is possible (likely?) that seemingly innocuous changes to exercise content could affect its utility from a BigLearn point-of-view
       * difficulty
-      * presentation style (current ignored - assumed m/c)
+      * presentation style (currently ignored - assumed m/c)
       * number of answer selections
       * conceptual content
 * Research:
@@ -59,6 +59,7 @@ There are three ways (that I can think of) to handle versioning:
   * current solution
   * pros:
     * URLs point to unchanging resources
+    * systems not responsible for extra storage
     * decision of what consitutes "equivalence" can be:
       * ignored entirely
       * punted until later
@@ -75,6 +76,7 @@ There are three ways (that I can think of) to handle versioning:
 * mutable, but "equivalent", remote resource referenced by URI without version
   * pros:
     * exercise versions are not included in URLs
+    * systems not responsible for extra storage
     * seed data accumulates across all versions
   * cons:
     * "equivalence" determined centrally - all consumers must understand/agree
@@ -89,7 +91,7 @@ There are three ways (that I can think of) to handle versioning:
     * local copies isolate systems from Exercises outages/obsolescence/etc
     * reproducibility is not a problem - as long as systems bother
   * cons:
-    * each system needs to manage exercise versioning on its own
+    * each system needs to manage exercise storage and versioning on its own
     * non-uniform version-related communication across systems
       * instead of universal id@version, some sort of hash-like value will need to be used
 
