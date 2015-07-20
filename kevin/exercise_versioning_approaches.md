@@ -40,7 +40,7 @@
   * definitely need to know what actually happened
 * Cross-System:
    * clear communication
-     * "exercise 123@456" is much more clear and concise than "that version with such-and-such a typo"
+     * "exercise 123@456" is much more clear and concise than "the one covering blah with such-and-such a typo"
    * traceability
      * who created "123@456"?  when?  etc.
    * stability
