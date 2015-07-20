@@ -2,6 +2,9 @@
 
 ## Version-Related System Aims
 
+* Exercises:
+  * each change to an exercise results in a new, immutable version
+  * immutable exercise versions can be permalinked
 * Tutor:
   * predictible assignments
     * teachers will likely want to know that the exercises they've reviewed/selected will be the ones used in assignments 
@@ -37,6 +40,8 @@
 * Cross-System:
    * clear communication
      * "exercise 123@456" is much more clear and concise than "that version with such-and-such a typo"
+   * traceability
+     * who created "123@456"?  when?  etc.
 
 There are three ways (that I can think of) to ensure reproducibility:
 
