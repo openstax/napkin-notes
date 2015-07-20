@@ -48,6 +48,8 @@
      * once implemented, code changes should only be needed if domain changes also occur
    * resiliency
      * solution should allow detection/correction of errors, should they occur 
+* Cross-Environment
+  * exercise ids/versions should remain unchanged
 
 ## Potential Approaches
 
