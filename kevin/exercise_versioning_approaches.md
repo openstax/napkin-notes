@@ -47,7 +47,8 @@
      * systems should not be impacted by unrelated changes
      * once implemented, code changes should only be needed if domain changes also occur
    * resiliency
-     * solution should allow detection/correction of errors, should they occur 
+     * solution should allow detection/correction of errors, should they occur
+     * solution should allow policy/requirements to be adjusted as much as practical
 * Cross-Environment
   * exercise ids/versions should remain unchanged
 
