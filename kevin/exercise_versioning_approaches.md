@@ -43,6 +43,11 @@
      * "exercise 123@456" is much more clear and concise than "that version with such-and-such a typo"
    * traceability
      * who created "123@456"?  when?  etc.
+   * stability
+     * systems should not be impacted by unrelated changes
+     * once implemented, code changes should only be needed if domain changes also occur
+   * resiliency
+     * solution should allow detection/correction of errors, should they occur 
 
 ## Potential Approaches
 
