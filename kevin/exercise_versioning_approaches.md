@@ -64,6 +64,7 @@ There are three ways (that I can think of) to handle versioning:
     * no clear-cut way to determine version-to-version "equivalence"
     * consumers are forced to at least consider version-related issues
       * some could be forced to deal with them 
+    * dependency on Exercises to reconstitute history from recorded exercise version, answer id, etc.
 * mutable, but "equivalent", remote resource referenced by URI without version
   * pros:
     * exercise versions are not included in URLs
@@ -73,6 +74,7 @@ There are three ways (that I can think of) to handle versioning:
     * reproducibility only as strong as meaning of "equivalence"
     * "equivalence" violations result in data contamination
       * very difficult to detect/correct 
+    * dependency on Exercises to reconstitute history from recorded exercise version, answer id, etc.
 * create local copy of remote resource
   * pros:
     * each system can choose whether or not exercise versions matter
