@@ -1,5 +1,43 @@
 # Overview
 
+## Version-Related System Aims
+
+* Tutor:
+  * predictible assignments
+    * teachers will likely want to know that the exercises they've reviewed/selected will be the ones used in assignments 
+  * stable assignments
+    * students/teachers will likely not want exercise content to change without notice
+    * it is desireable to avoid having "unrelated" activities (like content imports/updates) change existing (and potentially planned) assignments
+  * reproducible assignments
+    * auditing requirements
+    * dispute resolution
+    * research
+* Exchange:
+  * recording of unambiguous facts to be used by BigLearn and Research
+  * need to record:
+    * exact exercise, including version
+    * presentation style (currently missing - assumed m/c)
+    * free response (if appropriate)
+    * chosen answer(s)
+    * correctness (if appropriate)
+* BigLearn:
+  * seed data 
+    * if all versions of exercises have lots of seed data, then no problem
+    * however, it's more likely that certain versions will have little/no seed data
+    * depending on the situation, "combining" some/all versions is a necessity
+      * how this is done might be situation-dependent
+  * conceptual/content changes
+    * despite assurances, it is possible (likely?) that seemingly innocuous changes to exercise content could affect its utility from a BigLearn point-of-view
+      * difficulty
+      * presentation style (current ignored - assumed m/c)
+      * number of answer selections
+      * conceptual content
+* Research:
+  * definitely need to know what actually happened
+* Cross-System:
+   * clear communication
+     * "exercise 123@456" is much more clear and concise than "that version with such-and-such a typo"
+
 There are three ways (that I can think of) to ensure reproducibility:
 
 * immutable remote resources referenced by URI with version
