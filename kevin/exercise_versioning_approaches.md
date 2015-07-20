@@ -23,6 +23,7 @@
     * free response (if appropriate)
     * chosen answer(s)
     * correctness (if appropriate)
+    * student (de)identifier
 * BigLearn:
   * seed data 
     * if all versions of exercises have lots of seed data, then no problem
@@ -43,11 +44,45 @@
    * traceability
      * who created "123@456"?  when?  etc.
 
-There are three ways (that I can think of) to ensure reproducibility:
+## Potential Approaches
+
+There are three ways (that I can think of) to handle versioning:
 
 * immutable remote resources referenced by URI with version
+  * current solution
+  * pros:
+    * URLs point to unchanging resources
+    * decision of what consitutes "equivalence" can be:
+      * ignored entirely
+      * punted until later
+      * determined by consumer
+        * consensus is NOT required 
+  * cons:
+    * proliferation of versions
+    * potential lack of seed data for any given version
+    * version must be included in exercise description for completeness
+    * no clear-cut way to determine version-to-version "equivalence"
+    * consumers are forced to at least consider version-related issues
+      * some could be forced to deal with them 
 * mutable, but "equivalent", remote resource referenced by URI without version
+  * pros:
+    * exercise versions are not included in URLs
+    * seed data accumulates across all versions
+  * cons:
+    * "equivalence" determined centrally - all consumers must understand/agree
+    * reproducibility only as strong as meaning of "equivalence"
+    * "equivalence" violations result in data contamination
+      * very difficult to detect/correct 
 * create local copy of remote resource
+  * pros:
+    * each system can choose whether or not exercise versions matter
+    * each system can choose how best to track exercise versions
+    * local copies isolate systems from Exercises outages/obsolescence/etc
+    * reproducibility is not a problem - as long as systems bother
+  * cons:
+    * each system needs to manage exercise versioning on its own
+    * non-uniform version-related communication across systems
+      * instead of universal id@version, some sort of hash-like value will need to be used
 
 ## Exercises
 * creates new exercise version with every edit
