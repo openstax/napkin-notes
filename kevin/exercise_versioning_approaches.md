@@ -95,6 +95,7 @@ There are three ways (that I can think of) to handle versioning:
     * each system needs to manage exercise storage and versioning on its own
     * non-uniform version-related communication across systems
       * instead of universal id@version, some sort of hash-like value will need to be used
+      * could potentially be addressed by embedding standard exercise id@version in payload
 
 ## Exercises
 * creates new exercise version with every edit
