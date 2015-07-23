@@ -22,15 +22,15 @@
 
 # Notes
 
-* Flush buttons on calendar right
-* Take out "feedback" note on external form
-* only button spinning on external publish
+* Flush buttons on calendar right - phil did it
+* Take out "feedback" note on external form - amanda
+* only button spinning on external publish - amanda
 * external heading on perf report is 
-  * fix this
+  * fix this - nathan already did it
 * why are late things yellow on perf report?
   * discussion around color of late icon - Fred & Jason
 * teacher support - take out lightbulb?
-* answers on imported exercises don't need to be blue, etc.
+* answers on imported exercises don't need to be blue, etc. - amanda
   * changing notes styling?
 * link color, new blue - Fred
 * homework footer use the same icon thing from perf report - Amanda
