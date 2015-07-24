@@ -14,6 +14,7 @@
   * `OPENSTAX_ACCOUNTS_STUB=false`
   * `OPENSTAX_ACCOUNTS_CLIENT_ID` equal to the `uid` from above
   * `OPENSTAX_ACCOUNTS_SECRET` equal to the `secret` from above
+5. `bundle exec rails server` on both Tutor and Accounts
 
 ## Home page, Zendesk, make first Tutor user
 
@@ -34,7 +35,7 @@
 
 16. Make Jimbo an admin on the console by running `UserProfile::MakeAdministrator[user: Entity::User.first]`
 17. Reload the tutor page and click on the beautiful admin button.
-18. Show that the admin console is responsive.
+18. Read through the menu and show that the admin console is responsive.
 
 ## Import a book
 
@@ -67,7 +68,7 @@
 8. Click "Add course"
 9. Set name = "AP Biology", choose the high school, and click "Save"
 10. Click "Edit course" -- point out the different tabs
-  * Bug: Selected school not showing up in dropdown
+  * Bug: Selected school not showing up in dropdown (maybe not sticking from course creation)
 11. Choose Jimbo as the teacher (for sake of speed)
   * Feature needed: remove teacher
 12. Go to "Course books" tab.
@@ -77,11 +78,12 @@
   * Would be nice to return to the periods tab after creating each period
 16. Go to "Student roster" tab
 17. Import CSV files into the two periods
+18. Go to "Courses" menu item and click "Students" next to the course; point out deidentifier
 
 ## Student sign up
 
 18. Paste into Skype the email sent to Kim
-19. Copy the link from that email into an incognito browser
+19. Copy the link from that email into a different browser program
 20. Show the invite page -- intent at this point is to be able to choose a password, but that currently isn't working.
 
 ## Changing User Info
@@ -90,6 +92,7 @@
 2. Jimbo is already an admin on Accounts (the first user of Accounts is automatically an admin in development -- in production we could do a command line call to make him an admin).
 3. Go to Accounts, click "Dev console" -- in production this is only available to admins and is called the "Admin console".
 4. Click on "Users" tab and search for kjd
+  * Bug?: Names from Tutor import not showing up here
 5. Here's where Kim's account can be edited by an admin.  Click "Edit"
 6. Note that Kim's kjd@example.com address is already verified -- this is because we clicked on her invite email link.
 7. On this screen we can manually verify a user's email address (happens occasionally that users can't find email confirmation emails, whether they are in spam or whatever), or add a new email address and verify it.
@@ -99,7 +102,7 @@
   * Makes me wonder if we need to disable social login for school users or somehow require that they set up a password authentication, in the likely case that their school blocks facebook etc.
 9. Go back to user search and search for "admin" and see that Jimbo's password can be changed.
 
-## As Jimbo, See Student Roster / Book Content
+## As Jimbo as Teacher, See Student Roster / Book Content
 
 1. Go back to Tutor
 2. As Jimbo, click "Main Dashboard" from admin menu
