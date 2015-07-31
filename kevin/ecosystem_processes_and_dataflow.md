@@ -166,15 +166,18 @@ since content tends to be added and not removed.
 Each `Course` in `Tutor` has an associated current `Ecosystem`,
 as well as a list of previously-associated `Ecosystems`.
 Each `Course` also has a `Ecosystem(s)`-to-`Ecosystem` mapping
-to allow a smooth transition from one `Ecosystem` to another.
+to allow a smooth transition of work from past `Ecosystems` to the current one.
 
-In order to associate an `Ecosystem` to a `Course`, 
-an `Ecosystem(s)`-to-`Ecosystem` mapping
-must exist for all past, current, and new `Course`-associated `Ecosystems`.
+To update the current `Ecosystem` for a `Course`,
 
-`Tutor` can then move the `Course`'s current `Ecosystem` 
-to its previously-associated `Ecosystem` list
-and update the `Course`'s current `Ecosystem` and mapping.
+* a new `Ecosystem` is created using a book id and exercise manifest
+  * the new `Ecosystem` can be validated as necessary before proceding
+* an `Ecosystem(s)`-to-`Ecosystem` mapping is created from the past, current, and new `Ecosystems` to the new `Ecosystem`
+  * the mapping can be validated/reviewed/tweaked as necessary
+* the `Course`'s current `Ecosystem` is moved to the `Course`'s list of previously-associated `Ecosystems`
+* the new `Ecosystem` and mapping are added to the `Course`
+
+This process allows the update to be aborted at any point and also ensures success of the final update.
 
 ## Tutor Creates Assignments
 
