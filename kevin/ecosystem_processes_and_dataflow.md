@@ -49,6 +49,17 @@ be used to create several purpose-specific `Exercise` pools.
 
 ### Additional Concerns
 
+#### Multiple Ecosystems
+
+Because there are no interactions between `Ecosystems`, there is no problem with having several of them simultaneously. 
+
+It is worth noting that,
+even though `Ecosystem` are logically independent,
+it is anticipated that the content of many `Ecosystems` will overlap significantly.
+This overlap provides `Tutor` with many opportunities
+for caching content and
+sharing immutable resources between `Ecosystems`.
+
 #### Reproducibility
 
 To simplify the process of re-creating `Ecosystems` in different deployment environments (production, QA, dev, etc.), 
