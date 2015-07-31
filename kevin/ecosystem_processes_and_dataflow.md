@@ -173,7 +173,16 @@ must exist for all past, current, and new `Course`-associated `Ecosystems`.
 to its previously-associated `Ecosystem` list
 and update the `Course`'s current `Ecosystem` and mapping.
 
-## Tutor Creates a Reading Assignment
+## Tutor Creates Assignments
 
-## Tutor Creates a Homework Assignment
+### Reading
+
+### Homework
+
+### Additional Considerations
+
+It could be desirable for `Tutor` to automatically transfer unpublished `AssignmentPlans`
+based on past `Course` `Ecosystems` to the current `Course` `Ecosystem`
+if it can be determined that such an action is "safe" (doesn't cause `orphans`, etc.)
+Published `AssignmentPlans` are always locked to their target `EcoSystem` to preserve their integrity.
 
