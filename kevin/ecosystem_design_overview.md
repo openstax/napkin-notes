@@ -1,5 +1,9 @@
 ## Ecosystem Basics
 
+An `Ecosystem` is the combination of a `Cnx` book and its associated exercises.
+An `Ecosystem` encapsulates all the information necessary to create book-based assignments in `Tutor` (`homework`, `reading`, `practice`, etc.) from the contained content.
+An `Ecosystem` also contains manipulated `cnxml` for use in reference views.
+
 `Ecosystems` are IMMUTABLE.
 
 An `Ecosystem` is created from:
