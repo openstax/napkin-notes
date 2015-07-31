@@ -93,7 +93,57 @@ To allow `BigLearn` to suggest `Exercises` from the current `Ecosystem` only,
 `Tutor` must communicate the `Exercises` in various purpose-specific pools
 to `BigLearn`.  This is probably best done as part of the import process.
 
-## Tutor Creates an Ecosystem-to-Ecosystem Map
+Because many `Tutor` instances will be sharing a single instance of `BigLearn`,
+`Ecosystems` and their purpose-specific pools must be uniquely identified (`UUID`-ed)
+(at least externally).
+
+## Tutor Creates an Ecosystem(s)-to-Ecosystem Map
+
+### Motivation
+
+It is anticipated that book and exercise content will be updated throughout the semester,
+and that teachers will want to import this new content and use it mid-course.
+These updates could include significant structural changes to books and/or their metadata.
+
+Several `Tutor` features are based on book structure
+(Learning Guide, Course Stats, etc.).
+In order to provide a pleasant user experience, 
+`Tutor` will attempt to map work done in previous book versions
+to the current book's structure.
+
+### Problem Statement
+
+Given a target `Ecosystem` and a set of other `Ecosystems` (including the target),
+creating a set of mappings
+from various elements
+(`Pages`, `Chapters`, `Exercises`, `LOs`)
+of each given `Ecosystem` and the target `Ecosystem`.
+
+If a mapping cannot be found for a given element,
+it is considered an `orphan`
+and must be identified
+and handled as a special case
+by the affected `Tutor` features.
+
+### Desired Output
+
+While the exact structure of the mapping is TBD,
+it can be thought of as a function
+that takes as arguments
+
+* a specific `Ecosystem` element
+* the element type of target `Ecosystem` element to which it should be mapped
+
+and returns one of
+
+* a target `Ecosystem` element of the specified type
+* an `orphan` indicator
+
+### Worst-case Scenario
+
+
+
+### Better Scenarios
 
 ## Tutor Associates an Ecosystem to a Course
 
