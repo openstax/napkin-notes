@@ -17,7 +17,7 @@ When it comes to
 * testable
 * explainable
 
-`Ecosystems` are meant to address most, if not all, of these issues.
+`Ecosystems` are meant to address most, if not all, of these issues by providing a set stable content-related abstractions and behaviors.
 
 ## Ecosystem Basics
 
