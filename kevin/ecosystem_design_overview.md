@@ -67,3 +67,4 @@ To prevent `Ecosystem` schema knowledge from leaking to other parts of `Tutor`, 
 
 [initial interface](https://github.com/openstax/tutor-server/blob/klb_content_abstractions/app/subsystems/ecosystem/ecosystem.rb) ([specs](https://github.com/openstax/tutor-server/blob/klb_content_abstractions/spec/subsystems/ecosystem/ecosystem_spec.rb))
 
+All objects going into, and returned from, the interface will be immutable `POROs`.
