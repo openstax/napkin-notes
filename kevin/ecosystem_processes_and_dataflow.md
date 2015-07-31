@@ -98,7 +98,7 @@ Because many `Tutor` instances will be sharing a single instance of `BigLearn`,
 (at least externally).
 
 Because `Biglearn` can combine existing pools to form a new pool,
-it is likely that `Tutor` will want to create per-`Page` pool on `BigLearn`.
+it is likely that `Tutor` will want to create per-`Page` pools on `BigLearn`.
 These smaller pools can then be mixed and matched as needed to form per-`AssignmentPlan` pools.
 
 ## Tutor Creates an Ecosystem(s)-to-Ecosystem Map
