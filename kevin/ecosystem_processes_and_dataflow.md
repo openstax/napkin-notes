@@ -149,6 +149,11 @@ This is actually pretty do-able in most situations, but can probably be largely 
 
 TODO: detail varous algorithms for automating creation of mapping (yes it can be done)
 
+Some info we can use:
+* find same `Exercise` in new `Ecosystem`
+* find `Exercise`'s `LOs` or `Page` in new `Ecosystem`
+* try to process `Page`/`Chapter` titles/content (not awesome)
+
 ## Tutor Associates an Ecosystem to a Course
 
 Each `Course` in `Tutor` has an associated current `Ecosystem`,
