@@ -85,7 +85,7 @@ It will likely be the case that targeted updates to specific `Exercises` will be
 
 This can be achieved by copying the original `Ecosystem`'s exercise manifest
 and altering only the entries for `Exercises` to be updated.
-A new `Ecosystem` can then be created from the origin book id and the new manifest.
+A new `Ecosystem` can then be created from the original book id and the new manifest.
 
 #### Communication with BigLearn
 
