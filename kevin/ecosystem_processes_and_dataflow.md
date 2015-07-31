@@ -146,8 +146,8 @@ and returns one of
 ### Worst-case Scenario
 
 The worst-case scenario is that the mapping must be created by hand.
-
-This is actually pretty do-able in most situations, but can probably be largely automated.
+This is actually pretty do-able in most situations,
+and can probably be largely (if not entirely) automated.
 
 ### Better Scenarios
 
