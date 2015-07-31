@@ -63,7 +63,7 @@ NOT SHOWN:
 
 ## External Representation
 
-To prevent `Ecosystem` schema knowledge from leaking to other parts of `Tutor`, a well-defined and stable externally-facing interface will be presented.  This interface will delegate to a `strategy` object which will manage the complexities of queries, caching, data transformations, etc.
+To prevent `Ecosystem` schema knowledge from leaking to other parts of `Tutor`, a well-defined and stable externally-facing object interface (facade) will be presented.  This interface will delegate to a `strategy` object which will manage the complexities of queries, caching, data transformations, etc.
 
 [initial interface](https://github.com/openstax/tutor-server/blob/klb_content_abstractions/app/subsystems/ecosystem/ecosystem.rb) ([specs](https://github.com/openstax/tutor-server/blob/klb_content_abstractions/spec/subsystems/ecosystem/ecosystem_spec.rb))
 
