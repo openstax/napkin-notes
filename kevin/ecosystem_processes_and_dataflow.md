@@ -158,6 +158,9 @@ Some info we can use:
 * find `Exercise`'s `LOs` or `Page` in new `Ecosystem`
 * try to process `Page`/`Chapter` titles/content (not awesome)
 
+Note that reverting to a previous `Ecosystem` (with older content) will likely cause many `orphans`,
+since content tends to be added and not removed.
+
 ## Tutor Associates an Ecosystem to a Course
 
 Each `Course` in `Tutor` has an associated current `Ecosystem`,
