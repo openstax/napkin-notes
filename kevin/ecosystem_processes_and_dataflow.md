@@ -141,11 +141,28 @@ and returns one of
 
 ### Worst-case Scenario
 
+The worst-case scenario is that the mapping must be created by hand.
 
+This is actually pretty do-able in most situations, but can probably be largely automated.
 
 ### Better Scenarios
 
+TODO: detail varous algorithms for automating mapping
+
 ## Tutor Associates an Ecosystem to a Course
+
+Each `Course` in `Tutor` has an associated current `Ecosystem`,
+as well as a list of previously-associated `Ecosystems`.
+Each `Course` also has a `Ecosystem(s)`-to-`Ecosystem` mapping
+to allow a smooth transition from one `Ecosystem` to another.
+
+In order to associate an `Ecosystem` to a `Course`, 
+an `Ecosystem(s)`-to-`Ecosystem` mapping
+must exist for all past, present, and new `Course`-associated `Ecosystems`.
+
+`Tutor` can then
+move the `Course`'s current `Ecosystem` to its previously-associated `Ecosystem` list
+and update the `Course`'s current `Ecosystem` and mapping.
 
 ## Tutor Creates a Reading Assignment
 
