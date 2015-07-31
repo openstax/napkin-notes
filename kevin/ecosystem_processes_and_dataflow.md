@@ -147,7 +147,7 @@ This is actually pretty do-able in most situations, but can probably be largely 
 
 ### Better Scenarios
 
-TODO: detail varous algorithms for automating mapping
+TODO: detail varous algorithms for automating creation of mapping (yes it can be done)
 
 ## Tutor Associates an Ecosystem to a Course
 
@@ -158,10 +158,10 @@ to allow a smooth transition from one `Ecosystem` to another.
 
 In order to associate an `Ecosystem` to a `Course`, 
 an `Ecosystem(s)`-to-`Ecosystem` mapping
-must exist for all past, present, and new `Course`-associated `Ecosystems`.
+must exist for all past, current, and new `Course`-associated `Ecosystems`.
 
-`Tutor` can then
-move the `Course`'s current `Ecosystem` to its previously-associated `Ecosystem` list
+`Tutor` can then move the `Course`'s current `Ecosystem` 
+to its previously-associated `Ecosystem` list
 and update the `Course`'s current `Ecosystem` and mapping.
 
 ## Tutor Creates a Reading Assignment
