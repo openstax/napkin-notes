@@ -21,32 +21,38 @@ We should NOT assume that:
 * `Exercises` belong to only one `Lo`.
 
 ## Schema
+
+These schema details are subject to change.
+
+Do not confuse any of the terms mentioned here with any of their uses elsewhere in `Tutor`.
 ```
-Ecosystem
-  | 1
-  |
-  | 1
-Book
-  | 1
-  |
-  | 1..*
-Chapter
-  | 1
-  |
-  | *
-Page -----------+----------+---- ... ----+
-  | 1..*        | 1        | 1           | 1
-  |             |          |             |
-  | *           | *        | *           | *
- Lo          HwCoreEx   HwDynEx  ...   OtherPools
-  | 1..*        | 1        | 1           | 1
-  |             |          |             |
-  | *           | 1        | 1           | 1
-Exercise -------+----------+---- ... ----+
-  | 1..*
-  |
-  | *
-Tag
+Ecosystem::
+
+  Ecosystem
+    | 1
+    |
+    | 1
+  Book
+    | 1
+    |
+    | 1..*
+  Chapter
+    | 1
+    |
+    | *
+  Page -----------+----------+---- ... ----+
+    | 1..*        | 1        | 1           | 1
+    |             |          |             |
+    | *           | *        | *           | *
+   Lo          HwCoreEx   HwDynEx  ...   OtherPools
+    | 1..*        | 1        | 1           | 1
+    |             |          |             |
+    | *           | 1        | 1           | 1
+  Exercise -------+----------+---- ... ----+
+    | 1..*
+    |
+    | *
+  Tag
 
 NOT SHOWN:
   - Pages could have pre-computed Fragments
@@ -54,3 +60,10 @@ NOT SHOWN:
   - there is good reason to want Cnx:: and Exercises:: tables/subsystems/whatever
     to cache raw Cnx/Exercises products locally
 ```
+
+## External Representation
+
+To prevent `Ecosystem` schema knowledge from leaking to other parts of `Tutor`, a well-defined and stable externally-facing interface will be presented.  This interface will delegate to a `strategy` object which will manage the complexities of queries, caching, data transformations, etc.
+
+[initial interface](https://github.com/openstax/tutor-server/blob/klb_content_abstractions/app/subsystems/ecosystem/ecosystem.rb) ([specs](https://github.com/openstax/tutor-server/blob/klb_content_abstractions/spec/subsystems/ecosystem/ecosystem_spec.rb))
+
