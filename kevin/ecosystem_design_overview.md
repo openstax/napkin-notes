@@ -1,3 +1,5 @@
+Do not confuse any of the terms mentioned here with any of their uses elsewhere in `Tutor`.
+
 ## Ecosystem Basics
 
 An `Ecosystem` is the combination of a `Cnx` book and its associated exercises.
@@ -11,7 +13,7 @@ An `Ecosystem` is created from:
 * a manifest of fully-versioned `Exercises`
 * a fully-versioned `Cnx` book `id`
 
-It will be desirable to create an `Exercise` manifest from a timestamp.
+It will be desirable to have `OpenStax Exercises` create an `Exercise` manifest from a timestamp (returning a list of the latest exercise versions as of the timestamp).
 
 Given the appropriate `id` of anything in an `Ecosystem`, it must possible to find the containing `Ecosystem`.
 
@@ -28,7 +30,6 @@ We should NOT assume that:
 
 These schema details are subject to change.
 
-Do not confuse any of the terms mentioned here with any of their uses elsewhere in `Tutor`.
 ```
 Ecosystem::
 
