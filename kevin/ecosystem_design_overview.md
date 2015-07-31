@@ -1,7 +1,6 @@
 
-
+## Schema
 ```
-
 Ecosystem
   | 1
   |
@@ -27,4 +26,8 @@ Exercise -------+----------+---- ... ----+
   |
   | *
 Tag
+
+NOT SHOWN:
+  - Pages could have pre-computed Fragments
+  - Fragments could (in some cases) have their own Exercise pools
 ```
