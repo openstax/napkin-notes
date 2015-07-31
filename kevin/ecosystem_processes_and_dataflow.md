@@ -177,7 +177,29 @@ and update the `Course`'s current `Ecosystem` and mapping.
 
 ### Reading
 
+The teacher selects which `Pages` in the current `Course` `Ecosystem` a `Reading` will cover.
+The appropriate `Page` ids are stored in the `AssignmentPlan`.
+
+`Tutor` will convert the select `Pages'` `Fragments` into a series of `core` `TaskSteps`.
+It is possible that some `Fragments` will require configuration/personalization during this conversion.
+
+Based on the `Taskee`'s assignment history and the `k-ago-map`,
+a series of `spaced practice exercises` (`SPEs`) is chosen.
+The `SPEs` are current chosen by `Tutor`,
+but eventually they will likely be chosen by `BigLearn`.
+In order to implement the latter,
+`Tutor` will need to combine per-`Page` exercise pools into a per-assignment pool in `BigLearn`.
+
+`Tutor` will also ask `BigLearn` for one or more `personalized exercises` (`PEs`).
+Again, `Tutor` will need to create the appropriate pools from which `BigLearn` will choose.
+
 ### Homework
+
+The teacher selects a set of `Pages` and is shown the `Exercises` associated with those `Pages`.
+The teacher then chooses which `Exercises` will form the `Homework` assignment's `core` `TaskSteps`.
+
+As with `Reading` assignments, `Tutor` will select `SPEs` and ask `BigLearn` for `PEs`.
+`Tutor` will once again need to form the appropriate pools on `BigLearn` by combining per-`Page` pools.
 
 ### Additional Considerations
 
