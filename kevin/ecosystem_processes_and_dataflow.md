@@ -94,7 +94,7 @@ To allow `BigLearn` to suggest `Exercises` from the current `Ecosystem` only,
 to `BigLearn`.  This is probably best done as part of the import process.
 
 Because many `Tutor` instances will be sharing a single instance of `BigLearn`,
-`Ecosystems` and their purpose-specific pools must be uniquely identified (`UUID`-ed)
+`Ecosystems'` purpose-specific pools must be uniquely identified (`UUID`-ed)
 (at least externally).
 
 Because `Biglearn` can combine existing pools to form a new pool,
