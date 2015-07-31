@@ -1,5 +1,24 @@
 Do not confuse any of the terms mentioned here with any of their uses elsewhere in `Tutor`.
 
+## Why Ecosystems?
+
+When it comes to
+
+* validating content
+* creating assignments
+* debugging issues
+* training users
+
+`Tutor` needs to be
+
+* stable
+* predictable
+* reproducible
+* testable
+* explainable
+
+`Ecosystems` are meant to address most, if not all, of these issues.
+
 ## Ecosystem Basics
 
 An `Ecosystem` is the combination of a `Cnx` book and its associated exercises.
