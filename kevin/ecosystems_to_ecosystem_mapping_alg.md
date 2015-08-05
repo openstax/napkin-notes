@@ -44,14 +44,35 @@ for the affected `OX Tutor` use case.
 
 ## `Course` Stats
 
+### Overview
+
 It will be necessary for `OX Tutor` to show
-a variety of summaries of `TaskExercise` statistics
+a variety of summaries of assignment exercise statistics
 (number assigned, number completed, number correct, etc.)
 to both teachers and students.
 These statistics will be organized in several ways
 (by `LO`, by `Page`, by `Chapter`, etc.).
 
+### Implementation
+
+Internally, `OX Tutor` stores assignments as `Tasks`.
+Each `Task` contains one or more `TaskSteps`,
+some (or all) of which might be `TaskedExercises`.
+
+Each `TaskedExercise` is associated with
+a specific `PageExercise`
+inside a specific `Course` `Ecosystem`
+(past or current).
+
 #### Per `LO`
+
+To organize stats by `LO`,
+a pre-computed `PEs-to-CE Map`
+will be used.
+This `Map` will take as input a `PageExercise` 
+from any of the `Course`'s past or current `Ecosystems`,
+and will output an `LO` from the `Course`'s current `Ecosystem`
+or indicate that the given `PageExercise` is an `orphan`.
 
 #### Per `Page`
 
