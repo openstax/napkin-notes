@@ -81,6 +81,9 @@ The following pseudocode outlines the mapping process.
 Some details (like error handling/reporting and match thresholds)
 are still TBD.
 
+Note, however, that failure to find an unambigous `PageLo` map results in an error,
+so success implies that there are no `PageLo` `orphans`.
+
 ```ruby
 def build_map(past_and_current_ecosystems, new_ecosystem)
   errors = []
