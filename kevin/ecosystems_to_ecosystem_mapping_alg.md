@@ -23,6 +23,17 @@ to elements in its current `Ecosystem`.
 Because content updates tend to be incremental and additive,
 this process can be largely (perhaps entirely) automated.
 
+It is possible that each `OX Tutor` use case
+will need its own custom
+`Ecosystems-to-Ecosystem Map` (`Es-to-E Map`),
+but it seems likely that at most a handful of maps
+could address all foreseeable needs.
+
+Because `Ecosystems` are bounded and immutable,
+all `Es-to-E Maps` can be computed
+(and inspected/verified) in advance, 
+before a `Course`'s current `Ecosystem` is actually updated.
+
 ### `Course` Stats
 
 It will be necessary for `OX Tutor` to show a variety of summaries
