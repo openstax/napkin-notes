@@ -34,30 +34,21 @@ all `Es-to-E Maps` can be computed
 (and inspected/verified) in advance, 
 before a `Course`'s current `Ecosystem` is actually updated.
 
-### `Course` Stats
+In the event that an element from a `Course`'s past `Ecosystem`
+cannot be mapped to an element in its current `Ecosystem`,
+it will be considered an `orphan`
+and placed in a special `orphan bin`.
+Exactly how `orphan` are handled depends on the UX
+for the affected `OX Tutor` use case.
 
-It will be necessary for `OX Tutor` to show a variety of summaries
-of `TaskExercise` statistics
+## `Course` Stats
+
+It will be necessary for `OX Tutor` to show
+a variety of summaries of `TaskExercise` statistics
 (number assigned, number completed, number correct, etc.)
 to both teachers and students.
-
-Because
-
-* `Tasks` are constructed from, and associated with, a specific `Ecosystem`
-* `Courses` add new `Ecosystems` as content (`OX Cnx` and/or `OX Exercises`) is updated
-* `OX Tutor`'s UX desires content updates to be as painless as possible for end users
-
-`OX Tutor` will automatically map 
-elements (`LOs`, `PageExercises`, etc.) based on older `Ecosystems` 
-to elements in the `Course`'s current `Ecosystem`.
-
-If no corresponding element can be found
-in the `Course`'s current `Ecosystem`,
-the element will be mapped as an `orphan`.
-
-This `Ecosystems-to-Ecosystem Map` will be computed
-before the `Course`'s current `Ecosystem` is updated
-to ensure that it is acceptable.
+These statistics will be organized in several ways
+(by `LO`, by `Page`, by `Chapter`, etc.).
 
 #### Per `LO`
 
