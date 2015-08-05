@@ -55,6 +55,7 @@ map = PageLoToPageLoMap.new(past_and_current_ecosystems, new_ecosystem)
 ```
 
 The map provides two main methods.
+
 `#forward_map` takes a `PageLo` id
 from any `Ecosystem` used to construct the map
 and returns the associated `PageLo` id
