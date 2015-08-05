@@ -4,12 +4,24 @@
 `OX Tutor` creates immutable `Ecosystems` from `OX Cnx` and `OX Exercises` content.
 These `Ecosystems` are associated with a `Course`,
 and `Courses` maintain knowledge of their current and past `Ecosystems`.
+`Ecosystems` are built from various elements
+(`Book`, `Chapter`, `Page`, `PageExercise`, etc.).
 
-`Tasks` (`Readings`, `Homeworks`, etc.) in `OX Tutor` are created from,
-and associated with,
+`Tasks` (`Readings`, `Homeworks`, etc.) in `OX Tutor`
+are created from, and associated with,
 a specific `Ecosystem`.
 As updated `Ecosystems` are added to a `Course`,
 existing `Tasks` and their associated `Ecosystems` are unaffected.
+
+The UX for `OX Tutor` desires that
+content updates be as transparent as possible
+to the end users.
+This means that `OX Tutor` will need to
+automatically 'merge' information 
+associated with elements in a `Course`'s past `Ecosystems`
+to elements in its current `Ecosystem`.
+Because content updates tend to be incremental and additive,
+this process can be largely (perhaps entirely) automated.
 
 ### `Course` Stats
 
