@@ -76,19 +76,103 @@ or indicate that the given `PageExercise` is an `orphan`.
 
 #### Per `Page`
 
+To organize stats by `Page`,
+a pre-computed `PEs-to-CE Map`
+will be used.
+This `Map` will take as input a `PageExercise` 
+from any of the `Course`'s past or current `Ecosystems`,
+and will output a `Page` from the `Course`'s current `Ecosystem`
+or indicate that the given `PageExercise` is an `orphan`.
+
 #### Per `Chapter`
+
+To compute per-`Chapter` stats,
+per-`Page` stats (for each `Page` in the `Chapter`)
+will be 
+To organize stats by `Chapter`,
+a pre-computed `PEs-to-CE Map`
+will be used.
+This `Map` will take as input a `PageExercise` 
+from any of the `Course`'s past or current `Ecosystems`,
+and will output a `Page` from the `Course`'s current `Ecosystem`
+or indicate that the given `PageExercise` is an `orphan`.
 
 ## Assumptions
 
 ### Schema
 
-## Mapping `LOs` to `LOs`
+In `OX Tutor`, `Ecosystems` are constructed as trees:
+* `Ecosystem` contains exactly one `Book`
+* `Book` contains one or more `Chapters`
+* `Chapter` contains zero or more `Pages`
+* `Page` contains zero or more `PageLos`
+* `PageLo` contains zero or more `PageExercises`
 
-## Mapping `PageExercises` to `LOs`
+The code which creates `Ecosystems` from content
+must either 
+force the content into this form or 
+fail with an error.
 
-## Mapping `PageExercises` to `Pages`
+```
+Ecosystem::
 
-## Mapping `PageExercises` to `Chapters`
+  Ecosystem
+    | 1
+    |
+    | 1
+  Book
+    | 1
+    |
+    | 1..*
+  Chapter
+    | 1
+    |
+    | *
+  Page -------------+----------+---- ... ----+
+    | 1             | 1        | 1           | 1
+    |               |          |             |
+    | *             | *        | *           | *
+  PageLo          HwCoreEx   HwDynEx  ...   OtherPools
+    | 1             | 1        | 1           | 1
+    |               |          |             |
+    | *             | 1        | 1           | 1
+  PageExercise -----+----------+---- ... ----+
+```
 
+Given a list of `Ecosystem::PageExercise` ids,
+the `Task::` subsystem will need to efficiently determine
+which `TaskedExercises` are associated with the given `PageExercise` ids
+and a `Task` meeting the requirements
+(e.g., feedback is available)
+of the use case using the `PEs-to-CE Map`.
+
+```
+Tasks::
+
+  Task
+    - ecosystem_id
+    - feedback_at
+    | 1
+    |
+    | 1..*
+  TaskStep
+    | 1
+    |
+    | 1
+  (TaskedExercise)
+    - page_exercise_id
+```
+
+## Forward Mappings (Import)
+
+### Mapping `LOs` to `LOs`
+
+### Mapping `PageExercises` to `LOs`
+
+### Mapping `PageExercises` to `Pages`
+
+### Mapping `PageExercises` to `Chapters`
+
+## Reverse Mappings (Display)
 
 
