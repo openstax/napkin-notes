@@ -223,13 +223,24 @@ inside a specific `Course` `Ecosystem`
 
 #### Per `LO`
 
-To organize stats by `LO`,
-a pre-computed `PCEs-to-NE Map`
-will be used.
-This `Map` will take as input a `PageExercise` 
-from any of the `Course`'s past or current `Ecosystems`,
-and will output an `LO` from the `Course`'s current `Ecosystem`
-or indicate that the given `PageExercise` is an `orphan`.
+`OX Tutor` can use the `#backward_map` method
+of the pre-computed `PageLosToPageLoMap` (described above)
+associated with the `Course`'s current `Ecosystem`
+to quickly find all `PageLos`
+in past and current `Ecosystems`
+that should be considered
+given a set of `PageLos` of interest.
+
+Once the `PageLos` are identified,
+the `PageExercises` associated with them
+can be queried.
+The ids of these `PageExercises` can then be used
+in the `Task::` subsystem
+to find all `TaskedExercises` of interest,
+and those can be filtered
+by use case-specific rules
+(e.g., "is feedback available?")
+before counting stats.
 
 #### Per `Page`
 
