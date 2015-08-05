@@ -26,21 +26,52 @@ this process can be largely (perhaps entirely) automated.
 
 It is possible that each `OX Tutor` use case
 will need its own custom
-`Past Ecosystems-to-Current Ecosystem Map` (`PEs-to-CE Map`),
+`Past-and-Current-Ecosystems-to-New Ecosystem Map` (`PCEs-to-NE Map` or just `Map`),
 but it seems likely that at most a handful of maps
 could address all foreseeable needs.
 
 Because `Ecosystems` are bounded and immutable,
-all `PEs-to-CE Maps` can be computed
+all `PCEs-to-NE Maps` can be computed
 (and inspected/verified) in advance, 
 before a `Course`'s current `Ecosystem` is actually updated.
 
 In the event that an element from a `Course`'s past `Ecosystem`
 cannot be mapped to an element in its current `Ecosystem`,
 it will be considered an `orphan`
-and placed in a special `orphan bin`.
-Exactly how `orphan` are handled depends on the UX
-for the affected `OX Tutor` use case.
+and automatic mapping will fail
+without altering the existing `Course` settings.
+
+## Map Creation Processes
+
+### `PageLos` to `PageLos` Map
+
+The process takes as inputs
+a collection containing a `Course`'s past and current `Ecosystems`
+and the new `Ecosystem` that will replace the current one.
+It returns a new immutable `PageLoToPageLoMap` if successful,
+otherwise it raises an exception.
+```
+map = PageLoToPageLoMap.new(past_and_current_ecosystems, new_ecosystem)
+```
+
+The map provides two main methods.
+`#forward_map` takes a `PageLo` id
+from any `Ecosystem` used to construct the map
+and returns the associated `PageLo` id
+in the new `Ecosystem`:
+```
+page_lo_id = map.forward_map(page_lo_id)
+```
+
+`#backward_map` takes a `PageLo` id
+from the new `Ecosystem`
+and returns a collection
+of associated `PageLo` ids
+in any `Ecosystems` used to construct the map:
+```
+page_lo_ids = map.backward_map(page_lo_id)
+```
+
 
 ## `Course` Stats
 
@@ -67,7 +98,7 @@ inside a specific `Course` `Ecosystem`
 #### Per `LO`
 
 To organize stats by `LO`,
-a pre-computed `PEs-to-CE Map`
+a pre-computed `PCEs-to-NE Map`
 will be used.
 This `Map` will take as input a `PageExercise` 
 from any of the `Course`'s past or current `Ecosystems`,
@@ -90,7 +121,7 @@ To compute per-`Chapter` stats,
 per-`Page` stats (for each `Page` in the `Chapter`)
 will be 
 To organize stats by `Chapter`,
-a pre-computed `PEs-to-CE Map`
+a pre-computed `PCEs-to-NE Map`
 will be used.
 This `Map` will take as input a `PageExercise` 
 from any of the `Course`'s past or current `Ecosystems`,
