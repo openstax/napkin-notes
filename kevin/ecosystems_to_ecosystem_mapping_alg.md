@@ -43,17 +43,17 @@ without altering the existing `Course` settings.
 
 ## Map Creation Processes
 
-### `PageLos` to `PageLos` Map
+### `PageLos` to `PageLo` Map
 
 #### Interface
 
 The process takes as inputs
 a collection containing a `Course`'s past and current `Ecosystems`
 and the new `Ecosystem` that will replace the current one.
-It returns a new immutable `PageLoToPageLoMap` if successful,
+It returns a new immutable `PageLosToPageLoMap` if successful,
 otherwise it raises an exception.
 ```
-map = PageLoToPageLoMap.new(past_and_current_ecosystems, new_ecosystem)
+lo_map = PageLosToPageLoMap.new(past_and_current_ecosystems, new_ecosystem)
 ```
 
 The map provides two main methods.
@@ -63,7 +63,7 @@ from any `Ecosystem` used to construct the map
 and returns the associated `PageLo` id
 in the new `Ecosystem`:
 ```
-page_lo_id = map.forward_map(page_lo_id)
+page_lo_id = lo_map.forward_map(page_lo_id)
 ```
 
 `#backward_map` takes a `PageLo` id
@@ -72,7 +72,7 @@ and returns a collection
 of associated `PageLo` ids
 in any `Ecosystems` used to construct the map:
 ```
-page_lo_ids = map.backward_map(page_lo_id)
+page_lo_ids = lo_map.backward_map(page_lo_id)
 ```
 
 #### Algorithm
@@ -85,22 +85,22 @@ Note, however, that failure to find an unambigous `PageLo` map results in an err
 so success implies that there are no `PageLo` `orphans`.
 
 ```ruby
-def build_map(past_and_current_ecosystems, new_ecosystem)
+def build_lo_map(past_and_current_ecosystems, new_ecosystem)
   errors = []
-  map = {}
+  lo_map = {}
   all_ecosystems = [past_and_current_ecosystems, new_ecosystem].flatten
   all_ecosystems.each do |ecosystem|
     ecosystem.page_los.each do |page_lo|
       begin
         new_page_lo = find_matching_page_lo(page_lo, new_ecosystem)
-        map[page_lo.id] = new_page_lo.id
+        lo_map[page_lo.id] = new_page_lo.id
       rescue StandardError => e
         errors << [page_lo, e]
       end
     end
   end
   raise StandardError if errors.any?
-  map
+  lo_map
 end
 
 def find_matching_page_lo(page_lo, new_ecosystem)
@@ -136,6 +136,66 @@ def exercise_based_match?(exercises1, exercises2)
       matches.count > unversioned_ids1.count/2
     end
   result
+end
+```
+
+### `PageExercises` to `Page` Map
+
+#### Interface
+
+The process takes as inputs
+a collection containing a `Course`'s past and current `Ecosystems`,
+the new `Ecosystem` that will replace the current one,
+and a `PageLosToPageLoMap` (described above).
+It returns a new immutable `PageExercisesToPageMap` if successful,
+otherwise it raises an exception.
+```
+pgex_map = PageLosToPageLoMap.new(past_and_current_ecosystems, new_ecosystem, lo_map)
+```
+
+The map provides two main methods.
+
+`#forward_map` takes a `PageExercise` id
+from any `Ecosystem` used to construct the map
+and returns the associated `Page` id
+in the new `Ecosystem`:
+```
+page_id = pgex_map.forward_map(page_exercise_id)
+```
+
+`#backward_map` takes a `Page` id
+from the new `Ecosystem`
+and returns a collection
+of associated `PageExercise` ids
+in any `Ecosystems` used to construct the map:
+```
+page_exercise_ids = pgex_map.backward_map(page_id)
+```
+
+#### Algorithm
+
+Using the previously-computed `PageLosToPageLoMap`
+makes the mapping of `PageExercises`
+to `Pages` fairly simple.
+
+```ruby
+def build_pgex_map(past_and_current_ecosystems, new_ecosystem, lo_map)
+  errors = []
+  pgex_map = {}
+  all_ecosystems = [past_and_current_ecosystems, new_ecosystem].flatten
+  all_ecosystems.each do |ecosystem|
+    ecosystem.page_exercises.each do |page_ex|
+      begin
+        new_page_lo_id = lo_map.forward_map(page_ex.id)
+        pgex_map[page_ex.id] = new_ecosystem.page_lo_by_id(new_page_lo_id).page.id
+      rescue StandardError => e
+        errors << [page_ex, e]
+      end
+    end
+  end
+  
+  raise StandardError if errors.any?
+  pgex_map
 end
 ```
 
