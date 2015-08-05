@@ -45,6 +45,8 @@ without altering the existing `Course` settings.
 
 ### `PageLos` to `PageLos` Map
 
+#### Interface
+
 The process takes as inputs
 a collection containing a `Course`'s past and current `Ecosystems`
 and the new `Ecosystem` that will replace the current one.
@@ -73,6 +75,66 @@ in any `Ecosystems` used to construct the map:
 page_lo_ids = map.backward_map(page_lo_id)
 ```
 
+#### Algorithm
+
+The following pseudocode outlines the mapping process.
+Some details (like error handling/reporting and match thresholds)
+are still TBD.
+
+```ruby
+def build_map(past_and_current_ecosystems, new_ecosystem)
+  errors = []
+  map = {}
+  all_ecosystems = [past_and_current_ecosystems, new_ecosystem].flatten
+  all_ecosystems.each do |ecosystem|
+    ecosystem.page_los.each do |page_lo|
+      begin
+        new_page_lo = find_matching_page_lo(page_lo, new_ecosystem)
+        map[page_lo.id] = new_page_lo.id
+      rescue StandardError => e
+        errors << [page_lo, e]
+      end
+    end
+  end
+  raise StandardError if errors.any?
+  map
+end
+
+def find_matching_page_lo(page_lo, new_ecosystem)
+  page_lo_exercises = page_lo.page_exercises
+  matching_page_los = new_ecosystem.page_los.select do |new_page_lo|
+    if page_lo_exercises.none?
+      name_based_match?(page_lo.name, new_page_lo.name)
+    else
+      exercise_based_match?(page_lo_exercises, new_page_lo.page_exercises)
+    end
+  end
+  raise StandardError unless matching_page_los.count == 1
+  matching_page_los.first
+end
+
+def name_based_match?(name1, name2)
+  name1 == name2
+end
+
+def exercise_based_match?(exercises1, exercises2)
+  return false if exercises1.none?
+  return false if exercises2.none?
+  
+  unversioned_ids1 = unversioned_ids(exercises1)
+  unversioned_ids2 = unversioned_ids(exercises2)
+
+  matches = unversioned_ids1 & unversioned_ids2
+  
+  result = 
+    if unversioned_ids1.count <= 3
+      matches.count == unversioned_ids1.count
+    else
+      matches.count > unversioned_ids1.count/2
+    end
+  result
+end
+```
 
 ## `Course` Stats
 
