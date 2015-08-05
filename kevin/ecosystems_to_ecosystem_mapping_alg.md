@@ -19,18 +19,19 @@ to the end users.
 This means that `OX Tutor` will need to
 automatically 'merge' information 
 associated with elements in a `Course`'s past `Ecosystems`
-to elements in its current `Ecosystem`.
+to elements in its current `Ecosystem`
+for display purposes.
 Because content updates tend to be incremental and additive,
 this process can be largely (perhaps entirely) automated.
 
 It is possible that each `OX Tutor` use case
 will need its own custom
-`Ecosystems-to-Ecosystem Map` (`Es-to-E Map`),
+`Past Ecosystems-to-Current Ecosystem Map` (`PEs-to-CE Map`),
 but it seems likely that at most a handful of maps
 could address all foreseeable needs.
 
 Because `Ecosystems` are bounded and immutable,
-all `Es-to-E Maps` can be computed
+all `PEs-to-CE Maps` can be computed
 (and inspected/verified) in advance, 
 before a `Course`'s current `Ecosystem` is actually updated.
 
