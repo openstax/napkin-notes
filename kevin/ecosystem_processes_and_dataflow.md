@@ -13,8 +13,8 @@ a set of associated fully-versioned `OpenStax Exercises` exercises.
 Because fully-versioned content on `OpenStax Cnx` and `OpenStax Exercises` is immutable, 
 an `Ecosystem` can be fully specified by
 
-* a fully-versioned `OpenStax Cnx` book id
-* a manifest of fully-versioned `OpenStax Exercises` exercise ids
+* a fully-versioned `OpenStax Cnx` book id (`uuid@major.minor`)
+* a manifest of fully-versioned `OpenStax Exercises` exercise ids (`id@version`)
 
 The exercise manifest only needs to contain exercises associated with the given book.
 
