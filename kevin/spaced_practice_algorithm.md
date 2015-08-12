@@ -11,6 +11,7 @@ At the moment of publication for the current assignment:
 
 # Examples
 
+A normal assignment sequence:
 ```
 pub     assgn          k-ago
 order   dates          history
@@ -19,6 +20,7 @@ order   dates          history
 3:          -----      3 2 1
 ```
 
+Assignments published out of chronological order:
 ```
 pub     assgn          k-ago
 order   dates          history
@@ -28,11 +30,41 @@ order   dates          history
 4:            -----    4 2 3 1
 ```
 
+Multiple new assignments with same start dates:
+```
+pub     assgn          k-ago
+order   dates          history
+1:      -----          1
+2:        -----        2 1
+3:        ---          3 1
+4:        -----        4 1
+```
+
+Past assignments with identical start and due dates:
 ```
 pub     assgn          k-ago
 order   dates          history
 1:      -----          1
 2:        -----        2 1
 3:        -----        3 1
-4:        -----        4 1
+4:          -----      4 3 2 1
+```
+
+Past assignments with identical start dates but differing due dates:
+```
+pub     assgn          k-ago
+order   dates          history
+1:      -----          1
+2:        -----        2 1
+3:        ----         3 1
+4:          -----      4 2 3 1
+```
+
+One assignment spanned by another:
+```
+pub     assgn          k-ago
+order   dates          history
+1:      ---------      1
+2:        -----        2 1
+3:          -------    3 1 2
 ```
