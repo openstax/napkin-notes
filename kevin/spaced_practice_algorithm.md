@@ -11,6 +11,8 @@ At the moment of publication for the current assignment:
 
 # Examples
 
+In these examples, the `k-ago history` shows which assignment occupies the kth-ago slot, starting with k=0 (the current assignment).
+
 A normal assignment sequence:
 ```
 pub     assgn          k-ago
