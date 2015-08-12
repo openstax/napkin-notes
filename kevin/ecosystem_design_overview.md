@@ -45,6 +45,8 @@ We should NOT assume that:
 * `Los` belong to only one `Page` 
 * `Exercises` belong to only one `Lo`.
 
+(but we'll assume it anyway for expedience - we'll likely need to adjust this in the future)
+
 ## Schema
 
 These schema details are subject to change.
