@@ -101,17 +101,17 @@ role_label: nil
     #
     # First pass implementation (overly conservative)
     #
-    #  1) Find all clue_context_ids for the provided role
-    #  2) Find all Clues for those clue_context_ids and
+    #  1) Find all clue_role_label_ids for the provided role
+    #  2) Find all Clues for those clue_role_label_ids and
     #     increment their stale_count
     #
     # Second pass
     #
-    #  1) Find all clue_context_ids for the provided role
+    #  1) Find all clue_role_label_ids for the provided role
     #  2) Find the TagSets that have tags matching ANY of
     #     the provided tags.
     #  3) Find the Clues for the combinations of the discovered
-    #     clue_context_ids and TagSets and increment their
+    #     clue_role_label_ids and TagSets and increment their
     #     stale_count
   end
 
