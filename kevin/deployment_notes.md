@@ -27,4 +27,8 @@ pip install -r requirements.txt
 Note the use of the environment name (`kev` in this case; customize as appropriate) in the command below:
 ```
 ansible-playbook -i environments/kev/inventory tutor.yml --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
+
+to skip config steps (when re-deploying):
+
+ansible-playbook -i environments/kev/inventory tutor.yml --skip-tags "configuration" --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
 ```
