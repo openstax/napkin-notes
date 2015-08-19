@@ -24,6 +24,7 @@ workon tutordep
 pip install -r requirements.txt
 ```
 
+Note the use of the environment name (`kev` in this case; customize as appropriate) in the command below:
 ```
-ansible-playbook -i environments/dev/inventory tutor.yml --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
+ansible-playbook -i environments/kev/inventory tutor.yml --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
 ```
