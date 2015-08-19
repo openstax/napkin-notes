@@ -101,6 +101,9 @@ workon tutordep
 ```
 
 ### Run BigLearn Deploy Playbook
+
+Note the use of the environment name (`kev` in this case; customize as appropriate).
+
 ```
 ansible-playbook -i environments/kev/inventory biglearn.yml --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
 ```
