@@ -27,7 +27,7 @@ workon tutordep
 pip install -r requirements.txt
 ```
 
-### Deploy Tutor-Related Servers (Except BigLearn - see below)
+### Deploy Tutor-Related Servers (except BigLearn - see below)
 
 Note: If re-deploying, you can add:
 ```
@@ -48,3 +48,16 @@ Skipping configuration:
 ```
 ansible-playbook -i environments/kev/inventory tutor.yml --skip-tags "configuration" --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
 ```
+
+#### Tutor Only
+
+```
+ansible-playbook -i environments/kev/inventory tutor_only.yml --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
+```
+
+Skipping configuration:
+
+```
+ansible-playbook -i environments/kev/inventory tutor_only.yml --skip-tags "configuration" --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
+```
+
