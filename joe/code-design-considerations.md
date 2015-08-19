@@ -22,3 +22,4 @@
   * in `DistributeTasks` a use of `#lock!` is explained as preventing concurrent updates. Programmers ought to know what `#lock` does
   * however, further down the file, some odd code is written on `tasked` and `task_step` to alleviate an issue with rails, and it is not explained a comment
   * Another note about comments is that often you could just create a private method named after what you'd write as a comment
+  * In [https://github.com/openstax/tutor-server/blob/master/lib/html_tree_operations.rb](https://github.com/openstax/tutor-server/blob/master/lib/html_tree_operations.rb) -- this is heavily over commented. I can completely understand most if not all of the code as it is.
