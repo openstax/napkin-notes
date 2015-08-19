@@ -8,6 +8,8 @@ for i in accounts exchange exercises exercises-js tutor-js tutor-server biglearn
 
 # My Steps
 
+## Baseline Setup
+
 ### Create a Deployment Directory
 ```
 mkdir deploy_yymmdd_hhmm
@@ -19,13 +21,15 @@ cd !$
 for i in accounts exchange exercises exercises-js tutor-js tutor-server biglearn-algs biglearn-demos biglearn-common biglearn-platform tutor-deployment ; do git clone http://github.com/openstax/$i ; done
 ```
 
-### Setup Python Virtual Environment
+### Setup tutordep Python Virtual Environment
 ```
 cd tutor-deployment
 mkvirtualenv -p /usr/bin/python2 tutordep
 workon tutordep
 pip install -r requirements.txt
 ```
+
+## Installing Tutor
 
 ### Run Deploy Tutor-Related Servers (except BigLearn - see below)
 
