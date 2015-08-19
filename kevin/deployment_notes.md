@@ -67,6 +67,24 @@ ansible-playbook -i environments/kev/inventory tutor_only.yml --skip-tags "confi
 
 ```
 cd ../biglearn-platform/app
+mkvirtualenv blalgs -p /usr/bin/python2 --system-site-packages
+workon blalgs
+pip install -e "../../biglearn-common[quest, reqval]"
+pip install -e ../../biglearn-algs
+pip install -r requirements.txt
+```
+
+```
+cd ../biglearn-platform/app
+mkvirtualenv blapidev -p /usr/bin/python2 --system-site-packages
+workon blapidev
+pip install -e "../../biglearn-common[quest, reqval]"
+pip install -e ../../biglearn-algs
+pip install -r dev-requirements.txt
+```
+
+```
+cd ../biglearn-platform/app
 mkvirtualenv blapi -p /usr/bin/python2 --system-site-packages
 workon blapi
 pip install -e "../../biglearn-common[quest, reqval]"
