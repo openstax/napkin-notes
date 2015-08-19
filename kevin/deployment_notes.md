@@ -1,12 +1,8 @@
-# Missing Repos
-
-The following is the list of repos needed for "typical" developer deployment.
-
-```
-for i in accounts exchange exercises exercises-js tutor-js tutor-server biglearn-algs biglearn-demos biglearn-common biglearn-platform tutor-deployment ; do git clone http://github.com/openstax/$i ; done
-```
-
 # My Steps
+
+## Quick Overview
+
+The Baseline Setup is common to both Tutor and BigLearn installations - it isn't optional.  Once it's done, though, you can do either (or both) of the Installing Tutor and Installing BigLearn steps in any order.
 
 ## Baseline Setup
 
@@ -74,7 +70,7 @@ Skipping configuration:
 ansible-playbook -i environments/kev/inventory tutor_only.yml --skip-tags "configuration" --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
 ```
 
-## Deploy BigLearn
+## Installing BigLearn
 
 ### Create Python Virtual Environments
 
