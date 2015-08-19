@@ -24,7 +24,7 @@ for i in accounts exchange exercises exercises-js tutor-js tutor-server biglearn
 ### Setup tutordep Python Virtual Environment
 ```
 cd tutor-deployment
-mkvirtualenv -p /usr/bin/python2 tutordep
+mkvirtualenv -p /usr/bin/python2 tutordep --system-site-packages
 workon tutordep
 pip install -r requirements.txt
 ```
