@@ -27,7 +27,7 @@ workon tutordep
 pip install -r requirements.txt
 ```
 
-### Deploy Tutor-Related Servers (except BigLearn - see below)
+### Run Deploy Tutor-Related Servers (except BigLearn - see below)
 
 Note: If re-deploying, you can add:
 ```
@@ -61,3 +61,28 @@ Skipping configuration:
 ansible-playbook -i environments/kev/inventory tutor_only.yml --skip-tags "configuration" --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
 ```
 
+## Deploy BigLearn
+
+### Create Python Virtual Environments
+
+```
+cd ../biglearn-platform/app
+mkvirtualenv blapi -p /usr/bin/python2 --system-site-packages
+workon blapi
+pip install -e "../../biglearn-common[quest, reqval]"
+pip install -e ../../biglearn-algs
+pip install -r requirements.txt
+mkdir uploads
+```
+
+### Re-join tutordep Environment (created above)
+
+```
+cd ../../tutor-deployment
+workon tutordep
+```
+
+### Run BigLearn Deploy Playbook
+```
+ansible-playbook -i environments/kev/inventory biglearn.yml --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
+```
