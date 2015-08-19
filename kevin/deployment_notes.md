@@ -10,18 +10,27 @@ for i in accounts exchange exercises exercises-js tutor-js tutor-server biglearn
 
 ## Baseline Setup
 
+### [Optional] Clear Out Python Environments
+
+```
+rm -rf ~/.environments/{bl*,tutordep}
+```
+
 ### Create a Deployment Directory
+
 ```
 mkdir deploy_yymmdd_hhmm
 cd !$
 ```
 
 ### Create Local Copies of Repos
+
 ```
 for i in accounts exchange exercises exercises-js tutor-js tutor-server biglearn-algs biglearn-demos biglearn-common biglearn-platform tutor-deployment ; do git clone http://github.com/openstax/$i ; done
 ```
 
 ### Setup tutordep Python Virtual Environment
+
 ```
 cd tutor-deployment
 mkvirtualenv -p /usr/bin/python2 tutordep --system-site-packages
