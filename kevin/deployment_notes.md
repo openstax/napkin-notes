@@ -8,15 +8,18 @@ for i in accounts exchange exercises exercises-js tutor-js tutor-server biglearn
 
 # My Steps
 
+### Create a Deployment Directory
 ```
 mkdir deploy_yymmdd_hhmm
 cd !$
 ```
 
+### Create Local Copies of Repos
 ```
 for i in accounts exchange exercises exercises-js tutor-js tutor-server biglearn-algs biglearn-demos biglearn-common biglearn-platform tutor-deployment ; do git clone http://github.com/openstax/$i ; done
 ```
 
+### Setup Python Virtual Environment
 ```
 cd tutor-deployment
 mkvirtualenv -p /usr/bin/python2 tutordep
@@ -24,11 +27,24 @@ workon tutordep
 pip install -r requirements.txt
 ```
 
-Note the use of the environment name (`kev` in this case; customize as appropriate) in the command below:
+### Deploy Tutor-Related Servers (Except BigLearn - see below)
+
+Note: If re-deploying, you can add:
+```
+--skip-tags "configuration"
+```
+to the commands below.
+
+#### All Servers
+
+Note the use of the environment name (`kev` in this case; customize as appropriate).
+
 ```
 ansible-playbook -i environments/kev/inventory tutor.yml --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
+```
 
-to skip config steps (when re-deploying):
+Skipping configuration:
 
+```
 ansible-playbook -i environments/kev/inventory tutor.yml --skip-tags "configuration" --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
 ```
