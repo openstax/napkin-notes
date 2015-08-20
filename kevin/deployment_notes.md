@@ -150,3 +150,12 @@ cat environments/kev/inventory|grep flower -A 3|grep ansible_ssh_host
 ```
 
 `blapidev` is needed to generate the API documentation.
+
+```
+[8/19/15, 10:26:06 PM] Lakshmi Narasimhan: for python we use pythons packaging mechanism to bundle the package and push it onto servers
+[8/19/15, 10:26:28 PM] Lakshmi Narasimhan: for rails, we use git archive command to do the same since rails doesn't seem to have an equivalent
+[8/19/15, 10:26:44 PM] Lakshmi Narasimhan: (python setup.py sdist) for packaging, pip for installing.
+[8/19/15, 10:27:04 PM] Lakshmi Narasimhan: There is a big difference between these two approaches though.
+[8/19/15, 10:27:24 PM] Lakshmi Narasimhan: The first one doesn't care about source control status...  it takes whats in the file system.
+[8/19/15, 10:27:42 PM] Lakshmi Narasimhan: The second one only takes whats committed.. any local changes that are uncommitted are not pushed.
+```
