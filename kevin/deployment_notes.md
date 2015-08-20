@@ -17,6 +17,12 @@ Something like `0077` is definitely no good.
 ### [Optional] Clear Out Python Environments
 
 ```
+rmvirtualenv bldemo
+```
+
+or the more brutal:
+
+```
 rm -rf ~/.environments/{bl*,tutordep}
 ```
 
@@ -83,18 +89,15 @@ ansible-playbook -i environments/kev/inventory tutor_only.yml --skip-tags "confi
 ### Create Python Virtual Environments
 
 ```
-cd ../biglearn-platform/app
-```
-
-```
+cd ../biglearn-algs
 mkvirtualenv blalgs -p /usr/bin/python2 --system-site-packages
 workon blalgs
-pip install -e "../../biglearn-common[quest, reqval]"
-pip install -e ../../biglearn-algs
+pip install -e "../biglearn-common[quest, reqval]"
 pip install -r requirements.txt
 ```
 
 ```
+cd ../biglearn-platform/app
 mkvirtualenv blapidev -p /usr/bin/python2 --system-site-packages
 workon blapidev
 pip install -e "../../biglearn-common[quest, reqval]"
@@ -112,10 +115,10 @@ mkdir uploads
 ```
 
 ```
+cd ../../biglearn-demos/platform-demos
 mkvirtualenv bldemos -p /usr/bin/python2 --system-site-packages
 workon bldemos
 pip install -e "../../biglearn-common[quest, reqval]"
-pip install -e ../../biglearn-algs
 pip install -r requirements.txt
 ```
 
@@ -145,3 +148,5 @@ sh sshenv.sh kev biglearnflower
 ```
 cat environments/kev/inventory|grep flower -A 3|grep ansible_ssh_host
 ```
+
+`blapidev` is needed to generate the API documentation.
