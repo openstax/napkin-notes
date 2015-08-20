@@ -159,3 +159,26 @@ cat environments/kev/inventory|grep flower -A 3|grep ansible_ssh_host
 [8/19/15, 10:27:24 PM] Lakshmi Narasimhan: The first one doesn't care about source control status...  it takes whats in the file system.
 [8/19/15, 10:27:42 PM] Lakshmi Narasimhan: The second one only takes whats committed.. any local changes that are uncommitted are not pushed.
 ```
+
+```
+osttutor@server1:~/www/tutor$ sudo service unicorn_tutor restart
+ssh -i ~/.ssh/tutor_kev.pem ubuntu@tutor-kev.openstax.org
+sudo su osttutor
+```
+
+```
+RAILS_ENV=production rbenv exec bundle exec rake db:schema:load
+RAILS_ENV=production rbenv exec bundle exec rake db:schema:load db:seed demo:content[physics]
+https://biglearnflower-kev.openstax.org/
+```
+
+```
+--extra-vars "reset_tutor_db=true"
+```
+
+to fix BL oddities:
+```
+  ps afux |grep python
+  then sudo kill -9 ###
+  sudo supervisorctl restart all
+```
