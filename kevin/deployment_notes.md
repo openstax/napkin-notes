@@ -117,3 +117,15 @@ Note the use of the environment name (`kev` in this case; customize as appropria
 ```
 ansible-playbook -i environments/kev/inventory biglearn.yml --vault-password-file ~/.vaultkev --private-key ~/.ssh/tutor_kev.pem
 ```
+
+# Other Interesting Stuff
+
+```
+ansible-playbook -i environments/kev/inventory create_ssh_config.yml --extra-vars "key_path=~/.ssh/tutor_kev.pem" --vault-password-file ~/.vaultkev
+
+sh sshenv.sh kev biglearnflower
+```
+
+```
+cat environments/kev/inventory|grep flower -A 3|grep ansible_ssh_host
+```
