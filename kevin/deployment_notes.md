@@ -6,6 +6,14 @@ The Baseline Setup is common to both Tutor and BigLearn installations - it isn't
 
 ## Baseline Setup
 
+### Check Your umask
+
+```
+umask
+```
+should be `0022` (I think...).
+Something like `0077` is definitely no good.
+
 ### [Optional] Clear Out Python Environments
 
 ```
