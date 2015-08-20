@@ -90,6 +90,7 @@ cd ../biglearn-platform/app
 mkvirtualenv blalgs -p /usr/bin/python2 --system-site-packages
 workon blalgs
 pip install -e "../../biglearn-common[quest, reqval]"
+pip install -e ../../biglearn-algs
 pip install -r requirements.txt
 ```
 
@@ -114,6 +115,7 @@ mkdir uploads
 mkvirtualenv bldemos -p /usr/bin/python2 --system-site-packages
 workon bldemos
 pip install -e "../../biglearn-common[quest, reqval]"
+pip install -e ../../biglearn-algs
 pip install -r requirements.txt
 ```
 
