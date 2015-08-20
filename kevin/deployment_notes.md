@@ -161,14 +161,20 @@ cat environments/kev/inventory|grep flower -A 3|grep ansible_ssh_host
 ```
 
 ```
-osttutor@server1:~/www/tutor$ sudo service unicorn_tutor restart
 ssh -i ~/.ssh/tutor_kev.pem ubuntu@tutor-kev.openstax.org
-sudo su osttutor
+
+osttutor@server1:$ sudo su osttutor
+osttutor@server1:$ sudo service unicorn_tutor restart
+
+osttutor@server1:$ top cd4  (shift-M)
 ```
 
 ```
-RAILS_ENV=production rbenv exec bundle exec rake db:schema:load
-RAILS_ENV=production rbenv exec bundle exec rake db:schema:load db:seed demo:content[physics]
+osttutor@server1:~/www/tutor$ RAILS_ENV=production rbenv exec bundle exec rake db:schema:load
+osttutor@server1:~/www/tutor$ RAILS_ENV=production rbenv exec bundle exec rake db:schema:load db:seed demo:content[physics]
+```
+
+```
 https://biglearnflower-kev.openstax.org/
 ```
 
