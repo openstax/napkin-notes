@@ -188,3 +188,7 @@ to fix BL oddities:
   then sudo kill -9 ###
   sudo supervisorctl restart all
 ```
+
+After installing tutor, the `~/www/tutor/` directory on the server will be stale, so redo `cd ~/www/tutor` to correct it.
+
+Each time a new deploy directory is created on the client, a full (all servers) install must be done because secret keys are re-generated.
