@@ -90,8 +90,25 @@ Care should be taken to account for timezones and other `Course`- or `User`- spe
 
 ## HW Description Updates
 
+The fields for `Homework` assignments need to include:
+
+* `teacher_selected_exercise_count`
+* `tutor_selected_exercise_count`
+
+to allow each assignment to have a deterministic (and known) number of personalized and/or spaced practice exercises.
+
 ## People Validations
+
+We should validate that two different people don't share the same handle (as is the case with `cm` currently).
+
+This could be done by simply separating the list of users from their roles in the system.
 
 ## Parallelization of Tasks
 
+Since this is `rake`, we could take advantage of parallel tasks and automatic dependency management.
+
+For example, `Ecosystems` could be imported in parallel.  `Tasks` could be published and/or worked in parallel if `Timecop` allows it.  Some adjustments to `Tutor` might be needed to fully realize this.
+
 ## Test Coverage
+
+Maybe we should test all this stuff?
