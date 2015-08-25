@@ -124,3 +124,15 @@ If we combined this with Parallelization of Tasks, we could see a significant sp
 ## Test Coverage
 
 Maybe we should test all this stuff?
+
+## Specific Bugs
+
+```
+Remove full name from rake script so it matches new courses 
+Dante says: https://github.com/openstax/tutor-server/blob/master/lib/tasks/demo/demo_base.rb#L146 remove full_name from the line above
+```
+
+```
+Fix bug where it does not answer personalized questions 
+Dante says: to work the personalized, I think you just need a task.reload before https://github.com/openstax/tutor-server/blob/master/lib/tasks/demo/demo_base.rb#L276
+```
