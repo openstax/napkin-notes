@@ -109,6 +109,18 @@ Since this is `rake`, we could take advantage of parallel tasks and automatic de
 
 For example, `Ecosystems` could be imported in parallel.  `Tasks` could be published and/or worked in parallel if `Timecop` allows it.  Some adjustments to `Tutor` might be needed to fully realize this.
 
+## Split Script into 'Step Generation' and 'Step Exercution' Phases?
+
+(This is super hot-off-the-press, but...)
+
+It seems like it'd be a lot easier to test the `demo` script
+if we could separate what the setup code does
+(content `.yml` into `Tutor` actions)
+from what the action code does
+(execute `Tutor` actions).
+
+If we combined this with Parallelization of Tasks, we could see a significant speed improvement.
+
 ## Test Coverage
 
 Maybe we should test all this stuff?
