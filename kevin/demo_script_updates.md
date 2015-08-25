@@ -52,11 +52,41 @@ if that turns out to be a convenient way to organize the data.
 
 ## Ansible Integration
 
+We want to be able to specify the `scenario` name
+and import 'phase' (currently `content`, `tasks`, or `work`)
+one the ansible command line
+for maximum convenience.
+
+This parameter would need to work its way all the way to the server-side `demo` script.
+
 ## Ecosystem Support
+
+The `demo` script should be adjusted to handle fully-specified `Ecosystem` imports,
+using timestamps and/or exercise manifests,
+as well as `Course` `Ecosystem` histories,
+including the ability to associate `Readings` and `Homeworks` to specific `Ecosystems`.
 
 ## School vs Regular Dates
 
+`ContentConfigurationYamlMethod` helpers like `open_two_days_ago` should be split into:
+
+* `open_two_days_ago`
+* `open_two_school_days_ago`
+
+to avoid confusion about hidden date adjustments that affect only certain `scenario` types.
+
 ## Additional Date Helpers
+
+There should be additional `ContentConfigurationYamlMethod`:
+
+* `open_n_days_ago(n)`
+* `open_n_days_from_now(n)`
+* `due_n_days_ago(n)`
+* `due_n_days_from_now(n)`
+
+and convenience methods for specific `n` should be defined in terms of these.
+
+Care should be taken to account for timezones and other `Course`- or `User`- specific time settings.
 
 ## HW Description Updates
 
