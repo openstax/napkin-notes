@@ -59,6 +59,10 @@ for maximum convenience.
 
 This parameter would need to work its way all the way to the server-side `demo` script.
 
+We will likely want to allow `demo` to be its own import 'phase'
+so that we can update the scenarios
+without re-deplaying all of `Tutor`.
+
 ## Ecosystem Support
 
 The `demo` script should be adjusted to handle fully-specified `Ecosystem` imports,
@@ -109,7 +113,7 @@ Since this is `rake`, we could take advantage of parallel tasks and automatic de
 
 For example, `Ecosystems` could be imported in parallel.  `Tasks` could be published and/or worked in parallel if `Timecop` allows it.  Some adjustments to `Tutor` might be needed to fully realize this.
 
-## Split Script into 'Step Generation' and 'Step Exercution' Phases?
+## Split Script into 'Step Generation' and 'Step Execution' Phases?
 
 (This is super hot-off-the-press, but...)
 
