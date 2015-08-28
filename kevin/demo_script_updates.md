@@ -92,7 +92,9 @@ and convenience methods for specific `n` should be defined in terms of these.
 
 Care should be taken to account for timezones and other `Course`- or `User`- specific time settings.
 
-As an alternative to the date helpers, `opens_at` and `due_at` helpers could be created that would output yaml text.  For instance: `<%= due_at 4.days.ago %>` would output call `school_day_on_or_before` internally and then output "due_at: YYY-MM-DD" into the yaml.
+#### Thoughts from Nathan
+
+As an alternative to the date helpers, `opens_at` and `due_at` helpers could be created that would output yaml text.  For instance: `<%= due_at 4.days.ago %>` would output call `school_day_on_or_before` internally and then output "due_at: YYYY-MM-DD" into the yaml.
 
 This would allow assignments to be specified as:
 ```yaml
