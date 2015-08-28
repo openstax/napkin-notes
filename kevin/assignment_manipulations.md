@@ -24,6 +24,12 @@ At the very least, admins need to be able to:
 * delete unopened assignment
 * issue assignment to student
 
+I think
+roster manipulations
+should be separated from
+assignment manipulations.
+We'll focus on the assignment manipulations here.
+
 ## Going-in Approach
 
 I envision a table.
