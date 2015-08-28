@@ -1,5 +1,4 @@
 
-
 ## There Is One Deploy Tag to Rule Them All
 
 The same tag should
@@ -21,14 +20,18 @@ DEPLOY_<YYYYMMDD>_<HHMMSS>_<SHORT_HASH>
 would work
 but the details are flexible.
 
-A tool should be created to generate these tags:
-```
-create_deploy_tag
-```
+## These Tags Don't Move or Get Deleted
+
+Just in case anyone was wondering...
 
 ## There are Tools to Create Deploy Tags
 
 Tools should exist to facilite tagging of repos.
+
+A tool should be created to generate these tags:
+```
+create_deploy_tag
+```
 
 A simple tool to automate tagging one or more repos:
 ```
