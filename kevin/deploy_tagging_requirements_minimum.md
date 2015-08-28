@@ -1,3 +1,12 @@
+## Why Would We Ever Want Such a Thing?
+
+#### Admins Need to Know What Code to Deploy
+
+#### Users Need to Verify What Code They're Running
+
+#### Users Need to Identify Code in Bug Reports
+
+#### Developers Need to Reproduce Environments for Debugging
 
 ## There Is One Deploy Tag to Rule Them All
 
