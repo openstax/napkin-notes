@@ -1,3 +1,20 @@
+## Motivation
+
+It turns out that
+there is a lot more roster shuffling
+happening early in the semester
+than we previously anticipated.
+
+Although we _think_ a fairly small percentage
+(10-15%)
+of students will be impacted,
+our largest courses
+(those with 100+ students)
+are the first to open
+so the absolute number of impacted students,
+as a percentage of those in the pilot,
+is significant.
+
 ## Needed Features
 
 At the very least, admins need to be able to:
