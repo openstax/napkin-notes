@@ -29,6 +29,9 @@ It is also important to note that,
 at least for now,
 open assignments cannot be deleted.
 
+## Description of what actually happens when a student switches into a class or period
+// For instance 1. Call Micaela 2. Micaela asks the following questions ... and then logs in as admin and does the following things. ...  
+
 ## When We Want It
 
 Soon.
