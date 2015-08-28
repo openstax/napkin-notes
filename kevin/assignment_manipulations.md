@@ -38,3 +38,34 @@ On/Before | Would be...
 9/8       | great
 9/14      | pretty ok
 later     | meh...
+
+## Other Things to Consider
+
+### Published, Unopened Assignments
+
+We might want to monitor
+published, but not yet opened,
+assignments.
+
+#### New Student
+
+Because the assignment is already published,
+new students will not have been included
+in the distribution list.
+
+#### Moved Student
+
+Students are issued assignments
+for the period they were in
+at the moment the assignment was published.
+
+If a student is moved between periods,
+previously published assignments
+from their old period
+that have not yet opened
+will still be assigned to them.
+
+We should probably
+detect and delete these assignments,
+and issue the appropriate assignments
+from their new period.
