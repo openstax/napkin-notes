@@ -28,9 +28,19 @@ create_deploy_tag
 
 ## There are Tools to Create Deploy Tags
 
-`tag_repos <TAG> <REPOS>`
+Tools should exist to facilite tagging of repos.
 
-`tag_for_deploy <BASEDIR>`
+A simple tool to automate tagging one or more repos:
+```
+tag_repos <TAG> <REPOS>
+```
+
+and another wrapper which automates
+both tag creation
+and application:
+```
+tag_for_deploy <BASEDIR>
+```
 
 ## The Deploy Tools Use/Create a Deploy Tag as the Basis for Deployment
 
