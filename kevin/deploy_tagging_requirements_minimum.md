@@ -15,12 +15,11 @@ be applied to all repos used by the deploy tool,
 be unique,
 and be at least pseudo-sortable.
 
-The current list of repos is:
+The current list of repos (though subject to change) is:
 ```
 accounts  biglearn-algs    biglearn-demos      exchange   exercises-js       tutor-js
 archives  biglearn-common  biglearn-platform   exercises  tutor-deployment   tutor-server
 ```
-though this could change.
 
 A tag with a structure like:
 ```
