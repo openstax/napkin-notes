@@ -46,8 +46,21 @@ It is also important to note that,
 at least for now,
 open assignments cannot be deleted.
 
-## Description of what actually happens when a student switches into a class or period
-// For instance 1. Call Micaela 2. Micaela asks the following questions ... and then logs in as admin and does the following things. ...  
+## Roster/Assignment Update Process
+
+The teacher will need to convey the following information
+to the helpdesk:
+
+* new students and their periods
+* moved students and their new periods
+* for each new/moved student, assignment updates:
+  * which published assignments (name, period) to assign
+  * whether or not to "clean up" previously assigned unopned assignments
+
+This information will be relayed
+to an admin
+who will perform the necessary tasks
+using the admin interface.
 
 ## When We Want It
 
