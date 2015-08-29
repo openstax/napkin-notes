@@ -15,6 +15,16 @@ so the absolute number of impacted students,
 as a percentage of those in the pilot,
 is significant.
 
+### Two cases
+
+**Student switches into a tutor course from a non-Tutor course**
+
+The student will not have any assignments from before they were added to the course. Some assignments might be past due and the teacher might want them to do them. More importantly, some assignments may not yet be due, but might already be opened and thus prepared for students and this student won't see them.  In addition to missing those assignments, the student will not receive any spaced practice on those assignments.
+
+**Student switches periods in a tutor-course and has history**
+
+We already support students switching periods through the admin interface. In this case, the student will have open assignments from their original period, but the due dates might be for the original period rather than the new period. We might be able to just leave that as is and let teachers excuse late work if needed. Their scores on the assignments that opened while the student was in the former period might still count in the forecast of the former period.  
+
 ## Needed Features
 
 At the very least, admins need to be able to:
