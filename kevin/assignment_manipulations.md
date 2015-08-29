@@ -17,13 +17,32 @@ is significant.
 
 ### Two cases
 
-**Student switches into a tutor course from a non-Tutor course**
+**Case 1 (Brand New): Student switches into a tutor course from a non-Tutor course**
 
 The student will not have any assignments from before they were added to the course. Some assignments might be past due and the teacher might want them to do them. More importantly, some assignments may not yet be due, but might already be opened and thus prepared for students and this student won't see them.  In addition to missing those assignments, the student will not receive any spaced practice on those assignments.
 
-**Student switches periods in a tutor-course and has history**
+**Case 2 (Switching Periods): Student switches periods in a tutor-course and has history**
 
 We already support students switching periods through the admin interface. In this case, the student will have open assignments from their original period, but the due dates might be for the original period rather than the new period. We might be able to just leave that as is and let teachers excuse late work if needed. Their scores on the assignments that opened while the student was in the former period might still count in the forecast of the former period.  
+
+##Testing existing behavior
+
+**Case 1 (Brand New): Student switches into a tutor course from a non-Tutor course**
+* Create two readings - one past due, one upcoming
+* Create two hws - one past due, one upcoming
+* Login as admin and add a student to one period.
+* Login as teacher: Create a third hw
+* Login as student: Check student dashboard. Work assignments. Check forecast
+* Log in as teacher, check performance report and forecast.
+
+**Case 2 (Switching Periods): Student switches periods in a tutor-course and has history**
+* Create two readings - one past due, one upcoming
+* Create two hws - one past due, one upcoming
+* Login as a student and start the latter reading. 
+* Login as admin and switch student to different period.
+* Login as teacher: Create a third hw
+* Login as student: Check student dashboard. Work assignments. Check forecast.
+* Log in as teacher, check performance report and forecast.
 
 ## Needed Features
 
