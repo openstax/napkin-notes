@@ -30,7 +30,7 @@ We already support students switching periods through the admin interface. In th
 **Case 1 (Brand New): Student switches into a tutor course from a non-Tutor course**
 * Create two readings - one past due, one upcoming
 * Create two hws - one past due, one upcoming
-* Login as admin and add a student to one period.
+* Login as admin and add a student to one period. (Need instructions)
 * Login as teacher: Create a third hw
 * Login as student: Check student dashboard. Work assignments. Check forecast
 * Log in as teacher, check performance report and forecast.
@@ -39,7 +39,7 @@ We already support students switching periods through the admin interface. In th
 * Create two readings - one past due, one upcoming
 * Create two hws - one past due, one upcoming
 * Login as a student and start the latter reading. 
-* Login as admin and switch student to different period.
+* Login as admin and switch student to different period. (Need instructions)
 * Login as teacher: Create a third hw
 * Login as student: Check student dashboard. Work assignments. Check forecast.
 * Log in as teacher, check performance report and forecast.
