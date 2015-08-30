@@ -23,17 +23,26 @@ The student will not have any assignments from before they were added to the cou
 
 **Case 2 (Switching Periods): Student switches periods in a tutor-course and has history**
 
-We already support students switching periods through the admin interface. In this case, the student will have open assignments from their original period, but the due dates might be for the original period rather than the new period. We might be able to just leave that as is and let teachers excuse late work if needed. Their scores on the assignments that opened while the student was in the former period might still count in the forecast of the former period.  
+We already support students switching periods through the teacher's roster interface. In this case, the student will have open assignments from their original period, but the due dates might be for the original period rather than the new period. We might be able to just leave that as is and let teachers excuse late work if needed. Their scores on the assignments that opened while the student was in the former period might still count in the forecast of the former period.  
 
 ##Testing existing behavior
 
 **Case 1 (Brand New): Student switches into a tutor course from a non-Tutor course**
 * Create two readings - one past due, one upcoming
-* Create two hws - one past due, one upcoming
-* Login as admin and add a student to one period. (Need instructions)
-* Login as teacher: Create a third hw
+* Create three hws - one past due, one upcoming and open, one upcoming and not yet open
+* Login as admin and add a student to one period. 
+   * Instructions: Admin console, courses, edit course, student roster tab, upload csv with specified column headings to add students. 
+* Login as teacher: Open the assignment that was published but not open. Create a fourth assignment
 * Login as student: Check student dashboard. Work assignments. Check forecast
 * Log in as teacher, check performance report and forecast.
+
+### Current behavior
+* Teacher sees the student in their roster after a bit of time.
+* Student is able to login with that account pretty quickly.
+* If an assignment is open, the new student will not receive it.
+* If an assignment is published, but not yet open, the student will see it when it opens.
+* The student will see new assignments.
+* The teacher will see blanks in the report for all assignments that the student doesn't have. The teacher will see "not started" for assignments that the student has but hasn't done yet.
 
 **Case 2 (Switching Periods): Student switches periods in a tutor-course and has history**
 * Create two readings - one past due, one upcoming
