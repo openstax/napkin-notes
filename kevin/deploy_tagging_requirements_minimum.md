@@ -74,6 +74,12 @@ where some arguments could have sensible default values:
 <DIR>  current directory
 ```
 
+Note that if no tag is given to the deploy tool,
+a new tag is created,
+applied it to the codebase,
+and used it as the basis for deployment.
+If a tag is given, however, no tags are created.
+
 The deploy tool should
 place the deploy tag
 in the deploy environment
