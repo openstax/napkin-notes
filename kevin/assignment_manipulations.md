@@ -63,7 +63,21 @@ We already support students switching periods through the teacher's roster inter
 * The student has blank slots for all assignments that are in the other period, and some status indicator for each assignment in the period where it "opened".
 * The teacher forecast doesn't blow up.
 
-## Needed Features
+## Desired Behavior
+*Case 1 New Student (in order of priority)*
+
+1. All open but not-yet-due assignments should be automatically created for this student. The student should see them on their dashboard and the teacher should see them as "not started" in the Perf Report.
+2. When adding the student as an admin, it should be possible to provide a date and all past due assignment due on or after that date should be added to the new student. And show on student dashboard and teacher perf report.
+3. When a teacher can add a student, they should see a list of past due assignments and bea ble to select some and be able to add them to that student's assignments. 
+4. In the online performance report, in any cell (intersection of student and assignment) that is blank (never assigned), the teacher should be able to click to add that assignment for that student.
+
+*Case 2 Switching Periods (in order of priority)*
+
+1. Performance report row for the student should be consolidated into the new period for that student.
+2. Due dates for open but not yet due (in the new period) assignments should be switched to be due dates for the new period.
+3. The teacher forecast should include this student in the new period for all non-due assignments.
+
+## Needed Features (N.B. this stuff was devised before the desired behavior was specified.)
 
 At the very least, admins need to be able to:
 
