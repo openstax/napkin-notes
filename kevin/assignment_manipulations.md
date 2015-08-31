@@ -73,7 +73,7 @@ We already support students switching periods through the teacher's roster inter
 
 *Case 2 Switching Periods (in order of priority)*
 
-1. Performance report row for the student should be consolidated into the new period for that student.
+1. Performance report row for the student should be consolidated into the new period for that student. (JP notes that if the student did assignments in their original period that are not in the new period, that could be messy. KEF: I think it would be sufficient to only merge assignments into the new period when their is an equivalent assignment.)
 2. Due dates for open but not yet due (in the new period) assignments should be switched to be due dates for the new period.
 3. The teacher forecast should include this student in the new period for all non-due assignments.
 
