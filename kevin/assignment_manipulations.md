@@ -36,7 +36,7 @@ We already support students switching periods through the teacher's roster inter
 * Login as student: Check student dashboard. Work assignments. Check forecast
 * Log in as teacher, check performance report and forecast.
 
-### Current behavior
+*Case 1 Current behavior*
 * Teacher sees the student in their roster after a bit of time.
 * Student is able to login with that account pretty quickly.
 * If an assignment is open, the new student will not receive it.
@@ -45,13 +45,23 @@ We already support students switching periods through the teacher's roster inter
 * The teacher will see blanks in the report for all assignments that the student doesn't have. The teacher will see "not started" for assignments that the student has but hasn't done yet.
 
 **Case 2 (Switching Periods): Student switches periods in a tutor-course and has history**
-* Create two readings - one past due, one upcoming
+* Create three readings - one past due, one upcoming before opening
 * Create two hws - one past due, one upcoming
 * Login as a student and start the latter reading. 
-* Login as admin and switch student to different period. (Need instructions)
+* Login as teacher and go to the roster, and switch student to different period. 
 * Login as teacher: Create a third hw
 * Login as student: Check student dashboard. Work assignments. Check forecast.
 * Log in as teacher, check performance report and forecast.
+
+*Case 2 Current Behavior*
+* Student sees all assigments from either period. 
+* Those assignments that were open before the switch will show the due date from the prior period.
+* The forecast shows topics from all periods.
+* For the teacher, the roster shows the student in the new period.
+* For the teacher, the Performance Report shows the student in both period.
+* There is no indication of which period is the "real" one for that student. 
+* The student has blank slots for all assignments that are in the other period, and some status indicator for each assignment in the period where it "opened".
+* The teacher forecast doesn't blow up.
 
 ## Needed Features
 
