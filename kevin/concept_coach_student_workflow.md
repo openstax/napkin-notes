@@ -1,7 +1,9 @@
 ## Notation
 
-CC  = Concept Coach
-SPE = Spaced Practice Exercise
+term | definition
+----|-------------
+CC  | Concept Coach
+SPE | Spaced Practice Exercise
 
 ## Tutor Ingests Book and Exercise Tag Map
 
