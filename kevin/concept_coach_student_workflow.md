@@ -31,13 +31,13 @@ the current logged-in `User` (if any)
 and the `Book:Page` associated with the current URL.
 That information will be passed on to `OX Tutor`.
 
-## Anonymous User Visits CC Page URL
+#### Anonymous User Visits CC Page URL
 
 If an anonymous (not logged in) user
 visits a `Cnx` `Page` with a `CC plugin`,
 the `CC plugin` will display a login screen.
 
-## Logged in User Visits CC Page URL
+#### Logged in User Visits CC Page URL
 
 If a logged in `User`
 visits a `Cnx` `Page` with a `CC plugin`,
@@ -46,7 +46,7 @@ on whether or not `OX Tutor` can associate the combination
 of `User` and `Book:Page` URL
 with a `Student` in a `CC-Specific Course`.
 
-#### `User`/`Book:Page` Combo Identifies a `Student`
+##### `User`/`Book:Page` Combo Identifies a `Student`
 
 `OX Tutor` will create
 a `CC` `Task` for the `Book:Page`
@@ -58,7 +58,7 @@ The first assessment of the `Task`
 will be shown and be workable
 by the `Student`.
 
-#### `User`/`Book:Page` Combo Does NOT Identify a `Student`
+##### `User`/`Book:Page` Combo Does NOT Identify a `Student`
 
 If the `User`/`Book:Page` combination
 does NOT identify a `Student`
