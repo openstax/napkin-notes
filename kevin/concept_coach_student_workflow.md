@@ -5,13 +5,20 @@ term | definition
 CC  | Concept Coach
 SPE | Spaced Practice Exercise
 
-## Tutor Ingests Book and Exercise Tag Map
+## Tutor Ingests CC Tag Map
+
+There is a lot TBD here.  Punting for now.
 
 ## Tutor will have Special CC-Specific Courses
 
+`OX Tutor` will need to support special `Courses`
+which support new `CC` features
+and (perhaps) do not support extraneous features
+(like Calendar, etc.).
+
 ## Tutor Generates and Stores Per-Period CC Codes
 
-`OX Tutor` will need to
+`OX Tutor` will
 generate and store
 a per-`Period` `CC` `registration codes`
 for each `CC-Specific Course`.
