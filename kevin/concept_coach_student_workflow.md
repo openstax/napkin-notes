@@ -4,6 +4,7 @@ term | definition
 ----|-------------
 CC  | Concept Coach
 SPE | Spaced Practice Exercise
+ToC | Table of Contents
 
 ## Tutor Ingests CC Tag Map
 
@@ -97,3 +98,13 @@ add the current `Task` to the `Student's` event history
 and populate its `SPE` placeholders (if any).
 
 ## Student Scores (Online and Download)
+
+`OX Tutor` will need to provide
+`Teachers` of `CC-Specific Courses`
+the ability to display and download
+a table of `Student` scores.
+
+The table will be organized
+according to the `Book` ToC,
+and columns with no `Student` data at all
+will not be shown.
