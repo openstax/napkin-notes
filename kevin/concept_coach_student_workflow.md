@@ -7,9 +7,40 @@ SPE | Spaced Practice Exercise
 ToC | Table of Contents
 OX  | OpenStax
 
-## Tutor Ingests CC Tag Map
+## Tutor Imports CC-Specific Book
 
-There is a lot TBD here.  Punting for now.
+`OX Tutor`'s `ecosystem` creation process
+will need to be updated
+to handle the needs
+of `CC-Specific Courses`.
+
+The process will have a signature of the form:
+```
+ecosystem = CcImport(cnx_book_id)
+```
+
+`Pages` in CC-specific `Books`
+will not have the normal tagging
+present in High School `Course` content
+(specifically, the `LO` tags will not be in the content,
+but they will be on exercises in `OX Exercises`).
+
+To compensate for this,
+`OX Tutor` will automatically infer
+an `LO` tag pattern of the following form:
+```
+<bookname>-ch<#c>sec<#s>-lo*
+
+where:
+  <bookname> = 'apbio', 'phys', etc.
+  <#c>       = chapter number for the current Page
+  <#s>       = section number for the current Page
+  *          = any digits
+```
+and query `OX Exercises` accordingly
+to create the `Pool` of `Exercises`
+to use as `CC` assessments
+for the current `Page`.
 
 ## Tutor will have Special CC-Specific Courses
 
