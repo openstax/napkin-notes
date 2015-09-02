@@ -19,6 +19,18 @@ for distribution to teachers and students.
 
 ## Tutor CC Plugin
 
+Certain `Cnx` `Pages` will contain
+a `OX Tutor` `CC plugin`
+(some javascripty something or other)
+which will present
+`OX Tutor`-generated content
+to `Cnx` users.
+
+The `CC plugin` will be given
+the current logged-in `User` (if any)
+and the `Book:Page` associated with the current URL.
+That information will be passed on to `OX Tutor`.
+
 ## Anonymous User Visits CC Page URL
 
 If an anonymous (not logged in) user
@@ -41,6 +53,10 @@ a `CC` `Task` for the `Book:Page`
 for the current `Student`.
 This new `Task` will be displayed
 in the `CC plugin`.
+
+The first assessment of the `Task`
+will be shown and be workable
+by the `Student`.
 
 #### `User`/`Book:Page` Combo Does NOT Identify a `Student`
 
