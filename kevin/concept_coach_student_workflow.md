@@ -5,6 +5,7 @@ term | definition
 CC  | Concept Coach
 SPE | Spaced Practice Exercise
 ToC | Table of Contents
+OX  | OpenStax
 
 ## Tutor Ingests CC Tag Map
 
