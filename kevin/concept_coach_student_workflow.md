@@ -16,7 +16,7 @@ of `CC-Specific Courses`.
 
 The process will have a signature of the form:
 ```
-ecosystem = CcImport(cnx_book_id)
+ecosystem = CcImport(cnx_book_id, bookname)
 ```
 
 `Pages` in CC-specific `Books`
@@ -32,7 +32,7 @@ an `LO` tag pattern of the following form:
 <bookname>-ch<#c>sec<#s>-lo*
 
 where:
-  <bookname> = 'apbio', 'phys', etc.
+  <bookname> = 'apbio', 'phys', etc. (passed as parameter to CcImport)
   <#c>       = chapter number for the current Page
   <#s>       = section number for the current Page
   *          = any digits
