@@ -17,28 +17,45 @@ These codes will need to be made available
 to third parties
 for distribution to teachers and students.
 
-## Student Uses Concept Coach for the First Time for a Given Course
+## Tutor CC Plugin
 
-The first time a `User` reaches `CC` on a given `Page`,
-there will be a place to enter
-the `CC-Specific Course` `registration code`.
-(If the `User` has is not alreadly logged into `OX Tutor`,
-a login prompt will be displayed instead.
-Once logged in, however, the `registration code`
-screen will be shown.)
+## Anonymous User Visits CC Page URL
 
-The combination of
-the `registration code` and `Cnx` URL
-(both passed via the `Tutor javascript plugin`)
-will allow `OX Tutor`
-to auto-register the `User`
-as a `Student`
-in the `CC-Specific Course`.
+If an anonymous (not logged in) user
+visits a `Cnx` `Page` with a `CC plugin`,
+the `CC plugin` will display a login screen.
 
-Once the `Student` association has been made,
-`OX Tutor` can issue
-the `Student's` `CC` assignments
-for each `Page` in the curent `Book`.
+## Logged in User Visits CC Page URL
+
+If a logged in `User`
+visits a `Cnx` `Page` with a `CC plugin`,
+the `CC plugin` display will depend
+on whether or not `OX Tutor` can associate the combination
+of `User` and `Book:Page` URL
+with a `Student` in a `CC-Specific Course`.
+
+### `User`/`Book:Page` Combo Identifies a `Student`
+
+### `User`/`Book:Page` Combo Does NOT Identify a `Student`
+
+If the `User`/`Book:Page` combination
+does NOT identify a `Student`
+in a `CC-Specific Course`,
+the `CC plugin` will display
+a place to enter a `registration code`.
+
+Upon receipt of the
+`User`/`Book:Page`/`registation code` triple,
+`OX Tutor` will create a new `Student`
+in the appropriate `Period`
+of the `CC-Specific Course`
+associated with the `registration code`.
+
+`OX Tutor` will also create
+a `CC` `Task` for the `Book:Page`
+for the current `Student`.
+This new `Task` will be displayed
+in the `CC plugin`.
 
 ## Student Completes First Concept Coach Exercise for a Given Page
 
