@@ -1,6 +1,7 @@
 ## Notation
 
-CC = Concept Coach
+CC  = Concept Coach
+SPE = Spaced Practice Exercise
 
 ## Tutor Ingests Book and Exercise Tag Map
 
@@ -79,5 +80,11 @@ the previous workflow
 can be followed.
 
 ## Student Completes First Concept Coach Exercise for a Given Page
+
+Upon the completion of the first `CC` `Task` assessment,
+`OX Tutor` will
+add the current `Task` to the `Student's` event history
+(setting the `history_time`)
+and populate its `SPE` placeholders (if any).
 
 ## Student Scores (Online and Download)
