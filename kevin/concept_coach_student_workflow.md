@@ -34,9 +34,15 @@ on whether or not `OX Tutor` can associate the combination
 of `User` and `Book:Page` URL
 with a `Student` in a `CC-Specific Course`.
 
-### `User`/`Book:Page` Combo Identifies a `Student`
+#### `User`/`Book:Page` Combo Identifies a `Student`
 
-### `User`/`Book:Page` Combo Does NOT Identify a `Student`
+`OX Tutor` will create
+a `CC` `Task` for the `Book:Page`
+for the current `Student`.
+This new `Task` will be displayed
+in the `CC plugin`.
+
+#### `User`/`Book:Page` Combo Does NOT Identify a `Student`
 
 If the `User`/`Book:Page` combination
 does NOT identify a `Student`
@@ -51,11 +57,10 @@ in the appropriate `Period`
 of the `CC-Specific Course`
 associated with the `registration code`.
 
-`OX Tutor` will also create
-a `CC` `Task` for the `Book:Page`
-for the current `Student`.
-This new `Task` will be displayed
-in the `CC plugin`.
+Now that `OX Tutor`
+can identify the `Student`,
+the previous workflow
+can be followed.
 
 ## Student Completes First Concept Coach Exercise for a Given Page
 
