@@ -139,6 +139,10 @@ from what the action code does
 
 If we combined this with Parallelization of Tasks, we could see a significant speed improvement.
 
+## Timezone Support
+
+The demo script should create tasks using the target `Course`'s timezone.
+
 ## Test Coverage
 
 Maybe we should test all this stuff?
