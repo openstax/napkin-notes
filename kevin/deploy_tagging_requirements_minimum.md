@@ -1,14 +1,32 @@
 ## Why Would We Ever Want Such a Thing?
 
-#### Admins Need to Know What Code to Deploy
+* Admins Need to Know What Code to Deploy
 
-#### Users Need to Verify What Code They're Running
+* Users Need to Verify What Code They're Running
 
-#### Users Need to Identify Code in Bug Reports
+* Users Need to Identify Code in Bug Reports
 
-#### Developers Need to Reproduce Environments for Debugging
+* Developers Need to Reproduce Environments for Debugging
 
-## There Is One Deploy Tag to Rule Them All
+## There Is One Deploy Manifest to Rule Them All
+
+A deply manifest
+is a text file
+containing one commit hash
+per deployed repo:
+```
+tutor-server      d969dc1f88eabe71577157884604fddd05a6e497
+tutor-js          f5476fdb225482e195d84828aae9fb4d6b72e91d
+biglearn-platorm  817ad1bea59a76732c6142f499618ae3cb7d3728
+...
+```
+
+Manifests are committed
+to the `tutor-deploy` repo
+if they are meant to be shared
+across users/environments.
+In this case,
+the
 
 The same tag should
 be applied to all repos used by the deploy tool,
