@@ -75,25 +75,34 @@ where:
   <MANIFEST> = manifest git filename (<hash>:<path><filename>)
 ```
 
+Note that there will likely be many additional control flag
+(partial vs complete deploy,
+resetting of databases, etc.)
+that are not shown here.
+They will have sensible defaults.
+
 ## Deployment Workflow
 
 ### Deployment from Currently Checked-out Code
 
 ```
 deploy --env <ENV> --dir <BASEDIR>
-
-where:
-  <ENV>      = target environment (dev, qa, demo, production, etc.)
-               (no default)
-  <BASEDIR>  = directory under which repos are located
-               (defaults to .)
 ```
+A new manifest will be created
+in the `.../working/` directory of `tutor-manifests`
+and committed on the `working` branch
+(which will be created if necessary).
+
+The workflow will automatically continue
+using the newly-created manifest
+as described below.
 
 ### Deployment from Existing Manifest
 
 ```
 deploy --env <ENV> --dir <BASEDIR> --manifest <MANIFEST>
 ```
+
 
 ### Sharing of Manifests
 
