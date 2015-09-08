@@ -22,11 +22,37 @@ biglearn-platorm  817ad1bea59a76732c6142f499618ae3cb7d3728
 ```
 
 Manifests are committed
-to the `tutor-deploy` repo
-if they are meant to be shared
-across users/environments.
-In this case,
-the
+to a `tutor-manifests` repo,
+and referenced unambiguously
+by their path, filename and commit hash:
+```
+git show <hash>:<path><filename>
+
+where:
+  <hash>      = git commit hash (can be abbreviated)
+  <path>      = path to manifest file (see below)
+  <filename>  = manifest filename (see below)
+```
+
+Manifest filenames have the form:
+```
+YYYYMMDD_HHMMSS_<hash>
+
+where:
+
+  YYYY    = year
+  MM      = month of year  (01..12)
+  DD      = day of month   (01..31)
+  HH      = hour of day    (00..23)
+  MM      = minute of hour (00..59)
+  SS      = second of hour (00..60) <-- yes, that's correct...
+  <hash>  = 6(?) random hex characters to protect against accidental collisions
+```
+and are placed in one of two repo directories:
+```
+  .../shared/    = shared manifests (pushed to GH)
+  .../working/   = expermimental, local manifests (not pushed to GH)
+```
 
 The same tag should
 be applied to all repos used by the deploy tool,
