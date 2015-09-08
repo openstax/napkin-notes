@@ -36,10 +36,9 @@ where:
 
 Manifest filenames have the form:
 ```
-YYYYMMDD_HHMMSS_<hash>
+manifest_YYYYMMDD_HHMMSS_<hash>
 
 where:
-
   YYYY    = year
   MM      = month of year  (01..12)
   DD      = day of month   (01..31)
@@ -48,16 +47,59 @@ where:
   SS      = second of hour (00..60) <-- yes, that's correct...
   <hash>  = 6(?) random hex characters to protect against accidental collisions
 ```
-and are placed in one of two repo directories:
+where all times should probably be Zulu (GMT).
+
+Manifest files are placed in one of two repo directories:
 ```
   .../shared/    = shared manifests (pushed to GH)
   .../working/   = expermimental, local manifests (not pushed to GH)
 ```
 
-The same tag should
-be applied to all repos used by the deploy tool,
-be unique,
-and be at least pseudo-sortable.
+## Deply Tool Usage
+
+```
+deploy --env <ENV> [--dir <BASEDIR>] [--manifest <MANIFEST>]
+
+where:
+  <ENV>      = target environment (dev, qa, demo, production, etc.)
+  <BASEDIR>  = directory under which repos are located
+               (default: '.')
+  <MANIFEST> = manifest git filename (<hash>:<path><filename>)
+               (default: create new manifest)
+```
+or:
+```
+deploy --share <MANIFEST>
+
+where:
+  <MANIFEST> = manifest git filename (<hash>:<path><filename>)
+```
+
+## Deployment Workflow
+
+### Deployment from Currently Checked-out Code
+
+```
+deploy --env <ENV> --dir <BASEDIR>
+
+where:
+  <ENV>      = target environment (dev, qa, demo, production, etc.)
+               (no default)
+  <BASEDIR>  = directory under which repos are located
+               (defaults to .)
+```
+
+### Deployment from Existing Manifest
+
+```
+deploy --env <ENV> --dir <BASEDIR> --manifest <MANIFEST>
+```
+
+### Sharing of Manifests
+
+```
+share <MANIFEST>
+```
 
 The current list of repos (though subject to change) is:
 ```
