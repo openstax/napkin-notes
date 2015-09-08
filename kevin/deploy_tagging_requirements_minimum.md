@@ -97,12 +97,11 @@ The workflow will automatically continue
 using the newly-created manifest
 as described below.
 
-### Deployment from Existing Manifest
+### Deployment From an Existing Manifest
 
 ```
 deploy --env <ENV> --dir <BASEDIR> --manifest <MANIFEST>
 ```
-
 
 ### Sharing of Manifests
 
@@ -115,6 +114,8 @@ The current list of repos (though subject to change) is:
 accounts  biglearn-algs    biglearn-demos      exchange   exercises-js       tutor-js
 archives  biglearn-common  biglearn-platform   exercises  tutor-deployment   tutor-server
 ```
+
+# OLD STUFF - IGNORE
 
 A tag with a structure like:
 ```
