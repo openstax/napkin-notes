@@ -166,6 +166,9 @@ ssh -i ~/.ssh/tutor_kev.pem ubuntu@tutor-kev.openstax.org
 osttutor@server1:$ sudo su osttutor
 osttutor@server1:$ sudo service unicorn_tutor restart
 
+osttutor@server1:$ sudo monit restart all
+osttutor@server1:$ sudo monit stop all
+
 osttutor@server1:$ top cd4  (shift-M)
 ```
 
