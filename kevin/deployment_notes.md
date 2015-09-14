@@ -185,6 +185,10 @@ https://biglearnflower-kev.openstax.org/
 --extra-vars "reset_tutor_db=true"
 ```
 
+```
+screen -xRr
+```
+
 to fix BL oddities:
 ```
   ps afux |grep python
