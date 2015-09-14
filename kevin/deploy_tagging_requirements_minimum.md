@@ -15,9 +15,9 @@ is a text file
 containing one commit hash
 per deployed repo:
 ```
-tutor-server      d969dc1f88eabe71577157884604fddd05a6e497
-tutor-js          f5476fdb225482e195d84828aae9fb4d6b72e91d
-biglearn-platorm  817ad1bea59a76732c6142f499618ae3cb7d3728
+openstax/tutor-server      d969dc1f88eabe71577157884604fddd05a6e497
+openstax/tutor-js          f5476fdb225482e195d84828aae9fb4d6b72e91d
+openstax/biglearn-platorm  817ad1bea59a76732c6142f499618ae3cb7d3728
 ...
 ```
 
