@@ -44,6 +44,8 @@ class ActiveJob::Base
 Doesn't necessarily have to be `job_proc` vs `controller_proc` -- lots of possibilities for names, instances, etc.
 
 ```ruby
+# this code is in the gem
+
 class OpenStax::RescueFrom
 
   # whether these are class methods or instance methods with singletons, etc
@@ -92,6 +94,8 @@ OpenStax::RescueFrom.handle(ActiveRecord::RecordNotFound, notify: true) # an ove
 ```
 
 ## Implementation
+
+The gem will likely be tiny.  Could just be one main file and some specs.
 
 [The controller exception code in tutor-server](https://github.com/openstax/tutor-server/blob/master/config/initializers/controllers.rb) is our most up-to-date code and should likely be the implementation referenced in this work.
 
