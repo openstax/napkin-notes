@@ -1,3 +1,40 @@
+# Epic 1002 - Exercise Editing and Q/A
+
+## QA Role and Error Reporting
+- show errors on import (papertrail link?)
+- Add analyst Role
+- add ecosystem comment
+- add delete ecosystem button
+
+## QA Review of Exercises
+- see all exercises for section
+- link from exercise to Exercises
+- [2] filter exercise list
+- [2] exercise counts
+
+
+## QA Review of Content
+
+- [2] show book page_module with markup
+- [2] link to edit book page_module
+
+
+## Exercise Editing
+
+- simple edit
+- preview math/markdown
+- publish exercise
+- [2] save draft
+- [2] create new
+- [?] see "this is an old version" on Exercises
+
+
+## Exercise Protection
+
+- unauthenticated users do not get exercise answers
+
+
+
 # Epic 1004 - CNX Navigation
 
 - CNX change login/legacy link
@@ -76,3 +113,4 @@
 
 - UX: decide things
 NEED TO REVISIT
+
