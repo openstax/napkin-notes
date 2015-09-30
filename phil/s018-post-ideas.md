@@ -2,6 +2,7 @@
 
 - Organize Component files into subdirs
 - Fix bugs listed in `./test-integration/` files (grep for "BUG" or "TODO")
+- switch everyhting to use `classnames` lib
 
 # Prep for Concept Coach
 
