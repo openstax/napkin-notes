@@ -11,7 +11,7 @@
 
 - Chunk JS files (from webpack) into teacher JS and student JS.
 - Remove phantomjs from some unit tests (they are taking 5.5min)
-- Allow the media popover to be on any <ArbitraryHtmlAndMath> ? Just provide it a fn (Promise?) to look up the context HTML ?
+- Allow the media popover to be on any `<ArbitraryHtmlAndMath>` ? Just provide it a fn (Promise?) to look up the context HTML ?
 
 # Possible time-sinks
 
