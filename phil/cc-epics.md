@@ -1,4 +1,4 @@
-# Epic 1002 - Exercise Editing and Q/A
+# Epic 04 - Exercise Editing and Q/A
 
 ## QA Role and Error Reporting
 - show errors on import (papertrail link?)
@@ -35,7 +35,7 @@
 
 
 
-# Epic 1004 - CNX Navigation
+# Epic 05 - CNX Navigation
 
 - CNX change login/legacy link
 - CNX remove other links
@@ -44,7 +44,14 @@
 - CNX Search within a book (BE)
 
 
-# Epic 1005 - Student Registration, Enrollment, Login Authentication
+# Epic 06 - CC Widget Mechanics / Infrastructure 
+
+- CNX add to settings.json
+- CNX hide content
+- CNX load widget
+
+
+# Epic 07 - Student Registration, Enrollment, Login Authentication
 
 - register using code
 - change course/period
@@ -55,15 +62,7 @@
 - ? widget has profile editing
 
 
-
-# Epic 1007 - CC Widget Mechanics / Infrastructure 
-
-- CNX add to settings.json
-- CNX hide content
-- CNX load widget
-
-
-# Epic 1008 - Students performing assignments
+# Epic 08 - Students performing assignments
 
 - answer question (& feedback)
 - update Exercise design
@@ -74,12 +73,12 @@
 - accessibility
 
 
-# Epic 1009 - Student Progress Views
+# Epic 09 - Student Progress Views
 
 - see chapter/section completion 
 
 
-# Epic 1010 - Admin / Teacher Course setup
+# Epic 10 - Admin / Teacher Course setup
 
 - SF create course registration codes
 - SF->Tutor create course
@@ -92,13 +91,13 @@
 - Admin can impersonate teacher
 
 
-# Epic 1011 - Teacher Login 
+# Epic 11 - Teacher Login 
 
 - non-dev
   - explain where to login
 
 
-# Epic 1013 - Delivering Assignments (Concept Coach readings and Non-Concept Coach HW)
+# Epic 12 - Delivering Assignments (Concept Coach readings and Non-Concept Coach HW)
 
 - (Navigation Epic) TOC: Fix unit numbering (CSS)
 - (Navigation Epic) TOC: Fix intro numbering (BE+CSS)
@@ -109,7 +108,7 @@
   - CNX update/create homepages with links to CC
 
 
-# Epic 1014 - Teacher Views (settings, codes, roster, scores, analytics, data export)
+# Epic 13 - Teacher Views (settings, codes, roster, scores, analytics, data export)
 
 - UX: decide things
 NEED TO REVISIT
