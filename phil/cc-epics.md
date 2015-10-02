@@ -112,4 +112,4 @@
 
 - UX: decide things
 NEED TO REVISIT
-
+- [fe] make dashboard with ToC and %'s
