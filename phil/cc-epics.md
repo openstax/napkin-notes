@@ -7,23 +7,23 @@
 - add delete ecosystem button
 
 ## QA Review of Exercises
-- see all exercises for section
-- link from exercise to Exercises
-- [2] filter exercise list
-- [2] exercise counts
+- [fe] see all exercises for section
+- [fe] link from exercise to Exercises
+- [fe] [2] filter exercise list
+- [fe] [2] exercise counts
 
 
 ## QA Review of Content
 
-- [2] show book page_module with markup
-- [2] link to edit book page_module
+- [fe] [2] show book page_module with markup
+- [fe] [2] link to edit book page_module
 
 
 ## Exercise Editing
 
-- simple edit
-- preview math/markdown
-- publish exercise
+- [fe] simple edit
+- [fe] preview math/markdown
+- [fe] publish exercise
 - [2] save draft
 - [2] create new
 - [?] see "this is an old version" on Exercises
@@ -40,42 +40,42 @@
 - CNX change login/legacy link
 - CNX remove other links
 - CNX change "All Search" from global
-- TOC: Implement ToC (FE)
-- CNX Search within a book (BE)
+- [fe] TOC: Implement ToC (FE)
+- [fe] CNX Search within a book (BE)
 
 
 # Epic 06 - CC Widget Mechanics / Infrastructure 
 
-- CNX add to settings.json
-- CNX hide content
-- CNX load widget
+- [fe] CNX add to settings.json
+- [fe] CNX hide content
+- [fe] CNX load widget
 
 
 # Epic 07 - Student Registration, Enrollment, Login Authentication
 
-- register using code
-- change course/period
-- support multiple CC courses
+- [fe] register using code
+- [fe] change course/period
+- [fe] support multiple CC courses
 - show "Privacy & Policy" terms
-- widget shows page when not logged-in
-- ? widget shows student name
+- [fe] widget shows page when not logged-in
+- [fe] ? widget shows student name
 - ? widget has profile editing
 
 
 # Epic 08 - Students performing assignments
 
-- answer question (& feedback)
-- update Exercise design
-- send exercises based on page id
+- [fe] answer question (& feedback)
+- [fe] update Exercise design
+- [fe] send exercises based on page id
 - include Spaced Practice
-- incorrect login page
-- show summary when done
-- accessibility
+- [fe] incorrect login page
+- [fe] show summary when done
+- [fe] accessibility
 
 
 # Epic 09 - Student Progress Views
 
-- see chapter/section completion 
+- [fe] see chapter/section completion 
 
 
 # Epic 10 - Admin / Teacher Course setup
@@ -83,11 +83,11 @@
 - SF create course registration codes
 - SF->Tutor create course
 - link course to teacher via registration code
-- Teacher add/edit/remove periods
-- Teacher list period registration codes
-- Teacher edit course
-- Teacher add/remove teachers
-- Teacher add/remove students
+- [fe] Teacher add/edit/remove periods
+- [fe] Teacher list period registration codes
+- [fe] Teacher edit course
+- [fe] Teacher add/remove teachers
+- [fe] Teacher add/remove students
 - Admin can impersonate teacher
 
 
