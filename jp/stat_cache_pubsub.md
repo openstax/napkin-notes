@@ -49,6 +49,8 @@ class Tasks::Models::TaskPlanStats
 end
 ```
 
+Here's a little helper in `Task` used above:
+
 ```ruby
 class Tasks::Models::Task
   ...
