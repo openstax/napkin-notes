@@ -1,3 +1,9 @@
+# Epic 03 - Content Ingest/Import
+
+- [spike] Review tagging legend for CC
+- [spike] "magic mapping" Review LO description documen
+- [spike] check if content versioning impacted by CC-import
+
 # Epic 04 - Exercise Editing and Q/A
 
 ## QA Role and Error Reporting
@@ -37,10 +43,12 @@
 
 # Epic 05 - CNX Navigation
 
+- [spike] [fe] ToC with editor
+- [spike] [fe] book seaarch UI
 - CNX change login/legacy link
 - CNX remove other links
 - CNX change "All Search" from global
-- [fe] TOC: Implement ToC (FE)
+- [fe] CNX: Implement ToC (FE)
 - [fe] CNX Search within a book (BE)
 
 
