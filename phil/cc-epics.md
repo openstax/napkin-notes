@@ -46,6 +46,7 @@
 
 # Epic 06 - CC Widget Mechanics / Infrastructure 
 
+- [spike] [fe] how to load CC widget
 - [fe] CNX add to settings.json
 - [fe] CNX hide content
 - [fe] CNX load widget
@@ -53,6 +54,7 @@
 
 # Epic 07 - Student Registration, Enrollment, Login Authentication
 
+- [spike] [fe] login to tutor from cnx
 - [fe] register using code
 - [fe] change course/period
 - [fe] support multiple CC courses
