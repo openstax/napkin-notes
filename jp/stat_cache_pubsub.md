@@ -49,6 +49,17 @@ class Tasks::Models::TaskPlanStats
 end
 ```
 
+```ruby
+class Tasks::Models::Task
+  ...
+  def fraction_correct
+    return nil if completed_exercise_count == 0
+    correct_exercise_count / completed_exercise_count
+  end
+  ...
+end
+```
+
 When `refresh!` is called, the stats object gathers the relevant tasks and stores some statistics on them.  These stats can then be read out efficiently to produce the top half of the quick look analytics.
 
 Similarly, for the page-level stats (the bottom part of the quick look analytics), we can have something like:
