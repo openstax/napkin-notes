@@ -56,7 +56,7 @@ Links:
 - `CC1.09.001` see chapter/section completion
 - `CC1.10.009` Teacher edit course
 - `CC1.10.010` `CC1.10.011` Teacher add/remove teachers
-- `CC1.10.012` `CC1.10.013` Teacher change-period/remove students
+- `CC1.10.012` `CC1.10.013` Teacher move/remove students
 
 
 # Step 5
