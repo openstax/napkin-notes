@@ -14,12 +14,12 @@ Links:
 
 # Step 1
 
-- `CC1.04.013` Exercise Editing - Simple Edit
-- `CC1.05.003` [spike] [fe] ToC with editor
+- [JW] `CC1.04.013` Exercise Editing - Simple Edit
+- [DM] `CC1.05.003` [spike] [fe] ToC with editor
 - `CC1.05.004` CNX Search within a book (BE)
-- `CC1.06.001` [spike] how to load CC widget
+- [AS] `CC1.06.001` [spike] how to load CC widget
 - `CC1.06.001` CNX add to settings.json
-- `CC1.07.009` [spike] login to tutor from cnx
+- [NS] `CC1.07.009` [spike] login to tutor from cnx
 - `CC1.12.???` TOC: Fix unit numbering (CSS)
 - `CC1.12.???` CNX BE Add intro numbering
 
