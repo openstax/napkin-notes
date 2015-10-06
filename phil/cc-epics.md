@@ -31,7 +31,7 @@
 
 ## Exercise Editing
 
-- **[1]** `CC1.04.013` [fe] simple edit
+- **[1] `CC1.04.013` [fe] simple edit**
 - [2] `CC1.04.014` [fe] preview math/markdown
 - [3] `CC1.04.015` [fe] publish exercise
 - <s>[pri2] `CC1.04.016` save draft</s>
@@ -49,7 +49,7 @@
 - [_] `CC1.05.001` CNX change login/legacy link
 - [_] `CC1.05.002` CNX remove other links
 - [_] `CC1.05.003` [spike] [fe] ToC with editor
-- **[1]** `CC1.05.003` [fe] CNX: Implement ToC (FE)
+- **[1] `CC1.05.003` [fe] CNX: Implement ToC (FE)**
 - [_] `CC1.05.004` [spike] [fe] book seaarch UI
 - [2] `CC1.05.004` [fe] CNX Search within a book (BE)
 - [_] `CC1.05.???` CNX change "All Search" from global
@@ -57,8 +57,8 @@
 
 # Epic 06 - CC Widget Mechanics / Infrastructure 
 
-- **[1]** `CC1.06.001` [spike] [fe] how to load CC widget
-- **[1]** `CC1.06.001` [fe] CNX add to settings.json
+- **[1] `CC1.06.001` [spike] [fe] how to load CC widget**
+- **[1] `CC1.06.001` [fe] CNX add to settings.json**
 - [2] `CC1.06.001` [fe] CNX load widget
 - [3] `CC1.06.001` [fe] CNX hide content
 
@@ -66,8 +66,8 @@
 # Epic 07 - Student Registration, Enrollment, Login Authentication
 
 - [_] `CC1.07.001` Write /api/enroll endpoint
-- **[1]** `CC1.07.009` [spike] [fe] login to tutor from cnx
-- **[1]** `CC1.07.009` [fe] login to tutor from cnx
+- **[1] `CC1.07.009` [spike] [fe] login to tutor from cnx**
+- **[1] `CC1.07.009` [fe] login to tutor from cnx**
 - [2] `CC1.07.002` [fe] register using code
 - [2] `CC1.07.???` [fe] widget shows page when not logged-in
 - [_] `CC1.07.003` [fe] know registration was successful
@@ -127,7 +127,7 @@
 
 # Epic 12 - Delivering Assignments (Concept Coach readings and Non-Concept Coach HW)
 
-- **[1]** `CC1.12.???` (Navigation Epic) TOC: Fix unit numbering (CSS)
+- **[1] `CC1.12.???` (Navigation Epic) TOC: Fix unit numbering (CSS)**
 - [2] `CC1.12.???` (Navigation Epic) TOC: Fix intro numbering (BE+CSS)
 
 - non-dev
