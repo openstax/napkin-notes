@@ -15,7 +15,7 @@
 
 ## QA Review of Exercises
 
-- [_] `CC1.04.005` [fe] see all exercises for section 
+- [x] `CC1.04.005` [fe] see all exercises for section 
 - [3] `CC1.04.006` [fe] link from exercise to Exercises
 - [_] `CC1.04.007` [fe] know when changed
 - <s>[pri2] `CC1.04.008` [fe] filter exercise list</s>
@@ -46,13 +46,13 @@
 
 # Epic 05 - CNX Navigation
 
-- [_] `CC1.05.001` CNX change login/legacy link
-- [_] `CC1.05.002` CNX remove other links
-- [_] `CC1.05.003` [spike] [fe] ToC with editor
-- **[1] `CC1.05.003` [fe] CNX: Implement ToC (FE)**
-- [_] `CC1.05.004` [spike] [fe] book seaarch UI
-- [2] `CC1.05.004` [fe] CNX Search within a book (BE)
-- [_] `CC1.05.???` CNX change "All Search" from global
+- [x] `CC1.05.001` CNX change login/legacy link
+- [x] `CC1.05.002` CNX remove other links
+- [x] `CC1.05.???` CNX change "All Search" from global
+- **[1] `CC1.05.003` [spike] [fe] ToC with editor**
+- [2] `CC1.05.003` [fe] CNX: Implement ToC
+- **[1] `CC1.05.004` [fe] CNX Search within a book (BE)**
+- [2] `CC1.05.004` [spike] [fe] book search UI
 
 
 # Epic 06 - CC Widget Mechanics / Infrastructure 
@@ -70,26 +70,26 @@
 - **[1] `CC1.07.009` [fe] login to tutor from cnx**
 - [2] `CC1.07.002` [fe] register using code
 - [2] `CC1.07.???` [fe] widget shows page when not logged-in
-- [_] `CC1.07.003` [fe] know registration was successful
+- [3] `CC1.07.003` [fe] know registration was successful
 - [_] `CC1.07.004` `CC1.07.005` `CC1.07.006` `CC1.07.007` [fe] change course/period
 - [3] `CC1.07.004` [fe] change course/period confirmation messages
 - [3] `CC1.07.008` [fe] support multiple CC courses
 - [_] `CC1.07.010` [fe] ? widget shows student name
 - [_] `CC1.07.011` show "Privacy & Policy" terms
 - [_] `CC1.07.012` widget has profile editing
-- [_] `CC1.07.014` Accessibility
+- [_] `CC1.07.014` [fe] Accessibility
 - <s>[pri2] `CC1.07.013` Timeout policy</s>
 
 
 # Epic 08 - Students performing assignments
 
 - [2] `CC1.08.???` [fe] incorrect login page
-- [_] `CC1.08.001` [fe] fetch exercises based on page id
+- [3] `CC1.08.001` [fe] fetch exercises based on page id
 - [4] `CC1.08.002` [fe] answer question 
 - [4] `CC1.08.003` [fe] show answer feedback
 - [3] `CC1.08.004` [fe] update Exercise design
 - [_] `CC1.08.005` include Spaced Practice, `CC1.08.006` write CC "assistant"
-- [_] `CC1.08.010` decide what to do when no questions
+- [_] `CC1.08.010` [fe] decide what to do when no questions
 - [5] `CC1.08.012` [fe] show summary when done
 - [_] `CC1.08.011` [fe] accessibility
 - <s>[pri2] `CC1.08.013` [fe] refer to exercise id (link)</s>
