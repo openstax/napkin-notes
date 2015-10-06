@@ -7,37 +7,40 @@
 # Epic 04 - Exercise Editing and Q/A
 
 ## QA Role and Error Reporting
+
 - show errors on import (papertrail link?)
 - Add analyst Role
 - add ecosystem comment
 - add delete ecosystem button
 
 ## QA Review of Exercises
-- [fe] see all exercises for section
-- [fe] link from exercise to Exercises
-- [fe] [2] filter exercise list
-- [fe] [2] exercise counts
+
+- [fe] CC1.04.005 see all exercises for section 
+- [fe] CC1.04.006 link from exercise to Exercises
+- [fe] CC1.04.007 know when changed
+- [fe] CC1.04.008 [2] filter exercise list
+- [fe] CC1.04.009 [2] exercise counts
 
 
 ## QA Review of Content
 
-- [fe] [2] show book page_module with markup
-- [fe] [2] link to edit book page_module
+- [fe] CC1.04.010 [2] show book page_module with markup
+- [fe] CC1.04.011 [2] link to edit book page_module
+- [fe] CC1.04.012 [2] switch sections
 
 
 ## Exercise Editing
 
-- [fe] simple edit
-- [fe] preview math/markdown
-- [fe] publish exercise
-- [2] save draft
-- [2] create new
-- [?] see "this is an old version" on Exercises
+- [fe] CC1.04.013 simple edit
+- [fe] CC1.04.014 preview math/markdown
+- [fe] CC1.04.015 publish exercise
+- [2] CC1.04.016 save draft
+- [2] CC1.04.017 create new
 
 
 ## Exercise Protection
 
-- unauthenticated users do not get exercise answers
+- CC1.04.018 unauthenticated users do not get exercise answers
 
 
 
