@@ -46,33 +46,39 @@
 
 # Epic 05 - CNX Navigation
 
-- [spike] [fe] ToC with editor
-- [spike] [fe] book seaarch UI
-- CNX change login/legacy link
-- CNX remove other links
+- CC1.05.001 CNX change login/legacy link
+- CC1.05.002 CNX remove other links
+- CC1.05.003 [spike] [fe] ToC with editor
+- CC1.05.003 [fe] CNX: Implement ToC (FE)
+- CC1.05.004 [spike] [fe] book seaarch UI
+- CC1.05.004 [fe] CNX Search within a book (BE)
 - CNX change "All Search" from global
-- [fe] CNX: Implement ToC (FE)
-- [fe] CNX Search within a book (BE)
 
 
 # Epic 06 - CC Widget Mechanics / Infrastructure 
 
-- [spike] [fe] how to load CC widget
-- [fe] CNX add to settings.json
-- [fe] CNX hide content
-- [fe] CNX load widget
+- CC1.06.001 [spike] [fe] how to load CC widget
+- CC1.06.001 [fe] CNX add to settings.json
+- CC1.06.001 [fe] CNX hide content
+- CC1.06.001 [fe] CNX load widget
 
 
 # Epic 07 - Student Registration, Enrollment, Login Authentication
 
-- [spike] [fe] login to tutor from cnx
-- [fe] register using code
-- [fe] change course/period
-- [fe] support multiple CC courses
-- show "Privacy & Policy" terms
+- CC1.07.001 Write /api/enroll endpoint
+- CC1.07.009 [spike] [fe] login to tutor from cnx
+- CC1.07.002 [fe] register using code
+- CC1.07.003 [fe] know registration was successful
+- CC1.07.004 CC1.07.005 CC1.07.006 CC1.07.007 [fe] change course/period
+- CC1.07.004 [fe] change course/period confirmation messages
+- CC1.07.008 [fe] support multiple CC courses
+- CC1.07.009 [fe] login to tutor from cnx
+- CC1.07.010 [fe] ? widget shows student name
+- CC1.07.011 show "Privacy & Policy" terms
 - [fe] widget shows page when not logged-in
-- [fe] ? widget shows student name
-- ? widget has profile editing
+- CC1.07.012 widget has profile editing
+- CC1.07.013 Timeout policy
+- CC1.07.014 Accessibility
 
 
 # Epic 08 - Students performing assignments
