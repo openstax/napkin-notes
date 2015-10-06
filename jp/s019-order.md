@@ -69,6 +69,8 @@
 
 # Sprint 21
 
+(lower priority things that could fall off of sprint 20 if needed)
+
 * CC1.07.011    [BE] Present Privacy Policy & Terms of Service to registering users or to logging in users when terms content has changed
 * CC1.10.015    As an admin, I can change multiple course ecosystems at once (bulk change)
 * CC1.10.016    As a teacher, I want to customize access codes for my students
