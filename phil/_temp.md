@@ -10,6 +10,7 @@ Links:
 - https://github.com/openstax/napkin-notes/edit/master/phil/cc-epics.md
 - http://mockups.openstax.org/concept_coach/start.html#p=physics_toc_left_side_over_content_contact_form
 - http://mockups.openstax.org/cc-mockup-physics/#p=home
+- https://docs.google.com/document/d/19Uj6OXQqli7taJT3DitFHNdRSni3dgNv0DM6Xy_8c20/edit?pli=1#
 
 # Step 1
 
