@@ -1,3 +1,16 @@
+40,000 ft view: 
+
+1. more screens for teachers to manage class & students to register
+2. students answer questions in openstax books
+3. update cnx site to look "more like ref book"
+4. exercise editing
+
+Links:
+
+- https://github.com/openstax/napkin-notes/edit/master/phil/cc-epics.md
+- http://mockups.openstax.org/concept_coach/start.html#p=physics_toc_left_side_over_content_contact_form
+- http://mockups.openstax.org/cc-mockup-physics/#p=home
+
 # Step 1
 
 - `CC1.04.013` Exercise Editing - Simple Edit
