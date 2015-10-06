@@ -83,31 +83,40 @@
 
 # Epic 08 - Students performing assignments
 
-- [fe] answer question (& feedback)
-- [fe] update Exercise design
-- [fe] send exercises based on page id
-- include Spaced Practice
+- CC1.08.001 [fe] fetch exercises based on page id
+- CC1.08.002 [fe] answer question 
+- CC1.08.003 [fe] show answer feedback
+- CC1.08.004 [fe] update Exercise design
+- CC1.08.005 include Spaced Practice, CC1.08.006 write CC "assistant"
+- CC1.08.010 decide what to do when no questions
 - [fe] incorrect login page
-- [fe] show summary when done
-- [fe] accessibility
+- CC1.08.012 [fe] show summary when done
+- CC1.08.011 [fe] accessibility
+- CC1.08.013 [fe] [2] refer to exercise id (link)
+- CC1.08.014 [fe] works on tablet
 
 
 # Epic 09 - Student Progress Views
 
-- [fe] see chapter/section completion 
+- CC1.09.001 [fe] see chapter/section completion 
 
 
 # Epic 10 - Admin / Teacher Course setup
 
-- SF create course registration codes
-- SF->Tutor create course
-- link course to teacher via registration code
-- [fe] Teacher add/edit/remove periods
-- [fe] Teacher list period registration codes
-- [fe] Teacher edit course
-- [fe] Teacher add/remove teachers
-- [fe] Teacher add/remove students
-- Admin can impersonate teacher
+- CC1.10.003 SF create course registration codes
+- CC1.10.002 SF->Tutor create course
+- CC1.10.004 link course to teacher via registration code
+- CC1.10.005 [fe] Teacher add/edit/remove periods
+- CC1.10.007 [fe] Teacher add/edit/remove periods
+- CC1.10.008 [fe] Teacher add/edit/remove periods
+- CC1.10.006 [fe] Teacher list period registration codes
+- CC1.10.009 [fe] Teacher rename course
+- CC1.10.010 CC1.10.011 [fe] Teacher add/remove teachers
+- CC1.10.012 CC1.10.013 [fe] Teacher move/remove students
+- CC1.10.014 Admin can impersonate teacher
+- CC1.10.015 Admin Bulk Change Ecosystems
+- CC1.10.016 [2] Teacher Customize registration code
+- CC1.10.017 [fe] Show Roster
 
 
 # Epic 11 - Teacher Login 
