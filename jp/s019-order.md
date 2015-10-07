@@ -20,6 +20,7 @@
 
 # Sprint 19
 
+* CC1.07.001    Stub /api/enroll endpoint
 * CC1.07.000    [UX-M] Student Registration Workflow & Epic UI (SPIKE / design)
 *               Cache task plan stats / publish-subscribe / general caching
 * CC1.07.002    Spike - prototype login / account creation mechanism
