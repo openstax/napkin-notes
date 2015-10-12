@@ -75,6 +75,7 @@ Notes:
 * Prohibit users passing in their own values for the object -- Tutor is the only one who can set period IDs (in this case based on the enrollment code which acts as a sort of password)
 * Freak out if enrollment course points to CC course but no CNX collection ID given
 * If enrolling in a course previously dropped, make sure to reactivate old student
+* While this enrollment API could later be used by non-CC courses, for the moment error out if the course is not a concept coach course (means if hasn't been done yet, the Course model needs an `is_concept_coach` field).
 
 
 ## PUT /api/enrollment_changes/1002/approve
