@@ -1,11 +1,11 @@
 *Ideas about*
 # How to share components
 *across Backbone and Flux, between*
-* openstax/tutor-js
-* openstax/exercise
-* connexions/webview
+* [openstax/tutor-js](https://github.com/openstax/tutor-js)
+* [openstax/exercise-js](https://github.com/openstax/exercises-js)
+* [connexions/webview](https://github.com/connexions/webview)
 
-Tutor, webview, and Exercises need to share some components. One challenge is handling UI syncing with both Flux and Backbone.  Another is how to share components between projects in general.
+[Tutor](https://github.com/openstax/tutor-js), [webview](https://github.com/connexions/webview), and [Exercises](https://github.com/openstax/exercises-js) need to share some components. One challenge is handling UI syncing with both Flux and Backbone.  Another is how to share components between projects in general.
 
 ## Options on how to share components
 
