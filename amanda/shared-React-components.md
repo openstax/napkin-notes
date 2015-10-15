@@ -12,21 +12,25 @@
 ### One repo for all common components
 * A folder per component
 * Each component/folder will have a file each for
-  * Mixin/helper version (optional)
+  * Mixin/helper version *(optional)*
   * Bare component
   * Flux adapted data-bound component
   * Backbone adapted data-bound component
-  * Any other adapters for data-binding as needed
+  * Any other adapted data-bound components as needed
   * Index exporting the previous in an object
 * Webpack will build components
+* To include into project
+  ```sh
+  npm install --save openstax/react-common#some-tag
+  ```
 * Loading into other projects will look like this
   ```js
-  var ComponentName = require('TutorCommon/ComponentName/backbone');
+  var ComponentName = require('react-common/ComponentName/backbone');
   ```
   or
 
   ```coffee
-  {ComponentNameBackbone} = require('TutorCommon/ComponentName')
+  {ComponentNameBackbone} = require('react-common/ComponentName')
   ```
 
 ### One repo per common component
