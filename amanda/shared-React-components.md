@@ -40,6 +40,11 @@
 * Share components depending on others will require more management
 * I think I don't like this idea anymore.
 
+### Other Tooling
+* testing tooling
+  * should be pulled out of main `tutor-js` as well into separate repo
+  * to be shared between common and main `tutor-js`
+
 ## Mapping Tutor Flux to Webview Backbone models
 Could make loadable component that bridges both, or adapters for each
 
