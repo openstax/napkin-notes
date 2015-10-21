@@ -31,7 +31,7 @@
 
 ## Exercise Editing
 
-- **[1] `CC1.04.013` [fe] simple edit**
+- **[JW] `CC1.04.013` [fe] simple edit**
 - [2] `CC1.04.014` [fe] preview math/markdown
 - [3] `CC1.04.015` [fe] publish exercise
 - <s>[pri2] `CC1.04.016` save draft</s>
@@ -49,8 +49,8 @@
 - [x] `CC1.05.001` CNX change login/legacy link
 - [x] `CC1.05.002` CNX remove other links
 - [x] `CC1.05.???` CNX change "All Search" from global
-- **[1] `CC1.05.003` [spike] [CNX] ToC with editor**
-- [2] `CC1.05.003` [CNX] Implement ToC
+- [x] `CC1.05.003` [spike] [CNX] ToC with editor
+- **[DAK] `CC1.05.003` [CNX] Implement ToC**
 - **[1] `CC1.05.004` [CNX] Search within a book (BE)**
 - [2] `CC1.05.004` [spike] [CNX] book search UI
 - [3] `CC1.05.004` [CNX] Implement book search UI
@@ -58,17 +58,17 @@
 
 # Epic 06 - CC Widget Mechanics / Infrastructure
 
-- **[1] `CC1.06.001` [spike] [fe] how to load CC widget**
+- [x] `CC1.06.001` [spike] [fe] how to load CC widget
 - **[1] `CC1.06.001` [fe] CNX add to settings.json**
 - [2] `CC1.06.002` [fe] CNX hide content
-- [2] `CC1.06.003` [fe] CNX load widget
+- **[AS] `CC1.06.003` [fe] CNX load widget**
 
 
 # Epic 07 - Student Registration, Enrollment, Login Authentication
 
 - [_] `CC1.07.001` Write /api/enroll endpoint
-- **[1] `CC1.07.009` [spike] [fe] login to tutor from cnx**
-- **[1] `CC1.07.009` [fe] login to tutor from cnx**
+- [x] `CC1.07.009` [spike] [fe] login to tutor from cnx
+- **[NS] `CC1.07.009` [fe] login to tutor from cnx**
 - [2] `CC1.07.002` [fe] register using code
 - [2] `CC1.07.???` [fe] widget shows page when not logged-in
 - [3] `CC1.07.003` [fe] know registration was successful
@@ -108,11 +108,11 @@
 - [_] `CC1.10.003` SF create course registration codes
 - [_] `CC1.10.002` SF->Tutor create course
 - [_] `CC1.10.004` link course to teacher via registration code
-- [2] `CC1.10.005` [fe] Teacher add/edit/remove periods
-- [2] `CC1.10.007` [fe] Teacher add/edit/remove periods
-- [2] `CC1.10.008` [fe] Teacher add/edit/remove periods
+- **[DM] `CC1.10.005` [fe] Teacher add/edit/remove periods**
+- **[DM] `CC1.10.007` [fe] Teacher add/edit/remove periods**
+- **[DM] `CC1.10.008` [fe] Teacher add/edit/remove periods**
 - [3] `CC1.10.006` [fe] Teacher list period registration codes
-- [4] `CC1.10.009` [fe] Teacher rename course
+- **[HELENE] `CC1.10.009` [fe] Teacher rename course**
 - [4] `CC1.10.010` `CC1.10.011` [fe] Teacher add/remove teachers
 - [4] `CC1.10.012` `CC1.10.013` [fe] Teacher move/remove students
 - [_] `CC1.10.014` Admin can impersonate teacher
@@ -131,8 +131,8 @@
 
 # Epic 12 - Delivering Assignments (Concept Coach readings and Non-Concept Coach HW)
 
-- **[1] `CC1.12.003` [CNX] Fix unit numbering (ToC) (CSS)**
-- [2] `CC1.12.003` [CNX] Fix intro numbering (ToC) (BE+CSS)
+- [x] `CC1.12.003` [CNX] Fix unit numbering (ToC) (CSS)
+- [x] `CC1.12.003` [CNX] Fix intro numbering (ToC) (BE+CSS)
 - <s>[ ] `CC1.12.004` Google SEO</s>
 - [ ] `CC1.12.005` [CNX] lock PDF
   - CNX upload/lock PDF
@@ -145,7 +145,7 @@
 # Epic 13 - Teacher Views (settings, codes, roster, scores, analytics, data export)
 
 - [2] `CC1.13.002` [fe] teacher dashboard
-- **[1] `CC1.13.003` [fe] teacher coursepicker**
+- [1] `CC1.13.003` [fe] teacher coursepicker
 - [3] `CC1.13.004` [fe] teacher dashboard link to book and PDF
 - [3] `CC1.13.005` [fe] teacher copy text for students
 - [2] `CC1.13.006` [fe] change "Period" to "Section"
