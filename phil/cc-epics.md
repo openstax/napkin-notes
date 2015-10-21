@@ -86,7 +86,7 @@
 
 - [2] `CC1.08.???` [fe] incorrect login page
 - [3] `CC1.08.001` [fe] fetch exercises based on page id
-- [4] `CC1.08.002` [fe] answer question
+- **[AS] `CC1.08.002` [fe] answer question**
 - [4] `CC1.08.003` [fe] show answer feedback
 - [3] `CC1.08.004` [fe] update Exercise design
 - [_] `CC1.08.005` include Spaced Practice, `CC1.08.006` write CC "assistant"
