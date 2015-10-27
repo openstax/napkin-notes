@@ -8,7 +8,7 @@ and only the next incomplete exercise is shown
 (though past completed exercises
 can be reviewed).
 
-For `pages` with no ``CC exercise pools`,
+For `pages` with no `CC exercise pools`,
 there will be a 'finish' or 'continue' button
 (or the like).
 
@@ -28,10 +28,6 @@ specified by Grimaldi.
 The number of exercises in the `slider`
 will be the sum of these two numbers.
 
-
-
-
-
 ## What goes into the `core` exercise group?
 
 Exercises covering content on the current `page`,
@@ -41,12 +37,23 @@ associated with the current `page`.
 
 ## What if we run out of `core` exercises?
 
+This should never happen
+because Tutor can detect that situation
+in advance and compensate.
+
 Tutor will not repeat exercises
 within the same `event`,
 so the number of issued `core` exercises
 will be decreased to match
 the number of available exercises
 for the current `page`.
+
+This will result in a reduction
+in the number of `slider` exercises
+shown for the page,
+but the number will be consistent
+(though not ideal)
+once the student sees it.
 
 ## What goes into the `spaced practice` exercise group?
 
@@ -62,10 +69,19 @@ from the `k-ago-map`-specificied `event`'s
 
 ## What happens if we run out of `spaced practice` exercises?
 
-Because both the `event history`
-and `CC exercise pool` for each `page`
-are known at the moment
-
+Even though Tutor will not repeat exercises
+within the same `event`,
+it will repeat them across `events`
+if necessary.
+That being said,
+if there are still not enough exercises
+in a `page`'s `CC exercise pool`
+to fill the slots
+from the `k-ago-map`,
+the unfilled slots will be re-allocated
+behind the scenes
+to either additional `core` exercises
+or other `spaced practice` `events`.
 
 ## What is an event?
 
@@ -76,9 +92,13 @@ An `event` is a record of a single CNX `page` being read by a student.
 The current `page`
 gets added as an `event`
 in the student's `event history`
-upon completion of the any (the first?) exercise
+upon completion of the the first exercise
 at the bottom of the `page`.
-(CHECK based on mockup...)
+
+## When do the `spaced practice` exercises get populated?
+
+At the moment the `event`
+gets added to the student's `event history`.
 
 ## What if there are no exercises associated with a given `page`?
 
@@ -102,3 +122,16 @@ No.
 
 No.
 
+## What about content updates?
+
+When a student accesses
+a `Concept Coach` `page`
+for the first time,
+a Tutor assignment is made
+which contains the exercises
+that will (eventually) be shown.
+
+Because this assignment
+is linked to a specific ecosystem,
+it will be unaffected
+by future content updates.
