@@ -110,6 +110,21 @@ spaced practice exercises
 from past `pages`
 are waiting.
 
+## What is the `k-ago-map`?
+
+It's a list which describes
+how many exercises to (attempt to) pull
+from which `events` 
+in the student's `event history`.
+For instance,
+one entry might say
+to pull 2 exercises
+from the `page` that was two `events` ago.
+
+## Will the `k-ago-map` support `random-ago`?
+
+Kathi wants it to...
+
 ## What about `pages` which are assigned together?
 
 Each `page` is its own `event`, independent of the others.
