@@ -106,6 +106,38 @@ API endpoint.
 
 ### Tutor Resets a Practice Widget
 
+A practice widget is a group
+of five personalized (BigLearn-chosen)
+exercises that a student can work
+at any time.
+There is one practice widget per student and,
+when all of its exercises have been answered,
+it needs to be
+[reset](https://github.com/openstax/tutor-server/blob/master/app/routines/reset_practice_widget.rb#L39-L45).
+
+To reset a practice widget,
+Tutor
+[requests a "projection"](https://github.com/openstax/tutor-server/blob/master/app/routines/get_ecosystem_exercises_from_biglearn.rb#L10-L16)
+of the "best" exercises for the student.
+This results in Tutor
+[making](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L83)
+a
+[call](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L230)
+to the BigLearn
+[`/projections/questions`](https://biglearnadmin-qa.openstax.org/docs/projections.html#get--projections-questions)
+API endpoint.
+
+Tutor
+[passes a pool UUID](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L81)
+to BigLearn to limit the set of possible exercises returned
+to those appropriate for the current student
+based on the student's task history.
+Because BigLearn can only make projections
+against a single pool,
+Tutor will
+[create a pool on the fly](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L79)
+if necessary.
+
 ### Tutor Fills a Personalized Exercise Placeholder
 
 ### Tutor Displays a Learning Guide
