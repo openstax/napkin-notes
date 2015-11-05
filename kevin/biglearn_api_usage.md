@@ -96,6 +96,14 @@ and the
 [grade](https://github.com/openstax/tutor-server/blob/master/app/routines/send_tasked_exercise_answer_to_exchange.rb#L27)
 to Exchange.
 
+Exchange
+[turns around](https://github.com/openstax/exchange/blob/master/app/routines/create_or_update_activity_from_event.rb#L27-L28)
+and
+[sends](https://github.com/openstax/exchange/blob/master/lib/openstax/biglearn/v1/real_client.rb#L37-L51)
+the response to the BigLearn
+[`/facts/responses`](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-responses)
+API endpoint.
+
 ### Tutor Resets a Practice Widget
 
 ### Tutor Fills a Personalized Exercise Placeholder
