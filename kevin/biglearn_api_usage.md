@@ -25,6 +25,10 @@ which is a collection of entries of the form:
 }
 ```
 
+These entries are
+[processed](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/api/endpoints/facts.py#L102-L158)
+by BigLearn via a series of hacks
+that will eventually need to be cleaned up.
 
 ### Tutor Resets a Practice Widget
 
