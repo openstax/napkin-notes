@@ -14,9 +14,23 @@ the BigLearn
 [`/facts/questions`](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-questions)
 API endpoint.
 
+Tutor sends a
+[payload](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L237-L243)
+which is a collection of entries of the form:
+```
+{
+  exercise id (string),
+  exercise version (integer),
+  [list of exercise tags (strings)]
+}
+```
+
+
 ### Tutor Resets a Practice Widget
 
-### Tutor Displays Learning Guide
+### Tutor Fills a Personalized Exercise Placeholder
 
-### Student Answers Exercise
+### Tutor Displays a Learning Guide
+
+### Student Answers an Exercise
 
