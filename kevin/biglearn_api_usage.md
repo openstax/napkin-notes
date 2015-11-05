@@ -87,6 +87,15 @@ API endpoint.
 
 ### Student Answers an Exercise
 
+When a student answers an exercise, Tutor
+[uses](https://github.com/openstax/tutor-server/blob/master/app/routines/send_tasked_exercise_answer_to_exchange.rb#L9-L14)
+the student's Exchange write id
+to send the
+[response](https://github.com/openstax/tutor-server/blob/master/app/routines/send_tasked_exercise_answer_to_exchange.rb#L22)
+and the 
+[grade](https://github.com/openstax/tutor-server/blob/master/app/routines/send_tasked_exercise_answer_to_exchange.rb#L27)
+to Exchange.
+
 ### Tutor Resets a Practice Widget
 
 ### Tutor Fills a Personalized Exercise Placeholder
