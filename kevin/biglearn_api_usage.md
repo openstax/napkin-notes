@@ -171,3 +171,21 @@ are potentially different.
 
 ### Tutor Displays a Learning Guide
 
+When Tutor
+[creates a learning guide](https://github.com/openstax/tutor-server/blob/master/lib/course_guide_methods.rb#L68-L80)
+(a summary of student
+current level of understanding estimates (CLUEs)
+per book page or chapter)
+it
+[ultimately](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L175)
+ends up
+[using](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L234)
+the BigLearn
+[`/knowledge/clue`](https://biglearnadmin-qa.openstax.org/docs/knowledge.html#get--knowledge-clue)
+API endpoint.
+
+The
+[`/knowledge/clue`](https://biglearnadmin-qa.openstax.org/docs/knowledge.html#get--knowledge-clue)
+endpoint takes a group of learner ids
+and computes their aggregated CLUEs
+for each of the pool ids given.
