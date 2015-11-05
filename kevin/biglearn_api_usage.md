@@ -7,7 +7,7 @@ about the exercise ids/versions of interest:
 [ImportBook](https://github.com/openstax/tutor-server/blob/master/app/subsystems/content/import_book.rb#L100)
 
 This results in a call to the BigLearn client
-[#add_exercises](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L30)
+[#add_exercises](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L28-L32)
 method, which 
 [uses](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L222)
 the BigLearn 
