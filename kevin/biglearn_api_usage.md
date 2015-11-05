@@ -59,8 +59,9 @@ of entries of the form:
 }
 ```
 and receives back a BigLearn-assigned UUID for the pool.
-(Note that the `/facts/pool` endpoint
-can also define pools using
+(Note that the 
+[`/facts/pools`](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-pools)
+endpoint can also define pools using
 tag queries or existing pools.)
 
 ### Student Answers an Exercise
