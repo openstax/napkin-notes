@@ -140,5 +140,34 @@ if necessary.
 
 ### Tutor Fills a Personalized Exercise Placeholder
 
+Both 
+[homeworks](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L79)
+and 
+[readings](https://github.com/openstax/tutor-server/blob/master/app/subsystems/tasks/assistants/i_reading_assistant.rb#L60)
+can contain personalized exercises
+which are not chosen
+until the student
+[has completed](https://github.com/openstax/tutor-server/blob/master/app/subsystems/tasks/models/task.rb#L122-L134)
+all of the 'core' exercises
+in the assignment.
+To support this,
+Tutor places personalized exercise placeholders
+in the assignments upon creation,
+and fills the 
+[homework](https://github.com/openstax/tutor-server/blob/master/app/subsystems/tasks/placeholder_strategies/homework_personalized.rb)
+or
+[reading](https://github.com/openstax/tutor-server/blob/master/app/subsystems/tasks/placeholder_strategies/i_reading_personalized.rb)
+placeholders later
+when more information is available.
+
+The calls from Tutor to BigLearn
+to fill the personalized exercise placeholders
+is exactly the
+[same](https://github.com/openstax/tutor-server/blob/master/app/routines/get_ecosystem_exercises_from_biglearn.rb)
+as those for resetting a practice widget,
+except the pools
+from which BigLearn can choose exercises
+are potentially different.
+
 ### Tutor Displays a Learning Guide
 
