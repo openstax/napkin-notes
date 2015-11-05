@@ -64,6 +64,27 @@ and receives back a BigLearn-assigned UUID for the pool.
 endpoint can also define pools using
 tag queries or existing pools.)
 
+### Tutor Creates a User
+
+Newly-created Tutor users are
+[assigned Exchange identifiers](https://github.com/openstax/tutor-server/blob/master/app/subsystems/user/create_user.rb#L32-L34)
+(one for reading, one for writing)
+and these identifiers are used by Tutor
+when talking with Exchange and BigLearn
+to avoid the spread of student
+personally-identifiable information (PII)
+beyond Tutor.
+
+This results in
+[a call](https://github.com/openstax/exchange-ruby/blob/master/lib/openstax/exchange/real_client/real_client.rb#L37-L41)
+to the Exchange
+`/api/identifiers` API endpoint,
+which in turn results in
+[a call](https://github.com/openstax/exchange/blob/master/lib/openstax/biglearn/v1/real_client.rb#L22-L35)
+from Exchange to the BigLearn
+[`/facts/learners`](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-learners)
+API endpoint.
+
 ### Student Answers an Exercise
 
 ### Tutor Resets a Practice Widget
