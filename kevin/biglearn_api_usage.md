@@ -141,7 +141,7 @@ if necessary.
 ### Tutor Fills a Personalized Exercise Placeholder
 
 Both 
-[homeworks](https://github.com/openstax/tutor-server/blob/master/lib/openstax/biglearn/v1/real_client.rb#L79)
+[homeworks](https://github.com/openstax/tutor-server/blob/master/app/subsystems/tasks/assistants/homework_assistant.rb#L72)
 and 
 [readings](https://github.com/openstax/tutor-server/blob/master/app/subsystems/tasks/assistants/i_reading_assistant.rb#L60)
 can contain personalized exercises
