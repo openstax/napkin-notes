@@ -1,0 +1,2 @@
+pdflatex openstax_architecture.tex
+pdflatex openstax_architecture.tex
