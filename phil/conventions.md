@@ -52,6 +52,7 @@ Follow <https://github.com/cirosantilli/markdown-styleguide> (maybe skip the num
 1. Tag with issue number at the beginning with the fully qualified repo name if different (`lml/ost#231: Add stuff`)
 1. Rebase and push -f freely to get the commits crisp and clean in the topic branches
 1. Use <https://github.com/atom/atom/blob/master/CONTRIBUTING.md#git-commit-messages> emoticons if you choose to use them
+1. If a CHANGELOG file is desired, maybe https://github.com/philschatz/octokit.js/blob/commit-message-conventions/CONTRIBUTING.md for automated changelogs
 
 
 # API Conventions

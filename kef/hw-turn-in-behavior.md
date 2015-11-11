@@ -1,7 +1,6 @@
 # Homework Turn-In Behavior (Proposed Design)
 
-Mockup: http://mockups.openstax.org/Tutor_MVP_v2/#p=turn_in_page
-(not updated with decisions below as of Apr. 12, 2015 - Jason is working on implementing in the mockup)
+[Student Dashboard Mockup](http://mockups.openstax.org/Tutor_MVP_v2/#p=turn_in_page) (only partially updated)
 
 ## Goals
  - Alpha
@@ -16,25 +15,33 @@ Mockup: http://mockups.openstax.org/Tutor_MVP_v2/#p=turn_in_page
 ## Features and Behaviors
 
 - Alpha 
-  - Turn in button is informational only. It doesn't prevent continued work.
+  - Last page of the HW is informational only and shows a student how much they have done. Tells them about auto turn in.
+  - Students do NOT see feedback while they are working the HW
   - HW is turned in automatically upon the due date
-  - Student feedback is available at the due date and records when it is viewed. 
+    - The score shows on the dashboard
+    - Clicking the HW again will show feedback as you click through problems (like feedback)
+  - Student feedback is available at the due date and records when it is viewed. - Click on the HW link to view feedback (works just like i-reading)
 - MVP
  - When a student clicks on the feedback link for a particular HW for the first time, they get a message that the time they view the feedback is being recorded, it might affect ability to turn in late work, and lets them continue or cancel.
  - Students can work problems and change answers after the due date.
   - After the due date the student will see something like the following 
    - [HW 4](bogus.com), (3/5) ([view feedback](bogus.com))
 
-### What happens when a **student clicks Turn-In button**?
-Turn in is informational only. When a student clicks on the button, we want to tell them how "complete" their hw is. 
+### What happens when a **student clicks the last page**?
+We want to tell them how "complete" their hw is and let them know about auto turn in.
 
  - **Incomplete** For example, "You have answered 3 of 5 questions. You can still review and update your ansewrs until the due date." or 
-
- - **Complete** "You are done! You have answered 5 of 5 questions. P.S. You can still review and update your ansewrs until the due date." 
+ - **Complete** "It looks like you are done! You have answered 5 of 5 questions. P.S. You can still review and update your ansewrs until the due date." 
+ - **Both** "Your homework will automatically be turned in on the due date."
 
 ### What happens when a **HW due date is reached**?
 
-The assignment is submitted and the score (3 of 5 correct) is available to students on their dashboard and in their score-book (performance book). 
+- The assignment is automatically submitted.
+- Their current score (3 of 5 correct) is available to students on their dashboard and in their score-book (performance book). 
+- Alpha
+    - "Feedback available" text shows next to the HW
+- MVP 
+    -  "Feedback available" link shows up next to the HW, and goes to the [HW review page](http://mockups.openstax.org/Tutor_MVP_v2/#p=review_and_recover_hw_-_student_view).  
 
 ### When can a student **see feedback** about their problems?
 

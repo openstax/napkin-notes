@@ -1,0 +1,13 @@
+- Better confirm text (Select Readings)
+- [x] HW selection bar has new design (Problems selected, next, cancel) http://mockups.openstax.org/Tutor_MVP_v2/start.html#p=add_homework_2
+- Remove Checkbox for chapter selection when content is missing
+- No all caps for SIGN OUT!
+- [x] images should have a max width, not a width
+- Student visiting Teacher URLs should do something (redirect?)
+- True false in 4.4
+  - has a prompt
+  - "TRUE" should not be all-caps
+- [x] Check logic of "Refresh My Memory" (section should show up 2nd time)
+- reduce size of everything by 10%
+- [x] HW not started says 0/4 but forgets to count the personalized question
+- Learning guide should change URL and "Back to Learning Guide" should drill down

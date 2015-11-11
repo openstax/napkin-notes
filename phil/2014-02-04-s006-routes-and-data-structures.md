@@ -192,14 +192,14 @@ PATCH  | .../periods/1 {title} | u356
 DELETE | .../periods/1 | u356
 PATCH  | .../periods [ id1, id2 ] | u357
 
-PATCH  | .../students/345 {period} | u358
+POST   | .../students {period_id, first_name, last_name} | u358
 DELETE | .../students/345 | u359
-PATCH  | .../students/345 {period} | u360
-PATCH  | .../students/345 {name} | u361
+PATCH  | .../students/345 {period_id} | u360
+PATCH  | .../students/345 {first_name, last_name} | u361
 
 POST   | .../students/345/password-reset | u362
 
-PATCH  | /user { role: â€˜student' } | u363
+PATCH  | /user { role: 'student' } | u363
 ```
 
 
