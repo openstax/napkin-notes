@@ -9,6 +9,8 @@ These are internal goals for FE development of ConceptCoach
  * Allow switching from one course period to another using a different registration code
  * Supply student ID when registering
  * Handle errors when requesting API methods and display error dialog when appropriate
+ * Navigate to different CNX page module when progress is clicked.
+   * This'll require additional CNX integration.  We're currently discussing options 
 
 ## Nov 13th
 
