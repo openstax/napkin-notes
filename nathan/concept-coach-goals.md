@@ -2,6 +2,14 @@
 
 These are internal goals for FE development of ConceptCoach
 
+## Nov 20th
+
+ * Logout & profile working & deployed
+ * Show teacher names when registering
+ * Allow switching from one course period to another using a different registration code
+ * Supply student ID when registering
+ * Handle errors when requesting API methods and display error dialog when appropriate
+
 ## Nov 13th
 
 By the end of the week
