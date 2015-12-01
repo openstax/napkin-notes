@@ -92,8 +92,11 @@ An `event` is a record of a single CNX `page` being read by a student.
 The current `page`
 gets added as an `event`
 in the student's `event history`
-upon completion of the the first exercise
+upon clicking the concept coach button 
 at the bottom of the `page`.
+
+We wanted to have the history update when the first problem was worked, but backend sends all problems at once and so 
+it would be possible to click all buttons at the beginning of the class and then never receive spaced practice.
 
 ## When do the `spaced practice` exercises get populated?
 
