@@ -175,6 +175,16 @@ Schema:
                 ]
             },
             "minItems": 1
+        },
+        "errors":{
+            "items":{
+                "type":"string"
+                },
+                "type":"array"
+            },
+        "message":{
+            "description":"Descriptive message representing the status of the call.",
+            "type":"string"
         }
     },
     "required": ["precomputed_clues"],
