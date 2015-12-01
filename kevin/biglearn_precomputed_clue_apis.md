@@ -16,7 +16,7 @@ Schema:
 {
     "$schema": "http://json-schema.org/schema#",
     "title": "precomputed clue retrieval input schema",
-	"definitions": {
+    "definitions": {
         "uuid": {
             "type": "string",
             "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
@@ -186,23 +186,23 @@ Valid examples:
 
 ```json
 {
-  	"precomputed_clues": [
-      	{
-      		"precomputed_clue_id": "5f6ccc7b-35b2-4871-9b18-57cc77aae676",
-      		"clue": {
-              	"aggregate": 0.85,
-              	"confidence": {
-                  	"left": 0.51,
-                  	"right": 0.95,
-                  	"sample_size": 6,
-                  	"unique_learner_count": 4
+    "precomputed_clues": [
+        {
+          "precomputed_clue_id": "5f6ccc7b-35b2-4871-9b18-57cc77aae676",
+          "clue": {
+                "aggregate": 0.85,
+                "confidence": {
+                    "left": 0.51,
+                    "right": 0.95,
+                    "sample_size": 6,
+                    "unique_learner_count": 4
                 },
-              	"interpretation": {
-                  	"confidence": "good",
-                  	"level": "medium",
-                  	"threshold": "below"
+                "interpretation": {
+                    "confidence": "good",
+                    "level": "medium",
+                    "threshold": "below"
                 }
-      		}
+          }
         }
     ]
 }
