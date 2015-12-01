@@ -6,7 +6,7 @@
 
 ### Endpoint
 
-`HTTP GET /knowledge/precomputed_clue`
+`HTTP POST /knowledge/precomputed_clue`
 
 #### Input Body
 
