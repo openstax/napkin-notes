@@ -183,7 +183,7 @@ Schema:
             },
         },
         "message":{
-            "type": "string".
+            "type": "string",
             "description": "Descriptive message representing the status of the call.",
         }
     },
