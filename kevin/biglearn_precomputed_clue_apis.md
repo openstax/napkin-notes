@@ -177,14 +177,14 @@ Schema:
             "minItems": 1
         },
         "errors":{
-            "items":{
+            "type": "array",
+            "items": {
                 "type":"string"
-                },
-                "type":"array"
             },
+        },
         "message":{
-            "description":"Descriptive message representing the status of the call.",
-            "type":"string"
+            "type": "string".
+            "description": "Descriptive message representing the status of the call.",
         }
     },
     "required": ["precomputed_clues"],
