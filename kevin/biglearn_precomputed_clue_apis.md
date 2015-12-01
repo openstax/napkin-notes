@@ -8,13 +8,13 @@
 
 `HTTP GET /knowledge/precomputed_clue`
 
-#### Input
+#### Input Body
 
 Schema:
 
 ```json
 {
-  	"$schema": "http://json-schema.org/schema#",
+    "$schema": "http://json-schema.org/schema#",
     "title": "precomputed clue retrieval input schema",
 	"definitions": {
       	"uuid": {
@@ -68,7 +68,7 @@ Invalid examples:
 }
 ```
 
-#### Output
+#### Output Body
 
 Schema:
 
@@ -212,7 +212,7 @@ Invalid examples:
 
 ```json
 {
-  	"precomputed_clues": [
+    "precomputed_clues": [
     ]
 }
 ```
