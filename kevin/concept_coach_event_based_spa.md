@@ -1,4 +1,4 @@
-## What appears at the bottom of a `Concept Coach` `page`?
+## What appears at the bottom of a `Concept Coach` `page`? (OBE)
 
 For `pages` with associated `CC exercise pools`,
 there will be an exercise `slider`.
@@ -12,7 +12,7 @@ For `pages` with no `CC exercise pools`,
 there will be a 'finish' or 'continue' button
 (or the like).
 
-## How many exercises are in the `slider`?
+## How many exercises are in the `slider`? (OBE)
 
 Exercises are broken into two groups:
 `core` and `spaced practice`.
@@ -126,7 +126,27 @@ from the `page` that was two `events` ago.
 
 ## Will the `k-ago-map` support `random-ago`?
 
-Kathi wants it to...
+Yes.
+
+## How does `random-ago` work?
+
+Once the student's `event history`
+contains four past `events`
+(the current `event` is excluded in this count),
+a `random-ago` entry
+will randomly choose `k`
+and then randomly choose an exercise
+from the associated `k-ago` `event`.
+
+If no exercise is available
+(considering other `k-ago-map` entries
+and the desire to not duplicate exercise in a single `CC`)
+this process can be repeated a fixed number of times.
+
+If the retry limit is reached
+and no exercise has been found,
+the `event history` is searched backward in order
+and the first usable exercise is selected.
 
 ## What about `pages` which are assigned together?
 
