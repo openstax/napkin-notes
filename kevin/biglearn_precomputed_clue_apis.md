@@ -16,6 +16,7 @@ Schema:
 {
     "$schema": "http://json-schema.org/schema#",
     "title": "precomputed clue retrieval input schema",
+
     "definitions": {
         "uuid": {
             "type": "string",
@@ -25,6 +26,7 @@ Schema:
                 "$ref": "#/definitions/uuid"
         }
     },
+
     "type": "object",
     "properties": {
         "precomputed_clue_ids": {
@@ -76,6 +78,7 @@ Schema:
 {
     "$schema": "http://json-schema.org/schema#",
     "title": "precomputed clue retrieval output schema",
+
     "definitions": {
         "uuid": {
             "type": "string",
@@ -155,6 +158,7 @@ Schema:
             ]
         }
     },
+
     "type": "object",
     "properties": {
         "precomputed_clues": {
