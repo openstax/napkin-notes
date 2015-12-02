@@ -1,4 +1,10 @@
 ##
+## API Endpoint
+##
+
+HTTP POST /knowledge/fetch_precomputed_clues
+
+##
 ## Input
 ##
 
