@@ -1,25 +1,26 @@
-## What appears at the bottom of a `Concept Coach` `page`? (OBE)
+## What appears at the bottom of a `Concept Coach` `page`?
 
 For `pages` with associated `CC exercise pools`,
-there will be an exercise `slider`.
-Exercises in the `slider`
-must be completed in order,
-and only the next incomplete exercise is shown
-(though past completed exercises
-can be reviewed).
+there will a button
+that indicates that `Concept Coach` exericses are available.
+
+When the button is pushed,
+the student is taken
+to a page where they can view/complete exercises
+in any order they wish.
 
 For `pages` with no `CC exercise pools`,
 there will be a 'finish' or 'continue' button
 (or the like).
 
-## How many exercises are in the `slider`? (OBE)
+## How many exercises are issued?
 
 Exercises are broken into two groups:
 `core` and `spaced practice`.
 
 The number of `core` exercises
 will be chosen by Tutor(?),
-and will cover the current 'page'.
+and will cover the current `page`.
 
 The number of _potential_ `spaced practice` exercises
 will be determined by the `k-ago-map`
