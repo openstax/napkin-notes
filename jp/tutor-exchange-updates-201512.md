@@ -12,6 +12,7 @@ To support pending BigLearn work, we need the following updates to Tutor and Exc
       * all responses for a course's students
       * all responses anywhere by anyone for anything
     * gaps in the value are okay (and might be unavoiadable due to db technology limitations)
+    * this is not a replacement for the (approximate) timestamp
   2. it must include a flag that says whether or not the answer being sent is "finalized"
     * "finalized" means that this response is the one being "graded", and not a work-in-progress
     * ideally, no more answers will be submitted for this trial of this exercise
