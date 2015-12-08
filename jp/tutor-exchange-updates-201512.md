@@ -17,7 +17,7 @@ To support pending BigLearn work, we need the following updates to Tutor and Exc
     * "finalized" means that this response is the one being "graded", and not a work-in-progress
     * ideally, no more answers will be submitted for this trial of this exercise
       * however, it is _possible_ that multiple "finalized" responses could be created for the exercise (due to it being re-graded, etc.)
-    * [KB: I don't think we want this, since it suggests the student's knowledge of the concept is wrong and not just that our data is incomplete] Tutor must also send these final values when they become final (e.g. at a HW due date).  @kevin, what do you want to happen if an instructor extends a due date after the due date passes?  (is the finality really needed?)
+    * just to clear, Tutor should only send correctness information to Exchange for questions that were actually answered by the student (e.g., unanswered questions should not be transmitted as incorrect)
 2. Lower priority:
   1. Send an event from Tutor to Exchange when an exercise becomes available for viewing
   2. Send an event from Tutor to Exchange when an exercise is viewed (from server or FE?)
