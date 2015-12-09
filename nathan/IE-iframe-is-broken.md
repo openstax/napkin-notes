@@ -10,6 +10,8 @@ I see us having three options to fix this:
   * Notes on P3P:
    * wget -q --server-response http://google.com
    * https://support.google.com/accounts/answer/151657?hl=en
+   * http://blogs.unbolt.net/index.php/brinley/2010/03/31/p3p-fix-for-internet-explorer-to-access-cross-domain-cookie-in-iframe
+   * http://www.cylab.cmu.edu/research/techreports/2010/tr_cylab10014.html
    * http://stackoverflow.com/questions/5257983/what-is-headerp3p-cp-cao-psa-our
 
 2) Open login in a pop-up window.  We could implement this with minimal work to CC.  We could use PostMessage like we currently do, but talk to the window instead of an iframe.
