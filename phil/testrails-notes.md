@@ -2,8 +2,8 @@
 
 (login/pass: `kajalparekh@rice.edu/password` )
 
-[CC TestRails Dec 7](https://openstax.testrail.net/index.php?/runs/view/41&group_by=cases:section_id&group_order=asc) 
-[CC TestRails Dec 9](https://openstax.testrail.net/index.php?/runs/view/45&group_by=cases:section_id&group_order=asc) 
+- [CC TestRails Dec 7](https://openstax.testrail.net/index.php?/runs/view/41&group_by=cases:section_id&group_order=asc) 
+- [CC TestRails Dec 9](https://openstax.testrail.net/index.php?/runs/view/45&group_by=cases:section_id&group_order=asc) 
 
 
 ## Using TestRails
