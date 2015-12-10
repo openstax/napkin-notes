@@ -1,3 +1,7 @@
+# Requirements gathering questions
+
+(with examples. bold is the type of user answering the question)
+
 I'm interested in streamlining our ux/dev/qa/deploy/mgmt processes and am gathering data.
 
 Could you describe:
