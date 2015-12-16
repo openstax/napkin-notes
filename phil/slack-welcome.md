@@ -1,6 +1,6 @@
 # Welcome!
 
-Here are some notes by stax folks using Slack. Click "Edit this Page" (and submit a Pull Request) to amend this list!
+Here are some notes by stax folks using Slack. Click the pencil icon (just up and right of here) and submit a Pull Request to amend this list!
 
 Channels:
 
