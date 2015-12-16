@@ -12,6 +12,7 @@ Channels:
 # Tips
 
 - Change your notification preferences for different channels. That way you can peruse `#deployments` or `#watercooler` without being notified whenever someone posts.
+- Chat with multiple (<10) people by clicking "Direct Messages" and choosing them
 - (*devs*) Snippets allow you to send a block of syntax-highlighted code
 - Type `/remind` to set up reminders
 - Type `/hangout` to create a hangout or pin the hangout URL for recurring meetings (Click the "Start Hangout" link)
@@ -23,5 +24,5 @@ Channels:
 
 # Gripes
 
-- No ad-hoc group chats
+- <strike>No ad-hoc group chats</strike> Choose "Direct Messages" and add them
 - Difficult to do Audio/Screensharing with a channel (Screenhero does do audio/video but you have to select people each time)
