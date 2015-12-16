@@ -5,6 +5,7 @@ Here are some notes by stax folks using Slack. Click the pencil icon (just up an
 Channels:
 
 - `#watercooler` non-official chatter, or _cool_ things you want to chat about
+- `#meta` discuss slack (ask/answer any questions)
 - `#deployments` lets you know when deployments start/finish and what code is being deployed
 - `#cpr` and `#tutor-fe` are pretty active channels (you can preview without joining)
 
