@@ -20,6 +20,7 @@ Channels:
 - Add your GitHub username to the list of Highlight Words (in Preferences) to get notified when someone mentions you in GitHub
 - Edit a message by pressing the <kbd>...</kbd> button next to the message
 - Tired of sending a message to multiple people? You can create a group and they'll all be notified
+- Inline thumbs up/down voting (click the smiley next to a comment to add a :+1:, :-1:, or :pizza: and then others can click it to vote)
 
 
 # Gripes
