@@ -1,6 +1,6 @@
 # Requirements gathering questions
 
-(with examples. bold is the type of user answering the question)
+(with examples. bold is the type of user answering the question and what I think they might bring up)
 
 I'm interested in streamlining our ux/dev/qa/deploy/mgmt processes and am gathering data.
 
@@ -16,31 +16,137 @@ Could you describe:
   - ie **QA** unsure where to check when the specification changes
   - ie **QA** have to remember everything needed for dev to diagnose/reproduce
   - ie **QA/dev** pasting screenshots is annoying (clutters my desktop with files)
-2. your ideal "happy path" workflow
+2. What is your ideal "happy path" workflow?
   - looking at what changes have been made since the last time something was deployed (commit (err.. PR) lists)
-3. your ideal workflow when there is a time-crunch
+3. What is your ideal workflow when there is a time-crunch?
   - might want to test a batch of features at once instead of every little PR individually
-4. corner-cases from the ideal workflow
+4. What are some corner-cases from the ideal workflow?
   - ie **dev/deploy** releasing Hotfixes
-5. parts of the process that could be automated (& who should automate them)
+5. What are parts of the process that could be automated (& who should automate them)
   - ie: **QA** dev should write tests and ??? should maintain Jenkins
   - ie: **dev** QA should write tests and ??? should maintain Jenkins
   - ie: **QA** should have easy way to collect all the data needed to create an issue
 
 ---
 
-# Phil's Crazy Insanely Stupid Idea
-
-(it's an end-goal, and have not split up the steps yet)
+# Phil's Crazy Insanely Stupid Idea/Vision
 
 Audiences:
 
-- PM's
-- devops
-- devs
-- qa
+- **PM**: Project Manager
+- **DEVOPS**: devops person
+- **DEV**: coder
+- **QA**: Quality Assurance
+- **SUPPORT**: Customer Support
+- **MARCOM**: Marketing and Communication
+- **FINANCE**
 
-Here is my proposed ideal flow (vision):
+# 10,000ft view
+
+1. Epics/Stories are made in GDocs, sucked into GitHub, and "Change Requests" are PullRequests
+2. Epics are turned into GitHub Milestones
+3. Issues are made in GitHub and easily moved into the correct repository (or there's 1 big issues repo)
+4. PullRequests are strongly linked to Issues
+5. Kanban board is used to "move" Issues from **PM** (unstarted) -> **DEV** (delivered) -> **QA** (accepted)
+6. **QA** and **DEV**'s can deploy the code via an IM bot (write tests)
+7. A code reviewer moves an Issue/PullRequest to **QA** (checks code/time/formatting)
+8. **QA** merges Pull Requests when they are satisfied something works (writes/asks-for more tests)
+9. **DEV**/**QA** log time by using a special formatting syntax in the Issue/PullRequest
+
+- Communication:
+  - about the issue goes on the Issue
+  - about the solution (code) goes on the PullRequest
+  - about other stuff is in the IM client
+
+
+# Epics/Stories are made in GDocs, sucked into GitHub, and "Change Requests" are PullRequests
+
+## Why?
+
+- GDocs is a great way for people in a meeting to edit at the same time
+- GitHub provides versioning
+- PullRequests show exactly what the changes are (and can be done entirely via the website)
+- PullRequests reduce the # of communication methods people have to know about
+- PullRequests allow an easy, standard way of asynchronous notification/communication (which DEV's already have to use)
+
+
+# Epics are turned into GitHub Milestones
+
+## Why?
+
+- **DEV** is far more likely to link code(work) with an epic, so...
+- **MGMT** can see how far along parts of a project are
+- **QA** can know what parts to test and which parts are not implemented yet
+
+
+# Issues are made in GitHub and easily moved into the correct repository
+
+(or there's 1 big issues repo)
+
+## Why?
+
+- It is easier for **DEV**'s to see
+- _most_ issues fall into 1 repository...
+- but not all, so we _might_ still need a _catch-all_ repo for those
+  - this might be an indicator that the issue needs to be decomposed more
+- having this separation shows which stories are not broken down properly
+
+# PullRequests are strongly linked to Issues
+
+## Why?
+
+- Currently this is done in an ad-hoc way (remembering to put links to everything everywhere)
+- If an Issue requires code in multiple repositories or depends on other issues you can quickly see all of the dependencies
+  - ... because GitHub will show you all the references to the Issue when you look at it
+- Merging a PullRequest is currently at the "Code Reviewer"'s discretion and imposes a linear history in the `#master` branch which seems pretty arbitrary; the order *should* be when **QA** has put its stamp-of-approval on it.
+
+---
+
+# Proposed kanban columns for an Epic(Milestone)
+
+Syntax: `state-name (what-it-aplies-to) [WHO-PUTS-IT-IN-THIS-STATE -> WHO-LOOKS-AT-IT]`
+
+- unstarted-or-rejected   [**MGMT**/**QA** -> **DEV**]
+- work-in-progress        [**DEV** -> **REVIEWER**]
+- blocked                 [**DEV**/**REVIEWER** -> EVERYONE_VIA_CC_COMMENTS]
+- ready-for-review        [**DEV** -> **REVIEWER**]
+- ready-to-qa             [**REVIEWER** -> **QA**/**SUPPORT**]
+- accepted (Merged)       [**QA** -> **MGMT**/**SUPPORT**]
+- accepted-but-revisit (Merged) [**QA** -> **QA**/**DEV**]
+
+by default:
+
+- **MGMT** sees: unstarted-or-rejected, accepted
+- **QA** sees: ready-to-qa, accepted-but-revisit
+- **DEV** sees: unstarted-or-rejected
+- **REVIEWER** sees: work-in-progress, ready-for-review
+- **SUPPORT** sees: ready-to-qa, accepted
+
+(PHIL: Make dummy repositories and show in gh-board for tutor, textbooks, campaign)
+
+---
+
+# Other Workflows
+
+## Textbooks
+- coding
+- Alina and content QA
+
+## Responding to Users
+- answer user emails
+- update zendesk
+- feedback on changes or potential "gotcha's" (heather/denver)
+
+## Budgeting/Finance/Reporting
+
+- how close are we to hitting target dates/$$$
+
+---
+
+I know GitHub's API like the back of my hand. Learning a bunch of other API's to pull data out would be annoying/impossible.
+
+
+# Proposed ideal flow (vision)
 
 1. **PM's** create stories and epics in GDocs
 2. GDocs are converted to MarkDown and added to a GH repo so "Change Requests" (PR's) can be made [^convert-to-markdown]
