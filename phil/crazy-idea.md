@@ -14,6 +14,7 @@ Could you describe:
   - ie **dev** Difficult to keep ticket and GH in sync (cross i's and dot t's)
   - ie **dev** Difficult to know where to communicate or who to include
   - ie **dev** Difficult to reproduce bug report
+  - ie **dev** Difficult to cherry-pick a change out of master without breaking other stuff
   - ie **dev** unsure a code fix will break something else
   - ie **REVIEWER** difficult to test code
   - ie **MGMT** ... know when Change request happens and notify others that it occurred
