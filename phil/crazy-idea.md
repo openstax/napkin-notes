@@ -11,6 +11,7 @@ Could you describe:
   - ie **mgmt** Difficult to see how long tickets took to fix
   - ie **dev** Difficult to see what to work on next
   - ie **dev** Difficult to test changes (esp w/ CC widget and so many servers needed)
+  - ie **dev** Difficult to keep ticket and GH in sync (cross i's and dot t's)
   - ie **dev** unsure a code fix will break something else
   - ie **QA** cannot test individual tickets (have to test in bulk everything that's on master)
   - ie **QA** unsure where to check when the specification changes
