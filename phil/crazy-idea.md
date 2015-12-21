@@ -15,6 +15,8 @@ Could you describe:
   - ie **dev** Difficult to know where to communicate or who to include
   - ie **dev** Difficult to reproduce bug report
   - ie **dev** unsure a code fix will break something else
+  - ie **REVIEWER** difficult to test code
+  - ie **MGMT** ... know when Change request happens and notify others that it occurred
   - ie **QA** cannot test individual tickets (have to test in bulk everything that's on master)
   - ie **QA** unsure where to check when the specification changes
   - ie **QA** have to remember everything needed for dev to diagnose/reproduce
