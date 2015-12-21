@@ -217,6 +217,15 @@ I know GitHub's API like the back of my hand. Learning a bunch of other API's to
 # Alina reporting bot
 # Greg reporting on PR's
 
+## Why Selenium in JS
+- Would be useful for Selenium to turn on "admin" assignment creation
+  - allows creating an old draft, or already closed HW, or moving the dates; no need for timecop
+- easier to get changes like that in if devs are working on Selenium
+
+
+Automatic package upgrade tests done weekly
+- easy to do if we have comprehensive tests (and QA can check)
+
 Screenshots in the browser:
 
 https://experiments.hertzen.com/jsfeedback/
@@ -238,3 +247,5 @@ Better cache invalidation on test servers...
 
 [^convert-to-markdown]: http://thiscouldbejd.github.io/Gabriel/ (an app you can easily drop in to any GDoc, but does not post to org repos) or http://lifehacker.com/this-script-converts-google-documents-to-markdown-for-e-511746113 and example (which emails you when you run) https://docs.google.com/document/d/1iSk08hW2rd793xhcSDg_qUVoVjQvc4sBHY6w3Ik7tVA and
 Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/2015-12-10-_phil:-Copy-of-CC-Epic-08---Students-performing-assignments-(with-ConvertToMarkdown-script).md
+
+
