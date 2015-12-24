@@ -260,6 +260,7 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 ## What do people need to do with gh-board?
 
 - [x] see how far along a set of milestones are (Gantt chart)
+- [ ] show which PR's are missing info (time, link to issue in a milestone)
 - [ ] show time spent on a milestone (maybe by user?)
 - [ ] bulk add/edit tags
 - [ ] search all/closed tickets (all repos)
