@@ -255,3 +255,42 @@ Better cache invalidation on test servers...
 Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/2015-12-10-_phil:-Copy-of-CC-Epic-08---Students-performing-assignments-(with-ConvertToMarkdown-script).md
 
 
+# Holiday Work
+
+## What do people need to do with gh-board?
+
+- [x] see how far along a set of milestones are (Gantt chart)
+- [ ] show time spent on a milestone (maybe by user?)
+- [ ] bulk add/edit tags
+- [ ] search all/closed tickets (all repos)
+  - dropdown with checkboxes to search a subset of repos
+- [ ] prioritize (star labels)
+- [ ] merge a PR
+- [ ] see what features will be (easier than were) deployed to QA before testing starts (use rev.txt in the comparison)
+- [x] link an issue to a PR
+- [x] see who's working on what
+- merge an issue (& all PR's)
+- maybe reorder the backlog???
+- [x] recordo can report a bug (proof of concept)
+- show all the fixes pertaining to an issue (so QA can "merge" BE and FE tickets at the same time)
+- [ ] deploy a ticket (all PR's that "fix" the ticket)
+  - trigger a deploy from gh-board (GH tells you the deployment status)
+- filter by tag (JS boolean logic?)
+- bulk change milestone
+- sync milestones across repos
+
+## Proposal
+
+- [ ] make sample repos with Issues for Alina, Alana, Epics docs, QA, CS, and Norm views
+- [ ] mockups of an ideal flow from start-to-finish of a Story
+- [ ] clean up this doc
+
+## Deployments
+
+- [ ] get hubot to deploy with commands like `/deploy tutor-js#123 to dev`
+
+## Selenium
+
+- [ ] add code coverage
+- [ ] make common tasks
+
