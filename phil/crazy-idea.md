@@ -268,6 +268,7 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 - [ ] prioritize (star labels)
 - [ ] merge a PR
 - [ ] see what features will be (easier than were) deployed to QA before testing starts (use rev.txt in the comparison)
+  - [x] show the list of **issues** included (via `/since/:sha/:sha`) (not the PR's; or maybe toggle option)
 - [x] link an issue to a PR
 - [x] see who's working on what
 - merge an issue (& all PR's)
