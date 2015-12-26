@@ -269,6 +269,7 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 - [x] link an issue to a PR
 - [x] see who's working on what
 - [x] recordo can report a bug (proof of concept)
+- [ ] get gh-board to handle multiple orgs
 - [ ] show which PR's are missing info (time, link to issue in a milestone)
 - [ ] show time spent on a milestone (maybe by user?)
 - [ ] bulk add/edit tags
