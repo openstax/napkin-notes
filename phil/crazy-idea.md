@@ -2,7 +2,7 @@
 
 (we don't have to use all these steps; this is just a "vision") Using another service's API would be annoying :smile:
 
-## Tutor
+# Tutor
 
 Roles: **Leads**, **UX**, **DevLead**, **Dev**, **QA**, **CS** (Customer Support), **Devops**, **Anyone**
 
@@ -10,7 +10,7 @@ Kanban Columns: `Triage`, `Ready to Design`, `Ready to Code`, `WIP` (Work in Pro
 
 **Notation:** Roles are **bold**, sequences that are the same as the happy path just have `...`, and steps that are the same in the Happy-Path but are listed _for context_ are in <sub>smaller text</sub>
 
-### Happy Path (FE example)
+## Happy Path (FE example)
 
 First, all the steps of getting a story out to the users. No hangups here; those come later.
 
@@ -52,7 +52,7 @@ First, all the steps of getting a story out to the users. No hangups here; those
   - tells testers to create issues with the label "doomsday"
 
 
-### Change Request / Blocker
+## Change Request / Blocker
 
 Anyone can suggest changes to a story. It should be easy, but include discussion with all interested parties.
 
@@ -64,7 +64,7 @@ Anyone can suggest changes to a story. It should be easy, but include discussion
   - label is removed
 
 
-### Bug report
+## Bug report
 
 Anyone can submit a bug report. It should have detailed info on what happened, things like browser, OS, screen size, steps that happened, what was sent/received from the server to help diagnose.
 
@@ -77,7 +77,7 @@ Anyone can submit a bug report. It should have detailed info on what happened, t
 1. **DevLead** ...
 1. ...
 
-### Hotfix
+## Hotfix
 
 A Hotfix needs to be based on what is on production but should end up on master.
 
@@ -93,7 +93,7 @@ A Hotfix needs to be based on what is on production but should end up on master.
 1. **Devops** deploys the new commit to production
 
 
-### Partially Complete a Story
+## Partially Complete a Story
 
 Often an entire story cannot be completed as one PR.
 
@@ -117,7 +117,7 @@ Often an entire story cannot be completed as one PR.
 1. **QA** ...
 
 
-### Multiple repositories
+## Multiple repositories
 
 Many Stories require BE and FE changes which require changes in multiple repositories.
 This is similar to "Partially Complete a Story".
@@ -143,7 +143,7 @@ This is similar to "Partially Complete a Story".
 1. **QA** ...
 
 
-## CNX
+# CNX
 
 CNX workflow should be similar to tutor's. Some differences:
 
@@ -151,7 +151,7 @@ CNX workflow should be similar to tutor's. Some differences:
 - bugs come from the Internet, rather than internally, so no recordo, but rest should be the same
 
 
-## Textbooks
+# Textbooks
 
 Textbook development usually occurs on a long-running PR where all the **Dev**'s contribute.
 
@@ -160,20 +160,20 @@ Usually, work is done on a single book, or a family of books.
 Sometimes, refactoring work is done which involves all the books.
 
 
-## Content
+# Content
 
 The content team works with the CNXML content for books and Exercise spreadsheets that come in from W&N.
 
 Some of the tasks are to fix CNXML/Exercise markup, publish the book/Exercises, update the downloadable PDFs, and update various websites like openstaxcollege.org.
 
-### Happy Path for Content Editing
+## Happy Path for Content Editing
 
 DMS' need to edit many CNXML files, quickly verify their changes worked, and then publish them in batch into Legacy CNX.
 
 The _"magic"_ to generate the PDFs is: use GitHub's webhooks and a **TransformService** instance. This generates a PDF **and** provides a link to the PDF whenever changes are pushed up to GitHub. _<small>ex: See the little green checkbox or "Show all Checks" link in https://github.com/openstax/tutor-js/pull/914 . The link would go to the PDF instead</small>_
 
 1. **Alina**
-  - uploads the book from W&N (`complete.zip`) into the `textbooks` repo
+  - uploads the book from W&N (`complete.zip`) into the `textbooks` repository on GitHub
   - creates Issues which have checklists of things that need to be done (ie `#123`)
 1. **DMS**
   - creates a branch using the GitHub website
@@ -182,28 +182,41 @@ The _"magic"_ to generate the PDFs is: use GitHub's webhooks and a **TransformSe
   - adds the text `fixes #123` to the body of the PullRequest
     - use `refs #123` if all the checklist items will not be completed yet
 1. **TransformService**
-  - notices the PR and generates PDFs for the books that changed
+  - notices the PR and generates PDFs for the books that changed (via webhooks)
   - puts a link to the PDFs in the GitHub PullRequest
 1. **Alina**
   - reviews the PDF and CNXML
-  - merges the PullRequest (which may automatically close the Issue)
+  - merges the PullRequest _<small>(which may automatically close the Issue)</small>_
   - chats `/publish textbooks#master/physics to staging.cnx` (so other people like tutor BE folks will see)
-    - (this could also be done automatically when the PullRequest is merged; the bot would just says so in `#deployments`)
+    - _<small>(this could also be done automatically when the PullRequest is merged; the bot would just say so in `#deployments` chat channel)</small>_
 
-### Exercises
+## Exercises
 
 
-## Customer Support
+# Customer Support
 
 CS Needs to know what features are coming up, what bugs are fixed, and workarounds to tell users.
 
-## Gantt Chart structure:
+# Gantt Chart structure:
 
 Each bar should contain the following colored segments (from the kanban columns):
 
 `[{COMPLETED}{BLOCKED}{NEEDS_DESIGN}{NEEDS_DEV}{WORK_IN_PROGRESS}{QA}{uncategorized}]``
 
 ---
+
+---
+
+---
+
+# STOP READING!!! BELOW ARE NOTES AND SCRATCHWORK
+
+---
+
+---
+
+---
+
 
 # Requirements gathering questions
 
