@@ -2,6 +2,21 @@
 
 (we don't have to use all these steps; this is just a "vision") Using another service's API would be annoying :smile:
 
+- [Tutor](#tutor)
+  - [Happy Path (FE example)](#happy-path-fe-example)
+  - [Change Request / Blocker](#change-request--blocker)
+  - [Bug Report](#bug-report)
+  - [Hotfix](#hotfix)
+  - [Partially Complete a Story](#partially-complete-a-story)
+  - [Multiple Repositories](#multiple-repositories)
+- [Book Content / Exercise Editing](#book-content--exercise-editing)
+  - [Happy Path for Content Editing](#happy-path-for-content-editing)
+  - [Exercises](#exercises)
+- [CNX](#cnx)
+- [Textbooks](#textbooks)
+- [Customer Support](#customer-support)
+- [Gantt Chart Structure](#gantt-chart-structure)
+
 # Tutor
 
 Roles: **Leads**, **UX**, **DevLead**, **Dev**, **QA**, **CS** (Customer Support), **Devops**, **Anyone**
@@ -64,7 +79,7 @@ Anyone can suggest changes to a story. It should be easy, but include discussion
   - label is removed
 
 
-## Bug report
+## Bug Report
 
 Anyone can submit a bug report. It should have detailed info on what happened, things like browser, OS, screen size, steps that happened, what was sent/received from the server to help diagnose.
 
@@ -117,7 +132,7 @@ Often an entire story cannot be completed as one PR.
 1. **QA** ...
 
 
-## Multiple repositories
+## Multiple Repositories
 
 Many Stories require BE and FE changes which require changes in multiple repositories.
 This is similar to "Partially Complete a Story".
@@ -143,24 +158,7 @@ This is similar to "Partially Complete a Story".
 1. **QA** ...
 
 
-# CNX
-
-CNX workflow should be similar to tutor's. Some differences:
-
-- it may be able to merge BE changes without the corresponding FE changes yet
-- bugs come from the Internet, rather than internally, so no recordo, but rest should be the same
-
-
-# Textbooks
-
-Textbook development usually occurs on a long-running PR where all the **Dev**'s contribute.
-
-Usually, work is done on a single book, or a family of books.
-
-Sometimes, refactoring work is done which involves all the books.
-
-
-# Content
+# Book Content / Exercise Editing
 
 The content team works with the CNXML content for books and Exercise spreadsheets that come in from W&N.
 
@@ -170,7 +168,7 @@ Some of the tasks are to fix CNXML/Exercise markup, publish the book/Exercises, 
 
 DMS' need to edit many CNXML files, quickly verify their changes worked, and then publish them in batch into Legacy CNX.
 
-The _"magic"_ to generate the PDFs is: use GitHub's webhooks and a **TransformService** instance. This generates a PDF **and** provides a link to the PDF whenever changes are pushed up to GitHub. _<small>ex: See the little green checkbox or "Show all Checks" link in https://github.com/openstax/tutor-js/pull/914 . The link would go to the PDF instead</small>_
+The _"magic"_ to generate the PDFs is: use GitHub's webhooks and a _simple_ **TransformService** instance. This generates a PDF **and** provides a link to the PDF whenever changes are made in GitHub. _<small>ex: See the little green checkbox or "Show all Checks" link in https://github.com/openstax/tutor-js/pull/914 . The link would go to the PDF instead</small>_
 
 1. **Alina**
   - uploads the book from W&N (`complete.zip`) into the `textbooks` repository on GitHub
@@ -193,11 +191,28 @@ The _"magic"_ to generate the PDFs is: use GitHub's webhooks and a **TransformSe
 ## Exercises
 
 
+# CNX
+
+CNX workflow should be similar to tutor's. Some differences:
+
+- it may be able to merge BE changes without the corresponding FE changes yet
+- bugs come from the Internet, rather than internally, so no recordo, but rest should be the same
+
+
+# Textbooks
+
+Textbook development usually occurs on a long-running PR where all the **Dev**'s contribute.
+
+Usually, work is done on a single book, or a family of books.
+
+Sometimes, refactoring work is done which involves all the books.
+
+
 # Customer Support
 
 CS Needs to know what features are coming up, what bugs are fixed, and workarounds to tell users.
 
-# Gantt Chart structure:
+# Gantt Chart Structure
 
 Each bar should contain the following colored segments (from the kanban columns):
 
