@@ -264,6 +264,7 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 - [x] see what features will be (easier than were) deployed to QA before testing starts (use rev.txt in the comparison)
   - [x] show the list of **issues** included (via `/since/:sha/:sha`) (not the PR's; or maybe toggle option)
   - Example: http://philschatz.com/gh-board/#/r/openstax/tutor-js/since/v0.2.0/master
+  - Screenshot and flow description: https://github.com/philschatz/gh-demo/issues/455
   - A message in `#deployments` would autogenerate this link so QA and/or devs can see
 - [x] link an issue to a PR
 - [x] see who's working on what
