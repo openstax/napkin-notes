@@ -166,8 +166,29 @@ The content team works with the CNXML content for books and Exercise spreadsheet
 
 Some of the tasks are to fix CNXML/Exercise markup, publish the book/Exercises, update the downloadable PDFs, and update various websites like openstaxcollege.org.
 
+### Happy Path for Content Editing
 
-### Fix markup
+DMS' need to edit many CNXML files, quickly verify their changes worked, and then publish them in batch into Legacy CNX.
+
+The _"magic"_ to generate the PDFs is: use GitHub's webhooks and a **TransformService** instance. This generates a PDF **and** provides a link to the PDF whenever changes are pushed up to GitHub. _<small>ex: See the little green checkbox or "Show all Checks" link in https://github.com/openstax/tutor-js/pull/914 . The link would go to the PDF instead</small>_
+
+1. **Alina**
+  - uploads the book from W&N (`complete.zip`) into the `textbooks` repo
+  - creates Issues which have checklists of things that need to be done (ie `#123`)
+1. **DMS**
+  - creates a branch using the GitHub website
+  - edits online or uses `git` to download the books locally
+  - creates a PullRequest
+  - adds the text `fixes #123` to the body of the PullRequest
+    - use `refs #123` if all the checklist items will not be completed yet
+1. **TransformService**
+  - notices the PR and generates PDFs for the books that changed
+  - puts a link to the PDFs in the GitHub PullRequest
+1. **Alina**
+  - reviews the PDF and CNXML
+  - merges the PullRequest (which may automatically close the Issue)
+  - chats `/publish textbooks#master/physics to staging.cnx` (so other people like tutor BE folks will see)
+    - (this could also be done automatically when the PullRequest is merged; the bot would just says so in `#deployments`)
 
 ### Exercises
 
@@ -415,4 +436,3 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 
 - [ ] add code coverage
 - [ ] make common tasks
-
