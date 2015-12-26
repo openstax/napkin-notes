@@ -260,22 +260,22 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 ## What do people need to do with gh-board?
 
 - [x] see how far along a set of milestones are (Gantt chart)
+- [x] prioritize (star labels)
+- [x] see what features will be (easier than were) deployed to QA before testing starts (use rev.txt in the comparison)
+  - [x] show the list of **issues** included (via `/since/:sha/:sha`) (not the PR's; or maybe toggle option)
+  - Example: http://philschatz.com/gh-board/#/r/openstax/tutor-js/since/v0.2.0/master
+  - A message in `#deployments` would autogenerate this link so QA and/or devs can see
+- [x] link an issue to a PR
+- [x] see who's working on what
+- [x] recordo can report a bug (proof of concept)
 - [ ] show which PR's are missing info (time, link to issue in a milestone)
 - [ ] show time spent on a milestone (maybe by user?)
 - [ ] bulk add/edit tags
 - [ ] search all/closed tickets (all repos)
   - dropdown with checkboxes to search a subset of repos
-- [ ] prioritize (star labels)
 - [ ] merge a PR
-- [ ] see what features will be (easier than were) deployed to QA before testing starts (use rev.txt in the comparison)
-  - [x] show the list of **issues** included (via `/since/:sha/:sha`) (not the PR's; or maybe toggle option)
-  - Example: `http://philschatz.com/gh-board/#/r/openstax/tutor-js/since/v0.2.0/master`
-  - Message in `#deployments` would autogenerate this link so QA and/or devs can see
-- [x] link an issue to a PR
-- [x] see who's working on what
 - merge an issue (& all PR's)
 - maybe reorder the backlog???
-- [x] recordo can report a bug (proof of concept)
 - show all the fixes pertaining to an issue (so QA can "merge" BE and FE tickets at the same time)
 - [ ] deploy a ticket (all PR's that "fix" the ticket)
   - trigger a deploy from gh-board (GH tells you the deployment status)
