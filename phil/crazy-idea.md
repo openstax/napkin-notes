@@ -1,6 +1,6 @@
 # Workflow
 
-(we don't have to use all these steps; this is just a "vision") Using another service's API would be annoying :smile:
+(we don't have to use all these steps; this is just a "vision" :smile:)
 
 - [Tutor](#tutor)
   - [Happy Path (FE example)](#happy-path-fe-example)
