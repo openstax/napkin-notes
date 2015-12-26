@@ -1,3 +1,189 @@
+# Workflow
+
+(we don't have to use all these steps; this is just a "vision") Using another service's API would be annoying :smile:
+
+## Tutor
+
+Roles: **Leads**, **UX**, **DevLead**, **Dev**, **QA**, **CS** (Customer Support), **Devops**, **Anyone**
+
+Kanban Columns: `Triage`, `Ready to Design`, `Ready to Code`, `WIP` (Work in Progress), `Ready to Review`, `Ready to QA`
+
+**Notation:** Roles are **bold**, sequences that are the same as the happy path just have `...`, and steps that are the same in the Happy-Path but are listed _for context_ are in <sub>smaller text</sub>
+
+### Happy Path (FE example)
+
+First, all the steps of getting a story out to the users. No hangups here; those come later.
+
+1. **Leads**
+  - write stuff in GDocs
+  - convert epics to Milestones
+  - convert stories to Issues with label "Story"
+    - Issue label is: `[CC1.04.001] Story Title Goes Here`
+    - contains checklist of items that need to be done by UX/FE/BE
+    - move to `Ready to Design`, or `Ready to Code` column
+1. **UX**
+  - claims Issue (`#123`)
+  - adds mockups to the Issue body
+  - checks the "UX" item in the TODO section of the Issue
+  - moves to `Ready to Code` column
+1. **DevLead** assigns owner
+1. **Dev**
+  - moves `#123` to `WIP` column
+  - codes...
+  - creates a PR (`#234`)
+  - adds `fixes #123` to PR body
+  - chats `/deploy tutor-js#234 to dev` to test
+  - adds `<tt>4</tt>` to mark the hours worked
+  - checks the "FE" item in the TODO section of the Issue
+  - moves PR (and automatically the Issue) to `Ready to Review`
+1. **Reviewer**
+  - checks code
+  - tests code by chatting `/deploy tutor-js#234 to dev`
+  - moves PR (& Issue) to `Ready to QA`
+1. **QA**
+  - chats `/deploy tutor-js#234 to qa` to test
+  - merges the PR and closes the issue
+1. **PM**
+  - checks the Gantt Chart and sees where to help
+1. **QA**
+  - chats `/deploy tutor-js/master to staging` to doomsday test
+  - chatbot responds with link to see all Issues that are in the commit diff
+  - determines which tests need to be run from ^^^
+  - tells testers to create issues with the label "doomsday"
+
+
+### Change Request / Blocker
+
+Anyone can suggest changes to a story. It should be easy, but include discussion with all interested parties.
+
+1. **Anyone**
+  - adds `Change Request` or `BLOCKER` label on the Story Issue
+  - adds a comment describing the change/problem (`/cc @people`)
+  - (discussion happens)
+  - Issue body is updated
+  - label is removed
+
+
+### Bug report
+
+Anyone can submit a bug report. It should have detailed info on what happened, things like browser, OS, screen size, steps that happened, what was sent/received from the server to help diagnose.
+
+1. **Anyone**
+  - tests on a machine
+  - clicks "Create Issue" in recordo
+    - (could be configured to add a specific label like `doomsday-jan`)
+  - creates an Issue
+    - moves to `Triage` column
+1. **DevLead** ...
+1. ...
+
+### Hotfix
+
+A Hotfix needs to be based on what is on production but should end up on master.
+
+1. **Dev**
+  - checks production rev.txt to get production commit
+  - creates new branch based on the commit
+  - writes fix
+  - tests by chatting `/deploy tutor-js/hotfix-branch-name to dev`
+  - creates PR to `#master`
+    - adds label `HOTFIX`
+1. **Reviewer** ...
+1. **QA** ...
+1. **Devops** deploys the new commit to production
+
+
+### Partially Complete a Story
+
+Often an entire story cannot be completed as one PR.
+
+1. **Leads** ...
+1. **UX** ...
+1. **DevLead** ...
+1. **Dev**
+  - ...
+  - <sub>creates a PR (`#234`)</sub>
+  - adds `refs #123` to PR body (_instead of `fixes #123`_)
+  - <sub>chats `/deploy tutor-js#234 to dev` to test</sub>
+  - ...
+  - moves PR (but **not** the Issue) to `Ready to Review`
+1. **Reviewer**
+  - ...
+  - moves PR (but **not** the Issue) to `Ready to QA`
+1. **QA**
+  - <sub>chats `/deploy tutor-js#234 to qa` to test</sub>
+  - merges the PR but does **not** close the Issue
+1. **PM** ...
+1. **QA** ...
+
+
+### Multiple repositories
+
+Many Stories require BE and FE changes which require changes in multiple repositories.
+This is similar to "Partially Complete a Story".
+
+1. **Leads** ...
+1. **UX** ...
+1. **DevLead** ...
+1. **Dev** (BE)
+  - ...
+  - <sub>creates a PR (`#234`)</sub>
+  - adds `refs #123` to PR body
+  - ...
+  - moves PR (and but **not** the Issue) to `Ready to Review`
+1. **Reviewer** (BE)
+  - ...
+  - moves PR (but **not** the Issue) to `Ready to QA`
+1. **Dev** (FE) ... same as BE **Dev**
+1. **Reviewer** (FE) ... same as BE **Reviewer**
+1. **QA**
+  - chats `/deploy tutor-js#234 tutor-server#345 to qa` to test
+  - merges the PRs and closes the Issue
+1. **PM** ...
+1. **QA** ...
+
+
+## CNX
+
+CNX workflow should be similar to tutor's. Some differences:
+
+- it may be able to merge BE changes without the corresponding FE changes yet
+- bugs come from the Internet, rather than internally, so no recordo, but rest should be the same
+
+
+## Textbooks
+
+Textbook development usually occurs on a long-running PR where all the **Dev**'s contribute.
+
+Usually, work is done on a single book, or a family of books.
+
+Sometimes, refactoring work is done which involves all the books.
+
+
+## Content
+
+The content team works with the CNXML content for books and Exercise spreadsheets that come in from W&N.
+
+Some of the tasks are to fix CNXML/Exercise markup, publish the book/Exercises, update the downloadable PDFs, and update various websites like openstaxcollege.org.
+
+
+### Fix markup
+
+### Exercises
+
+
+## Customer Support
+
+CS Needs to know what features are coming up, what bugs are fixed, and workarounds to tell users.
+
+## Gantt Chart structure:
+
+Each bar should contain the following colored segments (from the kanban columns):
+
+`[{COMPLETED}{BLOCKED}{NEEDS_DESIGN}{NEEDS_DEV}{WORK_IN_PROGRESS}{QA}{uncategorized}]``
+
+---
+
 # Requirements gathering questions
 
 (with examples. bold is the type of user answering the question and what I think they might bring up)
@@ -146,76 +332,6 @@ by default:
 ## Budgeting/Finance/Reporting
 
 - how close are we to hitting target dates/$$$
-
----
-
-I know GitHub's API like the back of my hand. Learning a bunch of other API's to pull data out would be annoying/impossible.
-
-
-# Proposed ideal flow (vision)
-
-1. **PM's** create stories and epics in GDocs
-2. GDocs are converted to MarkDown and added to a GH repo so "Change Requests" (PR's) can be made [^convert-to-markdown]
-2. **Norm** pushes a button to create tickets in the various repos (Norm has some export thingy/process)
-  - if it's BE then it goes into tutor-server by default
-  - the title is `[CC2.001.123] Title`
-  - it is automatically assigned to a milestone (epic)
-  - let's say the ticket id is `#123`
-3. **developer** creates a _WIP Pull Request_
-  - the title of the PR says `Fixes #123`
-  - let's say the PR id is `#234`
-4. **developer** tests by chatting with hubot and saying `deploy tutor-js#234 to dev`
-5. **developer** moves the PR (and automatically, the issue) to a "Review" kanban column
-  - and puts in the PR/issue the time spent
-6. **code reviewer** checks the code and moves the PR (and automatically, the issue) to a "QA" kanban column
-7. **QA** tests by chatting with hubot and saying `deploy tutor-js#234 to qa`
-8. **QA** merges the pull request
-  - The issue is automatically closed
-9. **Devops** at some point pushes to production
-
-# Differences from "Ideal"
-
-- **QA** could reject the PR. They would move the ticket (and automatically, the PR) back to another kanban column (WIP, rejected, whatevs)
-- **developer** could mark the ticket as a duplicate (by linking to the other ticket)
-- **developer** could mark the PR as blocked by adding a label
-
-
-# Pitfalls
-
-## What if the ticket is in the wrong repo?
-
-- gh-board has the ability to move a ticket from 1 repo to another (Create with a link to the old issue, close the old issue)
-
-## What if we need to add a new story?
-
-- Create it in the GDoc and tell **Norm** to "Press the export button"
-
-## How can I see the progress of each epic?
-
-- I'll make a gh-board screen that pulls all open/closed tickets in a milestone and time spent to make a graph
-
-## What about bugfixes?
-
-- **developer** does the usual (find the commit on prod, open a new PR to master) but the command to hubot for them and **QA** changes to be "deploy to dev nomerge" (so the latest master isn't used)
-
-## What about textbook development?
-
-## What about helping QA know what to target (from looking at the files changed)?
-
-- the `src/` directory names correspond to the different screens in the app.
-
-# TODO's
-
-## hubot
-
-- add support for `deploy [X] to [Y] [nomerge]`
-  - support environment variables to configure which servers to use or rake tasks to run
-
-## gh-board
-
-- ability to move tickets to a different repo
-- stats page based on milestone(s) (epics)
-
 
 ---
 
