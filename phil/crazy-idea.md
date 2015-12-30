@@ -85,9 +85,11 @@ Anyone can submit a bug report. It should have detailed info on what happened, t
 
 1. **Anyone**
   - tests on a machine
+  - creates a screenshot in the clipboard (_not_ "Save to Desktop", find the file, drag it into the right tab, drop it into the area)
   - clicks "Create Issue" in recordo
     - (could be configured to add a specific label like `doomsday-jan`)
   - creates an Issue
+    - pastes the screenshot (from the clipboard) into the text box; easy-peasy
     - moves to `Triage` column
 1. **DevLead** ...
 1. ...
