@@ -216,10 +216,13 @@ CS Needs to know what features are coming up, what bugs are fixed, and workaroun
 
 # Gantt Chart Structure
 
+Eacch bar should show how many Issues are completed and what state they are in. The state color corresponds to the color of the label in GitHub (similar to pivotal's progress bars).
+
 Each bar should contain the following colored segments (from the kanban columns):
 
 `[{COMPLETED}{BLOCKED}{NEEDS_DESIGN}{NEEDS_DEV}{WORK_IN_PROGRESS}{QA}{uncategorized}]``
 
+<!--
 ---
 
 ---
@@ -421,6 +424,7 @@ Better cache invalidation on test servers...
 [^convert-to-markdown]: http://thiscouldbejd.github.io/Gabriel/ (an app you can easily drop in to any GDoc, but does not post to org repos) or http://lifehacker.com/this-script-converts-google-documents-to-markdown-for-e-511746113 and example (which emails you when you run) https://docs.google.com/document/d/1iSk08hW2rd793xhcSDg_qUVoVjQvc4sBHY6w3Ik7tVA and
 Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/2015-12-10-_phil:-Copy-of-CC-Epic-08---Students-performing-assignments-(with-ConvertToMarkdown-script).md
 
+-->
 
 # Holiday Work
 
