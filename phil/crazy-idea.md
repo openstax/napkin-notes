@@ -471,4 +471,7 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 ## Selenium
 
 - [ ] add code coverage
+  - [x] instrument the JS files with Istanbul
+  - [x] record/concatenate the coverage info from all the tests
+  - [ ] save a report file to coveralls or an `.lcov` file
 - [ ] make common tasks
