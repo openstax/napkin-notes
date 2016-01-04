@@ -187,7 +187,8 @@ The _"magic"_ to generate the PDFs is: use GitHub's webhooks and a _simple_ **Tr
 1. **Alina**
   - reviews the PDF and CNXML
   - merges the PullRequest _<small>(which may automatically close the Issue)</small>_
-  - chats `/publish textbooks#master/physics to staging.cnx` (so other people like tutor BE folks will see)
+  - chats `/publish textbooks/master:col11406_physics to staging.cnx` (so other people like tutor BE folks will see)
+    - this uploads the new content stored in the GitHub repo into staging.cnx
     - _<small>(this could also be done automatically when the PullRequest is merged; the bot would just say so in `#deployments` chat channel)</small>_
 
 ## Exercises
