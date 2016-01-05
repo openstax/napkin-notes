@@ -147,8 +147,10 @@ after an ecosystem is assigned to a course
 (right? not after import, right?).
 
 There are a few ways to fix this problem:
+
 * harden the above code against missing values
 * assign initial values when questions are imported to BigLearn
+
 Since these questions are already in BigLearn,
 it seems that the former is the best (only?) option...
 
