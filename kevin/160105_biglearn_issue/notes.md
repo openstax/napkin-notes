@@ -110,12 +110,12 @@ def _compute_next_questions(learner_id,
     ...
     # Get difficulties from knowledge store
     difficulties = knowledge.get_mu(question_ids)
-    ## p len(difficulties)  #=> 0  <-- problem 2!
+    ## p difficulties  #=> []  <-- problem 2!
 
     # Get clues from knowledge store
     tag_ids = sorted(set((t for _, t, _ in question_tag_scores)))
     clues = knowledge.get_c_matrix(learner_id, tag_ids)
-    ## p len(clues)  #=> 0 <-- looks fishy, but handled inside adaptive_question_recommendation
+    ## p clues  #=> [] <-- looks fishy, but handled inside adaptive_question_recommendation
     ...
     result = adaptive_question_recommendation(question_tag_scores,
                                               difficulties,
