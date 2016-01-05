@@ -139,7 +139,7 @@ Adding new values happens
 and resetting the whole table happens
 [here](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/db/knowledge/model.py#L305-L328).
 
-Scanning all four BigLearn repos shows that updates only happen in
+Scanning all four `BigLearn` repos shows that updates only happen in
 [fast_sparfa_tag](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/jobs/workflows/algorithms.py#L15),
 which suggests this problem should disappear 
 after the first run of `fast_sparfa_tag`
@@ -149,9 +149,9 @@ after an ecosystem is assigned to a course
 There are a few ways to fix this problem:
 
 * harden the above code against missing values
-* assign initial values when questions are imported to BigLearn
+* assign initial values when questions are imported to `BigLearn` (and backfill missing values)
 
-Since these questions are already in BigLearn,
-it seems that the former is the best (only?) option...
+Since these questions are already in `BigLearn`,
+it seems that the former is the best option...
 
 
