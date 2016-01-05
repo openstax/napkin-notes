@@ -86,3 +86,44 @@ def adaptive_question_recommendation(question_tag_scores,
     ...
     return result
 ```
+Again it seems that the caller is dooming this function to failure.
+
+Moving up the stack to
+[projections.py](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/api/endpoints/projections.py#L161-L167):
+```python
+def _compute_next_questions(learner_id,
+                            question_ids,
+                            number_of_questions,
+                            target_success_probability=0.5,
+                            allow_repetition=True,
+                            include_spy_values=False):
+    ## p len(question_ids)    #=> 48  <-- number of questions in pool (not 42)
+    ## p number_of_questions  #=> 1   <-- how many we want, not how many we have above
+    ...
+    # Get question tag scores from knowledge store
+    question_tag_scores = knowledge.get_w_matrix_for_questions(question_ids)
+    ## p question_tag_scores  #=> []  <-- problem 1!
+
+    # Get the Y matrix from realtime and facts for this learner
+    responses = response.get_responses_for_learner(learner_id)
+    ## p len(responses)  #=> 42  <-- number of student respones (not 48)
+    ...
+    # Get difficulties from knowledge store
+    difficulties = knowledge.get_mu(question_ids)
+    ## p len(difficulties)  #=> 0  <-- problem 2!
+
+    # Get clues from knowledge store
+    tag_ids = sorted(set((t for _, t, _ in question_tag_scores)))
+    clues = knowledge.get_c_matrix(learner_id, tag_ids)
+    ## p len(clues)  #=> 0 <-- looks fishy, but handled inside adaptive_question_recommendation
+    ...
+    result = adaptive_question_recommendation(question_tag_scores,
+                                              difficulties,
+                                              clues,
+                                              responses,
+                                              number_of_questions,
+                                              target_success_probability,
+                                              config) ## KA-BOOM!
+    ...
+    return results
+```
