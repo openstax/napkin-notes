@@ -144,7 +144,7 @@ Scanning all four `BigLearn` repos shows that updates only happen in
 which suggests this problem should disappear 
 after the first run of `fast_sparfa_tag`
 after an ecosystem is assigned to a course
-(right? not after import, right?).
+(right? maybe? hopefully the questions don't actually need to be answered to work...).
 
 There are a few ways to fix this problem:
 
