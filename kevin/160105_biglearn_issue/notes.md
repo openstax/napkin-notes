@@ -154,4 +154,9 @@ There are a few ways to fix this problem:
 Since these questions are already in `BigLearn`,
 it seems that the former is the best option...
 
-
+I think doing something like
+[this](https://github.com/openstax/biglearn-algs/blob/master/biglearn/algorithms/sparfa/tag/minic_box.py#L174-L176)
+for `question_topics` and `mastery`
+will get us by for now
+without covering up too many other potentially real issues.
+The trick will be getting the dimensions of the matrices correct.
