@@ -187,19 +187,14 @@ Breakpoint 7 at /var/src/biglearn-0.2.0/biglearn/db/knowledge/model.py:213
 (81047761, 2831, u'apbio-ch19-s03-aplo-1-5')
 ```
 
-=== The following might no longer be valid ===
+All of this, plus the `BigLearnFlower` admin API,
+points the `BigLearn` worker threads being hosed.
 
-There are a few ways to fix this problem:
+After resetting them
+(thanks Chris!)
+and running a "full refresh",
+it seems that `BigLearn`
+is now populating the W and C matrix data.
 
-* harden the above code against missing values
-* assign initial values when questions are imported to `BigLearn` (and backfill missing values)
-
-Since these questions are already in `BigLearn`,
-it seems that the former is the best option...
-
-I think doing something like
-[this](https://github.com/openstax/biglearn-algs/blob/master/biglearn/algorithms/sparfa/tag/minic_box.py#L174-L176)
-for `question_topics` and `mastery`
-will get us by for now
-without covering up too many other potentially real issues.
-The trick will be getting the dimensions of the matrices correct.
+There a some minor errors in the `PaperTrail` logs,
+but I believe those existed previously.
