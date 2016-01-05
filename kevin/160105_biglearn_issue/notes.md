@@ -43,3 +43,46 @@ def sparfac_with_matrices(responses, question_topics, mastery, config=None):
 
     return C
 ```
+
+So we can see
+that this function is doomed to fail
+because it's being fed empty W (`question_topics`) and C (`mastery`) matrices.
+
+The moving back up the stack trace to
+[etesr.py](https://github.com/openstax/biglearn-algs/blob/master/biglearn/algorithms/tesr/etesr.py#L104)
+shows:
+```python
+def adaptive_question_recommendation(question_tag_scores,
+                                     question_difficulties,
+                                     clues,
+                                     responses,
+                                     number_of_questions=1,
+                                     target_success_probability=0.5,
+                                     config=None):
+    ## p question_tag_scores   #=> []
+    ## p question_difficulties #=> []
+    ## p clues                 #=> []
+    ## p len(responses)        #=> 42
+    ...
+    if responses:
+        ymatrix, tmatrix, _, learners = assemble_ymatrix_and_tmatrix(
+            responses, questions)
+    else:
+        ymatrix = np.full((len(questions), 1), np.nan)
+        tmatrix = np.full((len(questions), 1), None)
+        learners = [None]
+
+    if clues:
+        cmatrix, _, _ = assemble_cmatrix(clues, tags, learners)
+    else:
+        cmatrix = np.zeros((len(tags), 1))
+
+    conf = get_conf(tesr_defaults, config)
+    ## p conf.update_clues  #=> True
+    if conf.update_clues and responses:
+        from biglearn.algorithms.sparfa.tag.minic_box import \
+            sparfac_with_matrices as sparfac
+        cmatrix = sparfac(ymatrix, wmatrix, cmatrix, conf.sparfac_config)  ## KA-BOOM!
+    ...
+    return result
+```
