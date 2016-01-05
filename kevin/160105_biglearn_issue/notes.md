@@ -127,3 +127,14 @@ def _compute_next_questions(learner_id,
     ...
     return results
 ```
+
+So the `knowledge` store doesn't know about W and mu data for these questions.
+Looking in
+[db/knowledge/model.py](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/db/knowledge/model.py#L193-L228)
+shows it hitting the database and coming up empty.
+
+Where do these values get set?
+Adding new values happens
+[here](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/db/knowledge/model.py#L442-L470),
+and resetting the whole table happens
+[here](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/db/knowledge/model.py#L305-L328).
