@@ -9,7 +9,7 @@ Here is a screenshot of the issue that I got from Kajal:
 ![Kajal's screenshot](https://github.com/openstax/napkin-notes/blob/master/kevin/160105_biglearn_issue/screenshot_160104.png)
 
 Here is an edited stack trace from `BigLearn`
-(the full trace can be seen
+(the full trace and more can be seen
 [here](https://gist.github.com/pumazi/4caaed3e1d8f08084a81),
 which was acquired by Michael M. using some nifty python tricks):
 ```
@@ -25,3 +25,21 @@ which was acquired by Michael M. using some nifty python tricks):
 IndexError: invalid index into a 0-size array
 ```
 
+The following is an annotated summary of the [code](https://github.com/openstax/biglearn-algs/blob/master/biglearn/algorithms/sparfa/tag/minic_box.py#L201)
+causing the error:
+```python
+def sparfac_with_matrices(responses, question_topics, mastery, config=None):
+    ## p len(responses)         #=> 42
+    ## p question_topics.shape  #=> (0, 1)
+    ## p mastery.shape          #=> (0, 1)
+    ...
+    for nn in range(0, N): ## p N   #=> 1
+        ## p nn   #=> 0
+        responses_local = responses[:, nn: nn + 1]  ## p responses_local.shape  #=> (42, 1)
+        ind = np.where(responses_local >= 0)[0]     ## p ind.shape              #=> (42,)
+        ...
+        w = question_topics[ind, :]  ## KA-BOOM!
+        ...
+
+    return C
+```
