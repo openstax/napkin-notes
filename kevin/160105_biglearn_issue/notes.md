@@ -146,6 +146,49 @@ after the first run of `fast_sparfa_tag`
 after an ecosystem is assigned to a course
 (right? maybe? hopefully the questions don't actually need to be answered to work...).
 
+By poking around in the database,
+I've established that
+`BigLearn` knows about all the questions in the pool,
+but doesn't know about any topics (LOs) associated with those questions:
+```
+>>> pdb.set_trace()
+--Return--
+> <stdin>(1)<module>()->None
+(Pdb) b biglearn/db/knowledge/model.py:213
+Breakpoint 7 at /var/src/biglearn-0.2.0/biglearn/db/knowledge/model.py:213
+(Pdb) c
+>>> client.get(uri_bad)
+> /var/src/biglearn-0.2.0/biglearn/db/knowledge/model.py(213)get_w_matrix_for_questions()
+-> stmt = db.select([qmatrix.c.id,
+(Pdb) question_list
+[(u'//exercises-qa.openstax.org/exercises/7003', 1), (u'//exercises-qa.openstax.org/exercises/7004', 1), (u'//exercises-qa.openstax.org/exercises/7005', 1), (u'//exercises-qa.openstax.org/exercises/7006', 1),
+...
+(u'//exercises-qa.openstax.org/exercises/7153', 1), (u'//exercises-qa.openstax.org/exercises/7154', 1), (u'//exercises-qa.openstax.org/exercises/7155', 1), (u'//exercises-qa.openstax.org/exercises/7156', 1)]
+(Pdb) ks_qmatrix_ids = db.select([qmatrix.c.id]).select_from(qmatrix).where(qmatrix.c.question_id.in_(question_id_list))
+(Pdb) kr_qmatrix_ids = conn.execute(ks_qmatrix_ids).fetchall()
+(Pdb) kr_qmatrix_ids
+[(5879,), (5882,), (5883,), (5894,), (5895,), (5896,), (5949,), (6096,), (6097,), (6100,), (6106,), (6114,), (6127,), (6378,), (6384,), (6428,), (6429,), (6507,), (6508,), (6510,), (6511,), (6512,), (6513,), (6514,), (6515,), (6516,), (6567,), (6568,), (6569,), (6570,), (6571,), (6572,), (6573,), (6574,), (6605,), (6606,), (6607,), (6608,), (6610,), (6611,), (6612,), (6613,), (6708,), (6709,), (6827,), (6950,), (6951,), (6952,)]
+(Pdb) len(kr_qmatrix_ids)
+48
+(Pdb) qmatrix_ids = [x[0] for x in kr_qmatrix_ids]
+(Pdb) qmatrix_ids
+[5879, 5882, 5883, 5894, 5895, 5896, 5949, 6096, 6097, 6100, 6106, 6114, 6127, 6378, 6384, 6428, 6429, 6507, 6508, 6510, 6511, 6512, 6513, 6514, 6515, 6516, 6567, 6568, 6569, 6570, 6571, 6572, 6573, 6574, 6605, 6606, 6607, 6608, 6610, 6611, 6612, 6613, 6708, 6709, 6827, 6950, 6951, 6952]
+(Pdb) ks_wmatrix_ids = db.select([wmatrix.c.id]).select_from(wmatrix).where(wmatrix.c.question_id.in_(qmatrix_ids))
+(Pdb) kr_wmatrix_ids = conn.execute(ks_wmatrix_ids).fetchall()
+(Pdb) kr_wmatrix_ids
+[]
+(Pdb) ks_wmatrix_ids = db.select([wmatrix.c.id]).select_from(wmatrix)
+(Pdb) kr_wmatrix_ids = conn.execute(ks_wmatrix_ids).fetchone()
+(Pdb) kr_wmatrix_ids
+(81047761,)
+(Pdb) ks_wmatrix_ids = db.select([wmatrix.c.id, wmatrix.c.question_id, wmatrix.c.tag_id]).select_from(wmatrix)
+(Pdb) kr_wmatrix_ids = conn.execute(ks_wmatrix_ids).fetchone()
+(Pdb) kr_wmatrix_ids
+(81047761, 2831, u'apbio-ch19-s03-aplo-1-5')
+```
+
+=== The following might no longer be valid ===
+
 There are a few ways to fix this problem:
 
 * harden the above code against missing values
