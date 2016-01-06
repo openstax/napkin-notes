@@ -27,9 +27,11 @@ Kanban Columns: `Triage`, `Ready to Design`, `Ready to Code`, `WIP` (Work in Pro
 
 ## Happy Path (FE example)
 
+**([SCREENCAST](https://drive.google.com/file/d/0B7-23yUTssvDOEkyY2lMZW9ETFk/view?usp=sharing))**
+
 First, all the steps of getting a story out to the users. No hangups here; those come later.
 
-1. **Leads**
+1. **Leads** **([SCREENCAST](https://drive.google.com/file/d/0B7-23yUTssvDWVYzaFo2aktsWkk/view?usp=sharing))**
   - write stuff in GDocs
   - convert epics to Milestones
   - convert stories to Issues with label "Story"
@@ -167,6 +169,8 @@ The content team works with the CNXML content for books and Exercise spreadsheet
 Some of the tasks are to fix CNXML/Exercise markup, publish the book/Exercises, update the downloadable PDFs, and update various websites like openstaxcollege.org.
 
 ## Happy Path for Content Editing
+
+**([SCREENCAST](https://drive.google.com/file/d/0B7-23yUTssvDMEpYWHd1SGtBMGM/view?usp=sharing))**
 
 DMS' need to edit many CNXML files, quickly verify their changes worked, and then publish them in batch into Legacy CNX.
 
