@@ -140,9 +140,9 @@ and resetting the whole table happens
 [here](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/db/knowledge/model.py#L305-L328).
 
 Scanning all four `BigLearn` repos shows that updates only happen in
-[fast_sparfa_tag](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/jobs/workflows/algorithms.py#L15),
+[sparfa_tag](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/jobs/workflows/algorithms.py#L15),
 which suggests this problem should disappear 
-after the first run of `fast_sparfa_tag`
+after the first run of `sparfa_tag`
 after an ecosystem is assigned to a course
 (right? maybe? hopefully the questions don't actually need to be answered to work...).
 
