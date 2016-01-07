@@ -198,3 +198,18 @@ is now populating the W and C matrix data.
 
 There a some minor errors in the `PaperTrail` logs,
 but I believe those existed previously.
+
+#### Root Cause
+
+It turns out that 
+the permissions on the `qmatrix` postgres table 
+were set incorrectly, akin to
+[this](http://stackoverflow.com/questions/15520361/permission-denied-for-relation)
+StackOverflow issue.
+
+Chris adjusted the permissions for the tables
+on each of the existing environments,
+and it seems that `BigLearn` is working again.
+The ansible scripts will be updated
+to prevent this from re-occurring in the future
+when/if new environments are created.
