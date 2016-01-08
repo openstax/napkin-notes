@@ -15,6 +15,8 @@ of various `sparfa` matrices:
 C = KxN = 10^3 * 10^6 * 10 = 10^10 bytes =  10GB (student conceptual mastery)
 W = KxQ = 10^3 * 10^4 * 10 = 10^7  bytes =  10MB (question conceptual content)
 S = QxN = 10^4 * 10^6 * 10 = 10^11 bytes = 100GB (scorecard/gradebook)
+
+NOTE: I'm using 10 bytes/double instead of 8 to make the math easier...
 ```
 The vast majority (>90%)
 of the entries in these matrices
