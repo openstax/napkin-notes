@@ -1,10 +1,6 @@
 Assuming:
-* 10 clicks per minute/user
-* 120 minutes/user/day
 * all users are in mainland US timezones
-* almost all users will use the system at some point in the evening (5-10pm)
 * total of 500,000 users
-
 
 The breakdown of population by timezone in the US is:
 ```
@@ -29,4 +25,10 @@ PST                     5-6    6-7     7-8    8-9   9-10
 So at peak usage,
 about 20% of all users will be using the system.
 
-
+Furthermore, let's assume
+10 actions/minute/user.
+At peak load, we'd expect
+roughly 2 actions/minute/user.
+For 500,000 users,
+that's 1,000,000 actions/minute
+(278 actions/second).
