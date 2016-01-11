@@ -7,7 +7,7 @@ used example less(css) from https://github.com/philschatz/book-collation/blob/ma
 
 Note that Phil`s thoughts in that repo include a variant markup language
 that is not actually HTML. The custom tag names sound very much like CNXML
-to me. They do have the advantage of making the rules much clearer: i.e.
+to me (PHIL: I did it for brevity :smile:). They do have the advantage of making the rules much clearer: i.e.
 
 ```less
 Book {
