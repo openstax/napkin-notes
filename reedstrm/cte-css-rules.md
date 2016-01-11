@@ -9,6 +9,7 @@ Note that Phil`s thoughts in that repo include a variant markup language
 that is not actually HTML. The custom tag names sound very much like CNXML
 to me. They do have the advantage of making the rules much clearer: i.e.
 
+```less
 Book {
     Chapter {
         Exercise.homework {
@@ -16,12 +17,15 @@ Book {
         }
     }
 }
+```
 
 Rather than:
 
+```less
 div[data-type="book"] div[data-type="chapter"] div[data-type="exercise"].homework {
   move-to: rs-123;
 }
+```
 
 Steps involved:
 
