@@ -28,6 +28,14 @@ div[data-type="book"] div[data-type="chapter"] div[data-type="exercise"].homewor
 }
 ```
 
+This may be implementable via 'detached rulsets' in less. Need to investigate.
+
+Another not-quite CSS feature is the ::div syntax. This is a new
+pseudo-selector we`re inventing that basically does ::after { content: <div>new
+stuff here } so we that the content moved or copied to pending() targets will
+be wrapped with a stylable div.
+
+
 Steps involved:
 
 - convert via `lessc` to css
@@ -49,9 +57,10 @@ diff types of exercises all numbered sequentially at chapter end)
 collation can be done in a single pass, provided that no copy/move can target
 an earlier point in the document (no move _up_). Can validate the RuleSet doc
 to be sure that every needed target is at least defined (need the doc to be
-sure that pending() rule acutally matches anything, though)
+sure that pending() rule actually matches anything, though)
 
-Aside: Perhaps can use move-to: "delete" as way to delete content? (special target) (PHIL: or just `display: none`?)
+_Aside_: Perhaps can use move-to: "delete" as way to delete content? (special target)
+_Aside2_: Phil suggests "display: none" as the CSS way to do that.
     
 numbering will require two passes, to allow for forward references. Numbering is a sub-case
 of link resolution, in general.
