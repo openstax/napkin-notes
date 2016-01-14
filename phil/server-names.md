@@ -1,6 +1,6 @@
 # Current agreed-upon names 
 
-(from a GDoc screenshot in an email FWD'd to me)
+(from a screenshot of a GDoc in an email FWD'd to me :smile:)
 
 Product | Dev | QA | Staging | Production
 --- | --- | --- | --- | ---
