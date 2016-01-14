@@ -1,4 +1,6 @@
-Current agreed-upon names (from a GDoc screenshot in an email FWD'd to me)
+# Current agreed-upon names 
+
+(from a GDoc screenshot in an email FWD'd to me)
 
 Product | Dev | QA | Staging | Production
 --- | --- | --- | --- | ---
@@ -27,6 +29,8 @@ textbook | textcode-dev.cnx.org | textcode-qa.cnx.org | |
 - Why `archive-qa` instead of `qa-archive`?
 
 # Naming suggestions
+
+(wouldn't have to move wholesale to this format :smile:)
 
 - `master.tutor.openstax` instead of `tutor-dev.openstax`
   - clear that it updates when master updates
