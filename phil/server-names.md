@@ -1,3 +1,5 @@
+Current agreed-upon names (from a GDoc screenshot in an email FWD'd to me)
+
 Product | Dev | QA | Staging | Production
 --- | --- | --- | --- | ---
 tutor | tutor-dev.openstax.org | tutor-qa.openstax.org | tutor-staging.openstax.org | tutor.openstax.org
@@ -7,6 +9,7 @@ cnx w editor | alpha.cnx.org | | | beta.cnx.org
 legacy | legacy-dev.cnx.org | | | legacy.cnx.org
 textbook | textcode-dev.cnx.org | textcode-qa.cnx.org | | 
  | textcode-dev#.cnx.org | | |
+
 
 # Questions
 
