@@ -15,7 +15,7 @@ textbook | textcode-dev.cnx.org | textcode-qa.cnx.org | |
 
 # Questions
 
-- What about other servers?
+- What about when other servers are added?
   - accounts.openstax.org
   - exercises.openstax.org
   - exchange.openstax.org
@@ -25,12 +25,12 @@ textbook | textcode-dev.cnx.org | textcode-qa.cnx.org | |
 - When do things update?
   - automatic? By user?
 - What datasets are on the various machines?
-- Security: Do we have to worry about cookies/sessions percolating since we're using subdomains?
+- Security: cookies/sessions
+  - do we want/not-want them to percolate since we're using subdomains?
 - Why `archive-qa` instead of `qa-archive`?
+  - maybe the latter is easier to type in browsers?
 
-# Naming suggestions
-
-(wouldn't have to move wholesale to this format :smile:)
+# Suggestion (prefix the production name)
 
 - `master.tutor.openstax` instead of `tutor-dev.openstax`
   - clear that it updates when master updates
