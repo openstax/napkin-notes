@@ -35,6 +35,15 @@ pseudo-selector we`re inventing that basically does ::after { content: <div>new
 stuff here } so we that the content moved or copied to pending() targets will
 be wrapped with a stylable div.
 
+We`re going to have to deal with rules that create not only new div`s but new
+pages as well: Table of Figures, Glossary, Selected Exercise Answers etc.
+Basically anything that is moved respective to the whole book will need a
+virtual-page to land on, and then will show up in the Table of Contents for the
+whole book.
+
+Going to need to define them with uuids, and declare that those uuids return
+something from archive in book context, but 404 outside that context. Also, no
+raw html for them, since they they only exist as cooked html. 
 
 Steps involved:
 
@@ -50,11 +59,17 @@ Two types of rules:
 - collation (moving/copying content)
 - numbering
 
-Collation must precede numbering, since in some cases, numbering happens in
-sequence in the post-collated document (out of order for original source - i.e.
-diff types of exercises all numbered sequentially at chapter end)
+Collation must both precede and follow numbering. In some cases, numbering
+happens in sequence in the post-collated document (out of order for original
+source - i.e.  diff types of exercises all numbered sequentially at chapter
+end) In other cases, the content is numbered in the parent`s context, and 
+that number "follows" the content to it`s new location - e.g. answers at the
+end-of-book are numbered by the exercise numbers that happen at end of chapter.
+On further consideration, I think this is a case of the "references" pattern - the
+local number is that assigned in a remote location, so we handle it in the
+link-reference cleanup pass.
 
-collation can be done in a single pass, provided that no copy/move can target
+Collation can be done in a single pass, provided that no copy/move can target
 an earlier point in the document (no move _up_). Can validate the RuleSet doc
 to be sure that every needed target is at least defined (need the doc to be
 sure that pending() rule actually matches anything, though)
@@ -62,16 +77,16 @@ sure that pending() rule actually matches anything, though)
 _Aside_: Perhaps can use move-to: "delete" as way to delete content? (special target)
 _Aside2_: Phil suggests "display: none" as the CSS way to do that.
     
-numbering will require two passes, to allow for forward references. Numbering is a sub-case
+Numbering will require two passes, to allow for forward references. Numbering is a sub-case
 of link resolution, in general.
 
-- first pass: 
+- first numbering pass: 
   1. count all the things (create counters for all object types RuleSet says to count)
   1. bake in the numbers (as a property indicating the computed sequential value -- will use CSS
-     to style actual representation in final doc)
+     to style actual representation in final doc ?)
   1. find all reference links (internal)
 
-- second pass:
+- second number/link resolution pass:
   1. fill all the references w/ appropriate value (may include baked-in numbering)
   1. _Aside:_ might use second pass to pull content back out of "delete" state, such as figures or
-     tables referenced in exercises when generating an exercise only or answer key PDF
+     tables referenced in exercises when generating an exerciser-only or answer-key PDF
