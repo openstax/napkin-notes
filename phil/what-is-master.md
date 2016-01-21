@@ -72,3 +72,21 @@ a change in `react-components` requires 1-line PR's (just change sha) to: `tutor
 If we only test on master then we'll have to make a teeny-tiny commit in CC and `webview`. It is inconceivable that it would be tested/reviewed before merging so folks just say "ok I'll just Merge", shortcutting the process for the sake of keeping the process.
 
 This introduced an important loophole: `webview` points to commits that **will not** exist in the future. If we delete the `gh-pages` branch then those commits in webviews' history will point to nowhere. We can fix this 1 issue but it is an example to illustrate the problem of requiring that code must be merged to `/master` before being tested.
+
+
+# Example chats of confusion
+
+From Jan 21:
+
+```
+kajal [2:31 PM] I have the changes from cnx for wed release
+      [2:31] Do we know the changes for Wednesday from FE and BE folks?
+dante [2:46 PM] I can tell you the BE changes if you tell me the date of the last deploy
+      [2:46] actually I can look it up...
+kajal [2:47 PM] ok
+phil [2:48 PM] what are the commits for the tutor/tutor-js wed release? (just whatever is on master right now, or yesterday@noon, yesterday@6p, or on qa)?
+kajal [2:51 PM] yes
+      [2:52] commits on qa
+      [2:52] that are in qa right now
+      [2:52] qa has master from yesterday I think
+```
