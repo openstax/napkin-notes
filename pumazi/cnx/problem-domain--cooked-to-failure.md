@@ -23,7 +23,7 @@ The question is, do we consider the cooked content procedure a factor in the ove
 
 ### Solution Y
 
-**tldr;** We remove the republish behavior in favor of a notification to the authoring system.
+**tl;dr** We remove the republish behavior in favor of a notification to the authoring system.
 
 Remove the problem by removing the behavior that causes the problem. By removing the republish behavior that happens as part of all publications, we remove any possible failure. This leaves means a publication will never fail from unrelated circumstances.
 
@@ -35,8 +35,22 @@ Currently, our *user notification system* is slightly unequipped to handle this 
 
 ### Solution H
 
-**tldr;** We try the republish behavior. If a failure occurs, we notify the authoring system.
+**tl;dr** We try the republish behavior. If a failure occurs, we notify the authoring system.
 
 This is similar to Solution Y except that we try to republish the content but gracefully fail and fall back to notifying the authoring systems.
 
 There is still a problem with this solution. It's now always going to be obvious/clear-cut that the RuleSets have succeeded or failed. Therefore, it may be better to always leave the republication up to the user.
+
+### Solution E
+
+**Accepted**
+
+**tl;dr** We try the republish behavior in a separate database transaction and log failures.
+
+We try to republish the content within a separate transaction. If the transaction failures, we log the failure and move on.
+
+cnx-publishing will need to be modified to do the republication process as individual transactions.
+
+The behavior within Zope will also need adjusted, but it's less clear to me what parts need changed. Somehow Zope will need to mark books that need cooked.
+
+(This solution came out of a discussion after scrum on 4-Feb-2016.)
