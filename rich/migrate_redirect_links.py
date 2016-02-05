@@ -6,7 +6,6 @@ from re import search
 # from the openstax college's mysql database to the
 # content management system's postgres database.
 
-
 mysql_settings = { 'user': 'root',
                    'host': 'localhost',
                    'db': 'osc',}
@@ -20,9 +19,9 @@ exclude_patterns = [ r'openstaxcollege.org']
 con = MySQLdb.connect(**mysql_settings)
 with con:
     cur = con.cursor()
-    cur.execute("SELECT id, url, short_code FROM links WHERE CHAR_LENGTH(url) <= 200")
+    cur.execute("SELECT id, url, short_code FROM links WHERE CHAR_LENGTH(url) <= 255")
     links = cur.fetchall()
-    cur.execute("SELECT id, url, short_code FROM links WHERE CHAR_LENGTH(url) > 200")
+    cur.execute("SELECT id, url, short_code FROM links WHERE CHAR_LENGTH(url) > 255")
     invalid_links = cur.fetchall()
 
 excluded_links = []
@@ -40,8 +39,11 @@ links = [ (dbid, url, 'l/' + short_code) for (dbid, url, short_code) in links ]
 
 with psycopg2.connect(**postgres_settings) as con:
     with con.cursor() as cur:
+        # Increase redirect_link column from 200 characters to 255
+        cur.execute("ALTER TABLE wagtailredirects_redirect ALTER redirect_link TYPE character varying(255)")
         cur.execute("SET CLIENT_ENCODING TO 'LATIN1';")
-        query = "INSERT INTO wagtailredirects_redirect (id, redirect_link, old_path, is_permanent) VALUES (%s, %s, %s, true)"
+        query = "INSERT INTO wagtailredirects_redirect (id, redirect_link, old_path, is_permanent) "\
+                "VALUES (%s, %s, %s, true)"
         cur.executemany(query,links)
 
 print("Any links not imported will be written to skipped_links.csv")
