@@ -15,6 +15,7 @@ postgres_settings = { 'database': 'openstax',
 
 exclude_patterns = [ r'openstaxcollege.org']
 
+LINK_PREFIX = 'l/'
 
 con = MySQLdb.connect(**mysql_settings)
 with con:
@@ -34,8 +35,8 @@ for link in links:
 links = [ link for link in links if link not in excluded_links] 
         
 
-# Include l/ prefix to short_codes to prevent potential routing conflicts
-links = [ (dbid, url, 'l/' + short_code) for (dbid, url, short_code) in links ]
+# Include prefix to short_codes to prevent potential routing conflicts
+links = [ (dbid, url, LINK_PREFIX + short_code) for (dbid, url, short_code) in links ]
 
 with psycopg2.connect(**postgres_settings) as con:
     with con.cursor() as cur:
