@@ -6,12 +6,25 @@ from re import search
 # from the openstax college's mysql database to the
 # content management system's postgres database.
 
-mysql_settings = { 'user': 'root',
-                   'host': 'localhost',
-                   'db': 'osc',}
+# Full list of mysql_settings can be found at 
+# http://mysql-python.sourceforge.net/MySQLdb.html#mysqldb
 
+mysql_settings = { 'user': 'root', 
+                   'host': 'localhost', 
+                   'db': 'osc', 
+#                   'passwd': None, 
+#                   'port': None, 
+#                   'unix_socket': None, 
+                   }
+
+# Full list of postgres_settings can be found ad
+# http://initd.org/psycopg/docs/module.html#psycopg2.connect
 postgres_settings = { 'database': 'openstax',
-                      'user': 'postgres',}
+                      'user': 'postgres',
+#                      'password', None,
+#                      'host', None,
+#                      'port', None,
+                       }
 
 exclude_patterns = [ r'openstaxcollege.org']
 
