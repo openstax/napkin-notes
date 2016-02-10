@@ -15,7 +15,7 @@ postgres_settings = { 'database': 'openstax',
 
 exclude_patterns = [ r'openstaxcollege.org']
 
-LINK_PREFIX = 'l/'
+LINK_PREFIX = '/l/'
 
 con = MySQLdb.connect(**mysql_settings)
 with con:
