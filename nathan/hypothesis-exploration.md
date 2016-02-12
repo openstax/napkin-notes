@@ -23,7 +23,7 @@ I've added a script tag onto webview.html.erb that loads embed.js from the serve
  * This loads the H sidebar on all Tutor views.
  * `window.annotator.destroy()` removes the sidebar, but then there's no way to re-create it
  * I've hacked in a reference to Sidebar so I could re-create it using identical arguments that main.js uses, but when I do so (after calling `destroy()`) the old app still has listeners bound and an infinitude loops between the two instances ensues.
- * So far I've been unable to figure out how they're observing DOM changes.  THere's quite a few references on Github issues to a `dom-text-mapper` plugin, but I can't find any references to it in the current source.
+ * So far I've been unable to figure out how they're observing DOM changes.  There are quite a few references on Github issues to a `dom-text-mapper` plugin, but I can't find any references to it in the current source.
    * It does notice when the DOM changes and the annotations indicator switches to the "detached" state.  Ideally I can somehow plug into this and reload the annoations for the new page when this occurs.  This may be difficult though since the annoations are loaded from the angular side of the app.
 
 
