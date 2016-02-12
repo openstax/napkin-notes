@@ -17,7 +17,7 @@ All of their documentation is written for using Docker containers, but it’s fa
 The annotation app (the pop-out sidebar) is written in Angular, and is loaded inside an iframe which is revealed when the sidebar is popped out.  The sidebar itself is powered by plain jQuery events as far as I can see.
  * Since it's jQuery it's easy to show/hide it using `window.annotator.frame.toggle(true/false)`
 
-The really interesting bits of Hypothes.is are the third party libraries that they’ve integrated.  The highlighting annotations are powered by the open-source [Annotator Project]( and they are stored as web annotations using the Text Quote Anchor library. https://hypothes.is/blog/supporting-open-annotation/
+The really interesting bits of Hypothes.is are the third party libraries that they’ve integrated.  The highlighting annotations are powered by the open-source [Annotator Project](http://annotatorjs.org) and they are stored as web annotations using the [Text Quote Anchor library](https://hypothes.is/blog/supporting-open-annotation/).
 
 I've added a script tag onto webview.html.erb that loads embed.js from the server.
  * Strangely script tag must be located after the csrf meta tag, otherwise it overrides them and crsf errors occur.
