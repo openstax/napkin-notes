@@ -14,7 +14,8 @@ It has some pretty large technical requirements for services that it depends on
 
 All of their documentation is written for using Docker containers, but it’s fairly straightforward to translate the instructions into what would be needed for running outside the container.
 
-Their annotation app (the pop-out sidebar) is written in Angular, and is loaded inside an iframe which is revealed when the sidebar is popped out.  The sidebar itself is powered by plain jQuery events as far as I can see.
+The annotation app (the pop-out sidebar) is written in Angular, and is loaded inside an iframe which is revealed when the sidebar is popped out.  The sidebar itself is powered by plain jQuery events as far as I can see.
+ * Since it's jQuery it's easy to show/hide it using `window.annotator.frame.toggle(true/false)`
 
 The really interesting bits of Hypothes.is are the third party libraries that they’ve integrated.  The highlighting annotations are powered by the open-source [Annotator Project]( and they are stored as web annotations using the Text Quote Anchor library. https://hypothes.is/blog/supporting-open-annotation/
 
