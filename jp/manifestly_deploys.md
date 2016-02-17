@@ -1,4 +1,6 @@
-## Recording Deployment Info With Manifestly
+# Recording Deployment Info With Manifestly
+
+## The Problem
 
 Currently, devops attempts to call `manifestly upload` whenever a manifest is used so that they can record where the manifest was used with that action's `--message`, e.g.
 
@@ -7,6 +9,8 @@ $> manifestly upload --file=some.manifest --repo=openstax/deploy-manifests --rep
 ```
 
 While fine to try this, this was not the intent of the `upload` action; `upload` is meant to upload a new manifest so that it can be shared with others.  Also, because of the way that manifestly uses git commits to store manifests, this method of storing messages breaks down when one tries to upload the same manifest multiple times in a row (git won't allow it because the file contents are identical).  In an bug-free world, one created manifest would be deployed to dev, qa, staging, and then production without changes, so the `upload` approach for remembering what is deployed when and where is not great.
+
+## Proposal
 
 The proposal in this note is to provide a new manifestly action for recording where manifests are deployed.
 
