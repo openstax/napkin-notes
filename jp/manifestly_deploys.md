@@ -69,4 +69,8 @@ With this proposal the `--message` option on `upload` would no longer be used to
 
 ### --message on deployed?
 
-Do we want to be able to add
+Do we want to be able to add a `message` when we call `manifestly deployed`?
+
+### What Else?
+
+What else do we need to support devops?  
