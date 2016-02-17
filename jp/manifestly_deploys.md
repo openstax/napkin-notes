@@ -17,6 +17,9 @@ The proposal in this note is to provide a new manifestly action for recording wh
 Why store this in `deploy-manifests`? As opposed to appending to a file on the server (that is backed up)?
 
 
+It seems odd that just deploying an existing manifest to a different env would require commit access to a repo.  If we had a way of "deploying" to our own machines (ie https://github.com/boxen/our-boxen/ ) then I would think that just having the manifest would be enough.
+
+
 ```
 $> manifestly deployed --repo=openstax/deploy-manifests --repo_file=tutor --sha=923892b --to=production
 ```
@@ -49,6 +52,9 @@ Which will record this information in the manifests repo in one of the following
 > `{file: 'tutor', sha: '923892B29839283DAB023902', to: 'production', at: '2016-02-17T21:43:00Z'}`
 
 The `--to` option could be practically anything, especially in the machine-readable storage options.  Devops could decide the best way to describe where code is being deployed.
+
+
+**Question:** I understand the need for different environments in the path, but how is the distinction for the `tutor` part decided? Is it `tutor | cnx`, `tutor | biglearn | exchange | cnx | os-cms`? because concept-coach depends on specific versions of `cnx` and `tutor`
 
 Regardless of how we store the data in git, manifestly would have an action for reading deployment information:
 
