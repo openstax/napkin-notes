@@ -14,6 +14,9 @@ While fine to try this, this was not the intent of the `upload` action; `upload`
 
 The proposal in this note is to provide a new manifestly action for recording where manifests are deployed.
 
+Why store this in `deploy-manifests`? As opposed to appending to a file on the server (that is backed up)?
+
+
 ```
 $> manifestly deployed --repo=openstax/deploy-manifests --repo_file=tutor --sha=923892b --to=production
 ```
