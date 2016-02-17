@@ -54,7 +54,7 @@ Which will record this information in the manifests repo in one of the following
 The `--to` option could be practically anything, especially in the machine-readable storage options.  Devops could decide the best way to describe where code is being deployed.
 
 
-**Question:** I understand the need for different environments in the path, but how is the distinction for the `tutor` part decided? Is it `tutor | cnx`, `tutor | biglearn | exchange | cnx | os-cms`? because concept-coach depends on specific versions of `cnx` and `tutor`
+**Question:** I understand the need for different environments in the path, but how is the distinction for the `tutor` part decided? Is it `tutor | cnx`, or would the separation be `tutor | biglearn | exchange | cnx | os-cms`? because concept-coach depends on specific versions of `cnx` and `tutor`.
 
 Regardless of how we store the data in git, manifestly would have an action for reading deployment information:
 
