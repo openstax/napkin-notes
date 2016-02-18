@@ -10,33 +10,42 @@ Some suggestions for trying this out:
 # `#general`
 
 - Posts should be very infrequent: ie "Official" Announcements
-- Notify: It is expected everyone ​*must*​ read this. (like an upcoming holiday)
+- **Notify:** It is expected everyone **must** read this. (like an upcoming holiday)
 
 # Project Channels
 
-1. Post here 1st and then move to a smaller group (w/ a link to the channel)
-1. These should be low-chatter, and folks should monitor throughout the day (no bots in here)
+- Post here 1st and then move to a smaller group (w/ a link to the channel)
+- These should be low-chatter, and folks should monitor throughout the day (no bots in here)
+- **Notify:** It is expected everyone **may** read this.
+
+Channels (these will match GitHub team names so you can `@mention` them in GitHub too):
 
 - `#cnx`
 - `#tutor`
 - `#textbook`
 - `#webredesign`
 - `#cte`
+- `#ux`
+- `#test-support`
 - `#devops`
 - `#marcom`
 
 ## SubProjects
 
 - These are where most of the chatter/discussion occurs
-- Notify: "only when `@mentioned`" is ok
+- **Notify:** "only when `@mentioned`" is :ok:
 - Feel free to `@mention` someone not in the channel; they can then leave
 - Should contain at least 3 people
+
+Examples:
 
 - `#tutor-devs`
 - `#tutor-cpr`
 - `#webredesign-devs`
 - `#bronies-and-unicorns`
+- `#all-devs`
 ...
+
 
 # Ad-hoc Channels
 
@@ -45,7 +54,9 @@ Great! Make'em, just please archive it when you're done (you can always un-archi
 
 # Other Channels
 
-- `#meta`: Questions/Tips/Gripes about Slack
+- `#meta`: Questions/Tips/Gripes about Slack or Openstax
 - `#watercooler`: non-work or naval-gazing
 - `#deployments`: When code is deployed to servers
 - `#bot-test`: For testing bot output
+- `#lunch_puzzle`: The daily puzzle of lunch
+- `#rubber-ducky`
