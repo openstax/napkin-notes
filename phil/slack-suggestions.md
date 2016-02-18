@@ -48,3 +48,4 @@ Great! Make'em, just please archive it when you're done (you can always un-archi
 - `#meta`: Questions/Tips/Gripes about Slack
 - `#watercooler`: non-work or naval-gazing
 - `#deployments`: When code is deployed to servers
+- `#bot-test`: For testing bot output
