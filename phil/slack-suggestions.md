@@ -28,6 +28,7 @@ Channels (these will match GitHub team names so you can `@mention` them in GitHu
 - `#ux`
 - `#test-support`
 - `#devops`
+- `#sustain`
 - `#marcom`
 
 ## SubProjects
@@ -41,7 +42,6 @@ Examples:
 
 - `#tutor-devs`
 - `#tutor-cpr`
-- `#webredesign-devs`
 - `#bronies-and-unicorns`
 - `#all-devs`
 ...
