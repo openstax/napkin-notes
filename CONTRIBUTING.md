@@ -1,3 +1,12 @@
+# Contributing to Openstax
+
+:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
+
+The following is a set of guidelines for contributing to the Openstax repositories, which are hosted in the [Openstax Organization](https://github.com/openstax) and [Connexions Organization](https://github.com/Connexions) on GitHub.
+These are just guidelines, not rules, use your best judgment and feel free to propose changes to this document in a pull request.
+
+#### Table of Contents
+
 - [Git Hygiene](#git-hygiene)
   - [Use a Good Commit Message](#use-a-good-commit-message)
   - [Squash Commits](#squash-commits)
