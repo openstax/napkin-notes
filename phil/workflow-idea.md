@@ -22,15 +22,44 @@
 
 It is confusing to know where to discuss. Here is the rough breakdown:
 
+### Option 1: Just GitHub
 
-| When | Where | Why |
-| ---- | ----- | --- |
-| defining a story | GDocs | usually a voice meeting & multiple people working |
-| proposing a change | Issue Comment | then, update the Issue Description |
-| discussing a story | Issue Comment |  |
-| discussing a solution | PR Comment | | 
+This involves having less places to have to keep in-sync.
+
+**([1min SCREENCAST](https://drive.google.com/file/d/0B7-23yUTssvDeGFlN0lfa09SVUE/view?usp=sharing))** of not using GDocs
+
+
+- no need to recreate PullRequests ("Change Request") in GDocs
+- there really is _1 place to look for everything_
+  - the Story **is** the Issue
+  - the Epic Description **is** the Milestone
+- no more fighting GDoc formatting or remembering to email people
+
+
+| When... | Where? | Why? |
+| ------- | ------ | ---- |
+| defining a story | Issue body (via collab editing in `gh-board`) | usually a voice meeting & multiple people working |
+| proposing a change | Issue Comment | then, update the Issue Description. Desc is the "canonical" place for work |
+| discussing a story | Issue Comment | all groups involved will see |
+| discussing a solution | PR Comment | code review goes here anyways | 
 
 Each **Story** (not task) is converted to an Issue (or Ticket/Card in pivotal/Trello-speak) rather than having a plethora of Issues for UX/Dev/Test/Documentation.
+
+### Option 2: Keep GDocs
+
+| When... | Where? | Why? |
+| ------- | ------ | ---- |
+| defining a story | GDocs | usually a voice meeting & multiple people working |
+| proposing a change | PR to the Epic `.md` file | then, update the Issue Description. Desc is the "canonical" place for work |
+| discussing a story | Issue Comment | all groups involved will see |
+| discussing a solution | PR Comment | code review goes here anyways | 
+
+Each **Story** (not task) is converted to an Issue (or Ticket/Card in pivotal/Trello-speak) rather than having a plethora of Issues for UX/Dev/Test/Documentation.
+
+
+# Sustain Team
+
+Just put any Issue/PullRequest into the **Sustain** Milestone.
 
 
 # Tutor
@@ -39,7 +68,8 @@ Roles: **Leads**, **UX**, **DevLead**, **Dev**, **TEST**, **CS** (Customer Suppo
 
 Kanban Columns: `Needs Design`, `Needs Code`, `Needs Review`, `Needs Test`, `Needs Documentation`
 
-**Notation:** Roles are **bold**, sequences that are the same as the happy path just have `...`, and steps that are the same in the Happy-Path but are listed _for context_ are in <sub>smaller text</sub>
+**Notation:** Roles are **bold**, sequences that are the same as the Happy Path just have `...`, and steps that are the same in the Happy Path but are listed _for context_ are in <sub>smaller text</sub>
+
 
 ## Happy Path (FE example)
 
@@ -117,11 +147,11 @@ Anyone can submit a bug report. It should have detailed info on what happened, t
 A Hotfix needs to be based on what is on production but should end up on master.
 
 1. **Dev**
-  - checks production rev.txt to get production commit
+  - checks production `https://${SERVER}/rev.txt` to get production commit
   - creates new branch based on the commit
   - writes fix
   - tests by chatting `/deploy tutor-js/hotfix-branch-name to dev`
-  - creates PR to `#master`
+  - creates PR to `/master`
     - adds label `HOTFIX`
 1. **Reviewer** ...
 1. **TEST** ...
@@ -482,7 +512,7 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 ## Proposal
 
 - [ ] make sample repos with Issues for Alina, Alana, Epics docs, QA, CS, and Norm views
-- [ ] mockups of an ideal flow from start-to-finish of a Story
+- [x] mockups of an ideal flow from start-to-finish of a Story
 - [ ] clean up this doc
 
 ## Deployments
@@ -491,8 +521,9 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 
 ## Selenium
 
-- [ ] add code coverage
+- [x] add code coverage
   - [x] instrument the JS files with Istanbul
   - [x] record/concatenate the coverage info from all the tests
-  - [ ] save a report file to coveralls or an `.lcov` file
+  - [x] save a report file to coveralls or an `.lcov` file
 - [ ] make common tasks
+
