@@ -2,6 +2,7 @@
 
 (we don't have to use all these steps; this is just a "vision" :smile:)
 
+- [Communication](#communication)
 - [Tutor](#tutor)
   - [Happy Path (FE example)](#happy-path-fe-example)
   - [Change Request / Blocker](#change-request--blocker)
@@ -17,13 +18,58 @@
 - [Customer Support](#customer-support)
 - [Gantt Chart Structure](#gantt-chart-structure)
 
+# Communication
+
+It is confusing to know where to discuss. Here is the rough breakdown:
+
+### Option 1: Just GitHub
+
+This involves having less places to have to keep in-sync.
+
+**([1min SCREENCAST](https://drive.google.com/file/d/0B7-23yUTssvDeGFlN0lfa09SVUE/view?usp=sharing))** of not using GDocs
+
+
+- no need to recreate PullRequests ("Change Request") in GDocs
+- there really is _1 place to look for everything_
+  - the Story **is** the Issue
+  - the Epic Description **is** the Milestone
+- no more fighting GDoc formatting or remembering to email people
+
+
+| When... | Where? | Why? |
+| ------- | ------ | ---- |
+| defining a story | Issue body (via collab editing in `gh-board`) | usually a voice meeting & multiple people working |
+| proposing a change | Issue Comment | then, update the Issue Description. Desc is the "canonical" place for work |
+| discussing a story | Issue Comment | all groups involved will see |
+| discussing a solution | PR Comment | code review goes here anyways | 
+
+Each **Story** (not task) is converted to an Issue (or Ticket/Card in pivotal/Trello-speak) rather than having a plethora of Issues for UX/Dev/Test/Documentation.
+
+### Option 2: Keep GDocs
+
+| When... | Where? | Why? |
+| ------- | ------ | ---- |
+| defining a story | GDocs | usually a voice meeting & multiple people working |
+| proposing a change | PR to the Epic `.md` file | then, update the Issue Description. Desc is the "canonical" place for work |
+| discussing a story | Issue Comment | all groups involved will see |
+| discussing a solution | PR Comment | code review goes here anyways | 
+
+Each **Story** (not task) is converted to an Issue (or Ticket/Card in pivotal/Trello-speak) rather than having a plethora of Issues for UX/Dev/Test/Documentation.
+
+
+# Sustain Team
+
+Just put any Issue/PullRequest into the **Sustain** Milestone.
+
+
 # Tutor
 
-Roles: **Leads**, **UX**, **DevLead**, **Dev**, **QA**, **CS** (Customer Support), **Devops**, **Anyone**
+Roles: **Leads**, **UX**, **DevLead**, **Dev**, **TEST**, **CS** (Customer Support), **Devops**, **Anyone**
 
-Kanban Columns: `Triage`, `Ready to Design`, `Ready to Code`, `WIP` (Work in Progress), `Ready to Review`, `Ready to QA`
+Kanban Columns: `Needs Design`, `Needs Code`, `Needs Review`, `Needs Test`, `Needs Documentation`
 
-**Notation:** Roles are **bold**, sequences that are the same as the happy path just have `...`, and steps that are the same in the Happy-Path but are listed _for context_ are in <sub>smaller text</sub>
+**Notation:** Roles are **bold**, sequences that are the same as the Happy Path just have `...`, and steps that are the same in the Happy Path but are listed _for context_ are in <sub>smaller text</sub>
+
 
 ## Happy Path (FE example)
 
@@ -35,15 +81,15 @@ First, all the steps of getting a story out to the users. No hangups here; those
   - write stuff in GDocs
   - convert epics to Milestones
   - convert stories to Issues with label "Story"
-    - Issue label is: `[CC1.04.001] Story Title Goes Here`
+    - Issue label is: `[CC1.04.001] Story Title Goes Here` (`#123`)
     - contains checklist of items that need to be done by UX/FE/BE
-    - move to `Ready to Design`, or `Ready to Code` column
+    - move to `Needs Design`, or `Needs Code` column
 1. **UX**
   - claims Issue (`#123`)
   - adds mockups to the Issue body
   - checks the "UX" item in the TODO section of the Issue
-  - moves to `Ready to Code` column
-1. **DevLead** assigns owner
+  - moves to `Needs Code` column
+1. **DevLead** assigns owner _(optional step. projects can skip)_
 1. **Dev**
   - moves `#123` to `WIP` column
   - codes...
@@ -52,17 +98,17 @@ First, all the steps of getting a story out to the users. No hangups here; those
   - chats `/deploy tutor-js#234 to dev` to test
   - adds `<tt>4</tt>` to mark the hours worked
   - checks the "FE" item in the TODO section of the Issue
-  - moves PR (and automatically the Issue) to `Ready to Review`
+  - moves PR (and automatically the Issue) to `Needs Review`
 1. **Reviewer**
   - checks code
   - tests code by chatting `/deploy tutor-js#234 to dev`
-  - moves PR (& Issue) to `Ready to QA`
-1. **QA**
+  - moves PR (& Issue) to `Needs TEST`
+1. **TEST**
   - chats `/deploy tutor-js#234 to qa` to test
   - merges the PR and closes the issue
 1. **PM**
   - checks the Gantt Chart and sees where to help
-1. **QA**
+1. **TEST**
   - chats `/deploy tutor-js/master to staging` to doomsday test
   - chatbot responds with link to see all Issues that are in the commit diff
   - determines which tests need to be run from ^^^
@@ -101,14 +147,14 @@ Anyone can submit a bug report. It should have detailed info on what happened, t
 A Hotfix needs to be based on what is on production but should end up on master.
 
 1. **Dev**
-  - checks production rev.txt to get production commit
+  - checks production `https://${SERVER}/rev.txt` to get production commit
   - creates new branch based on the commit
   - writes fix
   - tests by chatting `/deploy tutor-js/hotfix-branch-name to dev`
-  - creates PR to `#master`
+  - creates PR to `/master`
     - adds label `HOTFIX`
 1. **Reviewer** ...
-1. **QA** ...
+1. **TEST** ...
 1. **Devops** deploys the new commit to production
 
 
@@ -125,15 +171,15 @@ Often an entire story cannot be completed as one PR.
   - adds `refs #123` to PR body (_instead of `fixes #123`_)
   - <sub>chats `/deploy tutor-js#234 to dev` to test</sub>
   - ...
-  - moves PR (but **not** the Issue) to `Ready to Review`
+  - moves PR (but **not** the Issue) to `Needs Review`
 1. **Reviewer**
   - ...
-  - moves PR (but **not** the Issue) to `Ready to QA`
-1. **QA**
+  - moves PR (but **not** the Issue) to `Needs TEST`
+1. **TEST**
   - <sub>chats `/deploy tutor-js#234 to qa` to test</sub>
   - merges the PR but does **not** close the Issue
 1. **PM** ...
-1. **QA** ...
+1. **TEST** ...
 
 
 ## Multiple Repositories
@@ -149,17 +195,17 @@ This is similar to "Partially Complete a Story".
   - <sub>creates a PR (`#234`)</sub>
   - adds `refs #123` to PR body
   - ...
-  - moves PR (and but **not** the Issue) to `Ready to Review`
+  - moves PR (and but **not** the Issue) to `Needs Review`
 1. **Reviewer** (BE)
   - ...
-  - moves PR (but **not** the Issue) to `Ready to QA`
+  - moves PR (but **not** the Issue) to `Needs TEST`
 1. **Dev** (FE) ... same as BE **Dev**
 1. **Reviewer** (FE) ... same as BE **Reviewer**
-1. **QA**
+1. **TEST**
   - chats `/deploy tutor-js#234 tutor-server#345 to qa` to test
   - merges the PRs and closes the Issue
 1. **PM** ...
-1. **QA** ...
+1. **TEST** ...
 
 
 # Book Content / Exercise Editing
@@ -225,7 +271,7 @@ Eacch bar should show how many Issues are completed and what state they are in. 
 
 Each bar should contain the following colored segments (from the kanban columns):
 
-`[{COMPLETED}{BLOCKED}{NEEDS_DESIGN}{NEEDS_DEV}{WORK_IN_PROGRESS}{QA}{uncategorized}]``
+`[{COMPLETED}{BLOCKED}{NEEDS_DESIGN}{NEEDS_DEV}{NEEDS_TEST}{NEEDS_DOCUMENTATION}{uncategorized}]``
 
 <!--
 ---
@@ -466,7 +512,7 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 ## Proposal
 
 - [ ] make sample repos with Issues for Alina, Alana, Epics docs, QA, CS, and Norm views
-- [ ] mockups of an ideal flow from start-to-finish of a Story
+- [x] mockups of an ideal flow from start-to-finish of a Story
 - [ ] clean up this doc
 
 ## Deployments
@@ -475,8 +521,9 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 
 ## Selenium
 
-- [ ] add code coverage
+- [x] add code coverage
   - [x] instrument the JS files with Istanbul
   - [x] record/concatenate the coverage info from all the tests
-  - [ ] save a report file to coveralls or an `.lcov` file
+  - [x] save a report file to coveralls or an `.lcov` file
 - [ ] make common tasks
+
