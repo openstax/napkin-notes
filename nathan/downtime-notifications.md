@@ -15,14 +15,14 @@ By sharing a common manifest file between apps we can prevent duplicate display 
 
 The manifest.json will use the following structure:
 
-```json
+```javascript
 {
    notifications: [
      {
-       "notice-id": "A unique string"       # app will store this as a cookie to prevent duplicate fetch & display
-       "site-ids": [ 'tutor', 'cc', 'cnx' ] # which websites should display the notification, if omitted, all products will display it
-       "valid-from":  "ISO 8601 date-stamp"  # optional
-       "valid-until": "ISO 8601 date-stamp"  # optional
+       "notice-id": "A unique string"        // app will store this as a cookie to prevent duplicate fetch & display
+       "site-ids": [ 'tutor', 'cc', 'cnx' ]  // which websites should display the notification, if omitted, all products will display it
+       "valid-from":  "ISO 8601 date-stamp"  // optional
+       "valid-until": "ISO 8601 date-stamp"  // optional
      }
   ]
 
@@ -33,10 +33,10 @@ After requesting the manifest file, the application will check the valid notices
 
 The notice will have a structure of:
 
-```json
+```javascript
 {
-   "type": "one of info, warning, or error",               # used to style notification
-   "title": "plain text title, limited to 40 or so chars", # app may display this as bold or something
+   "type": "one of info, warning, or error",               // used to style notification
+   "title": "plain text title, limited to 40 or so chars", // app may display this as bold or something
    "message": "plain text notification, unlimited length, but should be fairly short to fit on ui"
 }
 ```
