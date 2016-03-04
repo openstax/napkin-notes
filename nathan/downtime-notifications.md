@@ -3,7 +3,7 @@ In-App downtime notifications
 
 I propose that we store a single `manifest.json` file in a known location on a s3 bucket which has the following settings:
 
- * CO RS enabled for wild-card origin GET requests
+ * CORS enabled for wild-card origin GET requests
  * Global read access
  * Caching headers
 
