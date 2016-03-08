@@ -24,9 +24,9 @@ to work in seperate transactions, log failures, and move on.
 
 ## The Problem: What behavior does Zope need to change to accomplish this?
 
-## Solution X: No change
+### Solution X: No change
 
-tl;dr  No changes needed in Zope. Need to modify triggers in cnx-archive to
+##tl;dr##  No changes needed in Zope. Need to modify triggers in cnx-archive to
 use the one-transaction-per-book-minor-version that cnx-publish will use.
 
 On further analysis, the Zope system accomplishes the above "republish" silently,
