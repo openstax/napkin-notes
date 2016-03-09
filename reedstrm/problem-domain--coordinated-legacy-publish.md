@@ -36,3 +36,25 @@ to doing CNXML-> HTML transforms)
 
 We will need to extend the DB schema to track
 books-that-would-exist-if-they-could-be-cooked, in any case.
+
+### Solution W: Manual
+
+**tl;dr** Put the reponsiblity for cooking of zope (/legacy) published content
+on the author(s) by having them invoke the cooking manually after publication.
+
+After a publication has been made, the author (or publishing user) can select
+a newly added button in the Zope interface that communicates with
+a cnx-publishing instance at `POST /builds/collate`. This will start
+the cooking process and return `200` when successful.
+
+### Solution C: Cron!
+
+**tl;dr** We use a cron job to cook all content that needs cooking.
+
+This is a hybrid of Solution X and W.
+
+A cron job runs a script that selects needed-to-be-cooked content from
+the database (using the marking mechanism noted in Solution W).
+The script then cooks each selected record by contacting
+a cnx-publishing instance at `POST /builds/collate`,
+which will cook, persistence the content in the database and return `200`.
