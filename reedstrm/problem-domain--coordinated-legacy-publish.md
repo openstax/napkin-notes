@@ -1,8 +1,6 @@
 # Problem Domain: Legacy Publish in the World of Cook HTML at Publish
 
-This is a follow-on from Michael Mulich's analysis in 
-
-https://github.com/openstax/napkin-notes/blob/master/pumazi/cnx/problem-domain--cooked-to-failure.md
+This is a follow-on from Michael Mulich's analysis:  [Problem Domain: Cooked content failure to publication failure](https://github.com/openstax/napkin-notes/blob/753c3fd71164881cda185010c787c0ee312959a1/pumazi/cnx/problem-domain--cooked-to-failure.md)
 
 ## The Domain Description (cribbed from above Problem)
 
@@ -24,7 +22,7 @@ to work in seperate transactions, log failures, and move on.
 
 ## The Problem: What behavior does Zope need to change to accomplish this?
 
-### Solution X: No change
+### Solution X: No change to Zope
 
 **tl;dr**  No changes needed in Zope. Need to modify triggers in cnx-archive to
 use the one-transaction-per-book-minor-version that cnx-publish will use.
@@ -38,3 +36,25 @@ to doing CNXML-> HTML transforms)
 
 We will need to extend the DB schema to track
 books-that-would-exist-if-they-could-be-cooked, in any case.
+
+### Solution W: Manual
+
+**tl;dr** Put the reponsiblity for cooking of zope (/legacy) published content
+on the author(s) by having them invoke the cooking manually after publication.
+
+After a publication has been made, the author (or publishing user) can select
+a newly added button in the Zope interface that communicates with
+a cnx-publishing instance at `POST /builds/collate`. This will start
+the cooking process and return `200` when successful.
+
+### Solution C: Cron!
+
+**tl;dr** We use a cron job to cook all content that needs cooking.
+
+This is a hybrid of Solution X and W.
+
+A cron job runs a script that selects needed-to-be-cooked content from
+the database (using the marking mechanism noted in Solution W).
+The script then cooks each selected record by contacting
+a cnx-publishing instance at `POST /builds/collate`,
+which will cook, persistence the content in the database and return `200`.
