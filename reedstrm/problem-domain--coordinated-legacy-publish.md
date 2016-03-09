@@ -1,8 +1,6 @@
 # Problem Domain: Legacy Publish in the World of Cook HTML at Publish
 
-This is a follow-on from Michael Mulich's analysis in 
-
-https://github.com/openstax/napkin-notes/blob/master/pumazi/cnx/problem-domain--cooked-to-failure.md
+This is a follow-on from Michael Mulich's analysis:  [Problem Domain: Cooked content failure to publication failure](https://github.com/openstax/napkin-notes/blob/753c3fd71164881cda185010c787c0ee312959a1/pumazi/cnx/problem-domain--cooked-to-failure.md)
 
 ## The Domain Description (cribbed from above Problem)
 
