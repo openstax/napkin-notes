@@ -4,11 +4,11 @@
 
 Implement parts of the CSS-generated-content spec. Two declarations and
 a content function:
-
+```
   move-to: _idstring_
   copy-to: _idstring_
   pending(_idstring_)
-
+```
 move-to and copy-to  will "mark" the  matching node (and all of it's
 descendants) for moving or copying to the place identifed by the idstring.
 
@@ -21,10 +21,10 @@ As an extension, since we are targetting output of HTML, rather than another
 rendering tree (page or screen display), we will create an actual wrapper node
 for each pseudo-element area. In support of this, we are adding additional
 declarations:
-
+```
   class: myclassname
   display: block|inline
-
+```
 The class declaration will set the value of the class attribute on the generated
 wrapper node. The "display" declaration will make the wrapper node a 'div' or 'span', respectively. There may be need for block:h1, block:section, or perhaps wrapper-node: h1|section|div|span|strong instead.
 
