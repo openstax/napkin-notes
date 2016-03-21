@@ -1,7 +1,7 @@
 # `facts`
 [schema definition in biglearn-platform repo](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/db/facts/schema.py)
 
-### `learners`
+### `facts/learners`
 [POST /facts/learners API schema](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-learners)
 ```
 'id':Integer                primary_key=True
@@ -9,14 +9,14 @@
 'platform_id':String(255)   nullable=False unique=True   ## platform-specific learner id (used when querying) [Q: ensured unique by Exchange?]
 ```
 
-### `pools`
+### `facts/pools`
 [POST /facts/pools API schema](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-pools)
 ```
 'id':Integer   primary_key=True
 'uuid':UUID()  nullable=False unique=True
 ```
 
-### `pool_questions`
+### `facts/pool_questions`
 [POST /facts/pools API schema](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-pools)
 ```
 'id':Integer          primary_key=True
@@ -24,7 +24,7 @@
 'question_id':Integer ForeignKey('question_tags.id') nullable=False
 ```
 
-### `question_tags`
+### `facts/question_tags`
 [POST /facts/questions API schema](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-questions)
 [GET /facts/questios API schema](https://biglearnadmin-qa.openstax.org/docs/facts.html#get--facts-questions)
 ```
@@ -34,7 +34,7 @@
 'tags':ARRAY(db.String(255))  nullable=False
 ```
 
-### `responses`
+### `facts/responses`
 [POST /facts/responses API schema](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-responses)
 ```
 'id':Integer          primary_key=True
@@ -45,7 +45,7 @@
 'score':Float                                        nullable=False
 ```
 
-### `taxonomy`
+### `facts/taxonomy`
 ```
 'id':Integer                   primary_key=True
 'tag':String(255)              nullable=False  unique=True
