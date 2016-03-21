@@ -24,9 +24,28 @@
 
 ### `question_tags`
 [POST /facts/questions API schema](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-questions)
+[GET /facts/questios API schema](https://biglearnadmin-qa.openstax.org/docs/facts.html#get--facts-questions)
 ```
 'id':Integer                  primary_key=True
 'question_id':String(255)     nullable=False
 'question_version':Integer    nullable=False  default=1 
 'tags':ARRAY(db.String(255))  nullable=False
+```
+
+### `responses`
+[POST /facts/responses API schema](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-responses)
+```
+'id':Integer          primary_key=True
+'learner_id':Integer  ForeignKey('learners.id')      nullable=False
+'question_id':Integer ForeignKey('question_tags.id'  nullable=False
+'activity_id':String                                 nullable=False
+'answered':DateTime                                  nullable=False
+'score':Float                                        nullable=False
+```
+
+### `taxonomy`
+```
+'id':Integer                   primary_key=True
+'tag':String(255)              nullable=False  unique=True
+'types':ARRAY(db.String(255))  nullable=False
 ```
