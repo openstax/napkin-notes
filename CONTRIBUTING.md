@@ -67,6 +67,22 @@ git rebase --continue
 
 It will do one round of conflict-checking for each commit in your branch, so keeping your history clean will make rebasing much easier. When the rebase is done, your branch will be up to date with master and ready to issue a PR if you are.
 
+# Hotfix
+To make a fix against production, first find the revision.  For example
+for tutor, you can find the revisions here: http://tutor.openstax.org/rev.txt
+
+Once you have the revision commit sha, you can do the following:
+```sh
+git branch <branch-name> <revision-sha>
+git checkout <branch-name>
+```
+
+After adding in your fixes, just push your branch up using:
+```sh
+git push origin <branch-name>
+```
+
+Since we don't keep a production branch, you can just make a PR against master and then you're done!
 
 # Testing
 
