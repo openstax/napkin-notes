@@ -86,3 +86,26 @@
 'tag_id':String(255)                             nullable=False  index=True  ## tag == concept
 'assoc_score':Float()                            nullable=False
 ```
+
+# `realtime`
+
+[schema definition in biglearn-platform repo](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/db/realtime/schema.py)
+
+### `realtime/responses`
+```
+'id':Integer                primary_key=True
+'learner_id':String(255)    nullable=False
+'question_id':String(255)   nullable=False
+'question_version':Integer  nullable=True
+'activity_id':String        nullable=False
+'answered':DateTime         nullable=False
+'score':Float               nullable=False
+```
+
+### `realtime/question_tags`
+```
+'id':Integer                  primary_key=True
+'question_id':String(255)     nullable=False
+'question_version':Integer    nullable=False
+'tags':ARRAY(db.String(255))  nullable=False
+```
