@@ -1,3 +1,5 @@
+# `facts`
+[schema definition in biglearn-platform repo](https://github.com/openstax/biglearn-platform/blob/master/app/biglearn/db/facts/schema.py)
 
 ### `learners`
 [POST /facts/learners API schema](https://biglearnadmin-qa.openstax.org/docs/facts.html#post--facts-learners)
