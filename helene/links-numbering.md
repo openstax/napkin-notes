@@ -14,8 +14,8 @@ Current links and numbering structure in PDF and webview
  - table
  - image
 
-##LINKS
-###intra link
+##links
+###intra-links
  ```<a class="link" href="">link to figure</a>```
  
  ``` <a class="xref target-inlinemediaobject">link to an image</a>```
