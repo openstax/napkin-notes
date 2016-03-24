@@ -88,7 +88,7 @@ For reference, current mixins (CSS generated) targets for numbering structure
   ```<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.openstaxcollege.org/l/30JWSTdiag">fun diagram</a>```
    > result in PDF: fun diagram (http://www.openstaxcollege.org/l/30JWSTdiag)
    
-    webview: ```<a rel="nofollow" href="http://openstaxcollege.org/l/relationfunction">Determine if a Relation is a Function</a>```
+  webview: ```<a rel="nofollow" href="http://openstaxcollege.org/l/relationfunction">Determine if a Relation is a Function</a>```
    
   PDF requests separation between text and url for styling purposes
    
