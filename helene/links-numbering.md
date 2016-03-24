@@ -57,16 +57,16 @@ Numbered elements:
   ```<a xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" class="book" href="#book-attribution" title="Attributions">Attributions</a>```
 
 
-##### note: examples aren't numbered in webview, so the link to examples isn't numbered either, producing something like "The domain of a function can also be determined by identifying the input values of a function written as an equation. See Example, Example, and Example." vs "The domain of a function can also be determined by identifying the input values of a function written as an equation. See Example 1.17, Example 1.18, and Example 1.19."  in PDF
+###### note: examples aren't numbered in webview, so the link to examples isn't numbered either, producing something like "The domain of a function can also be determined by identifying the input values of a function written as an equation. See Example, Example, and Example." vs "The domain of a function can also be determined by identifying the input values of a function written as an equation. See Example 1.17, Example 1.18, and Example 1.19."  in PDF
 
 Desired functionality: cook the numbers in. 
 
 <b>proposed</b> new structure could be:
 
-<a xmlns="http://www.w3.org/1999/xhtml" class="xref intra-link" href="#m12207-eip-851" title="Example 1.3. ">Example 1.3</a>
+```<a xmlns="http://www.w3.org/1999/xhtml" class="xref intra-link" href="#m12207-eip-851" title="Example 1.3. ">Example 1.3</a>```
 
 
-##### note: currently, the XSLT handles naming the link itself for numbering. Do we still need that level of detail for numbering? Can we do it another way? Do we need the 4 spans in those inline links?
+###### note: currently, the XSLT handles naming the link itself for numbering. Do we still need that level of detail for numbering? Can we do it another way? Do we need the 4 spans in those inline links?
 
 For reference, current mixins (CSS generated) targets for numbering structure
  ```
@@ -87,6 +87,7 @@ For reference, current mixins (CSS generated) targets for numbering structure
   
   ```<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.openstaxcollege.org/l/30JWSTdiag">fun diagram</a>```
    > result in PDF: fun diagram (http://www.openstaxcollege.org/l/30JWSTdiag)
+   
     webview: ```<a rel="nofollow" href="http://openstaxcollege.org/l/relationfunction">Determine if a Relation is a Function</a>```
    
   PDF requests separation between text and url for styling purposes
