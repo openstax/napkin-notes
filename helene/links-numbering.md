@@ -32,9 +32,9 @@ Numbered elements:
  
 ##links
 ###intra-links
-<b>pdf structure: <a class="xref target-element"></b>
+current pdf structure: <a class="xref target-element">
  
-#### examples:
+<b>examples</b>:
  ```<a class="link" href="">link to figure</a>```
  
  ``` <a class="xref target-inlinemediaobject">link to an image</a>```
