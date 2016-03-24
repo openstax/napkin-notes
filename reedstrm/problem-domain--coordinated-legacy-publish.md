@@ -36,14 +36,15 @@ to doing CNXML-> HTML transforms)
 
 The extensions needed to trace this involve using the `stateid` field in the
 `modules` metadata table. This links to `modulestates` which currently have on
-meaninful value "current". We need to extend that with states for each step of
-publication, and transition them with code in archive/publish ran from triggers.
-We need to make sure to include terminal "error" states as well.
-
+meaningful value "current". Legacy only uses a single `stateid` "1" internally,
+which RhaptosModuleStorage calls "submitted". The `statename` in `modulestates`
+is "current". We need to extend that with states for each step of publication,
+and transition them with code in archive/publish ran from triggers. We need to
+make sure to include terminal "error" states as well.
 
 ### Solution W: Manual
 
-**tl;dr** Put the reponsiblity for cooking of zope (/legacy) published content
+**tl;dr** Put the responsibility for cooking of zope (/legacy) published content
 on the author(s) by having them invoke the cooking manually after publication.
 
 After a publication has been made, the author (or publishing user) can select
