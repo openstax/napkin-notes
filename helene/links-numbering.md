@@ -1,13 +1,27 @@
 Current links and numbering structure in PDF and webview
 
-##numbering
-```<title><span class="numbering"></span><span class="titling"></span></title```
+##numbering (proposed structure for anything that has a number)
+- use 4 <span> elements within containers. 
+- have the ability to define how many spans we need while writting rulesets.
+
+```
+<section data-type="title">
+
+ <span></span>
+ 
+ <span></span>
+ 
+ <span></span>
+ 
+ <span></span>
+ 
+</section>
+```
+
  - unit
  - chapter
  - section/page
  - sub sections (...)
-
-```<span>figure 1 </span>```
  - figure
  - equation
  - cite
