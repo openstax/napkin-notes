@@ -28,14 +28,18 @@ to work in seperate transactions, log failures, and move on.
 use the one-transaction-per-book-minor-version that cnx-publish will use.
 
 On further analysis, the Zope system accomplishes the above "republish" silently,
-by virtue or referencing a magic "latest" version of most content. Additionally,
+by virtue of referencing a magic "latest" version of most content. Additionally,
 The major/minor version numbers differ for collections/books between legacy and
 rewrite. The minor versions that we are interested in here only exist, and are
 created by, the code in cnx-archive that is fired when Zope stores code (in addition
-to doing CNXML-> HTML transforms) 
+to doing CNXML-> HTML transforms)
 
-We will need to extend the DB schema to track
-books-that-would-exist-if-they-could-be-cooked, in any case.
+The extensions needed to trace this involve using the `stateid` field in the
+`modules` metadata table. This links to `modulestates` which currently have on
+meaninful value "current". We need to extend that with states for each step of
+publication, and transition them with code in archive/publish ran from triggers.
+We need to make sure to include terminal "error" states as well.
+
 
 ### Solution W: Manual
 
