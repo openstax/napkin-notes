@@ -1,0 +1,58 @@
+* Proposal to Re-organize cnx-* Codebase
+
+#+CAPTION: Diagram of the dependency changes
+#+NAME:   fig:dependency-chain
+[[./cnx-deps-chain.jpg]]
+
+** Cause of the proposal
+** Common ties
+** Scoped/Layered problems
+** Reusability
+* Libraries
+** cnx-epub
+** TODO cnx-db
+   Database layer parts of cnx-archive and cnx-publishing will be moved to cnx-db.
+   This includes the schema, migrations, SQL statements and SQL specific functions.
+   The schemas and migrations from cnx-archive and cnx-publishing will be combined.
+
+   This library will be setup from a IMCRUD
+   (Initialize Migrate Create Read Update and Delete) perspective.
+   Each part of the IMCRUD will be independently /unit tested/
+   (i.e. coverage should be complete for each part independent of any other).
+
+** TODO cnx-db-models
+   An integration library between cnx-db (database layer) and cnx-epub (models layer).
+
+   Some work towards this was made in ~cnxarchive/scripts/export_epub~.
+   It should be used as an example direction for where to take this package.
+
+** TODO cnx-db-cli (optional)
+   An integration interface package used to take input from the commandline
+   into the database.
+
+   One of the goals here is to be able to retrieve, update or input
+   a piece of content from the commandline. 
+
+   You'll noticed that a side-effect of doing CLI based actions for data
+   will greatly simplify the data and the way we view it both from the console
+   and the web. This should help us work towards prividing a top-notch API.
+
+* Dependent Projects
+** TODO cnx-archive
+   cnx-archive will be modified to use cnx-db (& cnx-db-models, if necessary).
+   This will scope all database changes to one package, which will better
+   isolate database changes. A clear division between database
+   and representation will make feature development clear and poignant.
+
+** TODO cnx-publishing
+   cnx-publishing will be modified to use cnx-db & cnx-db-models.
+   This will scope all database changes to one package, which will better
+   isolate database changes.
+   The same functions used to acquire data within
+   cnx-archive will now be available to cnx-publishing
+   without including cnx-archive itself.
+   A clear division between database and representation
+   will make feature development clear and poignant.
+   The reuseability of cnx-db will help to integrate changes
+   between archive and publishing,
+   which should mean that the chance of divergence is minimized.
