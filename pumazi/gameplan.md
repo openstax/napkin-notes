@@ -26,11 +26,15 @@ What will this achieve?
 
 Essentially, we are asking for this because it will facilitate **a means to do other work in an open, demonstrative, predictable and accelerated fashion.**
 
+RESULT: [cnx-deploy](https://github.com/Connexions/cnx-deploy)
+
 ## Automated Data Migrations
 
 One of the continuously contentious points of developing for CNX is the state of the database when changes are made. This has been an issue for as long as we can remember. And it's often exacerbated by having customized changes on production servers that do not have a reflection or shadow within the typical development environment. To alleviate this issue and provide a means for continuity and balance in the future, we are proposing the implementation of automated data migration.
 
 Automation of data migrations is nothing new. Many high-level frameworks provide it built-in. For example, Ruby on Rails and Django both provide migration frameworks. We are not talking about recreating the wheel in this implementation, only putting wheels on an otherwise stationary vehicle.
+
+RESULT: [db-migrator](https://github.com/karenc/db-migrator)
 
 ## Subscription Services
 
