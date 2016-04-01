@@ -39,3 +39,5 @@ env: localhost$ psql -U postgres accounts < user.sql
 # generate table
 accounts=# COPY users TO '/tmp/dev-users.csv' DELIMITER ',' CSV HEADER;
 ```
+
+Migrate Redirect Links
