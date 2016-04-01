@@ -27,11 +27,16 @@ env: accounts$ RAILS_ENV=production rake accounts:oauth_apps:create APP_NAME=Adm
 env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:import_users CSV_FILE=<filename> --trace APP_NAME=Admin_Tool
 
 # Export user list from accounts db
-env: accounts$ pg_dump -t users -U ostaccounts -h openstax-dev-db.crn7ls7y4nll.us-west-1.rds.amazonaws.com accounts_dev > user.sql
+env: accounts$ pg_dump -t users -U ostaccounts -h openstax-dev-db.casdfasdfnll.us-west-1.rds.amazonaws.com accounts_dev > user.sql
 
 # copy file to local env.
 
 
 env: localhost$ createdb accounts # might need to run rake db:create from accounts repo
+
+# load users into empty accounts db
 env: localhost$ psql -U postgres accounts < user.sql 
+
+# generate table
+accounts=# COPY users TO '/tmp/dev-users.csv' DELIMITER ',' CSV HEADER;
 ```
