@@ -31,7 +31,6 @@ env: accounts$ pg_dump -t users -U ostaccounts -h openstax-dev-db.casdfasdfnll.u
 
 # copy file to local env.
 
-
 env: localhost$ createdb accounts # might need to run rake db:create from accounts repo
 
 # load users into empty accounts db
