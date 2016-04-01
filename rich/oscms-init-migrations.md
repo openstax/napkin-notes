@@ -12,7 +12,18 @@ env: osc$ rake db:dump_users
 # Alternative command 
 env: osc$ RAILS_ENV=production rbenv exec bundle exec rake db:dump_users
 
-# copy file to accounts
+# export faculty list (in rails console)
+faculty_users = User.joins{faculty_profile}.where{faculty_profile.is_verified == true}.all
+require 'csv'
+CSV.open("faculty.csv","w") do |csv|
+  csv << ["last_name","first_name","college_website_url","email","institutional_email_address","department","address","phone_number"]
+  faculty_users.each do |row|
+    csv << [row.last_name,row.first_name,row.college_website_url,row.email,row.institutional_email_address,row.department,row.address,row.phone_number]
+  end
+end
+
+
+# copy files to accounts
 
 # Log in as ostaccounts user
 env: accounts$ sudo su ostaccounts
