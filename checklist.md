@@ -10,11 +10,7 @@
 
 # New Slack Channel
 
-- [ ] Add Hangout Link
-  - [ ] create a Hangout using a non-rice google account (you can use `/hangout` if it's quick)
-  - [ ] use `https://goo.gl` to make a short URL
-  - [ ] add the URL to the channel description
-- [ ] 
+- [ ] Announce in a popular channel (or build a bot that does it automatically)
 
 ### New Sprint Channels
 
