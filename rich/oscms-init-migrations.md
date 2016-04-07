@@ -38,6 +38,7 @@ env: accounts$ RAILS_ENV=production rake accounts:oauth_apps:create APP_NAME=Adm
 env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:import_users CSV_FILE=<filename> --trace APP_NAME=Admin_Tool
 
 # Export user list from accounts db
+# found in config/database.yml
 env: accounts$ pg_dump -t contact_infos -U ostaccounts -h openstax-dev-db.casdfasdfnll.us-west-1.rds.amazonaws.com accounts_dev > contact_infos.sql
 
 # copy file to local env.
@@ -52,3 +53,5 @@ accounts=# COPY users TO '/tmp/dev-users.csv' DELIMITER ',' CSV HEADER;
 ```
 
 Migrate Redirect Links
+
+Some usernames are too long for import
