@@ -4,15 +4,21 @@ Random collections of commands for launch day.
 
 **DevOps Requirments**:  Nothing stored on local file except for application code.
 
+#### Pre Procedure:
+```
+Have django, accounts, and osc env up and running
+```
+
+
 #### Procedure:
 ```
-#Export users from osc
+#Export all users from osc  (File will export as a .csv)
 env: osc$ rake db:dump_users 
 
 # Alternative command 
 env: osc$ RAILS_ENV=production rbenv exec bundle exec rake db:dump_users
 
-# export faculty list (in rails console)
+# export a seperate faculty list of users
 faculty_users = User.joins{faculty_profile}.where{faculty_profile.is_verified == true}.all
 require 'csv'
 CSV.open("faculty.csv","w") do |csv|
@@ -22,8 +28,7 @@ CSV.open("faculty.csv","w") do |csv|
   end
 end
 
-
-# copy files to accounts
+# copy files to accounts production
 
 # Log in as ostaccounts user
 env: accounts$ sudo su ostaccounts
@@ -37,21 +42,14 @@ env: accounts$ RAILS_ENV=production rake accounts:oauth_apps:create APP_NAME=Adm
 # Import users into accounts db
 env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:import_users CSV_FILE=<filename> --trace APP_NAME=Admin_Tool
 
-# Export user list from accounts db
+# Export user list from accounts db (this file is needed to match faculty users from osc with their new accounts id)
 # found in config/database.yml
-env: accounts$ pg_dump -t contact_infos -U ostaccounts -h openstax-dev-db.casdfasdfnll.us-west-1.rds.amazonaws.com accounts_dev > contact_infos.sql
+env: accounts$ pg_dump -t contact_infos -U ostaccounts -h openstax-dev-db.casdfasdfnll.us-west-1.rds.amazonaws.com accounts_dev > contact_infos.sql"
 
-# copy file to local env.
+# Use "faculty.csv" and "contact_infos.sql" to match every faculty user to an accounts ID
+# Give this file to salesforce
 
-env: localhost$ createdb accounts # might need to run rake db:create from accounts repo
-
-# load users into empty accounts db
-env: localhost$ psql -U postgres accounts < user.sql 
-
-# generate table
-accounts=# COPY users TO '/tmp/dev-users.csv' DELIMITER ',' CSV HEADER;
+# Use "faculty.csv" and "contact_infos.sql" to generate a csv list of users and import the list into cms system. 
 ```
 
-Migrate Redirect Links
 
-Some usernames are too long for import
