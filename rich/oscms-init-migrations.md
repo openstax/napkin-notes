@@ -18,7 +18,8 @@ env: osc$ rake db:dump_users
 # Alternative command 
 env: osc$ RAILS_ENV=production rbenv exec bundle exec rake db:dump_users
 
-# export a seperate faculty list of users
+# export a seperate faculty list of users using rails console.
+# (Using rails console: RAILS_ENV=production rbenv exec bundle exec rails c)
 faculty_users = User.joins{faculty_profile}.where{faculty_profile.is_verified == true}.all
 require 'csv'
 CSV.open("faculty.csv","w") do |csv|
