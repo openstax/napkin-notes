@@ -13,10 +13,10 @@ Have django, accounts, and osc env up and running
 #### Procedure:
 ```
 #Export all users from osc  (File will export as a .csv)
-env: osc$ rake db:dump_users 
+osc$ rake db:dump_users 
 
 # Alternative command 
-env: osc$ RAILS_ENV=production rbenv exec bundle exec rake db:dump_users
+osc$ RAILS_ENV=production rbenv exec bundle exec rake db:dump_users
 
 # export a seperate faculty list of users using rails console.
 # (Using rails console: RAILS_ENV=production rbenv exec bundle exec rails c)
@@ -32,29 +32,33 @@ end
 # copy files to accounts production
 
 # Log in as ostaccounts user
-env: accounts$ sudo su ostaccounts
+accounts$ sudo su ostaccounts
 
 # Create admin (optional)
-env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:create_admin[admin,password]
+accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:create_admin[admin,password]
 
 #check oauth app list
-env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:oauth_apps:list 
+accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:oauth_apps:list 
 
 # If Admin_Tool app does not exist create it
-env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:oauth_apps:create APP_NAME=Admin_Tool USERNAME=admin REDIRECT_URI=http://localhost/callback 
+accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:oauth_apps:create APP_NAME=Admin_Tool USERNAME=admin REDIRECT_URI=http://localhost/callback 
 
 # Import users into accounts db
-env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:import_users CSV_FILE=<filename> --trace APP_NAME=Admin_Tool
+accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:import_users CSV_FILE=<filename> --trace APP_NAME=Admin_Tool
 
 # Export user list from accounts db (this file is needed to match faculty users from osc with their new accounts id)
 # found in config/database.yml
-env: accounts$ pg_dump -t contact_infos -U ostaccounts -h openstax-dev-db.casdfasdfnll.us-west-1.rds.amazonaws.com accounts_dev > contact_infos.sql"
+accounts$ pg_dump -t contact_infos -U ostaccounts -h openstax-dev-db.casdfasdfnll.us-west-1.rds.amazonaws.com accounts_dev > contact_infos.sql"
 
 # Use "faculty.csv" and "contact_infos.sql" to match every faculty user to an accounts ID (JOIN on email)
 # Give this file to salesforce
 
 # Use "faculty.csv" and "contact_infos.sql" to generate a csv list of faculty users and import the list into cms system. 
 # see https://github.com/openstax/openstax-cms/blob/master/accounts/test_users.csv for an example import file
+
+# Import users into csm
+oscms$ python manage.py import_users users.csv
+
 ```
 
 
