@@ -35,7 +35,7 @@ end
 env: accounts$ sudo su ostaccounts
 
 # Create admin (optional)
-RAILS_ENV=production rbenv exec bundle exec accounts:create_admin[admin,password]
+RAILS_ENV=production rbenv exec bundle exec rake accounts:create_admin[admin,password]
 
 #check oauth app list
 env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:oauth_apps:list 
