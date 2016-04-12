@@ -50,7 +50,7 @@ env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:import_
 # found in config/database.yml
 env: accounts$ pg_dump -t contact_infos -U ostaccounts -h openstax-dev-db.casdfasdfnll.us-west-1.rds.amazonaws.com accounts_dev > contact_infos.sql"
 
-# Use "faculty.csv" and "contact_infos.sql" to match every faculty user to an accounts ID
+# Use "faculty.csv" and "contact_infos.sql" to match every faculty user to an accounts ID (JOIN on email)
 # Give this file to salesforce
 
 # Use "faculty.csv" and "contact_infos.sql" to generate a csv list of faculty users and import the list into cms system. 
