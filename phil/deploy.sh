@@ -62,10 +62,22 @@ then
 else
   # workon tutordep
 
-  if [ 'qa' == ${WHAT} -o 'prod' == ${WHAT} -o 'staging' == ${WHAT} -o 'dev' == ${WHAT} ]
+  if [ 'qa' == "${WHAT}" -o 'prod' == "${WHAT}" -o 'staging' == "${WHAT}" -o 'dev' == "${WHAT}" -o 'latest' == "${WHAT}" ]
   then
+
+    # Make sure all the repos have the latest commits for manifestly
+    ALL_REPOS=$(ls ..)
+    for REPO_NAME in ${ALL_REPOS}
+    do
+      if [ -d "../${REPO_NAME}/.git" ]
+      then
+        echo "Updating ${REPO_NAME} with new commits from github"
+        X=$(cd "../${REPO_NAME}" && git fetch --all)
+      fi
+    done
+
     # Deploying from an existing manifest file
-    if [ 'prod' == ${WHAT} ]
+    if [ 'prod' == "${WHAT}" ]
     then
       MANIFEST_HOST='tutor.openstax.org'
     else
@@ -84,6 +96,18 @@ else
 
   elif [ $(expr ${WHAT} : '^\([a-f0-9]*\)$') ]
   then
+
+    # Make sure all the repos have the latest commits for manifestly
+    ALL_REPOS=$(ls ..)
+    for REPO_NAME in ${ALL_REPOS}
+    do
+      if [ -d "../${REPO_NAME}/.git" ]
+      then
+        echo "Updating ${REPO_NAME} with new commits from github"
+        X=$(cd ../${REPO_NAME} && git fetch --all)
+      fi
+    done
+
     MANIFEST_SHA=${WHAT}
     MANIFEST_URL="https://raw.githubusercontent.com/openstax/deploy-manifests/${MANIFEST_SHA}/tutor"
 
