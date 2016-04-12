@@ -56,7 +56,7 @@ accounts$ pg_dump -t contact_infos -U ostaccounts -h openstax-dev-db.casdfasdfnl
 # Use "faculty.csv" and "contact_infos.sql" to generate a csv list of faculty users and import the list into cms system. 
 # see https://github.com/openstax/openstax-cms/blob/master/accounts/test_users.csv for an example import file
 
-# Import users into csm
+# Import users into cms
 oscms$ python manage.py import_users users.csv
 
 ```
