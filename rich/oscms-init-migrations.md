@@ -34,11 +34,14 @@ end
 # Log in as ostaccounts user
 env: accounts$ sudo su ostaccounts
 
+# Create admin (optional)
+RAILS_ENV=production rbenv exec bundle exec accounts:create_admin[admin,password]
+
 #check oauth app list
 env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:oauth_apps:list 
 
 # If Admin_Tool app does not exist create it
-env: accounts$ RAILS_ENV=production rake accounts:oauth_apps:create APP_NAME=Admin_Tool USERNAME=admin REDIRECT_URI=http://localhost/callback 
+env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:oauth_apps:create APP_NAME=Admin_Tool USERNAME=admin REDIRECT_URI=http://localhost/callback 
 
 # Import users into accounts db
 env: accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:import_users CSV_FILE=<filename> --trace APP_NAME=Admin_Tool
