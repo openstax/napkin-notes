@@ -30,6 +30,12 @@ in other transactions IF the row exists to begin with.
 will cause a `transaction isolation error` in the other transaction
 as soon as the `SELECT FOR UPDATE` returns (despite the blocking read).
 
+If no update is actually performed in the row where `SELECT FOR UPDATE` was used,
+but different rows are updated, other transactions will succeed, possibly with stale data
+(despite the blocking read).
+In this case, it might be desirable to use `SELECT FOR UPDATE`
+on the rows that are actually updated or use a different locking strategy.
+
 `INSERT` `blocks` other `INSERT` (not `SELECT`), however the error returned by PostgreSQL is
 `ERROR:  duplicate key value violates unique constraint "name"`
 which is NOT caught by the `transaction_retry` gem (no retry, causes 500 error).
