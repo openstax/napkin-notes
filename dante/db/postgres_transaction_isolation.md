@@ -34,7 +34,7 @@ If no update is actually performed in the row where `SELECT FOR UPDATE` was used
 but different rows are updated, other transactions will succeed, possibly with stale data
 (despite the blocking read).
 In this case, it might be desirable to use `SELECT FOR UPDATE`
-on the rows that are actually updated or use a different locking strategy.
+on the rows that are actually `UPDATE`d or use a different locking strategy (or `SERIALIZABLE`).
 
 `INSERT` `blocks` other `INSERT` (not `SELECT`), however the error returned by PostgreSQL is
 `ERROR:  duplicate key value violates unique constraint "name"`
