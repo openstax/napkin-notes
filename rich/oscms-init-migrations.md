@@ -1,6 +1,6 @@
 ### Migration Procedure Notes
 
-Random collections of commands for launch day. 
+A random collection of commands for launch day. 
 
 **DevOps Requirments**:  Nothing stored on local file except for application code.
 
