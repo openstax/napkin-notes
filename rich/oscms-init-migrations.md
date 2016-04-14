@@ -48,14 +48,18 @@ accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:oauth_apps:c
 # Import users into accounts db
 accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:import_users CSV_FILE=<filename> --trace APP_NAME=Admin_Tool
 
-# Export user list from accounts db (this file is needed to match faculty users from osc with their new accounts id)
+# Export contact list from accounts db (this file is needed to match faculty users from osc with their new accounts id in salesforce)
 # found in config/database.yml
 accounts$ pg_dump -t contact_infos -U ostaccounts -h openstax-dev-db.casdfasdfnll.us-west-1.rds.amazonaws.com accounts_dev > contact_infos.sql"
+
+# Also export user list from accounts db (this file is needed to match faculty users from osc with their new accounts id in cms)
+# found in config/database.yml
+accounts$ pg_dump -t users -U ostaccounts -h openstax-dev-db.casdfasdfnll.us-west-1.rds.amazonaws.com accounts_dev > users.sql"
 
 # Use "faculty.csv" and "contact_infos.sql" to match every faculty user to an accounts ID (JOIN on email)
 # Give this file to salesforce
 
-# Use "faculty.csv" and "contact_infos.sql" to generate a csv list of faculty users and import the list into cms system. 
+# Use "faculty.csv" and "users.sql" to generate a csv list of faculty users and import the list into cms system. 
 # see https://github.com/openstax/openstax-cms/blob/master/accounts/test_users.csv for an example import file
 
 # Import users into cms
