@@ -59,7 +59,7 @@ accounts$ pg_dump -t users -U ostaccounts -h openstax-dev-db.casdfasdfnll.us-wes
 # Use "faculty.csv" and "contact_infos.sql" to match every faculty user to an accounts ID (JOIN on email)
 # Give this file to salesforce
 
-# Use "faculty.csv" and "users.sql" to generate a csv list of faculty users and import the list into cms system. 
+# Use "faculty.csv" and "users.sql", (might need contact_infos.sql to filter out faculty users), to generate a csv list of users and import the list into cms system. 
 # see https://github.com/openstax/openstax-cms/blob/master/accounts/test_users.csv for an example import file
 
 # Import users into cms
