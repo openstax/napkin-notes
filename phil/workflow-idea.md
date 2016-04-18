@@ -1,3 +1,8 @@
+---
+title: "Workflow Idea"
+layout: default
+---
+
 # Workflow: "Be Less Busy"
 
 (we don't have to use all these steps; this is just a "vision" :smile:)
