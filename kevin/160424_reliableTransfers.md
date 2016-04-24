@@ -1,5 +1,5 @@
 ```
-data = request(client_instance_uuid, client_assigned_xfer_uuid, previous_server_assigned_xfer_uuid=nil)
+data, server_assigned_xfer_uuid = request(client_instance_uuid, client_assigned_xfer_uuid, previous_server_assigned_xfer_uuid=nil)
 ```
 | client instance uuid | client-assigned xfer uuid | previous server-assigned xfer uuid | result |
 |       :---:          |            :---:          |            :---:                   | :---   |
