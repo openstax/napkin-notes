@@ -12,14 +12,16 @@ Have django, accounts, and osc env up and running
 
 #### Procedure:
 ```
+osc$ export RAILS_ENV=production
+
 #Export all users from osc  (File will export as a .csv)
 osc$ rake db:dump_users 
 
 # Alternative command 
-osc$ RAILS_ENV=production rbenv exec bundle exec rake db:dump_users
+osc$ rbenv exec bundle exec rake db:dump_users
 
 # export a seperate faculty list of users using rails console.
-osc$ RAILS_ENV=production rbenv exec bundle exec rails c
+osc$ rbenv exec bundle exec rails c
 rails>
 
 faculty_users = User.joins{faculty_profile}.where{faculty_profile.is_verified == true}.all
@@ -31,22 +33,25 @@ CSV.open("faculty.csv","w") do |csv|
   end
 end
 
+# Enter accounts create env variable
+accounts$ export RAILS_ENV=production
+
 # copy files to accounts production
 
 # Log in as ostaccounts user
 accounts$ sudo su ostaccounts
 
 # Create admin (optional)
-accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:create_admin[admin,password]
+accounts$ rbenv exec bundle exec rake accounts:create_admin[admin,password]
 
 #check oauth app list
-accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:oauth_apps:list 
+accounts$ rbenv exec bundle exec rake accounts:oauth_apps:list 
 
 # If Admin_Tool app does not exist create it
-accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:oauth_apps:create APP_NAME=Admin_Tool USERNAME=admin REDIRECT_URI=http://localhost/callback 
+accounts$ rbenv exec bundle exec rake accounts:oauth_apps:create APP_NAME=Admin_Tool USERNAME=admin REDIRECT_URI=http://localhost/callback 
 
 # Import users into accounts db
-accounts$ RAILS_ENV=production rbenv exec bundle exec rake accounts:import_users CSV_FILE=<filename> --trace APP_NAME=Admin_Tool
+accounts$ rbenv exec bundle exec rake accounts:import_users CSV_FILE=<filename> --trace APP_NAME=Admin_Tool
 
 # Export contact list from accounts db (this file is needed to match faculty users from osc with their new accounts id in salesforce)
 # found in config/database.yml
