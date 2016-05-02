@@ -246,6 +246,13 @@ else
       elif [ 'accounts' == "${REPO_NAME}" ]
       then
         DEPLOY_COMMAND='accounts_web.yml'
+      elif [ 'tutor-deployment' == "${REPO_NAME}" ]
+      then
+        # Dummy command, just because I'm lazy and don't want to make appending
+        #   ansible commands conditional.
+        # But maybe it could be `DEPLOY_COMMAND=''` and then an if test for
+        #   appending to the list of ansible commands
+        DEPLOY_COMMAND='tutor_web.yml'
       else
         echo "Do not know which deploy command to run for this repo"
         exit 1
