@@ -3,7 +3,7 @@
 - [ ] add `LICENSE.md` file
 - [ ] protect master branch
 - [ ] add team (`all`)
-- [ ] add `.github/CONTRIBUTING.md` which links to https://github.com/openstax/napkin-notes/blob/master/.github/CONTRIBUTING.md
+- [ ] add `CONTRIBUTING.md` which links to https://github.com/openstax/napkin-notes/blob/master/CONTRIBUTING.md
 - [ ] add `.travis.yml`
 - [ ] add Webhook for Travis-CI
 
