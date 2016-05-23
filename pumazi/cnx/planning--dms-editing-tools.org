@@ -26,7 +26,7 @@ These are covered in more detail in the Architecture section of this document.
     One of the pain points associated with some of these tools
     is that they are difficult to setup.
     We will use basic python to achieve the goals for this story.
-    The utility itself will a a minimum only depend on the standard library.
+    The utility itself will at a minimum only depend on the standard library.
 
     Additional features of the tool can be made available,
     but the default behavior will be to push the functionality
@@ -66,7 +66,7 @@ These are covered in more detail in the Architecture section of this document.
     in the workflow that uses a staging server.
     Ideally, we should be providing preview features.
     However, I understand at this time that we don't
-    have the cycles to fix the problem outwrite.
+    have the cycles to fix the problem outright.
     Therefore, I push that story into the future.
     
 ** TODO S6 As a cnx developer, I want to disable the zope based publishing system so that I can provide vast improvements to the codebase and architecture of the cnx-suite; as well as, a better, cleaner and easier to maintain codebase that will hold up over time. :technical:debt:
@@ -89,7 +89,7 @@ and (optionally if dependencies exist)
 the validation of content (cnxml, collxml and completezip).
 
 This later validation option can be constructed to work locally
-or submit the content to a 
+or submit the content to a web service.
 The command-line utility will interact directly with a separate
 service specifically built to accept the completezip formatted payload.
 
