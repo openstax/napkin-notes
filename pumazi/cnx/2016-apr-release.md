@@ -87,10 +87,10 @@ Two stage upgrade... First stage introduces a database change that will allow ar
 
 #### Update code
 
-- cnx-epub @ `HEAD`
-- [cnx-easybake](https://github.com/Connexions/cnx-easybake) @ `HEAD`
+- cnx-epub @ `v0.9.0`
+- [cnx-easybake](https://github.com/Connexions/cnx-easybake) @ `v0.6.0`
 - cnx-archive @ `e3fa7d038607894c281433f9f3828b7597a3128b`
-- cnx-publishing @ `HEAD`
+- cnx-publishing @ `v0.6.0`
 
 - Products.RhaptosModuleStorage as `egg`
 
@@ -136,7 +136,7 @@ while keeping the services up.
 
 #### Update code
 
-- cnx-archive @ `HEAD`
+- cnx-archive @ `v2.5.0`
 
 #### Run migrations
 
