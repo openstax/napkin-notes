@@ -3,7 +3,7 @@ Digital Media Specialist editing tools
 * Stories
 Note, many of these stories are not written from the users themselves.
 I've had to translate them from various documents and scenarios.
-See also https://docs.google.com/document/d/1-oO0UfVP7YLUnZuZfAMMzkqgMOUbeCLnJZCwjTMdnms/edit#
+See also Pain Points for Content Production: https://docs.google.com/document/d/1-oO0UfVP7YLUnZuZfAMMzkqgMOUbeCLnJZCwjTMdnms/edit#
 
 Inside these stories there is mention of a DMS command-line utility and DMS service.
 These are covered in more detail in the Architecture section of this document.
