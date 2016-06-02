@@ -22,4 +22,14 @@
 - [ ] create GitHub account
 - [ ] create Slack account (ppreferably use GitHub username)
 - [ ] create Honey account
-- [ ] invite to GitHub Team(s)
+- [ ] invite to https://github.com/orgs/openstax/teams/all
+
+
+# Leaving Person
+
+- [ ] remove from https://github.com/orgs/openstax/teams/all
+- [ ] remove from https://github.com/orgs/Connexions/teams
+- [ ] remove from Slack
+- [ ] remove from _all_ the Trello boards
+- [ ] remove from Zendesk/Salesforce/twitter/facebook
+- [ ] remove from LDAP
