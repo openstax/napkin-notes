@@ -87,12 +87,14 @@ Two stage upgrade... First stage introduces a database change that will allow ar
 
 #### Update code
 
-- cnx-epub @ `v0.9.0`
+- cnx-epub @ `v0.10.0`
 - [cnx-easybake](https://github.com/Connexions/cnx-easybake) @ `v0.6.0`
-- cnx-archive @ `e3fa7d038607894c281433f9f3828b7597a3128b`
+- cnx-archive @ `v2.4.8`
 - cnx-publishing @ `v0.6.0`
 
-- Products.RhaptosModuleStorage as `egg`
+- Products.RhaptosModuleStorage as `egg @ 1.1.2`
+- Products.RhaptosRepository as `egg @ 1.3.0`
+- Products.RhaptosCollaborationTool as `egg @ 0.10.1`
 
 #### Run migrations
 
@@ -136,6 +138,7 @@ while keeping the services up.
 
 #### Update code
 
+Make sure to update on both archive-server and db-server.
 - cnx-archive @ `v2.5.0`
 
 #### Run migrations
@@ -143,11 +146,14 @@ while keeping the services up.
 This migration runs away from the middle of the road solution.
 This is the final set of migrations.
 
+The last migration requires a user with superuser privileges. 
+
 `dbmigrator --config <publishing-config-ini> --context cnx-publishing --context cnx-archive migrate`
 
 #### Restart services
 
 - restart cnx-archive
+- restart zope FEs
 
 Restarting these will bring everything up-to-date.
 
