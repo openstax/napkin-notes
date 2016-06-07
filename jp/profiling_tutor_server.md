@@ -82,3 +82,36 @@ https://www.dropbox.com/s/nr1dqt4m8tewbgv/Screenshot%202015-07-11%2010.53.13.png
 And we see that 40% of the time is spent in `get_page_for_tasked_exercise`, [seen here](https://github.com/openstax/tutor-server/blob/1a0cbe89302d4b91b4bfc2d984e9e17f3600c5b4/app/routines/calculate_task_plan_stats.rb#L99-L101).  This is no surprise in that we already knew this was a suboptimal way to get pages from tasked exercises (albeit the only way currently).
 
 So the process here would be to knock that performance problem down and reanalyze.
+
+## Profiling the scores export
+
+Put the following in tutor-server somewhere it can be reloaded from the console, and run it over and over.
+
+```ruby
+CourseMembership::Models::Period
+Content::Uuid
+
+require 'ruby-prof'
+
+class PerfPerf
+  def self.run
+    # Get performance report object from a console run on staging, etc.  Dump
+    # it to YAML
+
+    report = YAML.load(File.read('/path/to/perf_report.yaml'))
+
+    # profile the code
+    result = RubyProf.profile do
+      Tasks::PerformanceReport::ExportCcXlsx.call(course_name: "A Name", report: [report], filename: 'trial')
+    end
+
+    File.open "#{Rails.root}/tmp/performance/export-graph.html", 'w' do |file|
+      RubyProf::GraphHtmlPrinter.new(result).print(file)
+    end
+
+    File.open "#{Rails.root}/tmp/performance/export-stack.html", 'w' do |file|
+      RubyProf::CallStackPrinter.new(result).print(file)
+    end
+  end
+end
+```

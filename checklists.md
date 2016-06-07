@@ -3,7 +3,7 @@
 - [ ] add `LICENSE.md` file
 - [ ] protect master branch
 - [ ] add team (`all`)
-- [ ] add `.github/CONTRIBUTING.md` which links to https://github.com/openstax/napkin-notes/blob/master/.github/CONTRIBUTING.md
+- [ ] add `CONTRIBUTING.md` which links to https://github.com/openstax/napkin-notes/blob/master/CONTRIBUTING.md
 - [ ] add `.travis.yml`
 - [ ] add Webhook for Travis-CI
 
@@ -22,4 +22,15 @@
 - [ ] create GitHub account
 - [ ] create Slack account (ppreferably use GitHub username)
 - [ ] create Honey account
-- [ ] invite to GitHub Team(s)
+- [ ] invite to https://github.com/orgs/openstax/teams/all
+
+
+# Leaving Person
+
+- [ ] remove from https://github.com/orgs/openstax/teams/all
+- [ ] remove from https://github.com/orgs/Connexions/teams
+- [ ] remove from Slack
+- [ ] remove from Google Drive folders and Docs
+- [ ] remove from _all_ the Trello boards
+- [ ] remove from Zendesk/Salesforce/twitter/facebook
+- [ ] remove from LDAP

@@ -1,0 +1,159 @@
+Digital Media Specialist editing tools
+
+* Stories
+Note, many of these stories are not written from the users themselves.
+I've had to translate them from various documents and scenarios.
+See also Pain Points for Content Production: https://docs.google.com/document/d/1-oO0UfVP7YLUnZuZfAMMzkqgMOUbeCLnJZCwjTMdnms/edit#
+
+Inside these stories there is mention of a DMS command-line utility and DMS service.
+These are covered in more detail in the Architecture section of this document.
+
+** DONE Story-DMS-1 As a DMS, I want to edit published books so that I can release books, correct errata and prepare materials for courseware. :editing:
+    This has been explained in the pain points document as "Because the new editor
+    is not available to users yet,
+    DMSs typically need to train any faculty who want to edit a book.
+    Once the new editor is available,
+    it should be more intuitive and cut down on time spent training."
+
+    Essentially, this is done because books will be edited
+    on the DMSs local machine.
+    Followup user stories will address other elements of the workflow
+    and the end results of that workflow.
+** TODO Story-DMS-2 As a DMS, I want validate cnxml edits outside of zope so that I get instant feedback on my work. :editing:
+    Providing a simple interface for the DMSs to validate their work prior
+    to publication.
+
+    One of the pain points associated with some of these tools
+    is that they are difficult to setup.
+    We will use basic python to achieve the goals for this story.
+    The utility itself will at a minimum only depend on the standard library.
+
+    Additional features of the tool can be made available,
+    but the default behavior will be to push the functionality
+    into an externally available service.
+
+    Thus, if dependencies like lxml, which require system libraries cannot be
+    easily installed, the application will default to submitting the results
+    to an external service.
+
+** TODO Story-DMS-3 As a DMS, I want to validate my edits to a book so that I can ensure a clean and accurate publication. [0/2] :editing:
+    It's known that they are already familiar with CNXML and have a general
+    understanding of the completezip structure,
+    used by zope as an export format.
+    So we will provide a mean for validatating an entire book formated in the completezip structure.
+
+    - [ ] validate the collxml file
+    - [ ] validate each cnxml file
+
+    The implementation concerns for this are similar to those of Story-DMS-2.
+
+** TODO Story-DMS-4 As a DMS, I want to publish a book so that I can meet my book release deadline. :editing:
+    Given a valid book formatted in the completezip structure,
+    publish it's contents to the archive database outside the scope of zope.
+
+    See the DMS Press component for implementation of the service
+    that accepts and handles the publication.
+** TODO Story-DMS-5 As a DMS, I want migrate staged books to production so that I can publish the finalized book. :editing:
+    Assuming we have disabled zope and the content-copy-tool as it is today no longer works,
+    this story attempts to fill that hole.
+    Our internal EPUB format will contain all the content for a publication,
+    including the transformations from cnxml->html.
+    Given that, we should be able to use the internal EPUB
+    to insert the book into the archive database
+    in its exact and identical form seen on the staging server.
+
+    Note, as I (M. Mulich) do not strongly believe
+    in the workflow that uses a staging server.
+    Ideally, we should be providing preview features.
+    However, I understand at this time that we don't
+    have the cycles to fix the problem outright.
+    Therefore, I push that story into the future.
+    
+** TODO S6 As a cnx developer, I want to disable the zope based publishing system so that I can provide vast improvements to the codebase and architecture of the cnx-suite; as well as, a better, cleaner and easier to maintain codebase that will hold up over time. :technical:debt:
+** TODO S7 As M. Mulich, I want to see the use of the production system when developing text book so that differences between the staging instances and production are not an issue. :idealism:
+* Architecture
+
+Technically speaking this could play out as a series of services
+that iteratively work as an umbilical before
+replacing it with a full editing service and interface.
+
+** Interface Components
+
+*** DMS command-line utility
+
+We define a command-line tools tool
+that will be used in the validation and submission of content.
+The scope of the commandline utility will be limited
+the to submission of content in the completezip format
+and (optionally if dependencies exist)
+the validation of content (cnxml, collxml and completezip).
+
+This later validation option can be constructed to work locally
+or submit the content to a web service.
+The command-line utility will interact directly with a separate
+service specifically built to accept the completezip formatted payload.
+
+*** DMS press service
+
+We provide a web API for submission of content in the completezip format.
+For the purposes of calling this service something useful,
+let's tentatively call it DMS Press (like the printing press).
+
+This service will also provide API points for validating individual pieces
+of content.
+This will allow the command-line utility to be accessible from any platform
+by providing a solution for those that don't want to or cannot install
+the required dependencies for the validation.
+
+At first (1st iteration) we provide an API point that accepts completezip
+formatted content and publishes it the archive
+similar to how zope would have done the publication.
+This will crudely eliminate the need to publish via zope.
+As a result, we can further work towards decommisioning zope altogether.
+
+Later (2nd iteration) we will provide a means for transforming
+the completezip payload to an internal epub.
+(This can be done in parallel with the zope style publication.
+Think of it like an experiment for working out the kinks.
+Effectively it puts real eyes on the format.)
+Doing this will repurpose the service as an authoring
+component rather than a publishing one.
+The service will start to look and act more like what cnx-authoring does
+and less like what cnx-publishing does.
+In fact, this change to transforming the content to use the internal epub
+is to allow the service to submit that epub as a publication payload
+to the publishing service.
+
+(Note, these later iteration items might not even be necessary,
+because by this time we may have been able to fully develop
+an authoring environment.)
+
+Later still (3rd iteration) we will completely disable the parallel
+zope style publication logic.
+The service will now proxy information from publishing
+
+Finally (final iteration), we throw the service away
+in favor of using publishing directly.
+This assumes that a viable solution for authoring content
+as HTML has come along.
+
+** Software components
+
+Two new applications will be created.
+One the DMS command-line utility,
+which is the direct interface for the DMSs.
+The other is the DMS press service,
+an HTTP service we will use to mimic zope style publications.
+These two applications combined fulfil the general usecase.
+
+Two new library packages will be used/created
+to fulfil the implementation of the above applications.
+The first is a package for constructing and deconstructing
+the completezip format.
+This package will also hold the validation code for the
+cnxml and collxml formats as well as the completezip structure validator.
+
+The other library is cnx-db, which will be used in the DMS press application
+as the database layer for committing the content into the archive.
+This library is shared between cnx-archive, cnx-publishing
+and now DMS Press.

@@ -132,3 +132,10 @@ all the links in the chapter outline need the 4 span structure described above
    ```<div class="ui-toggle-wrapper">
     <button class="btn-link ui-toggle" title="Show/Hide Solution"></button>
    </div>```)
+
+
+TODO:  
+- make sure that any link that has a href="#id" also has data-href-pageid="UUIDoftarget"
+ -> per Ross: This is probably doable, and would allow rewritting of links w/ only local knowledge of the tree. However, it seems that it's fairly trivial at the python level to take a HTML tree document, and construct the needed id -> uuid#id map, then fix all the links there. It needs to be outside the easybake, since the way to make a url is specific to archive/publish, not easybake.
+or
+-> The whole 'update all ids' part could encode the uuid in the id, so "#uuid-localid". That would make the HTML hard to read, but ... it's too for humans. However, this means easybake could no longer stay agnostic about the HTML format, since it needs to adjust IDs when it copies them.

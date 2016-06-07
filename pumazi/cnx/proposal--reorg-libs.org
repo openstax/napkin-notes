@@ -4,13 +4,24 @@
 #+NAME:   fig:dependency-chain
 [[./cnx-deps-chain.jpg]]
 
-** Cause of the proposal
-** Common ties
-** Scoped/Layered problems
-** Reusability
-* Libraries
-** cnx-epub
-** TODO cnx-db
+* Stories
+** TODO Story-refactor-1 As a cnx developer, I want to interact with the database as an abstraction layer so that I can write clear, reusable and maintainable code.
+   See the Architecture section for the new packages
+   that would split some of the existing code
+   in cnx-archive and cnx-publishing
+   into a common abstract library called cnx-db.
+** TODO Story-refactor-2 As a cnx developer and DMS (and devops), I want to be able to inject content the archive from the CLI so that I can easily transfer content from one system to another.
+   Essentially this would allow us to export an internal EPUB from production
+   into another environment.
+   That environment could be a staging server or a developer's local machine.
+** TODO Story-refactor-3 As a cnx developer, I want to use similar functions when working with archive and publishing so that I don't have to repeat myself.
+   We already have a number of places that contain duplicate code.
+   This story would be an attempt *sinch up some technical debt*
+   that we have accrued over several added features.
+* Architecture
+** Libraries
+*** cnx-epub
+*** cnx-db
    Database layer parts of cnx-archive and cnx-publishing will be moved to cnx-db.
    This includes the schema, migrations, SQL statements and SQL specific functions.
    The schemas and migrations from cnx-archive and cnx-publishing will be combined.
@@ -20,13 +31,13 @@
    Each part of the IMCRUD will be independently /unit tested/
    (i.e. coverage should be complete for each part independent of any other).
 
-** TODO cnx-db-models
+*** cnx-db-models
    An integration library between cnx-db (database layer) and cnx-epub (models layer).
 
    Some work towards this was made in ~cnxarchive/scripts/export_epub~.
    It should be used as an example direction for where to take this package.
 
-** TODO cnx-db-cli (optional)
+*** cnx-db-cli (optional)
    An integration interface package used to take input from the commandline
    into the database.
 
@@ -37,14 +48,14 @@
    will greatly simplify the data and the way we view it both from the console
    and the web. This should help us work towards prividing a top-notch API.
 
-* Dependent Projects
-** TODO cnx-archive
+** Applications
+*** cnx-archive
    cnx-archive will be modified to use cnx-db (& cnx-db-models, if necessary).
    This will scope all database changes to one package, which will better
    isolate database changes. A clear division between database
    and representation will make feature development clear and poignant.
 
-** TODO cnx-publishing
+*** cnx-publishing
    cnx-publishing will be modified to use cnx-db & cnx-db-models.
    This will scope all database changes to one package, which will better
    isolate database changes.
