@@ -8,6 +8,8 @@ Some tools made in-house that could be useful to others:
 
 - QA frequently has to describe, in words, how to reproduce a bug.
 Recordo logs AJAX requests, mouse clicks, screen resizes, browser/OS information, exceptions, error messages, and copies it to the clipboard
+- Shows that openstax.org makes a bunch of JS requests for every page, errors when someone does not have Google Analytics, and would have made pasting the errors and browser info in the release last night more precise.
+- Works on mobile too!
 
 
 ### Selenium Sanity Wrapper
