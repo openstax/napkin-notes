@@ -92,7 +92,6 @@ Two stage upgrade... First stage introduces a database change that will allow ar
 
 - cnx-archive @ `v2.5.1` (2.4.8 has a nasty long migration that locks the db)
 - pip install setuptools==20.1.1` (bypass an error w/ funcsig)
-
 - cnx-publishing @ `v0.6.0`
 
 - Products.RhaptosModuleStorage as `egg @ 1.1.2`
