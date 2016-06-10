@@ -89,7 +89,10 @@ Two stage upgrade... First stage introduces a database change that will allow ar
 
 - cnx-epub @ `v0.10.0`
 - [cnx-easybake](https://github.com/Connexions/cnx-easybake) @ `v0.6.0`
-- cnx-archive @ `v2.4.8`
+
+- cnx-archive @ `v2.5.1` (2.4.8 has a nasty long migration that locks the db)
+- pip install setuptools==20.1.1` (bypass an error w/ funcsig)
+
 - cnx-publishing @ `v0.6.0`
 
 - Products.RhaptosModuleStorage as `egg @ 1.1.2`
@@ -106,6 +109,10 @@ where things will continue working while we transition to the next stage
 
 Note, we purposefully leave `--context cnx-publishing` out of the command.
 We will wait until stage two to introduce those migrations.
+
+#### Change Code
+
+ - revert archive to `v2.4.8`
 
 #### Restart services
 
@@ -157,6 +164,25 @@ The last migration requires a user with superuser privileges.
 
 Restarting these will bring everything up-to-date.
 
+#### Webview
+
+update beta to latest tip-of-master; cnx.org to tip of production
+
+cp -a webview webview-2016_06_09
+
+edit settings.js   - correct to exercises.openstax.org
+
+npm update; bower update; grunt dist; ./purge.sh
+
+#### publish fixes
+
+connect to archive db.
+run:
+
+`insert into api_keys (key, name, groups) values ('b07', 'Authoring', ARRAY['g:trusted-publishers']);
+
+restart cnx-publishing
+
 ## Testing
 
 ### Are things working between the stages?
@@ -198,6 +224,7 @@ Have them supply devops with a ruleset that we can inject into archive.
 After the ruleset is in archive, manually invoke the collation.
 This will enable you to test the archive routes deliver collated content.
 :bug: I suspect webview will not be able to render composite-pages without modifications.
+
 
 
 ## Ignoring
