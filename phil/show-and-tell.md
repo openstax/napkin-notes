@@ -12,7 +12,7 @@ Recordo logs AJAX requests, mouse clicks, screen resizes, browser/OS information
 
 ### Selenium Sanity Wrapper
 
-[README](https://github.com/openstax/tutor-js/tree/master/test-integration#readme) or [video](https://drive.google.com/file/d/0B7-23yUTssvDc3FDQUU5MHNGUEU/view)
+[README](https://github.com/openstax/tutor-js/tree/master/test-integration#readme) or [video](https://drive.google.com/file/d/0B7-23yUTssvDc3FDQUU5MHNGUEU/view) or [helper docs](https://openstax.github.io/tutor-js/docs/) or [coverage](https://openstax.github.io/tutor-js/coverage/)
 
 - selenium has annoying timeouts
   - Some tests take 10 minutes to succeed. if it errors on the 1st step then you have to wait 10minutes for it to fail
@@ -22,16 +22,15 @@ Recordo logs AJAX requests, mouse clicks, screen resizes, browser/OS information
   - so, we have developers maintain the selectors by having to write our own tests
 - Selenium is fragile because of lack of abstraction
   - QA needs to do higher-level "things", and occasionally doing low-level tasks
-  - so, we have things like "create and publish an assignment"
+  - so, we have things like "create and publish an assignment" (see "Helper Docs" link above)
 - Selenium doesn't do code coverage
-  - coverage is nice for unit tests so we added a way to do it for Selenium tests too!
+  - coverage is nice for unit tests so we added a way to do it for Selenium tests too! (see "Coverage" link above)
 - Selenium doesn't have a debugger
-  - So, we added one
-- Selenium does 
+  - So, we added one (see "Video" link above)
 - ES6 is async and requires things like Promises
   - So, we added support for ES7 async (& got it to work in the debugger too!)
 
-- We split the helpers into screens. Each helper assumes you are already on the current screen and only has operations for how to leave the screen.
+- We split the helpers into screens. Each helper assumes you are already on the current screen and only has operations for how to leave the screen. (see "Helper Docs" link above)
 
 
 ### Source Code in Production
