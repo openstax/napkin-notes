@@ -46,7 +46,7 @@ Recordo logs AJAX requests, mouse clicks, screen resizes, browser/OS information
 # 2 to Show
 
 
-### Slackbot
+### Slaxbot
 
 [code](https://github.com/philschatz/stax-bot)
 
