@@ -1,5 +1,5 @@
 #Global Requirements
-This document's aim is to identify needs and requirements from all the OSX products that are using a common html file and common CSS styling
+This document's aim is to identify needs and requirements from all the Openstax products that are using a common html file and common CSS styling
 
 ###General needs
 Take specific formats into account 
