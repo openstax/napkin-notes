@@ -16,6 +16,7 @@
 - [CNX](#cnx)
 - [Textbooks](#textbooks)
 - [Customer Support](#customer-support)
+- [Deployments](#deployments)
 - [Gantt Chart Structure](#gantt-chart-structure)
 
 # Communication
@@ -95,21 +96,21 @@ First, all the steps of getting a story out to the users. No hangups here; those
   - codes...
   - creates a PR (`#234`)
   - adds `fixes #123` to PR body
-  - chats `/deploy tutor-js#234 to dev` to test
+  - chats `/deploy tutor-js#234 to dev` to test ([Why use Chat?](#deployments))
   - adds `<tt>4</tt>` to mark the hours worked
   - checks the "FE" item in the TODO section of the Issue
   - moves PR (and automatically the Issue) to `Needs Review`
 1. **Reviewer**
   - checks code
-  - tests code by chatting `/deploy tutor-js#234 to dev`
+  - tests code by chatting `/deploy tutor-js#234 to dev` ([Why use Chat?](#deployments))
   - moves PR (& Issue) to `Needs TEST`
 1. **TEST**
-  - chats `/deploy tutor-js#234 to qa` to test
+  - chats `/deploy tutor-js#234 to qa` or `/deploy dev to qa` to test ([Why use Chat?](#deployments))
   - merges the PR and closes the issue
 1. **PM**
   - checks the Gantt Chart and sees where to help
 1. **TEST**
-  - chats `/deploy tutor-js/master to staging` to doomsday test
+  - chats `/deploy qa to staging` to doomsday test ([Why use Chat?](#deployments))
   - chatbot responds with link to see all Issues that are in the commit diff
   - determines which tests need to be run from ^^^
   - tells testers to create issues with the label "doomsday"
@@ -150,7 +151,7 @@ A Hotfix needs to be based on what is on production but should end up on master.
   - checks production `https://${SERVER}/rev.txt` to get production commit
   - creates new branch based on the commit
   - writes fix
-  - tests by chatting `/deploy tutor-js/hotfix-branch-name to dev`
+  - tests by chatting `/deploy tutor-js/hotfix-branch-name to dev` ([Why use Chat?](#deployments))
   - creates PR to `/master`
     - adds label `HOTFIX`
 1. **Reviewer** ...
@@ -169,7 +170,7 @@ Often an entire story cannot be completed as one PR.
   - ...
   - <sub>creates a PR (`#234`)</sub>
   - adds `refs #123` to PR body (_instead of `fixes #123`_)
-  - <sub>chats `/deploy tutor-js#234 to dev` to test</sub>
+  - <sub>chats `/deploy tutor-js#234 to dev` to test ([Why use Chat?](#deployments))</sub> 
   - ...
   - moves PR (but **not** the Issue) to `Needs Review`
 1. **Reviewer**
@@ -202,7 +203,7 @@ This is similar to "Partially Complete a Story".
 1. **Dev** (FE) ... same as BE **Dev**
 1. **Reviewer** (FE) ... same as BE **Reviewer**
 1. **TEST**
-  - chats `/deploy tutor-js#234 tutor-server#345 to qa` to test
+  - chats `/deploy tutor-js#234 tutor-server#345 to qa` to test ([Why use Chat?](#deployments))
   - merges the PRs and closes the Issue
 1. **PM** ...
 1. **TEST** ...
@@ -237,7 +238,7 @@ The _"magic"_ to generate the PDFs is: use GitHub's webhooks and a _simple_ **Tr
 1. **Alina**
   - reviews the PDF and CNXML
   - merges the PullRequest _<small>(which may automatically close the Issue)</small>_
-  - chats `/publish textbooks/master:col11406_physics to staging.cnx` (so other people like tutor BE folks will see)
+  - chats `/publish textbooks/master:col11406_physics to staging.cnx` (so other people like tutor BE folks will see) ([Why use Chat?](#deployments))
     - this uploads the new content stored in the GitHub repo into staging.cnx
     - _<small>(this could also be done automatically when the PullRequest is merged; the bot would just say so in `#deployments` chat channel)</small>_
 
@@ -264,6 +265,31 @@ Sometimes, refactoring work is done which involves all the books.
 # Customer Support
 
 CS Needs to know what features are coming up, what bugs are fixed, and workarounds to tell users.
+
+
+# Deployments
+
+Why deploy from chat? See http://githubengineering.com/deploying-branches-to-github-com/
+
+- people see what is going on
+- provides context for why the deploy happened (if done from a room)
+- teaches the syntax to others
+- can restrict who or what types of deployments can be made
+
+### Deployment types
+
+Deployments that generate a manifest:
+
+- `deploy tutor-js@bb49cf to dev` deploys a commit
+- `deploy tutor-js#123 to dev` deploys a Pull Request with master merged in ("cool magic!")
+- `deploy tutor-js#123! to dev` deploys a Pull Request without `master` (useful for Hotfixes only)
+- `deploy tutor-js/branch-name to dev`
+
+Deployments that use an existing manifest:
+
+- `deploy c9fbb67 to qa` deploys a manifest file
+- `deploy qa to staging` deploys the manifest currently on `qa` (could prompt if qa is currently being deployed)
+
 
 # Gantt Chart Structure
 
@@ -514,10 +540,6 @@ Example: https://github.com/philschatz/gdocs-convert-to-markdown2/blob/master/20
 - [ ] make sample repos with Issues for Alina, Alana, Epics docs, QA, CS, and Norm views
 - [x] mockups of an ideal flow from start-to-finish of a Story
 - [ ] clean up this doc
-
-## Deployments
-
-- [ ] get hubot to deploy with commands like `/deploy tutor-js#123 to dev`
 
 ## Selenium
 
