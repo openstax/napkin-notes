@@ -1,49 +1,58 @@
-#Global Requirements
+# Global Requirements
 This document's aim is to identify needs and requirements from all the Openstax products that are using a common html file and common CSS styling
 
-###General needs
-Take specific formats into account
-  - webview
-  - epub
-  - pdf
-  - Tutor
+### General needs
 
-Global identity, consistent look and feel
-  - format specific but not disconnected from other products
+As a **student/instructor** I want the different formats (webview, epub, pdf, tutor) to be similar enough to do my homework and reading assignments easily.
 
-Cross team friendly
-  - accessible and efficiently accessed/modified by all teams
+As **Openstax** I want the styling to be similar so there is brand identity and a consistent "look and feel" within the constraints of the various digital formats.
 
-##Product Specific
-###PDF styles/framework
-Maintainablity:
-  - lifetime
-    - retain control over natural evolution of code base over time
-    - scalable
-  - multiple users, code consistency
-  - future development (features, refactor, new designs)
-  - change in data structure (new DOM)
+As a **developer** I want the code to be easily approachable and efficiently accessed/modified by all teams so I can make changes faster.  
 
-Ease of use:
-  - efficiency: clear file structure, clear logic pathways: limit time wasted figuring out what does what and what is where
-  - access to PDF(print) specific needs: pagination, folio
-  - minimal regression testing: ablitity to add or modifiy content without having to do a full stack regression testing each time
+# Product Specific
 
-Fast creation
-  - DRY code
-  - reusable/modular when creating/updating templates
-  - ability to add various or new features easily
-  - turn around issues or bugs quickly
+## PDF styles/framework
 
---------
-##General philosophy/concepts
+### Maintenance
 
-###For cleaner/better code
+As a **developer** I want the code to scale to multiple books so adding a new book is simple.
+
+As a **developer** I want to retain control over the evolution of the codebase over time _(PHILS: I am not sure what is meant by this)_
+
+As a **developer** I want code consistency by other developers so the code is easier to understand.
+
+As a **developer** I want future development (new features, refactor, new designs) to be easy to maintain.
+
+As a **developer** I want changes in data structure to be relatively easy so that we can add formats or features easily.
+
+
+### Ease of use
+
+As a **developer** I want a clear file structure and logic pathways to reduce time wasted figuring out what does what and what is where.
+
+As a **developer** I want easy access to PDF-specific needs (pagination/folio) so testing is quicker.
+
+As a **tester** I want minimal regression-testing so code-changes do not impact more books than necessary.
+
+### Fast creation
+
+As a **developer** I want code to not be duplicated so there is less code to support.
+
+As a **developer** I want code to be reusable/modular so creating/updating templates is easier.
+
+As a **developer** I want to add new features easily because that is where the majority of my time is spent.
+
+As a **developer** I want to fix bugs quickly _(PHIL: This item seems to list a problem but is missing a solution)
+
+
+# General philosophy/concepts
+
+## For cleaner/better code
   - never override an CSS declaration
   - keep our mixins simple, you shouldn't need a map and two days to find where that mixin was created  
   - from general to specific, keeping it as generic as possible
 
-###For an ideal slots/skeleton framework
+## For an ideal slots/skeleton framework
   - we add, we never remove (avoid regression testing)
   - the framework is versioned, as with an API
   - developers should never have to look at the skeleton
