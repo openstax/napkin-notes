@@ -267,3 +267,11 @@ biglearn-qa_batch=> SELECT * FROM facts.pool_questions WHERE pool_id IN (185589,
  2779181 |  185610 |       33280 | 2016-07-07 22:03:36.107788
 (79 rows)
 ```
+
+```
+biglearn-qa_batch=> SELECT * FROM facts.question_tags WHERE id = 33252;
+  id   |               question_id               | tags |          created           | question_version
+-------+-----------------------------------------+------+----------------------------+------------------
+ 33252 | //exercises.openstax.org/exercises/5721 | {}   | 2016-06-29 18:24:09.332217 |                3
+(1 row)
+```
