@@ -17,13 +17,19 @@ As a **developer** I want the code to be easily approachable and efficiently acc
 
 As a **developer** I want the code to scale to multiple books so adding a new book is simple.
 
-As a **developer** I want to retain control over the evolution of the codebase over time _(PHILS: I am not sure what is meant by this)_
+As a **developer** I want to easily refactor the code so it can evolve over time (need refactor usecases).
 
 As a **developer** I want code consistency by other developers so the code is easier to understand.
 
 As a **developer** I want future development (new features, refactor, new designs) to be easy to maintain.
 
 As a **developer** I want changes in data structure to be relatively easy so that we can add formats or features easily.
+
+As a **developer** I want the code to be well documented and organized so bug fixing is easier.
+
+As *OpenStax* I want to make sure people cannot create infinite loops
+  - _(CSS by itself is NOT turing complete)_
+  - _(something about running untrusted code and whatnot)_
 
 
 ### Ease of use
@@ -41,8 +47,6 @@ As a **developer** I want code to not be duplicated so there is less code to sup
 As a **developer** I want code to be reusable/modular so creating/updating templates is easier.
 
 As a **developer** I want to add new features easily because that is where the majority of my time is spent.
-
-As a **developer** I want to fix bugs quickly _(PHIL: This item seems to list a problem but is missing a solution)
 
 
 # General philosophy/concepts
@@ -106,9 +110,6 @@ As **openstax** I want to...
 1. have strings & numbering to work in multiple languages because a lot of the content is not in english
 1. have a default numbering/collation for non-openstax books
   - _(maybe also affects the cnxml2html conversion for things like exercises (they'll need to not lose some metadata))_
-1. make sure people cannot create infinite loops
-  - _(CSS by itself is NOT turing complete)_
-  - _(something about running untrusted code and whatnot)_
 
 
 # HTML Stories
