@@ -7,7 +7,7 @@ As a **student/instructor** I want the different formats (webview, epub, pdf, tu
 
 As **Openstax** I want the styling to be similar so there is brand identity and a consistent "look and feel" within the constraints of the various digital formats.
 
-As a **developer** I want the code to be easily approachable and efficiently accessed/modified by all teams so I can make changes faster.  
+As a **developer** I want the code to be easily approachable and efficiently accessed/modified by all teams so I can make changes faster.
 
 # Product Specific
 
@@ -53,7 +53,7 @@ As a **developer** I want to add new features easily because that is where the m
 
 ## For cleaner/better code
   - never override an CSS declaration
-  - keep our mixins simple, you shouldn't need a map and two days to find where that mixin was created  
+  - keep our mixins simple, you shouldn't need a map and two days to find where that mixin was created
   - from general to specific, keeping it as generic as possible
 
 ## For an ideal slots/skeleton framework
@@ -83,6 +83,8 @@ As a **Developer** I want to...
 1. generate HTML from parts of books or entire books (with caching a-la-makefile) easily from the commandline
 1. have "unit tests" for the CSS files so I don't have to generate the whole book
   - _(also acts as "runnable documentation")_
+1. have a validation structure that I can rely on to prevent me from producing/committing unusable code
+ - _(ruleset validation against cnx-epub  publishing)_
 1. maintain as little documentation as possible because keeping documentation in sync is error-prone
   - _(including scripts to generate the HTML, installing dependencies, etc. (ie [Runnable Documentation](http://githubengineering.com/runnable-documentation/)) )_
 1. associate the CSS files for books with the code somewhere in GitHub and keep them in sync
