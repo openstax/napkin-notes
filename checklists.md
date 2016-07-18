@@ -24,14 +24,18 @@
 - [ ] create Slack account (ppreferably use GitHub username)
 - [ ] create Honey account
 - [ ] invite to https://github.com/orgs/openstax/teams/all
-
+- [ ] add to Google Drive folders (`Open Stax All (Searchword: Gorilla)`)
+- [ ] add to Google openstax calendar(s)
+- Employee-specific:
+  - [ ] create LDAP account (preferably use GitHub username)
 
 # Leaving Person
 
+- [ ] collect any passwords and secrets
 - [ ] remove from https://github.com/orgs/openstax/teams/all
 - [ ] remove from https://github.com/orgs/Connexions/teams
 - [ ] remove from Slack
 - [ ] remove from Google Drive folders and Docs
 - [ ] remove from _all_ the Trello boards
 - [ ] remove from Zendesk/Salesforce/twitter/facebook
-- [ ] remove from LDAP
+- [ ] disable LDAP account
