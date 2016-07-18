@@ -26,8 +26,7 @@
 - [ ] invite to https://github.com/orgs/openstax/teams/all
 - [ ] add to Google Drive folders (`Open Stax All (Searchword: Gorilla)`)
 - [ ] add to Google openstax calendar(s)
-- Employee-specific:
-  - [ ] create LDAP account (preferably use GitHub username)
+- [ ] create LDAP account (preferably use GitHub username)
 
 # Leaving Person
 
