@@ -78,6 +78,13 @@ As a **Developer** I want to...
   - _(naive styling test: pixel-compare each PDF (just needs to verify nothing changed) )_
   - _(naive collation test: generate the HTML & diff)_
 1. take an existing book and quickly add a new "feature"
+```less
+// File oldbook.less
+
+// File newbook.less
+@import './oldbook';
+.book-chapter-collation(@where: chapter; @className: 'review-problems'; @resetNumbering: true);
+```
 1. take an existing book and change some collation to make a new book
 1. quickly make a new book from scratch
 1. generate HTML from parts of books or entire books (with caching a-la-makefile) easily from the commandline
@@ -96,14 +103,14 @@ As a **Developer** I want to...
   - (:thought_balloon: The analysis done by kerwin+derek(?) should contain all the mixins)
 ```less
 // File mixins/collation.less:
-.book-chapter-collation(@className; @resetNumbering) {
+.book-chapter-collation(chapter; @className; @resetNumbering) {
   // TODO: do something in here
 }
 
 // File books/physics.less
 @import '../mixins/collation';
-.book-chapter-collation(@className: 'review-problems'; @resetNumbering: true);
-.book-chapter-collation(@className: 'homework-problems'; @resetNumbering: true);
+.book-collation(@where: chapter; @className: 'review-problems'; @resetNumbering: true);
+.book-collation(@where: chapter; @className: 'homework-problems'; @resetNumbering: true);
 ```
 
 As an **External user** I want to...
