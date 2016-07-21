@@ -94,7 +94,17 @@ As a **Developer** I want to...
 1. have the passes to be abstracted away because most of those will not change frequently
 1. write simple CSS as long as I know what the mixins are and create few (if any) of my own mixins.
   - (:thought_balloon: The analysis done by kerwin+derek(?) should contain all the mixins)
+```less
+// File mixins/collation.less:
+.book-chapter-collation(@className; @resetNumbering) {
+  // TODO: do something in here
+}
 
+// File books/physics.less
+@import '../mixins/collation';
+.book-chapter-collation(@className: 'review-problems'; @resetNumbering: true);
+.book-chapter-collation(@className: 'homework-problems'; @resetNumbering: true);
+```
 
 As an **External user** I want to...
 
