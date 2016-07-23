@@ -213,6 +213,22 @@ import '.../strings/all';
 As **openstax** I want to...
 
 1. have strings & numbering to work in multiple languages because a lot of the content is not in english
+```less
+// File physics.less
+@LANGUAGES: en, pl;  // define the languages supported
+
+
+// file doStuff.less . TODO: Spike out an example of how this would work
+.doStuff(@LANGUAGES) {
+  // Loop over each language (stored in the LANG variable)
+  [xml:lang=@{LANG] {
+    @import '.../strings/@{LANG}';  // global strings like "Figure" or "Table" or the NUMBER_SEPARATOR (like `.` or `,`)
+    @import './strings/@{LANG}'; // allow book-specific strings so they can be translated
+    @import '.../all-the-other-files'; // This way the selectors in those files are scoped to a specific language
+    // Note: This could impact the design of other files if they need to be automatically scoped inside the lang attribute
+  }
+}
+```
 1. have a default numbering/collation for non-openstax books
   - _(maybe also affects the cnxml2html conversion for things like exercises (they'll need to not lose some metadata))_
 
