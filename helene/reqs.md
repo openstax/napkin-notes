@@ -233,9 +233,11 @@ As **openstax** I want to...
   - _(maybe also affects the cnxml2html conversion for things like exercises (they'll need to not lose some metadata))_
 ```less
 // Maybe have 3 numbering options to choose from:
-// - `numbering/simple-2.less` - Example: Figure 4.1, Table 4.1, Figure 4.2 (most books)
-// - `numbering/alternate-2.less` - Example: Figure 4.1, Table 4.2, Figure 4.3
-// - `numbering/unique-3.less` - Example: Figure 4.1.1, Table 4.1.2, Figure 4.1.3 (numbering contains the chapter, section, and then unique-number)
+// - `numbering/2-level-by-type.less` - Example: Figure 4.1, Table 4.1, Figure 4.2 (most books)
+// - `numbering/2-level-by-chapter.less` - Example: Figure 4.1, Table 4.2, Figure 4.3
+// - `numbering/3-level-by-chapter.less` - Example: Figure 4.1.1, Table 4.1.2, Figure 4.1.3 (numbering contains the chapter, section, and then unique-number)
+// All strategies provide a mixin named .numbering(@before; @after; @counterName);
+//     TODO: see how that works with subfigures, end-of-chapter/book items
 
 // Default collation just moves all exercises to end of chapter
 [data-type='exercise] { move-to: end-of-chapter; }
@@ -245,7 +247,8 @@ As **openstax** I want to...
   // Apply numbering to the exercises that were moved somehow (I don't know what the current syntax is)
   // TODO: figure out i18n for stuff like this
   [data-type='exercise']::before {
-    content: @EXERCISE_NAME ' ' counter(chapter) @NUMBER_SEPARATOR counter(end-of-chapter-exercise);
+    .numbering(@before: @EXERCISE_NAME; @counterName: end-of-chapter-exercise);
+    // which makes: content: @EXERCISE_NAME ' ' counter(chapter) @NUMBER_SEPARATOR counter(end-of-chapter-exercise);
   }
 }
 ```
