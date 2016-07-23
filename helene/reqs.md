@@ -35,6 +35,28 @@ As *OpenStax* I want to make sure people cannot create infinite loops
 ### Ease of use
 
 As a **developer** I want a clear file structure and logic pathways to reduce time wasted figuring out what does what and what is where.
+```less
+// /mixins/** contains files that do not output anything when imported
+// /templates/** contains files that will output selectors when imported.
+//            If these files use variables, then the variable definitions must be imported beforehand
+//            (TODO: is this a good policy?)
+//            These files usually define the numbering & collation schemes for an entire book.
+
+
+// Example file structure for a book:
+// File bookname.less
+@import '.../mixins/all';    // mixins should not use globals (aka "pure" functions)
+@import '.../variables/all'; // do this after to ensure the mixins do not depend on variables being defined
+
+// define variables for this book
+@PRACTICE_PROBLEM: 'practice-problem';
+
+// if using a "simple" template then import it here
+@import '.../templates/simple-book';
+
+// call any mixins that are necessary to customize this book (like numbering/collation)
+.book-collate(@where: chapter; @className: @PRACTICE_PROBLEM);
+```
 
 As a **developer** I want easy access to PDF-specific needs (pagination/folio) so testing is quicker.
 
@@ -175,6 +197,16 @@ As an **External user** I want to...
 As a **Translator** I want to...
 
 1. easily change strings and numbering because languages have different conventions
+```less
+// All strings should be defined in a strings.less/scss file
+import '.../strings/all';
+@FIGURE_NAME_EN: 'Figure';
+// Selectors that add labels should always have the language defined on them
+[xml:lang='en'] figure::before { content: @FIGURE_NAME_EN ' ' counter(chapter) '.' counter(figure); }
+[xml:lang='pl'] figure::before { content: @FIGURE_NAME_PL ' ' counter(chapter) ',' counter(figure); }
+
+// TODO: It seems like we need more thought on how to organize this so books do not have duplicated CSS selectors that are unused.
+```
 1. easily change LTR to RTL
 
 
