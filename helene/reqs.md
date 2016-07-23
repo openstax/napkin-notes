@@ -45,14 +45,14 @@ As a **developer** I want a clear file structure and logic pathways to reduce ti
 
 // Example file structure for a book:
 // File bookname.less
-@import '.../mixins/all';    // mixins should not use globals (aka "pure" functions)
-@import '.../variables/all'; // do this after to ensure the mixins do not depend on variables being defined
+@import '~/mixins/all';    // mixins should not use globals (aka "pure" functions)
+@import '~/variables/all'; // do this after to ensure the mixins do not depend on variables being defined
 
 // define variables for this book
 @PRACTICE_PROBLEM: 'practice-problem';
 
 // if using a "simple" template then import it here
-@import '.../templates/simple-book';
+@import '~/templates/simple-book';
 
 // call any mixins that are necessary to customize this book (like numbering/collation)
 .book-collate(@where: chapter; @className: @PRACTICE_PROBLEM);
@@ -111,9 +111,9 @@ As a **Developer** I want to...
 1. quickly make a new book from scratch
 ```less
 // File philosopy.less
-@import '.../numbering/2-level-by-type.less'; // generates `Figure 4.1`, `Table 4.1`, `Figure 4.2`
-@import '.../collate/end-of-book-solutions.less';
-@import '.../collate/exercises-with-collate-attribute.less'; // cnxml has an attribute on exercises that defines collation
+@import '~/numbering/2-level-by-type.less'; // generates `Figure 4.1`, `Table 4.1`, `Figure 4.2`
+@import '~/collate/end-of-book-solutions.less';
+@import '~/collate/exercises-with-collate-attribute.less'; // cnxml has an attribute on exercises that defines collation
 ```
 1. generate HTML from parts of books or entire books (with caching a-la-makefile) easily from the commandline
 ```sh
@@ -143,6 +143,7 @@ cat ./path/to/file.html | ./scripts/generate --style-file ./path/to/file.css -
   - _(including scripts to generate the HTML, installing dependencies, etc. (ie [Runnable Documentation](http://githubengineering.com/runnable-documentation/)) )_
 ```sh
 # See above code examples for generating HTML, installing dependencies, etc)
+# See links at the end of this file for some (not all) CSS Documentation-generation tools
 ```
 1. associate the CSS files for books with the code somewhere in GitHub and keep them in sync
   - _(:cake: commit hooks which republish?)_
@@ -192,14 +193,19 @@ cat ./path/to/file.html | ./scripts/generate --style-file ./path/to/file.css -
 As an **External user** I want to...
 
 1. easily tweak the default numbering/collation for my book because I may want to refer to things differently
-
+```less
+// Maybe have 3 numbering options to choose from:
+// - `~/numbering/2-level-by-type.less` - Example: Figure 4.1, Table 4.1, Figure 4.2 (most books)
+// - `~/numbering/2-level-by-chapter.less` - Example: Figure 4.1, Table 4.2, Figure 4.3
+// - `~/numbering/3-level-by-chapter.less` - Example: Figure 4.1.1, Table 4.1.2, Figure 4.1.3 (numbering contains the chapter, section, and then unique-number)
+```
 
 As a **Translator** I want to...
 
 1. easily change strings and numbering because languages have different conventions
 ```less
 // All strings should be defined in a strings.less/scss file
-import '.../strings/all';
+import '~/strings/all';
 @FIGURE_NAME_EN: 'Figure';
 // Selectors that add labels should always have the language defined on them
 [xml:lang='en'] figure::before { content: @FIGURE_NAME_EN ' ' counter(chapter) '.' counter(figure); }
@@ -222,9 +228,9 @@ As **openstax** I want to...
 .doStuff(@LANGUAGES) {
   // Loop over each language (stored in the LANG variable)
   [xml:lang=@{LANG] {
-    @import '.../strings/@{LANG}';  // global strings like "Figure" or "Table" or the NUMBER_SEPARATOR (like `.` or `,`)
+    @import '~/strings/@{LANG}';  // global strings like "Figure" or "Table" or the NUMBER_SEPARATOR (like `.` or `,`)
     @import './strings/@{LANG}'; // allow book-specific strings so they can be translated
-    @import '.../all-the-other-files'; // This way the selectors in those files are scoped to a specific language
+    @import '~/all-the-other-files'; // This way the selectors in those files are scoped to a specific language
     // Note: This could impact the design of other files if they need to be automatically scoped inside the lang attribute
   }
 }
