@@ -87,6 +87,12 @@ As a **Developer** I want to...
 ```
 1. take an existing book and change some collation to make a new book
 1. quickly make a new book from scratch
+```less
+// File philosopy.less
+@import '.../numbering/2-level-by-type.less'; // generates `Figure 4.1`, `Table 4.1`, `Figure 4.2`
+@import '.../collate/end-of-book-solutions.less';
+@import '.../collate/exercises-with-collate-attribute.less'; // cnxml has an attribute on exercises that defines collation
+```
 1. generate HTML from parts of books or entire books (with caching a-la-makefile) easily from the commandline
 ```sh
 # Install all dependencies (from http://githubengineering.com/scripts-to-rule-them-all/ and http://githubengineering.com/runnable-documentation/)
