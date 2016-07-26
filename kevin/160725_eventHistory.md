@@ -42,3 +42,12 @@ The events are
 `page-modules` that have no dynamic exercises
 but still appear in `Reading` assigments
 [are excluded](https://github.com/openstax/tutor-server/blob/master/app/routines/get_history.rb#L74-L78).
+
+## Proposed Fix
+
+This
+[PR](https://github.com/openstax/tutor-server/pull/1173/files)
+is Dante's initial stab 
+at trying to fix the problem
+of exercise from the future
+appearing in spaced practice.
