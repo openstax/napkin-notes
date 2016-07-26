@@ -23,6 +23,10 @@ to the `Reading` history
 (which includes all previously-published `Readings`)
 when it is created (published). 
 
+## `HomeworkAssistant`
+
+The `HomeworkAssistant` uses the same code as `IReadingAssistant`, but with a slightly different event filter.
+
 ## `GetHistories`
 
 [This code](https://github.com/openstax/tutor-server/blob/master/app/routines/get_history.rb#L74-L90)
