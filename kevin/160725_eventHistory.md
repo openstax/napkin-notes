@@ -51,3 +51,7 @@ is Dante's initial stab
 at trying to fix the problem
 of exercise from the future
 appearing in spaced practice.
+
+The meat of the matter is in
+[this](https://github.com/openstax/tutor-server/blob/back_to_the_spaced_future/app/subsystems/tasks/assistants/generic_assistant.rb#L79-L82)
+code.
