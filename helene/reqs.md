@@ -277,7 +277,7 @@ As **openstax** I want to...
 1. https://inch-ci.org/github/sass/sass (CI for documentation)
 
 # Less vs Sass
-Making a mixin overridable in Less (scoping is weird): 
+- Making a mixin overridable in Less (scoping is weird): 
 ```less
 //LIBRARY
 #lib {
@@ -314,5 +314,33 @@ div {
 
   //Make an empty listener for a default call, will crash if not created?
   .doStuffListener() {}
+}
+```
+- Overriding a mixin in Sass
+```sass
+@mixin mixin() {
+  @include called();
+}
+@mixin called() {
+  color: blue;
+}
+
+p {
+  @include mixin();
+}
+
+@mixin called() {
+  color: red;
+}
+
+div p {
+  @include mixin();
+}
+
+@mixin called() {
+  color: green;
+}
+div div p {
+  @include mixin();
 }
 ```
