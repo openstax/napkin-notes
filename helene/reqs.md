@@ -275,3 +275,44 @@ As **openstax** I want to...
 1. https://github.com/ericponto/jekyll-dss
 1. http://sassdoc.com/
 1. https://inch-ci.org/github/sass/sass (CI for documentation)
+
+# Less vs Sass
+Making a mixin overridable in Less (scoping is weird): 
+```less
+//LIBRARY
+#lib {
+  //Overridable function
+  .doThings(@color) {
+    //set variable to code block based on variables
+    @doThings: {
+      color: @color;
+    };
+  }
+
+  .doStuff() {
+    //Call any mixin that's listening
+    .doStuffListener();
+    //Strangely the listener MUST be before the actual mixin call to do anything?
+    .doThings(blue);
+    //Call the variable set to the code block that the mixins created
+    @doThings();
+  }
+  //Empty listener here causes everything to be blue?
+}
+
+//BOOK
+p {
+  #lib.doStuff();
+  //Make a listener
+  .doStuffListener {
+    //Override a mixin
+    #lib.doThings(red);
+  }
+}
+div {
+  #lib.doStuff();
+
+  //Make an empty listener for a default call, will crash if not created?
+  .doStuffListener() {}
+}
+```
