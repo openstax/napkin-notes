@@ -277,7 +277,8 @@ As **openstax** I want to...
 1. https://inch-ci.org/github/sass/sass (CI for documentation)
 
 # Less vs Sass
-- Making a mixin overridable in Less (scoping is weird): 
+- Overriding mixins
+  a. Making a mixin overridable in Less (scoping is weird): 
 ```less
 //LIBRARY
 #lib {
@@ -316,8 +317,8 @@ div {
   .doStuffListener() {}
 }
 ```
-- Overriding a mixin in Sass
-```sass
+  b. Overriding a mixin in Sass
+```scss
 @mixin mixin() {
   @include called();
 }
@@ -344,3 +345,74 @@ div div p {
   @include mixin();
 }
 ```
+- Control Structures
+  a. Control Structures in less (Recursive loops and mixin, namespace guards)
+  Example:
+  ```less
+.title(@bucket, @content...) when (@option = 1) {
+  @contentLength: length(@content);
+  @i: 1;
+  .assignContent(@i);
+}
+
+.title(@bucket, @container, @containerClass, @content...) when (@option = 2) {
+  @contentLength: length(@content);
+  @i: 1;
+  .assignContent(@i);
+  &::before {
+    container: @container;
+    class: @containerClass;
+    content: pending(@bucket);
+  }
+}
+
+.title(@bucket, @container, @containerClass, @containerDestination, @content...) when (@option = 2) {
+  @contentLength: length(@content);
+  @i: 1;
+  .assignContent(@i);
+  &::before {
+    container: @container;
+    class: @containerClass;
+    content: pending(@bucket);
+    move-to: @containerDestination;
+  }
+}
+
+.assignContent(@i) when (@i <= @contentLength) {
+  &::before {
+    container: span;
+    class: extract(extract(@content, @i), 1);
+    content: extract(extract(@content, @i), 2);
+    move-to: @bucket;
+  }
+  .assignContent(@i + 1);
+}
+.assignContent(@i) when (@i > @contentLength) {}
+```
+  b. Control Structures in sass (Nested if, for, each statements)
+  Same example:
+  ```scss
+@mixin title($content, $bucket, $container: null, $containerClass: null, $containerDestination: null) {
+  @each $itemContent, $itemClass in $content {
+    &::before {
+      container: span;
+      content: $itemContent;
+      class: "title-#{$itemClass}";
+      move-to: $bucket;
+    }
+  }
+  @if ($container != null and $containerType != null) {
+    &::before {
+      container: $container;
+      class: $containerClass;
+      content: pending($bucket);
+      @if ($destination != null) {
+        move-to: $containerDestination;
+      }
+    }
+  }
+}
+```
+- Namespaces
+  a. Less has them
+  b. Sass doesn't
