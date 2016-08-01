@@ -278,141 +278,141 @@ As **openstax** I want to...
 
 # Less vs Sass
 - Overriding mixins
-  a. Making a mixin overridable in Less (scoping is weird): 
-```less
-//LIBRARY
-#lib {
-  //Overridable function
-  .doThings(@color) {
-    //set variable to code block based on variables
-    @doThings: {
-      color: @color;
-    };
-  }
-
-  .doStuff() {
-    //Call any mixin that's listening
-    .doStuffListener();
-    //Strangely the listener MUST be before the actual mixin call to do anything?
-    .doThings(blue);
-    //Call the variable set to the code block that the mixins created
-    @doThings();
-  }
-  //Empty listener here causes everything to be blue?
-}
-
-//BOOK
-p {
-  #lib.doStuff();
-  //Make a listener
-  .doStuffListener {
-    //Override a mixin
-    #lib.doThings(red);
-  }
-}
-div {
-  #lib.doStuff();
-
-  //Make an empty listener for a default call, will crash if not created?
-  .doStuffListener() {}
-}
-```
-  b. Overriding a mixin in Sass
-```scss
-@mixin mixin() {
-  @include called();
-}
-@mixin called() {
-  color: blue;
-}
-
-p {
-  @include mixin();
-}
-
-@mixin called() {
-  color: red;
-}
-
-div p {
-  @include mixin();
-}
-
-@mixin called() {
-  color: green;
-}
-div div p {
-  @include mixin();
-}
-```
-- Control Structures
-  a. Control Structures in less (Recursive loops and mixin, namespace guards)
-  Example:
+  - Making a mixin overridable in Less (scoping is weird): 
   ```less
-.title(@bucket, @content...) when (@option = 1) {
-  @contentLength: length(@content);
-  @i: 1;
-  .assignContent(@i);
-}
-
-.title(@bucket, @container, @containerClass, @content...) when (@option = 2) {
-  @contentLength: length(@content);
-  @i: 1;
-  .assignContent(@i);
-  &::before {
-    container: @container;
-    class: @containerClass;
-    content: pending(@bucket);
+  //LIBRARY
+  #lib {
+    //Overridable function
+    .doThings(@color) {
+      //set variable to code block based on variables
+      @doThings: {
+        color: @color;
+      };
+    }
+  
+    .doStuff() {
+      //Call any mixin that's listening
+      .doStuffListener();
+      //Strangely the listener MUST be before the actual mixin call to do anything?
+      .doThings(blue);
+      //Call the variable set to the code block that the mixins created
+      @doThings();
+    }
+    //Empty listener here causes everything to be blue?
   }
-}
-
-.title(@bucket, @container, @containerClass, @containerDestination, @content...) when (@option = 2) {
-  @contentLength: length(@content);
-  @i: 1;
-  .assignContent(@i);
-  &::before {
-    container: @container;
-    class: @containerClass;
-    content: pending(@bucket);
-    move-to: @containerDestination;
-  }
-}
-
-.assignContent(@i) when (@i <= @contentLength) {
-  &::before {
-    container: span;
-    class: extract(extract(@content, @i), 1);
-    content: extract(extract(@content, @i), 2);
-    move-to: @bucket;
-  }
-  .assignContent(@i + 1);
-}
-.assignContent(@i) when (@i > @contentLength) {}
-```
-  b. Control Structures in sass (Nested if, for, each statements)
-  Same example:
-  ```scss
-@mixin title($content, $bucket, $container: null, $containerClass: null, $containerDestination: null) {
-  @each $itemContent, $itemClass in $content {
-    &::before {
-      container: span;
-      content: $itemContent;
-      class: "title-#{$itemClass}";
-      move-to: $bucket;
+  
+  //BOOK
+  p {
+    #lib.doStuff();
+    //Make a listener
+    .doStuffListener {
+      //Override a mixin
+      #lib.doThings(red);
     }
   }
-  @if ($container != null and $containerType != null) {
+  div {
+    #lib.doStuff();
+  
+    //Make an empty listener for a default call, will crash if not created?
+    .doStuffListener() {}
+  }
+  ```
+  - Overriding a mixin in Sass
+  ```scss
+  @mixin mixin() {
+    @include called();
+  }
+  @mixin called() {
+    color: blue;
+  }
+  
+  p {
+    @include mixin();
+  }
+  
+  @mixin called() {
+    color: red;
+  }
+  
+  div p {
+    @include mixin();
+  }
+  
+  @mixin called() {
+    color: green;
+  }
+  div div p {
+    @include mixin();
+  }
+  ```
+- Control Structures
+  - Control Structures in less (Recursive loops and mixin, namespace guards)
+  **Example:**
+  ```less
+  .title(@bucket, @content...) when (@option = 1) {
+    @contentLength: length(@content);
+    @i: 1;
+    .assignContent(@i);
+  }
+  
+  .title(@bucket, @container, @containerClass, @content...) when (@option = 2) {
+    @contentLength: length(@content);
+    @i: 1;
+    .assignContent(@i);
     &::before {
-      container: $container;
-      class: $containerClass;
-      content: pending($bucket);
-      @if ($destination != null) {
-        move-to: $containerDestination;
+      container: @container;
+      class: @containerClass;
+      content: pending(@bucket);
+    }
+  }
+  
+  .title(@bucket, @container, @containerClass, @containerDestination, @content...) when (@option = 3) {
+    @contentLength: length(@content);
+    @i: 1;
+    .assignContent(@i);
+    &::before {
+      container: @container;
+      class: @containerClass;
+      content: pending(@bucket);
+      move-to: @containerDestination;
+    }
+  }
+  
+  .assignContent(@i) when (@i <= @contentLength) {
+    &::before {
+      container: span;
+      class: extract(extract(@content, @i), 1);
+      content: extract(extract(@content, @i), 2);
+      move-to: @bucket;
+    }
+    .assignContent(@i + 1);
+  }
+  .assignContent(@i) when (@i > @contentLength) {}
+  ```
+  - Control Structures in sass (Nested if, for, each statements)
+  **Same example:**
+  ```scss
+  @mixin title($content, $bucket, $container: null, $containerClass: null, $containerDestination: null) {
+    @each $itemContent, $itemClass in $content {
+      &::before {
+        container: span;
+        content: $itemContent;
+        class: "title-#{$itemClass}";
+        move-to: $bucket;
+      }
+    }
+    @if ($container != null and $containerType != null) {
+      &::before {
+        container: $container;
+        class: $containerClass;
+        content: pending($bucket);
+        @if ($destination != null) {
+          move-to: $containerDestination;
+        }
       }
     }
   }
-}
-```
+  ```
 - Namespaces
-  a. Less has them
-  b. Sass doesn't
+  - Less has them
+  - Sass doesn't
