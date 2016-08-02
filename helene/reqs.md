@@ -173,7 +173,7 @@ cat ./path/to/file.html | ./scripts/generate --style-file ./path/to/file.css -
     <!-- moved to here because of in.css line 23 -->
     <div id='id123' class='review-problem'>Hello</div>
   </div>
-</body>    
+</body>
 ```
 1. have the passes to be abstracted away because most of those will not change frequently
 1. write simple CSS as long as I know what the mixins are and create few (if any) of my own mixins.
@@ -247,7 +247,7 @@ As **openstax** I want to...
 
 // Default collation just moves all exercises to end of chapter
 [data-type='exercise] { move-to: end-of-chapter; }
-.chapter::after { 
+.chapter::after {
   &::before { content: 'Exercises' }
   pending: end-of-chapter;
   // Apply numbering to the exercises that were moved somehow (I don't know what the current syntax is)
@@ -276,9 +276,14 @@ As **openstax** I want to...
 1. http://sassdoc.com/
 1. https://inch-ci.org/github/sass/sass (CI for documentation)
 
-# Less vs Sass
-- Overriding mixins
-  - Making a mixin overridable in Less (scoping is weird): 
+
+#Technical considerations
+As a **developer**
+ - I need a css tool that can be used for complex templates, including packaging and organizing of my rules.
+
+## Less vs Sass
+###Overriding mixins
+**LESS***: (scoping is weird):
   ```less
   //LIBRARY
   #lib {
@@ -289,7 +294,7 @@ As **openstax** I want to...
         color: @color;
       };
     }
-  
+
     .doStuff() {
       //Call any mixin that's listening
       .doStuffListener();
@@ -300,7 +305,7 @@ As **openstax** I want to...
     }
     //Empty listener here causes everything to be blue?
   }
-  
+
   //BOOK
   p {
     #lib.doStuff();
@@ -312,12 +317,12 @@ As **openstax** I want to...
   }
   div {
     #lib.doStuff();
-  
+
     //Make an empty listener for a default call, will crash if not created?
     .doStuffListener() {}
   }
   ```
-  - Overriding a mixin in Sass
+**SASS**
   ```scss
   @mixin mixin() {
     @include called();
@@ -325,36 +330,35 @@ As **openstax** I want to...
   @mixin called() {
     color: blue;
   }
-  
+
   p {
     @include mixin();
   }
-  
+
   @mixin called() {
     color: red;
   }
-  
-  div p {
+
+  p {
     @include mixin();
   }
-  
+
   @mixin called() {
     color: green;
   }
-  div div p {
+ p {
     @include mixin();
   }
   ```
-- Control Structures
-  - Control Structures in less (Recursive loops and mixin, namespace guards)
-  **Example:**
+###Control Structures
+**Less** (Recursive loops and mixin, namespace guards)
   ```less
   .title(@bucket, @content...) when (@option = 1) {
     @contentLength: length(@content);
     @i: 1;
     .assignContent(@i);
   }
-  
+
   .title(@bucket, @container, @containerClass, @content...) when (@option = 2) {
     @contentLength: length(@content);
     @i: 1;
@@ -365,7 +369,7 @@ As **openstax** I want to...
       content: pending(@bucket);
     }
   }
-  
+
   .title(@bucket, @container, @containerClass, @containerDestination, @content...) when (@option = 3) {
     @contentLength: length(@content);
     @i: 1;
@@ -377,7 +381,7 @@ As **openstax** I want to...
       move-to: @containerDestination;
     }
   }
-  
+
   .assignContent(@i) when (@i <= @contentLength) {
     &::before {
       container: span;
@@ -389,8 +393,7 @@ As **openstax** I want to...
   }
   .assignContent(@i) when (@i > @contentLength) {}
   ```
-  - Control Structures in sass (Nested if, for, each statements)
-  **Same example:**
+**SASS** (Nested if, for, each statements)
   ```scss
   @mixin title($content, $bucket, $container: null, $containerClass: null, $containerDestination: null) {
     @each $itemContent, $itemClass in $content {
