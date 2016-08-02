@@ -283,7 +283,7 @@ As a **developer**
 
 ## Less vs Sass
 ###Overriding mixins
-**LESS***: (scoping is weird):
+**LESS*** (scoping is weird)
   ```less
   //LIBRARY
   #lib {
