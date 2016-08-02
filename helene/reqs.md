@@ -279,7 +279,7 @@ As **openstax** I want to...
 
 #Technical considerations
 As a **developer**
- - I need a css tool that can be used for complex templates, including packaging and organizing of my rules.
+ - I need a css tool that can be used for complex templates, including packaging and organizing my rules.
 
 ## Less vs Sass
 ###Overriding mixins
