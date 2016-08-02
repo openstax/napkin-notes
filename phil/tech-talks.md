@@ -1,0 +1,33 @@
+# Tech Talks
+
+## Guidelines:
+
+- 15 minutes to present
+
+When proposing one, include the following next to your item
+
+1. your GitHub username
+1. which Friday you want to present
+1. link to slides or list-o-links with descriptions and link-to-recording-afterwards so someone else can listen in later.
+
+
+## Some Fodder to Start
+
+- Recurring: favorite libraries
+    - ampersandjs.com
+    - github.com/avajs
+    - knockoutjs.com
+    - github.com/maxogden/yo-yo
+- How to use Browser Performance tools (repaints)
+- Performance collection: (repaints, image/XHR requests). How to add it to integration tests & production 
+    - http://githubengineering.com/browser-monitoring-for-github-com/
+- Accessibility: how to get into normal ux/dev/qa process
+- HSTS preloading
+    - https://hstspreload.appspot.com/
+    - https://chromium.googlesource.com/chromium/src/net/+/master/http/transport_security_state_static.json
+- `history.state`
+    - dak's sprint demo but more techy and less-interrupty
+- When to use, when to skip? coverage, integration, unit tests
+    - when should something be a unit test, integration test, dev performance test
+    - when is coverage useful and how should it be collected (ie QA would like it to be collected during the manual tests)
+- SASS vs LESS (organizing code for styling books)
