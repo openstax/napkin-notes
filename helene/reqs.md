@@ -322,6 +322,15 @@ As a **developer**
     .doStuffListener() {}
   }
   ```
+  **CSS Output:**
+  ```css
+  p {
+    color: red;
+  }
+  p {
+    color: blue;
+  }
+  ```
 **SASS**
   ```scss
   @mixin mixin() {
@@ -349,6 +358,17 @@ As a **developer**
  p {
     @include mixin();
   }
+  ```
+  **CSS Output:** 
+  ```css
+  p {
+    color: blue; }
+  
+  p {
+    color: red; }
+  
+  p {
+    color: green; }
   ```
 ###Control Structures
 **Less** (Recursive loops and mixin, namespace guards)
