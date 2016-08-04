@@ -437,5 +437,74 @@ As a **developer**
   }
   ```
 - Namespaces
-  - Less has them
-  - Sass doesn't
+  - Less has #-prefixed namespaces, Example:
+  ```less
+  //Call
+  #namespace.mixin();
+  //Namespace
+  #namespace {
+    @var: 5px;
+    .mixin(){}
+  }
+  ```
+  - Sass doesn't have the same functionality, but the same effect can be achieved through simply dash separating mixin names, Example:
+  ```scss
+  //Call
+  @include namespace-mixin();
+  //Namespace
+  $namespace-var: 5px;
+  @mixin namespace-mixin() {}
+  ```
+- Variable interpolation
+  - Less can interpolate a variable name as well as property/attribute names
+  ```less
+  @border-basic: 1px solid black;
+  @border-thick: 3px solid black;
+  @border-dashed: 1px dashed black;
+  @border-fancy: 2px dashed red;
+  
+  .border-type(@type) {
+    @var: "border-@{type}";
+    border: @@var;
+  }
+  ```
+  - Sass cannot interpolate variable names, but can interpolate property/atrribute names
+  - Neither Sass nor Less can use variable interpolation to dynamically name and declare a variable
+- Pattern matching
+  - Less mixins support pattern matching
+  ```less
+  .mixin(@var, something, otherthing);
+  //Calls
+  .mixin(@var, something, otherthing) {}
+  ```
+  - Sass can use nested if controls to achieve the same effect
+  ```scss
+  @include .mixin(@var, @var2, @var3);
+  //Calls
+  @mixin mixin(@var, @var2, @var3) {
+    @if (@var2 == something and @var3 == otherthing) {}
+  }
+  ```
+- Functions
+  - Less can execute embedded javascript
+  ```less
+  @color: `function() {
+    return("red");
+  }()` ;
+  p {
+    color: @color; //color: "red";
+  }
+  ```
+  - Functions with returns can be created within Sass
+  ```scss
+  @function color() {
+    @return red;
+  }
+  p {
+    color: color(); //color: red;
+  }
+  ```
+- Data Structures
+  - Less has a list data structure, which has length(@list), extract(@list) etc.
+  - Sass has a list data structure, with similar functions, but more can be written because of sass's @function feature
+  - Both can simulate maps with key, value associations, but sass comes with map functions built in
