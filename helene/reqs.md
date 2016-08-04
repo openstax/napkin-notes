@@ -479,10 +479,10 @@ As a **developer**
   ```
   - Sass can use nested if controls to achieve the same effect
   ```scss
-  @include .mixin(@var, @var2, @var3);
+  @include .mixin($var, $var2, $var3);
   //Calls
-  @mixin mixin(@var, @var2, @var3) {
-    @if (@var2 == something and @var3 == otherthing) {}
+  @mixin mixin($var, $var2, $var3) {
+    @if ($var2 == something and $var3 == otherthing) {}
   }
   ```
 - Functions
