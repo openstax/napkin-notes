@@ -10,7 +10,7 @@ Without significant interruption to processing, want to be able to:
 Much of `Biglearn`'s work
 can be partitioned into non-overlapping pieces
 that can scale very well
-and can minimize database transaction isolation issues.
+and also minimize database transaction isolation issues.
 
 The protocol described here can be used
 by multiple processes on multiple machines
@@ -19,4 +19,14 @@ to partition work,
 even as processes are dynamically
 added or removed from the group.
 
-## 
+## The Goal
+
+Given `N` processes,
+we want all processes to have:
+* knowledge of the total number of processes (`N`)
+* a unique `modulo-N` value [0..`N`)
+
+We also want processes to
+automatically detect newly added and/or removed processes
+and renegotiate their shared knowledge.
+
