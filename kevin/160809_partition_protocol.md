@@ -45,3 +45,11 @@ All processes sharing the same group UUID
 and access to the same database
 will automatically negotiate the shared knowledge
 described above.
+
+## Open Questions
+
+* Is the concept of a boss really necessary?  Could we eliminate it?
+* Are there any race conditions remaining?
+* Are heartbeats/timeouts/hangs/etc. all handled properly?
+
+It is known that this protocol will not survive a network partition.
