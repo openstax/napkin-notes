@@ -46,6 +46,21 @@ and access to the same database
 will automatically negotiate the shared knowledge
 described above.
 
+If the command above is run in four separate terminals,
+the outputs look something like this:
+```
+7a27ebec-1e6a-4884-afe4-f35bccc57520:[0/4] working away as usual...
+```
+```
+7a27ebec-1e6a-4884-afe4-f35bccc57520:[1/4] working away as usual...
+```
+```
+7a27ebec-1e6a-4884-afe4-f35bccc57520:[2/4] working away as usual...
+```
+```
+7a27ebec-1e6a-4884-afe4-f35bccc57520:[3/4] working away as usual...
+```
+
 It is known that this protocol will not survive a network partition.
 
 The code is currently written
