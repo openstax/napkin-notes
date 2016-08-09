@@ -55,10 +55,13 @@ to partition work.
 This requires careful management
 of `ActiveRecord` connections -
 I'd very much like to maintain this capability going forward.
+(It is especially useful for testing.)
 
 ## Open Questions
 
 * Is the concept of a boss really necessary?  Could we eliminate it?
 * Are there any race conditions remaining?
 * Are heartbeats/timeouts/hangs/etc. all handled properly?
+* Can we make this into a gem?
+* To what extent can we test this?
 
