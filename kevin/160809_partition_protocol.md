@@ -30,3 +30,18 @@ We also want processes to
 automatically detect newly added and/or removed processes
 and renegotiate their shared knowledge.
 
+## The Protocol
+
+The current code is 
+[here](https://github.com/openstax/biglearn-api/blob/klb_protocol/lib/protocol.rb).
+
+Is is called from a
+[rake task](https://github.com/openstax/biglearn-api/blob/klb_protocol/lib/tasks/protocol.rake)
+that takes a group UUID as a parameter:
+```
+bundle exec rake protocol:exper[7a27ebec-1e6a-4884-afe4-f35bccc57520]
+```
+All processes sharing the same group UUID
+and access to the same database
+will automatically negotiate the shared knowledge
+described above.
