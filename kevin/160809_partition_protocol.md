@@ -33,7 +33,9 @@ and renegotiate their shared knowledge.
 ## The Protocol
 
 The current code is 
-[here](https://github.com/openstax/biglearn-api/blob/klb_protocol/lib/protocol.rb).
+[here](https://github.com/openstax/biglearn-api/blob/klb_protocol/lib/protocol.rb)
+and depends on
+[this migration](https://github.com/openstax/biglearn-api/blob/klb_protocol/db/migrate/20160808014609_create_protocol_records.rb).
 
 It is called from a
 [rake task](https://github.com/openstax/biglearn-api/blob/klb_protocol/lib/tasks/protocol.rake)
