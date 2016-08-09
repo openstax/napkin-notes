@@ -35,7 +35,7 @@ and renegotiate their shared knowledge.
 The current code is 
 [here](https://github.com/openstax/biglearn-api/blob/klb_protocol/lib/protocol.rb).
 
-Is is called from a
+It is called from a
 [rake task](https://github.com/openstax/biglearn-api/blob/klb_protocol/lib/tasks/protocol.rake)
 that takes a group UUID as a parameter:
 ```
