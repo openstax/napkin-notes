@@ -46,10 +46,19 @@ and access to the same database
 will automatically negotiate the shared knowledge
 described above.
 
+It is known that this protocol will not survive a network partition.
+
+The code is currently written
+to allow multiple threads 
+(as opposed to processes)
+to partition work.
+This requires careful management
+of `ActiveRecord` connections -
+I'd very much like to maintain this capability going forward.
+
 ## Open Questions
 
 * Is the concept of a boss really necessary?  Could we eliminate it?
 * Are there any race conditions remaining?
 * Are heartbeats/timeouts/hangs/etc. all handled properly?
 
-It is known that this protocol will not survive a network partition.
