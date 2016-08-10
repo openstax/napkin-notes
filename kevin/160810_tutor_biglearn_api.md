@@ -14,6 +14,7 @@
           'type': 'array',
           'items': {'$ref': '#definitions/chapter_def'},
           'minItems': 1,
+          'maxItems': 500,
         },
       },
       'required': ['chapters'],
@@ -29,6 +30,7 @@
           'type': 'array',
           'items': {'$ref': '#definitions/pagemodule_def'},
           'minItems': 1,
+          'maxItems': 100,
         },
       },
       'required': ['pagemodules'],
@@ -42,6 +44,7 @@
           'type': 'array',
           'items': {'$ref': '#definitions/exercise_pool_def'},
           'minItems': 0,
+          'maxItems': 10,
         },
       },
       'required': ['exercise_pools'],
@@ -55,6 +58,7 @@
           'type': 'array',
           'items': {'$ref': '#definitions/exercise_def'},
           'minItems': 0,
+          'maxItems': 1000,
         },
       },
       'required': ['exercises'],
@@ -70,6 +74,7 @@
           'type': 'array',
           'items': {'$ref': '#definitions/lo_def'},
           'minItems': 1,
+          'maxItems': 100,
         },
       },
       'required': ['exercise_uuid', 'exercise_version', 'exercise_los'],
@@ -79,7 +84,39 @@
     'lo_def': {
       'type': 'string',
       'minLength': 1,
-      'maxLength': 1000,
+      'maxLength': 100,
+    },
+  },
+}
+```
+
+### `/assign_course_ecosystem'
+```ruby
+{
+  '$schema': 'http://json-schema.org/draft-04/schema#',
+    
+  'type': 'object',
+  'properties': {
+    'ecosystem_assignments': {
+      'type': 'array',
+      'items': {'#ref': '#definitions/ecosystem_assignment_def'},
+      'minItems': 0,
+      'maxItems': 10000,
+    },
+  },
+  'required': ['ecosystem_assignments'],
+  'additionalProperties': false,
+  
+  'definitions': {
+    'ecosystem_assignment_def': {
+      'type': 'object',
+      'properties': {
+        'course_uuid': {'$ref': '#standard_definitions/uuid'},
+        'ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
+        'effective_at': {'$ref': '#standard_definitions/datetime'},
+      },
+      'required': ['course_uuid', 'ecosystem_uuid'],
+      'additionalProperties': false,
     },
   },
 }
