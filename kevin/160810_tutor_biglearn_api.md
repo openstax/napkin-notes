@@ -12,8 +12,8 @@
       'properties': {
         'chapters': {
           'type': 'array',
-		      'items': {'$ref': '#definitions/chapter_def'},
-        	'minItems': 1,
+          'items': {'$ref': '#definitions/chapter_def'},
+          'minItems': 1,
         },
       },
       'required': ['chapters'],
@@ -69,7 +69,7 @@
         'exercise_los': {
           'type': 'array',
           'items': {'$ref': '#definitions/lo_def'},
-          'minItems: 1,
+          'minItems': 1,
         },
       },
       'required': ['exercise_uuid', 'exercise_version', 'exercise_los'],
