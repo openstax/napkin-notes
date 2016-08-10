@@ -25,6 +25,7 @@
     'chapter_def': {
       'type': 'object',
       'properties': {
+        'chapter_uuid': {'$ref': '#standard_definitions/uuid'},
         'pagemodules': {
           'type': 'array',
           'items': {'$ref': '#definitions/pagemodule_def'},
@@ -32,13 +33,14 @@
           'maxItems': 100,
         },
       },
-      'required': ['pagemodules'],
+      'required': ['chapter_uuid', 'pagemodules'],
       'additionalProperties': false,
     },
     
     'pagemodule_def': {
       'type': 'object',
       'properties': {
+        'pagemodule_uuid': {'$ref': '#standard_definitions/uuid'},
         'exercise_pools': {
           'type': 'array',
           'items': {'$ref': '#definitions/exercise_pool_def'},
