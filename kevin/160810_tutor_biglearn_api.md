@@ -1,5 +1,4 @@
 ### `/create_ecosystem`
-
 ```ruby
 {
   '$schema': 'http://json-schema.org/draft-04/schema#',
@@ -90,7 +89,9 @@
 }
 ```
 
-### `/assign_course_ecosystem`
+### `/decommision_courses`
+
+### `/assign_course_ecosystems`
 ```ruby
 {
   '$schema': 'http://json-schema.org/draft-04/schema#',
@@ -122,7 +123,7 @@
 }
 ```
 
-### `/roster_update`
+### `/update_rosters`
 ```ruby
 {
   '$schema': 'http://json-schema.org/draft-04/schema#',
@@ -158,3 +159,12 @@
   },
 }
 ```
+
+### `/archive_periods`
+
+### `/record_student_responses`
+
+### `/update_exercise_exclusions`
+
+### `/update_assignments`
+
