@@ -113,9 +113,46 @@
       'properties': {
         'course_uuid': {'$ref': '#standard_definitions/uuid'},
         'ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
-        'effective_at': {'$ref': '#standard_definitions/datetime'},
+        'ordered_at': {'$ref': '#standard_definitions/datetime'},
       },
       'required': ['course_uuid', 'ecosystem_uuid'],
+      'additionalProperties': false,
+    },
+  },
+}
+```
+
+### `/roster_update`
+```ruby
+{
+  '$schema': 'http://json-schema.org/draft-04/schema#',
+    
+  'type': 'object',
+  'properties': {
+    'roster_updates': {
+      'type': 'array',
+      'items': {'#ref': '#definitions/roster_update_def'},
+      'minItems': 0,
+      'maxItems': 10000,
+    },
+  },
+  'required': ['roster_updates'],
+  'additionalProperties': false,
+
+  'definitions': {
+    'roster_update_def': {
+      'type': 'object',
+      'properties': {
+        'course_uuid':  {'$ref': '#standard_definitions/uuid'},
+        'period_uuid':  {'$ref': '#standard_definitions/uuid'},
+        'student_uuid': {'$ref': '#standard_definitions/uuid'},
+        'action': {
+          'type': 'string',
+          'enum': ['add', 'remove'],
+        },
+        'ordered_at': {'$ref': '#standard_definitions/datetime'},
+      },
+      'required': ['course_uuid', 'period_uuid', 'student_uuid', 'action', 'ordered_at'],
       'additionalProperties': false,
     },
   },
