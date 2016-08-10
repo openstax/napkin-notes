@@ -45,7 +45,7 @@
           'type': 'array',
           'items': {'$ref': '#definitions/exercise_pool_def'},
           'minItems': 0,
-          'maxItems': 10,
+          'maxItems': 50,
         },
       },
       'required': ['exercise_pools'],
@@ -55,6 +55,10 @@
     'exercise_pool_def': {
       'type': 'object',
       'properties': {
+        'pool_type': {
+          'type': 'string',
+          'enum': ['exercises', 'recommend', 'clue'],
+        },
         'exercises': {
           'type': 'array',
           'items': {'$ref': '#definitions/exercise_def'},
