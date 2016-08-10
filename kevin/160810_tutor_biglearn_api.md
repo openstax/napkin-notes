@@ -6,6 +6,11 @@
   'type': 'object',
   'properties': {
     'ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
+    'subject_partition': {
+      'type': 'string',
+      'minLength': 3,
+      'maxLength': 100,
+    },
     'toc': {
       'type': 'object',
       'properties': {
