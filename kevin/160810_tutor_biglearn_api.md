@@ -90,7 +90,7 @@
 }
 ```
 
-### `/assign_course_ecosystem'
+### `/assign_course_ecosystem`
 ```ruby
 {
   '$schema': 'http://json-schema.org/draft-04/schema#',
