@@ -16,7 +16,7 @@ When proposing one, include the following next to your item
 - Recurring: favorite libraries
     - ampersandjs.com
     - github.com/avajs
-    - knockoutjs.com - RoyEJohnson, Aug 26, 3pm, https://docs.google.com/presentation/d/1Hg92ZzRW7izqwquzwSAch62wruU4Z6HUadRgsbroulQ/edit#slide=id.p
+    - [x] knockoutjs.com
     - github.com/maxogden/yo-yo
 - How to use Browser Performance tools (repaints)
 - Performance collection: (repaints, image/XHR requests). How to add it to integration tests & production 
@@ -31,3 +31,8 @@ When proposing one, include the following next to your item
     - when should something be a unit test, integration test, dev performance test
     - when is coverage useful and how should it be collected (ie QA would like it to be collected during the manual tests)
 - SASS vs LESS (organizing code for styling books)
+
+
+# Aug 26, 3pm : knockoutJS
+
+RoyEJohnson will talk about knockoutjs.com . [Slides](https://docs.google.com/presentation/d/1Hg92ZzRW7izqwquzwSAch62wruU4Z6HUadRgsbroulQ/edit#slide=id.p)
