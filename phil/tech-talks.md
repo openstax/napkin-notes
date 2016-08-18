@@ -35,4 +35,4 @@ When proposing one, include the following next to your item
 
 # Aug 26, 3pm : knockoutJS
 
-RoyEJohnson will talk about knockoutjs.com . [Slides](https://docs.google.com/presentation/d/1Hg92ZzRW7izqwquzwSAch62wruU4Z6HUadRgsbroulQ/edit#slide=id.p)
+RoyEJohnson will talk about knockoutjs.com for ~15minutes with 15 minutes for Q & A. [Slides](https://docs.google.com/presentation/d/1Hg92ZzRW7izqwquzwSAch62wruU4Z6HUadRgsbroulQ/edit#slide=id.p)
