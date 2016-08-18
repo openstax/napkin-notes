@@ -16,7 +16,7 @@ When proposing one, include the following next to your item
 - Recurring: favorite libraries
     - ampersandjs.com
     - github.com/avajs
-    - knockoutjs.com
+    - knockoutjs.com - RoyEJohnson, Aug 26, 3pm, https://docs.google.com/presentation/d/1Hg92ZzRW7izqwquzwSAch62wruU4Z6HUadRgsbroulQ/edit#slide=id.p
     - github.com/maxogden/yo-yo
 - How to use Browser Performance tools (repaints)
 - Performance collection: (repaints, image/XHR requests). How to add it to integration tests & production 
