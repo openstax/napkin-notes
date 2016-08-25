@@ -194,7 +194,7 @@ figure { color: green; }
 
 ## Loops Example
 
-Here's an example of looping using a number:
+### An example of looping using a number
 
 ```js
 doWidthBreakPoints = (total) {
@@ -218,7 +218,8 @@ col:nth-of-type(2) { width: 33%; }
 col:nth-of-type(3) { width: 33%; }
 ```
 
-Here's an example of looping over a list of objects:
+
+### An example of looping over a list of objects
 
 ```js
 COLOR_BADGES = [
@@ -253,11 +254,18 @@ And generated output:
 ```
 
 
-Here's a more complicated example of looping over objects:
+### A very complicated example of looping over objects
+
+This generates the CSS needed to collate exercises to the end of a chapter and put a title on the collated exercises.
 
 ```js
 // This would be defined in another file
 CHAPTER_SELECTOR = '.chapter'
+THINGS_TO_COLLATE = [
+  {title: 'Homework', selector: 'exercise.homework', isCollatedToChapter: true},
+  {title: 'Answers', selector: 'solution', isCollatedToChapter: false}
+];
+
 
 doCollations(thingsToCollate) {
   return thingsToCollate.map(doSingleCollation).join('')
@@ -279,10 +287,7 @@ doSingleCollation({title, selector, isCollatedToChapter}, index) {
   `
 }
 // Example of calling this mixin:
-doCollations([
-  {title: 'Homework', selector: 'exercise.homework', isCollatedToChapter: true},
-  {title: 'Answers', selector: 'solution', isCollatedToChapter: false}
-]);
+doCollations(THINGS_TO_COLLATE);
 ```
 
 And generated output:
