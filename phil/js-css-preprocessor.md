@@ -237,7 +237,7 @@ doBadges(badges) {
 
 doBadge({name, color) {
   return `
-    &.${name} { color: ${color}; }
+    &.${name} { background-color: ${color}; }
   `
 }
 // Example of calling this mixin:
