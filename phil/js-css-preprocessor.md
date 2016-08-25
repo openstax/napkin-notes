@@ -202,7 +202,7 @@ doWidthBreakPoints = (total) {
   for (i=1; i <= total; i++) {
     str.push(`
       col:nth-of-type(${i}) {
-        width: ${i/total * 100}%;
+        width: ${Math.round(1/total * 100)}%;
       }
     `)
   }
@@ -214,11 +214,46 @@ And the generated output:
 
 ```css
 col:nth-of-type(1) { width: 33%; }
-col:nth-of-type(2) { width: 66%; }
-col:nth-of-type(3) { width: 100%; }
+col:nth-of-type(2) { width: 33%; }
+col:nth-of-type(3) { width: 33%; }
 ```
 
 Here's an example of looping over a list of objects:
+
+```js
+COLOR_BADGES = [
+  {name: 'info', color: 'blue'},
+  {name: 'danger', color: 'red'},
+  {name: 'warning', color: 'yellow'}
+}
+
+doBadges(badges) {
+  return `
+    .badge {
+      ${badges.map(doBadge).join('')}
+    }
+  `
+}
+
+doBadge({name, color) {
+  return `
+    &.${name} { color: ${color}; }
+  `
+}
+// Example of calling this mixin:
+doBadges(COLOR_BADGES);
+```
+
+And generated output:
+
+```css
+.badge.info    { background-color: blue; }
+.badge.danger  { background-color: red; }
+.badge.warning { background-color: yellow; }
+```
+
+
+Here's a more complicated example of looping over objects:
 
 ```js
 // This would be defined in another file
