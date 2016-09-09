@@ -26,9 +26,8 @@ So at peak usage,
 about 20% of all users will be using the system.
 
 Furthermore, let's assume
-10 actions/minute/user.
-At peak load, we'd expect
-roughly 2 actions/minute/user.
-For 500,000 users,
-that's 1,000,000 actions/minute
+10 actions/minute/active user.
+For 500,000 users
+(100,000 active at peak load)
+we'd expect roughly 1,000,000 actions/minute
 (16.7k actions/second).
