@@ -31,4 +31,4 @@ At peak load, we'd expect
 roughly 2 actions/minute/user.
 For 500,000 users,
 that's 1,000,000 actions/minute
-(278 actions/second).
+(16.7k actions/second).
