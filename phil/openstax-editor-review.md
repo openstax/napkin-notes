@@ -4,6 +4,11 @@
 
 You can create a new Book and Page
 
+You cannot:
+
+- easily edit metadata (like sharing with other people)
+
+
 ## Derive a Copy of an Existing Book/Page
 
 You can:
@@ -13,6 +18,7 @@ You can:
 You cannot:
 
 - derive a copy of an existing Book
+- easily edit metadata (like sharing with other people)
 
 
 # Editing Things
