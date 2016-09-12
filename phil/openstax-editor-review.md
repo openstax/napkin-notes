@@ -2,6 +2,8 @@
 
 ## Create a new Book/Page
 
+You can create a new Book and Page
+
 ## Derive a Copy of an Existing Book/Page
 
 You can:
@@ -17,7 +19,7 @@ You cannot:
 
 There are 2 major things that can be edited, a Page in a book (figures, exercises, math), and the Organizational Structure of a book (chapters, chapter order)
 
-## Book Editing
+# Book Editing
 
 In a book, you can:
 
@@ -26,6 +28,11 @@ In a book, you can:
     ![image](https://cloud.githubusercontent.com/assets/253202/18446209/56a9c5bc-78ef-11e6-9f4c-179ea241287c.png)
 
 - reorder Chapters
+- edit metadata (permissions, attribution, summary)
+
+    ![image](https://cloud.githubusercontent.com/assets/253202/18446187/31f4db44-78ef-11e6-8f9b-9c9de6fe88b1.png)
+
+
 
 
 You currently cannot:
@@ -35,14 +42,14 @@ You currently cannot:
 - search your draft book
 
 
-## Page Editing
+# Page Editing
 
 You can:
 
 - change the title
 - change the metadata (ie permissions, attributions, keywords)
 
-    ![image](https://cloud.githubusercontent.com/assets/253202/18446187/31f4db44-78ef-11e6-8f9b-9c9de6fe88b1.png)
+    ![image](https://cloud.githubusercontent.com/assets/253202/18447911/a18e8ea8-78f6-11e6-84f1-677710104c74.png)
 
 
 
@@ -50,11 +57,11 @@ You currently cannot:
 
 - refresh the page
     ![image](https://cloud.githubusercontent.com/assets/253202/18446360/01b62928-78f0-11e6-880c-678d15eb93a2.png)
+- save (but maybe it's just phil having problems)
 
+# Page HTML Editing
 
-### Page HTML Editing
-
-#### Note
+## Note
 
 You can:
 
@@ -72,7 +79,7 @@ You cannot:
 - see the styling of the note if it has a custom type/class
 
 
-#### Table
+## Table
 
 ![image](https://cloud.githubusercontent.com/assets/253202/18446953/842d7260-78f2-11e6-8fb2-495778479432.png)
 
@@ -86,7 +93,7 @@ You cannot:
 - select an entire row/column
 - provide a caption/title
 
-#### Misc
+## Misc
 
 Link edit: ![image](https://cloud.githubusercontent.com/assets/253202/18447221/aab7ada0-78f3-11e6-8bd9-1ba099a5b0f0.png)
 
@@ -104,7 +111,7 @@ You can:
   - an uploaded document
   - but **not** to another part of the book
 
-#### Figures
+## Figures
 
 ![image](https://cloud.githubusercontent.com/assets/253202/18446989/aa2859c6-78f2-11e6-8328-ae797e5fd082.png)
 
@@ -128,7 +135,7 @@ You cannot:
 - resize an image
 
 
-#### Math
+## Math
 
 ![image](https://cloud.githubusercontent.com/assets/253202/18447053/ee180028-78f2-11e6-9c3a-1a512064d9cc.png)
 
@@ -149,7 +156,7 @@ You cannot:
 
 - edit WYSIWYG
 
-### Video
+## Video
 
 ![image](https://cloud.githubusercontent.com/assets/253202/18447149/6206fd2c-78f3-11e6-8b22-29dfbb017628.png)
 
@@ -158,7 +165,7 @@ You cannot:
 ![image](https://cloud.githubusercontent.com/assets/253202/18447209/99aa33a2-78f3-11e6-8410-1a3279c1a867.png)
 
 
-#### Exercise
+## Exercise
 
 ![image](https://cloud.githubusercontent.com/assets/253202/18447289/febd3578-78f3-11e6-8a63-56739c06bfb6.png)
 
@@ -173,7 +180,7 @@ You can:
 - add a custom class and type
 
 
-#### Example
+## Example
 
 ![image](https://cloud.githubusercontent.com/assets/253202/18447431/96876cde-78f4-11e6-944c-f507a4775310.png)
 
@@ -183,7 +190,7 @@ You can:
 - drag to move
 
 
-#### Quotation/Equation/Definition
+## Quotation/Equation/Definition
 
 ![image](https://cloud.githubusercontent.com/assets/253202/18447465/bf5f8150-78f4-11e6-8602-405fd2d6b641.png)
 
