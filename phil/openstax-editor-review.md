@@ -1,5 +1,6 @@
 # Ways of Starting
 
+
 ## Create a new Book/Page
 
 You can create a new Book and Page
@@ -17,8 +18,8 @@ You can:
 
 You cannot:
 
-- derive a copy of an existing Book
-- easily edit metadata (like sharing with other people)
+- derive a copy of an existing Book (bug)
+- easily edit metadata (like sharing with other people).  Hidden; usage not clear. (gap)
 
 
 # Editing Things
@@ -43,9 +44,9 @@ In a book, you can:
 
 You currently cannot:
 
-- move a Page
-- move a Page to a chapter
-- search your draft book
+- move a Page easily (bug) _(need to move mouse until you see crosshairs/grabby hand cursor)_
+- move a Page to a chapter (bug)
+- search your draft book (gap)
 
 
 # Page Editing
@@ -57,13 +58,19 @@ You can:
 
     ![image](https://cloud.githubusercontent.com/assets/253202/18447911/a18e8ea8-78f6-11e6-84f1-677710104c74.png)
 
-
-
-You currently cannot:
-
 - refresh the page
     ![image](https://cloud.githubusercontent.com/assets/253202/18446360/01b62928-78f0-11e6-880c-678d15eb93a2.png)
-- save (but maybe it's just phil having problems)
+- save 
+
+You cannot:
+
+- currently see a prompt when you have unsaved changes
+
+**Notes**
+
+- difficult to focus on various elements
+- copy and paste is clunky
+
 
 # Page HTML Editing
 
@@ -76,13 +83,13 @@ You can:
     ![image](https://cloud.githubusercontent.com/assets/253202/18446435/50586faa-78f0-11e6-8250-6a820306d8a3.png)
 
   - edit the Type and Title
-  - set a custom class
+  - set a custom class (currently used for PDF versions)
 
 ![image](https://cloud.githubusercontent.com/assets/253202/18446529/b05042ac-78f0-11e6-89ec-450e71d0d20c.png)
 
 You cannot:
 
-- see the styling of the note if it has a custom type/class
+- see the styling of the note if it has a custom type/class (gap)
 
 
 ## Table
@@ -96,8 +103,9 @@ You can:
 
 You cannot:
 
-- select an entire row/column
-- provide a caption/title
+- select an entire row/column (gap)
+- provide a caption/title (gap)
+
 
 ## Misc
 
@@ -110,12 +118,21 @@ You can:
 
 - copy and paste elements into the "clipboard" (not the Operating System one)
 - add up to 3 headings, and a code block
-- bold/italic/underline/subscript/superscript
-- link to:
-  - part of this page (heading, example, note, equation) **does not seem to work for me**
-  - external website
-  - an uploaded document
-  - but **not** to another part of the book
+- bold/italic/underline/subscript/superscript/lists (ordered and unordered), indent/outdent
+
+
+
+## Links
+
+You can link to:
+
+- part of this page (heading, example, note, equation)
+- external website
+- an uploaded document
+
+You cannot:
+
+- link to another part of the book
 
 ## Figures
 
@@ -137,8 +154,10 @@ You can:
 
 You cannot:
 
-- drag an image to upload
-- resize an image
+- drag an image to upload (gap)
+- resize an image (gap)
+
+**Note:** currently saved as data-uri
 
 
 ## Math
@@ -160,7 +179,8 @@ You can:
 
 You cannot:
 
-- edit WYSIWYG
+- edit very large and complex math formulas
+
 
 ## Video
 
@@ -169,6 +189,10 @@ You cannot:
 ![image](https://cloud.githubusercontent.com/assets/253202/18447201/92613d98-78f3-11e6-8466-5c61c9a595e7.png)
 
 ![image](https://cloud.githubusercontent.com/assets/253202/18447209/99aa33a2-78f3-11e6-8410-1a3279c1a867.png)
+
+You can:
+
+- upload youtube, maybe vimeo, and some others
 
 
 ## Exercise
