@@ -43,13 +43,51 @@ where:
 exercise_pool = book_container -
                 course_excluded_exercises -
                 globally_excluded_exercises -
-                open_assignment_exercises
+                nonpast_assignment_exercises
 ```
-
+Open assignment exercises are excluded
+to prevent learners from using their CLUE values
+to cheat.
 
 ## CLUEs (aggregated learners)
+```
+clue = AGGREGATE_CLUE(learner_pool,
+                      learner_responses
+                      exercise_pool,
+                      Wt_QxK, d_Qx1)
+```
+where:
+```
+exercise_pool = book_container -
+                course_excluded_exercises -
+                globally_excluded_exercises
+```
+Note that cheating is not (yet) a concern here,
+because these values are only visible to teachers.
 
 ## PEs (individual learner)
+```
+personalized_exercises = PEs(learner,
+                             learner_responses,
+                             exercise_pool,
+                             Wt_QxK, d_Qx1)
+```
+where:
+```
+exercise_pool = book_container_1 +
+                book_container_2 +
+                ...
+                book_container_n -
+                course_excluded_exercises -
+                globally_excluded_exercises -
+                nonpast_assignment_exercises
+```
+Again, assignment exercises are excluded to
+* avoid repetitions in assignments
+* prevent cheating via Practice Widget
 
 ## SPEs (individual learner)
 
+Spaced Practice Exercises (SPEs)
+are a special case of Personalized Exercises (PEs);
+only target ecosystem changes.
