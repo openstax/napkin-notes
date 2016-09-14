@@ -138,7 +138,7 @@ TBD: Does `Biglearn` need to know about `ecosystem mappings` to handle `SPEs`, o
 
 # Why Not Handle All of This in `Tutor`?
 
-The main reason is separation of concerns.
+## Separation of concerns.
 
 If all `exercise` and `learner` pool management is done by `Tutor`,
 then every piece of `Tutor` business logic
@@ -164,3 +164,14 @@ is super error-prone
 (how are we going to test that?)
 and causes risk to spread
 far beyond roster management.
+
+## Easy of Update
+
+If we change how any of these features work,
+we'll need to bring down `Tutor`
+to make the changes.
+
+The more we can put in `Biglearn`, the better,
+because we can make updates much more easily,
+with no `Tutor` downtime,
+and with limited risk.
