@@ -131,5 +131,7 @@ Again, assignment exercises are excluded to
 ## SPEs (individual learner)
 
 Spaced Practice Exercises (SPEs)
-are a special case of Personalized Exercises (PEs);
+are (probably) a special case of Personalized Exercises (PEs);
 only target ecosystem changes.
+
+TBD: Does `Biglearn` need to know about `ecosystem mappings` to handle `SPEs`, or can that remain in `Tutor`?
