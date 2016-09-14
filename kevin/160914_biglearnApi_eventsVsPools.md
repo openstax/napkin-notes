@@ -165,7 +165,7 @@ is super error-prone
 and causes risk to spread
 far beyond roster management.
 
-## Easy of Update
+## Easy Updates
 
 If we change how any of these features work,
 we'll need to bring down `Tutor`
