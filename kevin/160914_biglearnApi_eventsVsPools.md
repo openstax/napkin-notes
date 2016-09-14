@@ -135,3 +135,32 @@ are (probably) a special case of Personalized Exercises (PEs);
 only target ecosystem changes.
 
 TBD: Does `Biglearn` need to know about `ecosystem mappings` to handle `SPEs`, or can that remain in `Tutor`?
+
+# Why Not Handle All of This in `Tutor`?
+
+The main reason is separation of concerns.
+
+If all `exercise` and `learner` pool management is done by `Tutor`,
+then every piece of `Tutor` business logic
+will need to carefully understand and manage
+its impacts on `Biglearn` pools.
+
+For instance, 
+`Tutor` moving a student from one period to another
+just involves checking for roster limits, etc.,
+and recording the change.  Right?
+
+Wrong.
+
+If `Tutor` is also managing `Biglearn` pools,
+it will also need to:
+* invalidate affected `learner` pools
+* create updated `learner` pools
+* determine which `CLUE`, `PE`, and `SPE` definitions are affected, and update them
+* anything else? hard to say...
+
+Putting that burden on `Tutor`
+is super error-prone
+(how are we going to test that?)
+and causes risk to spread
+far beyond roster management.
