@@ -83,6 +83,13 @@ allowing `Biglearn`
 to exclude the appropriate `exercises`
 from its `CLUE` calculation.
 
+Everything mentioned above is needed by `Biglearn`
+so it can have time to precompute all the `CLUE` values
+that `Tutor` might want.
+It is also important to allow `Biglearn`
+to stop computing values that `Tutor`
+knows it will never need again.
+
 ## CLUEs (aggregated learners)
 ```
 clue = AGGREGATE_CLUE(learner_pool,
