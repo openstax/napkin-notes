@@ -5,7 +5,7 @@
 
   'type': 'object',
   'properties': {
-    'learner_clues': {
+    'learner_clue_requests': {
       'type': 'array',
       'items': { '$ref': '#definitions/clue_request'},
       'minItems': 0,
@@ -37,7 +37,7 @@
 
   'type': 'object',
   'properties': {
-    'teacher_clues': {
+    'teacher_clue_requests': {
       'type': 'array',
       'items': { '$ref': '#definitions/clue_request'},
       'minItems': 0,
