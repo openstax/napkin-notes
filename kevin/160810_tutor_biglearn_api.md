@@ -1,3 +1,67 @@
+### `/fetch_learner_clues`
+```ruby
+{
+  '$schema': 'http://json-schema.org/draft-04/schema#',
+
+  'type': 'object',
+  'properties': {
+    'learner_clues': {
+      'type': 'array',
+      'items': { '$ref': '#definitions/clue_request'},
+      'minItems': 0,
+      'maxItems': 1000,
+    },
+  },
+  'required': ['learner_clues'],
+  'additionalProperties': false,
+
+  'definitions': {
+    'clue_request': {
+      'type': 'object',
+      'properties': {
+        'ecosystem_uuid':      {'$ref': '#standard_definitions/uuid'},
+        'book_container_uuid': {'$ref': '#standard_definitions/uuid'},
+        'learner_uuid':        {'$ref': '#standard_definitions/uuid'},
+      },
+      'required': ['ecosystem_uuid', 'book_container_uuid', 'learner_uuid'],
+      'additionalProperties': false,
+    },
+  },
+}
+```
+
+### `/fetch_teacher_clues`
+```ruby
+{
+  '$schema': 'http://json-schema.org/draft-04/schema#',
+
+  'type': 'object',
+  'properties': {
+    'teacher_clues': {
+      'type': 'array',
+      'items': { '$ref': '#definitions/clue_request'},
+      'minItems': 0,
+      'maxItems': 1000,
+    },
+  },
+  'required': ['learner_clues'],
+  'additionalProperties': false,
+
+  'definitions': {
+    'clue_request': {
+      'type': 'object',
+      'properties': {
+        'ecosystem_uuid':        {'$ref': '#standard_definitions/uuid'},
+        'book_container_uuid':   {'$ref': '#standard_definitions/uuid'},
+        'course_container_uuid': {'$ref': '#standard_definitions/uuid'},
+      },
+      'required': ['ecosystem_uuid', 'book_container_uuid', 'course_container_uuid'],
+      'additionalProperties': false,
+    },
+  },
+}
+```
+
 ### `/create_ecosystem`
 ```ruby
 {
