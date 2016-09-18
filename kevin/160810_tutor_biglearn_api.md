@@ -90,6 +90,13 @@
           'maximum': 100,
         },
       },
+      'required': [
+        'learner_uuid',
+        'course_uuid',
+        'ecosystem_uuid',
+        'max_exercises_to_return'
+      ],
+      'additionalProperties': false,
     },
   },
 }
