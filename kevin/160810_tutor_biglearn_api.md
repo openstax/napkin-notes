@@ -142,6 +142,44 @@
 }
 ```
 
+### `/fetch_assignment_pes`
+```ruby
+{
+  '$schema': 'http://json-schema.org/draft-04/schema#',
+
+  'type': 'object',
+  'properties': {
+    'pe_requests': {
+      'type': 'array',
+      'items': {'$ref': '#definitions/pe_request'}
+      'minItems': 0,
+      'maxItems': 1000,
+    },
+  },
+
+  'definitions': {
+    'pe_request': {
+      'type': 'object',
+      'properties': {
+        'learner_uuid':    {'$ref': '#standard_definitions/uuid'},
+        'assignment_uuid': {'$ref': '#standard_definitions/uuid'},
+        'max_exercises_to_return': {
+          'type': 'integer',
+          'minimum': 0,
+          'maximum': 100,
+        },
+      },
+      'required': [
+        'learner_uuid',
+        'assignment_uuid',
+        'max_exercises_to_return',
+      ],
+      'additionalProperties': false,
+    },
+  },
+}
+```
+
 ### `/create_ecosystem`
 ```ruby
 {
