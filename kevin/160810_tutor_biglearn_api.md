@@ -62,6 +62,39 @@
 }
 ```
 
+### `/fetch_weakest_topics_pes`
+```ruby
+{
+  '$schema': 'http://json-schema.org/draft-04/schema#',
+
+  'type': 'object',
+  'properties': {
+    'personalized_exerises_requests': {
+      'type': 'array',
+      'items': {'$ref': '#definitions/personalized_exerises_request'},
+      'minItems': 0,
+      'maxItems': 1000,
+    },
+  },
+
+  'definitions': {
+    'practice_weakest_topics': {
+      'type': 'object',
+      'properties': {
+        'learner_uuid':   {'$ref': '#standard_definitions/uuid'},
+        'course_uuid':    {'$ref': '#standard_definitions/uuid'},
+        'ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
+        'max_exercises_to_return': {
+          'type': 'integer',
+          'minimum': 0,
+          'maximum': 100,
+        },
+      },
+    },
+  },
+}
+```
+
 ### `/create_ecosystem`
 ```ruby
 {
