@@ -322,6 +322,7 @@
     'ecosystem_assignment': {
       'type': 'object',
       'properties': {
+        'assignment_uuid': {'$ref': '#standard_definitions/uuid'},
         'course_uuid': {'$ref': '#standard_definitions/uuid'},
         'ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
         'sequence': {'$ref': '#standard_definitions/non_negative_integer'},
