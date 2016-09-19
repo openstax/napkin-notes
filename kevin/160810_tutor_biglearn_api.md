@@ -308,23 +308,25 @@
   'properties': {
     'ecosystem_assignments': {
       'type': 'array',
-      'items': {'#ref': '#definitions/ecosystem_assignment_def'},
+      'items': {'#ref': '#definitions/ecosystem_assignment'},
       'minItems': 0,
-      'maxItems': 10000,
+      'maxItems': 1000,
     },
   },
   'required': ['ecosystem_assignments'],
   'additionalProperties': false,
-  
+
+  'standard_definitions': _standard_definitions,
+      
   'definitions': {
-    'ecosystem_assignment_def': {
+    'ecosystem_assignment': {
       'type': 'object',
       'properties': {
         'course_uuid': {'$ref': '#standard_definitions/uuid'},
         'ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
-        'ordered_at': {'$ref': '#standard_definitions/datetime'},
+        'sequence': {'$ref': '#standard_definitions/non_negative_integer'},
       },
-      'required': ['course_uuid', 'ecosystem_uuid'],
+      'required': ['course_uuid', 'ecosystem_uuid', 'sequence'],
       'additionalProperties': false,
     },
   },
