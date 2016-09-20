@@ -79,6 +79,7 @@
     'practice_weakest_topics': {
       'type': 'object',
       'properties': {
+        'ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
         'student_uuid':   {'$ref': '#standard_definitions/uuid'},
         'max_exercises_to_return': {
           'type': 'integer',
@@ -87,6 +88,7 @@
         },
       },
       'required': [
+        'ecosystem_uuid',
         'student_uuid',
         'max_exercises_to_return',
       ],
@@ -153,8 +155,7 @@
     'pe_request': {
       'type': 'object',
       'properties': {
-        'student_uuid':    {'$ref': '#standard_definitions/uuid'},
-        'assignment_uuid': {'$ref': '#standard_definitions/uuid'},
+        'assignment_uuid': {'$ref': '#standard_definitions/uuid'}, ## Student-specific Assignment uuid
         'max_exercises_to_return': {
           'type': 'integer',
           'minimum': 0,
@@ -162,7 +163,6 @@
         },
       },
       'required': [
-        'learner_uuid',
         'assignment_uuid',
         'max_exercises_to_return',
       ],
@@ -186,7 +186,7 @@
         'type': 'string',
         'pattern': '^\d+\.\d+$',
       },
-      'subject_partitions': {
+      'subject_partitions': {  ## revisit this to make sure it works as expected for econ, etc.
         'type': 'object',
         'properties': {
           'primary': {'$ref': '#definitions/subject_partition'},
@@ -207,6 +207,7 @@
           'properties': {
             'container_uuid':        {'$ref':, '#standard_definitions/uuid'},
             'container_parent_uuid': {'$ref':, '#standard_definitions/uuid'},
+            ## (optional) CNX uuids, versions (not available for Chapters, Units)
             'pools': {
               'type': 'array',
               'items': {'$ref': '#definitions/pool'},
@@ -242,9 +243,9 @@
       'properties': {
         'category': {
           'type': 'string',
-          'enum': ['CLUE', 'SPE', 'PE'],
+          'enum': ['CLUE', 'SPE', 'PE'],  ## SPEs come from past PEs
         },
-        'monikers': {
+        'monikers': { ## revisit this to make sure it works in all cases
           'type': 'array',
           'items': {
             'type': 'string',
@@ -268,7 +269,7 @@
       'type': 'object',
       'properties': {
         'uuid':              {'$ref': '#standard_definitions/uuid'},
-        'exercises_uuid':    {'$ref': '#standard_definitions/uuid'},
+        'exercises_uuid':    {'$ref': '#standard_definitions/uuid'},  ## could change this to execises_number
         'exercises_version': {'$ref': '#standard_definitions/non_negative_integer'},
         'los': {
           'type': 'array',
@@ -291,7 +292,10 @@
 
 ### `/decommision_courses`
 
-### `/assign_course_ecosystems`
+### `/update_course_ecosystem`
+just the course uuid
+
+### `/prepare_course_ecosystems`
 ```ruby
 {
   '$schema': 'http://json-schema.org/draft-04/schema#',
@@ -311,16 +315,24 @@
   'standard_definitions': _standard_definitions,
       
   'definitions': {
-    'ecosystem_assignment': {
+    'updates': {
       'type': 'object',
       'properties': {
-        'assignment_uuid': {'$ref': '#standard_definitions/uuid'},
-        'course_uuid': {'$ref': '#standard_definitions/uuid'},
-        'ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
-        'sequence': {'$ref': '#standard_definitions/non_negative_integer'},
+        'update_uuid':               {'$ref': '#standard_definitions/uuid'},
+        'course_uuid':               {'$ref': '#standard_definitions/uuid'},
+        'ecosystem_uuid':            {'$ref': '#standard_definitions/uuid'},
+        'map':                       {'$ref': '#definitions/map'},
+        'sequence':                  {'$ref': '#standard_definitions/non_negative_integer'},
       },
       'required': ['course_uuid', 'ecosystem_uuid', 'sequence'],
       'additionalProperties': false,
+    },
+    'map': {
+      'properties': {
+        ## from, to ecosystem uuids
+        ## pages to pages
+        ## exercises to pages
+      },
     },
   },
 }
@@ -347,20 +359,33 @@
     'roster_update_def': {
       'type': 'object',
       'properties': {
-        'course_uuid':  {'$ref': '#standard_definitions/uuid'},
-        'period_uuid':  {'$ref': '#standard_definitions/uuid'},
-        'student_uuid': {'$ref': '#standard_definitions/uuid'},
+        'course_container_uuid':  {'$ref': '#standard_definitions/uuid'},  ## where does the hierarchy get defined?
+        'student_uuid':           {'$ref': '#standard_definitions/uuid'},
         'action': {
           'type': 'string',
           'enum': ['add', 'remove'],
         },
-        'ordered_at': {'$ref': '#standard_definitions/datetime'},
+        'sequence': {'$ref': '#standard_definitions/non_negative_integer'},
       },
-      'required': ['course_uuid', 'period_uuid', 'student_uuid', 'action', 'ordered_at'],
+      'required': ['course_uuid', 'period_uuid', 'student_uuid', 'action', 'sequence'],
       'additionalProperties': false,
     },
   },
 }
+```
+
+### `/create_or_update_assignment`
+```ruby
+  event_uuid
+  student_uuid
+  assignment_uuid
+  ecosystem_uuid
+  assignment_moniker  ## hw, reading, pw, etc.
+  opens_at (optional)
+  due_at   (optional)
+  [book_container_uuids]
+  [assigned_exercise_uuids]
+  sequence
 ```
 
 ### `/archive_periods`
