@@ -108,6 +108,7 @@ because these values are only visible to teachers.
 
 
 ## PEs (individual learner)
+##KEF: How do you avoid selecting PE's from the intended sections? For PW that would be anything previously assigned, and for a HW it would be practice problems from the sections in the HW, and for readings it would be the current reading section.
 ```
 personalized_exercises = PEs(learner,
                              learner_responses,
