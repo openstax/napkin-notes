@@ -19,11 +19,10 @@
     'clue_request': {
       'type': 'object',
       'properties': {
-        'ecosystem_uuid':      {'$ref': '#standard_definitions/uuid'},
-        'book_container_uuid': {'$ref': '#standard_definitions/uuid'},
-        'learner_uuid':        {'$ref': '#standard_definitions/uuid'},
+        'book_container_uuid': {'$ref': '#standard_definitions/uuid'},  ## Ecosystem-specific uuid (not CNX uuid)
+        'student_uuid':        {'$ref': '#standard_definitions/uuid'},  ## Course-specific Student uuid
       },
-      'required': ['ecosystem_uuid', 'book_container_uuid', 'learner_uuid'],
+      'required': ['book_container_uuid', 'student_uuid'],
       'additionalProperties': false,
     },
   },
@@ -51,11 +50,10 @@
     'clue_request': {
       'type': 'object',
       'properties': {
-        'ecosystem_uuid':        {'$ref': '#standard_definitions/uuid'},
-        'book_container_uuid':   {'$ref': '#standard_definitions/uuid'},
-        'course_container_uuid': {'$ref': '#standard_definitions/uuid'},
+        'book_container_uuid':   {'$ref': '#standard_definitions/uuid'},  ## Ecosystem-specific uuid (not CNX uuid)
+        'course_container_uuid': {'$ref': '#standard_definitions/uuid'},  ## Course-specific Period, Section, Class, etc., 
       },
-      'required': ['ecosystem_uuid', 'book_container_uuid', 'course_container_uuid'],
+      'required': ['book_container_uuid', 'course_container_uuid'],
       'additionalProperties': false,
     },
   },
@@ -81,9 +79,7 @@
     'practice_weakest_topics': {
       'type': 'object',
       'properties': {
-        'learner_uuid':   {'$ref': '#standard_definitions/uuid'},
-        'course_uuid':    {'$ref': '#standard_definitions/uuid'},
-        'ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
+        'student_uuid':   {'$ref': '#standard_definitions/uuid'},
         'max_exercises_to_return': {
           'type': 'integer',
           'minimum': 0,
@@ -91,10 +87,8 @@
         },
       },
       'required': [
-        'learner_uuid',
-        'course_uuid',
-        'ecosystem_uuid',
-        'max_exercises_to_return'
+        'student_uuid',
+        'max_exercises_to_return',
       ],
       'additionalProperties': false,
     },
@@ -121,8 +115,7 @@
     'practice_request': {
       'type': 'object',
       'properties': {
-        'learner_uuid':        {'$ref': '#standard_definitions/uuid'},
-        'ecosystem_uuid':      {'$ref': '#standard_definitions/uuid'},
+        'student_uuid':        {'$ref': '#standard_definitions/uuid'},
         'book_container_uuid': {'$ref': '#standard_definitions/uuid'},
         'max_exercises_to_return': {
           'type': 'integer',
@@ -131,8 +124,7 @@
         },
       },
       'required': [
-        'learner_uuid',
-        'ecosystem_uuid',
+        'student_uuid',
         'book_container_uuid',
         'max_exercises_to_return',
       ],
@@ -161,7 +153,7 @@
     'pe_request': {
       'type': 'object',
       'properties': {
-        'learner_uuid':    {'$ref': '#standard_definitions/uuid'},
+        'student_uuid':    {'$ref': '#standard_definitions/uuid'},
         'assignment_uuid': {'$ref': '#standard_definitions/uuid'},
         'max_exercises_to_return': {
           'type': 'integer',
