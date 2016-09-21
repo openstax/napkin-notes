@@ -2,7 +2,7 @@
 
 Because all `courses` must have an associated `ecosystem`,
 `Tutor` must create at least one `ecosystem`
-before created any `courses`.
+before creating any `courses`.
 
 The request and response schemas
 describe the HTTP request JSON payloads in detail,
