@@ -28,6 +28,8 @@ Once `SPARFA` computes the initial `W` and `d` matrices for the `ecosystem` (whi
 `Biglearn` will update the `ecosystem`'s status to `ready`,
 indicating to `Tutor` that the `ecosystem` can be assigned to a `course`.
 
+There is a `Biglearn` API endpoint for `Tutor` to query `ecosystem` statuses.
+
 ## Creating a Course
 
 ## Updating the Course Roster
