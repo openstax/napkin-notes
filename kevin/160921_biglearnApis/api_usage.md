@@ -4,10 +4,6 @@ Because all `courses` must have an associated `ecosystem`,
 `Tutor` must create at least one `ecosystem`
 before creating any `courses`.
 
-The request and response schemas
-describe the HTTP request JSON payloads in detail,
-but an overview is provided below as a convenience.
-
 An `ecosystem` consists of:
 * an `ecosystem uuid` that identifies the given `ecosystem`
 * a `book` attribute describing:
@@ -28,7 +24,9 @@ Once `SPARFA` computes the initial `W` and `d` matrices for the `ecosystem` (whi
 `Biglearn` will update the `ecosystem`'s status to `ready`,
 indicating to `Tutor` that the `ecosystem` can be assigned to a `course`.
 
-There is a `Biglearn` API endpoint for `Tutor` to query `ecosystem` statuses.
+Reference links:
+* request and response schemas for the `ecosystem` creation endpoint
+* request and response schemas for the `ecosystem` status query endpoint
 
 ## Creating a Course
 
