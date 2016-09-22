@@ -102,6 +102,15 @@ At a minimum,
 information about every `student response`
 recorded when "continue" or "submit" is pressed.
 
+References:
+* This endpoint has already been implemented
+[here](https://github.com/openstax/biglearn-api/blob/master/app/controllers/responses_controller.rb),
+where the
+[request](https://github.com/openstax/biglearn-api/blob/master/app/controllers/responses_controller.rb#L17-L60)
+and
+[response](https://github.com/openstax/biglearn-api/blob/master/app/controllers/responses_controller.rb#L63-L81)
+schemas are defined.
+
 ### Spaced Practice Exercises
 
 `Biglearn` will keep a constantly-updated set
