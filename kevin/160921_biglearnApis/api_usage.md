@@ -30,6 +30,14 @@ References:
 
 ## Creating a Course
 
+Because every `course` must have an associated `ecosystem`,
+when a `course` is created, `Tutor` tells `Biglearn`:
+* the `course uuid`
+* the `course`'s initial `ecosystem uuid`
+
+References:
+* request and response schemas for the `course` creation endpoint
+
 ## Updating the Course Roster
 
 ## Creating/Updating Assignments
