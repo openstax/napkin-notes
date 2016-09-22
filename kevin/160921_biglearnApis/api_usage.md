@@ -90,6 +90,9 @@ Each assigned `exercise` is given a `trial uuid`,
 allowing `Biglearn` to identify exactly which
 copy of a multiply-issued `exercise` is being answered.
 
+References:
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_create_update_assignments.md) for the `assignment` create/update endpoint
+
 ## Working Assignments
 
 ### Student Responses
