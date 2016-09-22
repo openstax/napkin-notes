@@ -11,7 +11,7 @@
   'properties': {
     'ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
     'book': {
-      'cnx_identity: {'$ref': '#standard_definitions/cnx_identity'},
+      'cnx_identity': {'$ref': '#standard_definitions/cnx_identity'},
       'contents': {
         'type': 'array',
         'items': {
