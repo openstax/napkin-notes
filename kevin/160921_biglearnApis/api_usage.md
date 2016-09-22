@@ -27,7 +27,7 @@ Once `SPARFA` computes the initial `W` and `d` matrices for the `ecosystem` (whi
 indicating to `Tutor` that the `ecosystem` can be assigned to a `course`.
 
 References:
-* request and response schemas for the `ecosystem` creation endpoint
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_create_ecosystem.md) for the `ecosystem` creation endpoint
 * request and response schemas for the `ecosystem` status query endpoint
 
 ## Creating a Course
