@@ -111,13 +111,54 @@ and
 [response](https://github.com/openstax/biglearn-api/blob/master/app/controllers/responses_controller.rb#L63-L81)
 schemas are defined.
 
-### Spaced Practice Exercises
+### Dynamic Exercises
 
-`Biglearn` will keep a constantly-updated set
-of SPEs available at all times for any
-`assignments` that have not yet had them populated.
-`Tutor` can request the latest set of SPEs from `Biglearn` at any time
-(but probably once the 'core' `exercises` have been completed).
+From a `Tutor` point-of-view, 
+an `assignment` consists of three parts:
+* 'core' exercises (assigned, directly or indirectly, by the teacher)
+* 'spaced practice' exercises (assigned by `Tutor` based largely on the `student`'s `assignment` history)
+* 'personalized' exercises (assigned by `Tutor` based largely on the `student`'s response history)
+
+The 'spaced practice' and 'personalized' exercises, together,
+constitute the 'dynamic' portion of an `assignment`.
+`Tutor` delegates the choice of dynamic exercises to `Biglearn`,
+usually wanting them to be populated just-in-time
+to allow maximum value from personalization.
+
+When `Tutor` initially creates an `assignment`,
+it leaves out the dynamic exercises
+but (maybe?) indicates to `Biglearn`
+the desired (but not required) number of `exercises`.
+
+When appropriate, `Tutor` asks `Biglearn`
+for dynamic exercises
+and then updates the `assignment` definition.
+This lets `Biglearn` know
+which exercises have actually been assigned to the `student`
+and the `assignments` for which
+it no longer needs to precompute dynamic exercises.
+
+Because `Tutor` can ask `Biglearn`
+for dynamic exercises
+at any time,
+it is possible that `Biglearn`
+has not had time to select any appropriately.
+The response from `Biglearn` will contain,
+in addition to the suggested `exercises` (if any),
+an indicator that `Tutor` can use
+to decide whether or not
+to re-query `Biglearn` for better `exercises`
+or to tell the learner to check back later.
+
+`Biglearn` will always omit
+admin- and teacher-excluded `exercises`
+from its recommendations.
+
+#### Spaced Practice Exercises
+
+`Biglearn` will keep a constantly-updated set of SPEs
+on a per-`assignment` basis
+for any `assignments` that have not yet had them populated.
 
 To choose the appropriate SPEs,
 `Biglearn` will use its knowledge of:
@@ -130,45 +171,36 @@ All SPEs will ultimately come from
 the `assignment`'s associated `ecosystem`
 (which might not the the `course`'s current `ecosystem`).
 
-SPEs will (initially) be chosen from the appropriate `exercise pools`
+SPEs will (initially) be chosen from the appropriate `exercise pool`
 using the PE algorithm.
 
-Once `Tutor` adds the SPEs to an `assignment`,
-it should send the updated `assignment` to `Biglearn`.
-This will allow `Biglearn`
-to update excluded `exercises`
-and stop calculating SPEs for the given `assignment`.
+#### Personalized Exercises
 
-### Personalized Exercises
+`Biglearn` will keep a constantly-updated set of \PEs
+on a per-`assignment` basis
+for any `assignments` that have not yet had them populated.
 
-Much like SPEs, `Biglearn` will maintain a set of PEs
-on a per-`student` basis.
-Tutor can ask for this set at any time
-(but probably once the 'spaced practice' `exercises` have been completed).
+All PEs will ultimately come from
+the `assignment`'s associated `ecosystem`
+(which might not the the `course`'s current `ecosystem`).
 
-Once `Tutor` adds the PEs to an `assignment`,
-it should send the updated `assignment` to `Biglearn`.
-This will allow `Biglearn`
-to update excluded `exercises`
-and stop calculating PEs for the given `assignment`.
+## Practice Widgets
 
-## Practice Widget
+`Tutor` can treat `practice widgets` like an `assignments` 
+that contain only personalized exercises.
 
-`Tutor` can treat `practice widget` like an `assignment` that contains only personalized exercises.
-
-`Biglearn` will always maintain
-an updated set of per-`student` `exercises`
-that `Tutor` can use to create `practice widgets`.
-
-In all cases,
-admin- and teacher-excluded `exercises` will be omitted,
-as will any `exercises` appearing in not-yet-past-due `assignments`.
+In addition to admin- and teacher-excluded `exercises`,
+`Biglearn` will omit any `exercises` appearing in 
+not-yet-past-due `assignments`
+marked with the exclusion flag.
 
 ### Practice a Specific Topic
 
-`Biglearn` will maintain a set of per-`student` `exercises` 
-for each `book container` (chapter, etc.)
-definined the the `course`'s current `ecosystem`.
+`Tutor` can create an `assignment`
+containing only personalized exercises
+(in advance for each topic, if desired)
+and ask `Biglearn` for its recommendations
+when appropriate.
 
 ### Practice Worst Topics
 
