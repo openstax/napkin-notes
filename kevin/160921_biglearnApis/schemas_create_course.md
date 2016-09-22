@@ -24,7 +24,7 @@
 
   'type': 'object',
   'properties': {
-    'course_uuid': {'$ref': '#standard_definitions/uuid'},
+    'created_course_uuid': {'$ref': '#standard_definitions/uuid'},
   },
   'required': ['course_uuid'],
   'additionalProperties': false,
