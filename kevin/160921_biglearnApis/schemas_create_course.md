@@ -26,7 +26,7 @@
   'properties': {
     'created_course_uuid': {'$ref': '#standard_definitions/uuid'},
   },
-  'required': ['course_uuid'],
+  'required': ['created_course_uuid'],
   'additionalProperties': false,
 }
 ```
