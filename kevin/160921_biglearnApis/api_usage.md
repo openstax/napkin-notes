@@ -17,6 +17,9 @@ An `ecosystem` consists of:
   * the `Exercises uuid` and `Exercises version` (to allow `Biglearn` to deal with divergence as it sees fit)
   * the `los` associated with the `exercise` (these act as hints to `SPARFA`)
 
+Each `book container` has a globally-unique `uuid`
+(assigned by `Tutor`).
+
 When `Tutor` tells `Biglearn` about a new `ecosystem`,
 `Biglearn` will acknowledge the `ecosystem`
 and mark its status as `processing`.
@@ -46,9 +49,8 @@ When changes are made to a `course`'s `roster`
 The `roster` consists of:
 * a `roster uuid`
 * a `course uuid`
-* a course-specific `roster sequence number`
 * nested `course containers` (sections, periods, recitations, etc.)
-* `student uuids` for each `course container`
+* `course`-specific `student uuids` for each `course container`
 
 (We will probably need to revisit this if course rosters
 begin to approach ~1000 students, or if students move
@@ -60,6 +62,30 @@ References:
 * request and response schemas for the `roster` update endpoint
 
 ## Creating/Updating Assignments
+
+`Biglearn` only deals with `assignments` on a per-`student` basis
+(so no `TaskPlans`, etc.).
+This makes `Biglearn` independent of
+the complexities of managing due dates, etc.,
+for various groupings of `students`
+for the price of more data being sent
+from `Tutor` to `Biglearn`.
+(This could become a problem if we
+start supporting MOOC-like classes.)
+
+An `assignment` update consists of:
+* a `course`-specific `student uuid`
+* an `assignment uuid`
+* the `assignment`'s associated `ecosystem uuid`
+* an `ecosystem pool moniker` ("hw", "reading", "pw", etc.)
+* optional `opens_at` and `due_at` (to enable `exercise` exclusions)
+* a set of teacher-assigned `book container uuids`
+* a [possibly empty] set of teacher-assigned `exercise uuids`
+
+If `Biglearn` has never seen this `assignment uuid`,
+a new `assignment` will be created.
+Otherwise, the existing `assignment` 
+will be updated (effectively).
 
 ## Working Assignments
 
@@ -81,3 +107,4 @@ References:
 
 ## Updating a Course's Ecosystem
 
+## Associating Students with Learners
