@@ -8,7 +8,6 @@ An `ecosystem` consists of:
 * an `ecosystem uuid` that identifies the given `ecosystem`
 * a `book` attribute describing:
   * the `CNX uuid` and `CNX version` of the book (for reference) 
-  * the `subject partitions` for the book
   * the contents of the book:
     *  nested `book containers` (units, chapters, page-modules, etc.)
     *  `exercise pools` associated with each `book container`
