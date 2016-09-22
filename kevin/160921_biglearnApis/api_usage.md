@@ -180,6 +180,27 @@ are available to `Tutor` in a timely manner.
 
 ## Updating a Course's Ecosystem
 
+As content updates are made,
+we will need to update a `course`'s `ecosystem`
+using the following process:
+* `Tutor` creates a new `ecosystem` and informs `Biglearn`
+* `Tutor` waits until the `ecosystem`'s status is `ready` on `Biglearn`
+* `Tutor` tells `Biglearn` to prepare the new `ecosystem` using:
+  * a `course uuid`
+  * the target `ecosystem uuid`
+  * a `course`-specific `ecosystem map`
+  * NOTE: during this time, `Biglearn` will maintain all `CLUEs`, PEs, etc., for BOTH ecosystems
+* Once `Biglearn` tells `Tutor` that the new `ecosystem` has been prepared:
+  * `Tutor` updates the `course`'s current `ecosytem`
+  * `Tutor` tells `Biglearn` to update the `course`'s current `ecosystem`
+  * NOTE: If there is a delay updating `Biglearn`, there should be no problems since both `ecosystems` are being maintained.
+
+Once a `course`'s ecosystem has been updated,
+`Biglearn` will no longer update SPEs, `CLUEs`, etc.,
+for the old `ecosystem`,
+except for assignments whose SPEs and PEs
+have not yet been assigned.
+
 ## Exercise Exclusions
 
 ### Global Exclusions
