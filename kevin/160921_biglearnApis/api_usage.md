@@ -201,6 +201,14 @@ for the old `ecosystem`,
 except for assignments whose SPEs and PEs
 have not yet been assigned.
 
+![ecosystem update](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/ecosystem_update.png)
+
+Note that all `exercises`
+for a given `assignment`
+come from its `ecosystem`
+(including SPEs)
+and not from the `course`'s current `ecosystem`.
+
 ## Exercise Exclusions
 
 ### Global Exclusions
