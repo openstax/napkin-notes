@@ -143,4 +143,15 @@ Tutor can ask for this set at any time
 
 ## Updating a Course's Ecosystem
 
+## Exercise Exclusions
+
+### Global Exclusions
+
+### Per-Course Exclusions
+
 ## Associating Students with Learners
+
+## Archiving a Course Container
+
+## Archiving a Course
+
