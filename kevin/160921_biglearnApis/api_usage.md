@@ -38,7 +38,7 @@ when a `course` is created, `Tutor` tells `Biglearn`:
 * the `course`'s initial `ecosystem uuid`
 
 References:
-* request and response schemas for the `course` creation endpoint
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_create_course.md) for the `course` creation endpoint
 
 ## Updating the Course Roster
 
