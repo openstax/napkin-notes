@@ -131,6 +131,32 @@ on a per-`student` basis.
 Tutor can ask for this set at any time
 (but probably once the 'spaced practice' `exercises` have been completed).
 
+## Practice Widget
+
+`Tutor` can treat `practice widget` like an `assignment` that contains only personalized exercises.
+
+`Biglearn` will always maintain
+an updated set of per-`student` `exercises`
+that `Tutor` can use to create `practice widgets`.
+
+In all cases,
+admin- and teacher-excluded `exercises` will be omitted,
+as will any `exercises` appearing in not-yet-past-due `assignments`.
+
+### Practice a Specific Topic
+
+`Biglearn` will maintain a set of per-`student` `exercises` 
+for each `book container` (chapter, etc.)
+definined the the `course`'s current `ecosystem`.
+
+### Practice Worst Topics
+
+Because of the ad-hoc nature of this feature,
+`Biglearn` should maintain the per-`student` `exercise`
+sets using its knowledge of `student` and `assignment` histories.
+This will ensure that the appropriate `exercises`
+are available to `Tutor` in a timely manner.
+
 ## Performance Forecast
 
 `Biglearn` will maintain `CLUEs` for each combinaton
@@ -155,30 +181,6 @@ to not-yet-past-due `assignments`.
 
 The teacher view of `CLUEs`
 will always contain the most up-to-date `student` responses.
-
-## Practice Widget
-
-`Biglearn` will always maintain
-an updated set of per-`student` `exercises`
-that `Tutor` can use to create `practice widgets`.
-
-In all cases,
-admin- and teacher-excluded `exercises` will be omitted,
-as will any `exercises` appearing in not-yet-past-due `assignments`.
-
-### Practice a Specific Topic
-
-`Biglearn` will maintain a set of per-`student` `exercises` 
-for each `book container` (chapter, etc.)
-definined the the `course`'s current `ecosystem`.
-
-### Practice Worst Topics
-
-Because of the ad-hoc nature of this feature,
-`Biglearn` should maintain the per-`student` `exercise`
-sets using its knowledge of `student` and `assignment` histories.
-This will ensure that the appropriate `exercises`
-are available to `Tutor` in a timely manner.
 
 ## Updating a Course's Ecosystem
 
