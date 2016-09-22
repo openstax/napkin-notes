@@ -40,6 +40,24 @@ References:
 
 ## Updating the Course Roster
 
+When changes are made to a `course`'s `roster`
+(or perhaps periodically, if the `roster` has changed),
+`Tutor` will send the new `roster` to `Biglearn`.
+The `roster` consists of:
+* a `roster uuid`
+* a `roster sequence number`
+* nested `course containers` (sections, periods, recitations, etc.)
+* `student uuids` for each `course container`
+
+(We will probably need to revisit this if course rosters
+begin to approach ~1000 students, or if students move
+between `course containers` too frequently.
+We could send deltas instead of full rosters,
+but that imposes new requirements on message deliveries.)
+
+References:
+* request and response schemas for the `roster` update endpoint
+
 ## Creating/Updating Assignments
 
 ## Working Assignments
