@@ -45,7 +45,8 @@ When changes are made to a `course`'s `roster`
 `Tutor` will send the new `roster` to `Biglearn`.
 The `roster` consists of:
 * a `roster uuid`
-* a `roster sequence number`
+* a `course uuid`
+* a course-specific `roster sequence number`
 * nested `course containers` (sections, periods, recitations, etc.)
 * `student uuids` for each `course container`
 
