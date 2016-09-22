@@ -117,12 +117,18 @@ To choose the appropriate SPEs,
 * research parameters (especially the `k-ago map`)
 * the `course`'s `ecosystem maps`
 
-All SPEs will ultimate come from
+All SPEs will ultimately come from
 the `assignment`'s associated `ecosystem`
 (which might not the the `course`'s current `ecosystem`).
 
 SPEs will (initially) be chosen from the appropriate `exercise pools`
 using the PE algorithm.
+
+Once `Tutor` adds the SPEs to an `assignment`,
+it should send the updated `assignment` to `Biglearn`.
+This will allow `Biglearn`
+to update excluded `exercises`
+and stop calculating SPEs for the given `assignment`.
 
 ### Personalized Exercises
 
@@ -130,6 +136,12 @@ Much like SPEs, `Biglearn` will maintain a set of PEs
 on a per-`student` basis.
 Tutor can ask for this set at any time
 (but probably once the 'spaced practice' `exercises` have been completed).
+
+Once `Tutor` adds the PEs to an `assignment`,
+it should send the updated `assignment` to `Biglearn`.
+This will allow `Biglearn`
+to update excluded `exercises`
+and stop calculating PEs for the given `assignment`.
 
 ## Practice Widget
 
