@@ -87,11 +87,47 @@ a new `assignment` will be created.
 Otherwise, the existing `assignment` 
 will be updated (effectively).
 
+Each assigned `exercise` is given a `trial uuid`,
+allowing `Biglearn` to identify exactly which
+copy of a multiply-issued `exercise` is being answered.
+
 ## Working Assignments
+
+### Student Responses
+
+At a minimum, 
+`Tutor` will send `Biglearn` 
+information about every `student response`
+recorded when "continue" or "submit" is pressed.
 
 ### Spaced Practice Exercises
 
+`Biglearn` will keep a constantly-updated set
+of SPEs available at all times for any
+`assignments` that have not yet had them populated.
+`Tutor` can request the latest set of SPEs from `Biglearn` at any time
+(but probably once the 'core' `exercises` have been completed).
+
+To choose the appropriate SPEs,
+`Biglearn` will use its knowledge of:
+* the `student`'s response history
+* the `student`'s assignment history
+* research parameters (especially the `k-ago map`)
+* the `course`'s `ecosystem maps`
+
+All SPEs will ultimate come from
+the `assignment`'s associated `ecosystem`
+(which might not the the `course`'s current `ecosystem`).
+
+SPEs will (initially) be chosen from the appropriate `exercise pools`
+using the PE algorithm.
+
 ### Personalized Exercises
+
+Much like SPEs, `Biglearn` will maintain a set of PEs
+on a per-`student` basis.
+Tutor can ask for this set at any time
+(but probably once the 'spaced practice' `exercises` have been completed).
 
 ## Performance Forecast
 
