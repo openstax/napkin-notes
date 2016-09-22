@@ -1,3 +1,7 @@
+### Endpoint
+
+`/create_ecosystem`
+
 ### Request
 ```ruby
 {
