@@ -103,7 +103,7 @@
 
   'type': 'object',
   'properties': {
-    'ecosystem_uuid': {'$ref': '#standard_definitions/uuid},
+    'ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
   },
   'required': ['ecosystem_uuid'],
   'additionalProperties': false,
