@@ -58,7 +58,7 @@ We could send deltas instead of full rosters,
 but that imposes new requirements on message deliveries.)
 
 References:
-* request and response schemas for the `roster` update endpoint
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_update_rosters.md) for the `roster` update endpoint
 
 ## Creating/Updating Assignments
 
