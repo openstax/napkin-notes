@@ -131,15 +131,52 @@ Tutor can ask for this set at any time
 
 ## Performance Forecast
 
+`Biglearn` will maintain `CLUEs` for each combinaton
+of `book container` (chapter, etc.)
+and `course container` (period, etc., down to individual `students`).
+These `CLUEs` will be updated as `students` answer `exercises`
+and as `assignments` are issued.
+
+`CLUE` calculations will always omit
+admin- and teacher-excluded `exercises`.
+
 ### Student
+
+To avoid cheating,
+the `student` view of `CLUEs`
+will not include their responses
+to not-yet-past-due `assignments`.
+
+(NOTE: There are some corner cases related to SPEs where cheating could still occur.)
 
 ### Teacher
 
+The teacher view of `CLUEs`
+will always contain the most up-to-date `student` responses.
+
 ## Practice Widget
+
+`Biglearn` will always maintain
+an updated set of per-`student` `exercises`
+that `Tutor` can use to create `practice widgets`.
+
+In all cases,
+admin- and teacher-excluded `exercises` will be omitted,
+as will any `exercises` appearing in not-yet-past-due `assignments`.
 
 ### Practice a Specific Topic
 
+`Biglearn` will maintain a set of per-`student` `exercises` 
+for each `book container` (chapter, etc.)
+definined the the `course`'s current `ecosystem`.
+
 ### Practice Worst Topics
+
+Because of the ad-hoc nature of this feature,
+`Biglearn` should maintain the per-`student` `exercise`
+sets using its knowledge of `student` and `assignment` histories.
+This will ensure that the appropriate `exercises`
+are available to `Tutor` in a timely manner.
 
 ## Updating a Course's Ecosystem
 
