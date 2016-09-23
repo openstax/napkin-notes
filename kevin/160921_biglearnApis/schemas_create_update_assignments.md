@@ -27,73 +27,35 @@
         'sequence_number': {'$ref': '#standard_definitions/non_negative_integer'},
         'ecosystem_uuid':  {'$ref': '#standard_definitions/uuid'},
         'student_uuid':    {'$ref': '#standard_definitions/uuid'},
-        'assignment_type': {
+        'assignment_type': {  ## NOTE: This should match the usage when creating ecosystem pools
           'type': 'string',
           'minLength': 1,
           'maxLength': 100,
         },
-        'opens_at': {'$ref': '#standard_definitions/datetime'}, ## NOTE: optional
-        'due_at':   {'$ref': '#standard_definitions/datetime'}, ## NOTE: optional
+        'exclusion_info': {  ## NOTE: optional
+          'type': 'object',
+          'properties': {
+            'opens_at': {'$ref': '#standard_definitions/datetime'}, ## NOTE: optional
+            'due_at':   {'$ref': '#standard_definitions/datetime'},
+          },
+          'required': ['due_at'],
+          'additionalProperties': false,
+        },
         'assigned_book_container_uuids': {
           'type': 'array',
           'items': {'$ref': '#standard_definitions/uuid'},
           'minItems': 0,
           'maxItems': 500,
         },
+        'goal_num_tutor_assigned_spes': {'$ref': '#standard_definitions/non_negative_integer'},
+        'spes_are_assigned': {'type': 'boolean'},
+        'goal_num_tutor_assigned_pes': {'$ref': '#standard_definitions/non_negative_integer'},
+        'pes_are_assigned': {'type': 'boolean'},
         'assigned_exercises': {
-          'type': 'object',
-          'properties': {
-            'core': {
-              'type': 'array',
-              'items': {'$ref': '#definitions/trial'},
-              'minItems': 0,
-              'maxItems': 1000,
-            },
-            'spaced_practice': {
-              'type': 'object',
-              'properties': {
-                'goal_num_tutor_assigned': {'$ref': '#standard_definitions/non_negative_integer'},
-                'tutor_assignment_completed': {
-                  'type': 'boolean',
-                },
-                'exercise': {
-                  'type': 'array',
-                  'items': {'$ref': '#definitions/trial'},
-                  'minItems': 0,
-                  'maxItems': 1000,
-                },
-              },
-              'required': [
-                'goal_num_tutor_assigned',
-                'tutor_assignment_completed',
-                'exercise_uuids',
-              ],
-              'additionalProperties': false,
-            },
-            'personalized': {
-              'type': 'object',
-              'properties': {
-                'goal_num_tutor_assigned': {'$ref': '#standard_definitions/non_negative_integer'},
-                'tutor_assignment_completed': {
-                  'type': 'boolean',
-                },
-                'exercises': {
-                  'type': 'array',
-                  'items': {'$ref': '#standard_definitions/trial'},
-                  'minItems': 0,
-                  'maxItems': 1000,
-                },
-              },
-              'required': [
-                'goal_num_tutor_assigned',
-                'tutor_assignment_completed',
-                'exercise_uuids',
-              ],
-              'additionalProperties': false,
-            },
-          },
-        'required': ['core', 'spaced_practice', 'personalized'],
-        'additionalProperties': false,
+          'type': 'array',
+          'items': {'$ref': '#definitions/trial'},
+          'minItems': 0,
+          'maxItems': 1000,
         },
       },
       'required': [
@@ -103,6 +65,8 @@
         'ecosystem_uuid',
         'assignment_type',
         'assigned_book_container_uuids',
+        'goal_num_tutor_assigned_spes',
+        'goal_num_tutor_assigned_pes',
         'assigned_exercises',
       ],
       'additionalProperties': false,
@@ -115,8 +79,10 @@
       'properties': {
         'trial_uuid':    {'$ref': '#standard_definitions/uuid'},
         'exercise_uuid': {'$ref': '#standard_definitions/uuid'},
+        'is_spe': {'type': 'boolean'},
+        'is_pe':  {'type': 'boolean'},
       },
-      'required': ['trial_uuid', 'exercise_uuid'],
+      'required': ['trial_uuid', 'exercise_uuid', 'is_spe', 'is_pe'],
       'additionalProperties': false,
     },
   },
