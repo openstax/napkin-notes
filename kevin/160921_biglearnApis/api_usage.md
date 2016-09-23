@@ -76,15 +76,16 @@ An `assignment` update consists of:
 * a `course`-specific `student uuid`
 * an `assignment uuid`
 * the `assignment`'s associated `ecosystem uuid`
-* an `ecosystem pool moniker` ("hw", "reading", "pw", etc.)
-* optional `opens_at` and `due_at` (to enable `exercise` exclusions)
+* an `assignment type` ("hw", "reading", "pw", etc.)
+* optional `exclusion info` (`opens_at`, `due_at`, etc., to enable `exercise` exclusions)
 * a set of teacher-assigned `book container uuids`
 * a [possibly empty] set of teacher-assigned `exercise uuids`
+* whether or not the `assignment` has been deleted
 
 If `Biglearn` has never seen this `assignment uuid`,
 a new `assignment` will be created.
 Otherwise, the existing `assignment` 
-will be updated (effectively).
+will be [effectively] updated.
 
 Each assigned `exercise` is given a `trial uuid`,
 allowing `Biglearn` to identify exactly which
