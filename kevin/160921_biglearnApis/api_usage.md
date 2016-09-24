@@ -248,10 +248,17 @@ to not-yet-past-due `assignments`.
 
 (NOTE: There are some corner cases related to SPEs where cheating could still occur.)
 
+References:
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_student_clues.md) for the `student` `CLUE` endpoint
+
+
 ### Teacher
 
 The teacher view of `CLUEs`
 will always contain the most up-to-date `student` responses.
+
+References:
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_teacher_clues.md) for the teacher `CLUE` endpoint
 
 ## Updating a Course's Ecosystem
 
