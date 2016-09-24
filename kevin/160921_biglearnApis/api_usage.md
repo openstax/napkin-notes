@@ -188,6 +188,9 @@ All PEs will ultimately come from
 the `assignment`'s associated `ecosystem`
 (which might not the the `course`'s current `ecosystem`).
 
+References:
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_assignment_pes.md) for the `assignment` PE endpoint
+
 ## Practice Widgets
 
 `Tutor` can treat `practice widgets` like an `assignments` 
