@@ -209,6 +209,9 @@ containing only personalized exercises
 and ask `Biglearn` for its recommendations
 when appropriate.
 
+References:
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_assignment_pes.md) for the `assignment` PE endpoint
+
 ### Practice Worst Topics
 
 Because of the ad-hoc nature of this feature,
@@ -216,6 +219,14 @@ Because of the ad-hoc nature of this feature,
 sets using its knowledge of `student` and `assignment` histories.
 This will ensure that the appropriate `exercises`
 are available to `Tutor` in a timely manner.
+
+To create this type of `practice widget`,
+`Tutor` creates an `assignment`
+but populates its `exercises`
+from `Biglearn`'s 'worst topics' endpoint.
+
+References:
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_practice_worst_topics.md) for the 'worst topics' endpoint
 
 ## Performance Forecast
 
