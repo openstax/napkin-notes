@@ -175,9 +175,12 @@ the `assignment`'s associated `ecosystem`
 SPEs will (initially) be chosen from the appropriate `exercise pool`
 using the PE algorithm.
 
+References:
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_assignment_spes.md) for the `assignment` SPE endpoint
+
 #### Personalized Exercises
 
-`Biglearn` will keep a constantly-updated set of \PEs
+`Biglearn` will keep a constantly-updated set of PEs
 on a per-`assignment` basis
 for any `assignments` that have not yet had them populated.
 
