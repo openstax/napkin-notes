@@ -23,10 +23,11 @@
     'student_clue_request': {
       'type': 'object',
       'properties': {
+        'request_uuid':        {'$ref': '#standard_definitions/uuid'},
         'student_uuid':        {'$ref': '#standard_definitions/uuid'},  ## Course-specific Student uuid
         'book_container_uuid': {'$ref': '#standard_definitions/uuid'},  ## Ecosystem-specific uuid (not CNX uuid)
       },
-      'required': ['student_uuid', 'book_container_uuid'],
+      'required': ['request_uuid', 'student_uuid', 'book_container_uuid'],
       'additionalProperties': false,
     },
   },
@@ -54,14 +55,14 @@
     'student_clue_response': {
       'type': 'object',
       'properties': {
-        'student_uuid':        {'$ref': '#standard_definitions/uuid'},
-        'book_container_uuid': {'$ref': '#standard_definitions/uuid'},
+        'request_uuid': {'$ref': '#standard_definitions/uuid'},
+        'clue_data':    {'$ref': '#standard_definitions/clue_data'},
         'clue_status': {
           'type': 'string',
           'enum': ['student_unknown', 'book_container_unknown', 'clue_unready', 'clue_ready'],
         },
       },
-      'required': ['student_uuid', 'book_container_uuid', 'clue_status'],
+      'required': ['request_uuid', 'clue_data', 'clue_status'],
       'additionalProperties': false,
     },
   },
