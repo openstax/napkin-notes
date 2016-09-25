@@ -291,6 +291,9 @@ come from its `ecosystem`
 (including SPEs)
 and not from the `course`'s current `ecosystem`.
 
+References:
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_prepare_course_ecosystem.md) for the prepare `ecosystem` endpoint
+
 ## Exercise Exclusions
 
 ### Global Exclusions
