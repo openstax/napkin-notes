@@ -293,6 +293,7 @@ and not from the `course`'s current `ecosystem`.
 
 References:
 * request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_prepare_course_ecosystem.md) for the prepare `ecosystem` endpoint
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_update_course_ecosystem.md) for the update `ecosystem` endpoint
 
 ## Exercise Exclusions
 
