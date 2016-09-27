@@ -1,3 +1,8 @@
+## THIS IS NOW OBSOLETE
+
+The update `Biglearn` API description (including schemas) is 
+[here](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/api_usage.md).
+
 ### `/fetch_learner_clues`
 ```ruby
 {
