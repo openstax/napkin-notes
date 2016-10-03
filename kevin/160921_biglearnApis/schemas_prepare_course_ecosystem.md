@@ -9,6 +9,7 @@
 
   'type': 'object',
   'properties': {
+    `perparation_uuid`: {'$ref': '#standard_definitions/uuid'},
     `course_uuid': {'$ref': '#standard_definitions/uuid'},
     'ecosystem_map': {
       'type': 'object',
@@ -32,7 +33,7 @@
       'additionalProperties': false,
     },
   },
-  'required': ['course_uuid', 'ecosystem_map'],
+  'required': ['preparation_uuid', 'course_uuid', 'ecosystem_map'],
   'additionalProperties': false,
 
   'definitions': {
