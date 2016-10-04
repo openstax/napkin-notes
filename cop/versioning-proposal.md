@@ -14,6 +14,9 @@ Current methods include using
 * Sprint-based naming
   * Non-specific, difficult to trace back to exact code
   * Used primarily by Tutor/Coach project managers and QA
+* [PEP 440](https://www.python.org/dev/peps/pep-0440/)
+  * Used in CNX
+
 
 Here, we try to define a common way across OpenStax to version.  The versioning should:
 
