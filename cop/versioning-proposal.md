@@ -53,12 +53,35 @@ Version name will largely be determined by developers.  Potentially confusing wi
 * PATCH version is as stated above
   * i.e. hotfixes.
 
-Since semver is a widely adopted versioning system, newcomers and outsiders will find the versioning familiar.
+Since semver is a widely adopted versioning system, newcomers and outsiders will find the versioning familiar.  Additionally, for any packages that OpenStax may be put into a package management system, having semantic versioning will help with a standard install/setup process.
 
 # Questions
 
 1. Should there be a file, something like `.openstax-version` in the code with the version number?
+  * No.
 1. What number do we start at?
+  * Project dependent.
 1. Where should dependencies of versioning between OpenStax projects be recorded?
+  * How to describe the range of dependencies between different projects?
+  * Can the range be used to do some automated checking for whether or not the versions being used are compatible?
+1. How many versions do we need to continue to support?
+  * 2 -- the one in production and the one in development
+  * Challenges with BE vs FE
+1. What about projects that depends on multiple languages?  How do we describe language/package dependency?
+  * Not fully discussed/outside of scope
+  * Python
+    * `requirements.txt`, `setup.py`, where to put Python version?
+    * [tox.ini](https://tox.readthedocs.io/en/latest/)
+  * Ruby
+    * `Gemfile`, `.ruby-version`
+  * JavaScript
+    * `package.json`, `.nvmrc`
 
-This topic was discussed at COP on 2016-09-27.
+
+# Concrete Steps
+
+1. Decide within projects what number to start with.
+1. With this sprint/next release, tag code with version number.
+1. Tag anything that gets released.
+
+This topic was discussed at COP on 2016-09-27 and 2016-10-04.
