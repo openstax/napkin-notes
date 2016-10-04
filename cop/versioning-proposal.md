@@ -57,3 +57,5 @@ Since semver is a widely adopted versioning system, newcomers and outsiders will
 1. Should there be a file, something like `.openstax-version` in the code with the version number?
 1. What number do we start at?
 1. Where should dependencies of versioning between OpenStax projects be recorded?
+
+This topic was discussed at COP on 2016-09-27.
