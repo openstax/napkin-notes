@@ -43,7 +43,7 @@ Version name will largely be determined by developers.  Potentially confusing wi
 
 * MAJOR version when you make incompatible UI changes
   * redesigning, adding, or removing features
-  * refactoring
+  * cross-feature/component/model/file refactoring
   * additional breaking dependency updates
 * MINOR version when UI changes are minor
   * also per sprint release
