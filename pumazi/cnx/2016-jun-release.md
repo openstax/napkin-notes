@@ -87,12 +87,16 @@ Two stage upgrade... First stage introduces a database change that will allow ar
 
 #### Update code
 
-- cnx-epub @ `v0.9.0`
+- cnx-epub @ `v0.10.0`
 - [cnx-easybake](https://github.com/Connexions/cnx-easybake) @ `v0.6.0`
-- cnx-archive @ `e3fa7d038607894c281433f9f3828b7597a3128b`
+
+- cnx-archive @ `v2.5.1` (2.4.8 has a nasty long migration that locks the db)
+- pip install setuptools==20.1.1` (bypass an error w/ funcsig)
 - cnx-publishing @ `v0.6.0`
 
-- Products.RhaptosModuleStorage as `egg`
+- Products.RhaptosModuleStorage as `egg @ 1.1.2`
+- Products.RhaptosRepository as `egg @ 1.3.0`
+- Products.RhaptosCollaborationTool as `egg @ 0.10.1`
 
 #### Run migrations
 
@@ -104,6 +108,10 @@ where things will continue working while we transition to the next stage
 
 Note, we purposefully leave `--context cnx-publishing` out of the command.
 We will wait until stage two to introduce those migrations.
+
+#### Change Code
+
+ - revert archive to `v2.4.8`
 
 #### Restart services
 
@@ -136,6 +144,7 @@ while keeping the services up.
 
 #### Update code
 
+Make sure to update on both archive-server and db-server.
 - cnx-archive @ `v2.5.0`
 
 #### Run migrations
@@ -143,13 +152,35 @@ while keeping the services up.
 This migration runs away from the middle of the road solution.
 This is the final set of migrations.
 
+The last migration requires a user with superuser privileges. 
+
 `dbmigrator --config <publishing-config-ini> --context cnx-publishing --context cnx-archive migrate`
 
 #### Restart services
 
 - restart cnx-archive
+- restart zope FEs
 
 Restarting these will bring everything up-to-date.
+
+#### Webview
+
+update beta to latest tip-of-master; cnx.org to tip of production
+
+cp -a webview webview-2016_06_09
+
+edit settings.js   - correct to exercises.openstax.org
+
+npm update; bower update; grunt dist; ./purge.sh
+
+#### publish fixes
+
+connect to archive db.
+run:
+
+`insert into api_keys (key, name, groups) values ('b07', 'Authoring', ARRAY['g:trusted-publishers']);
+
+restart cnx-publishing
 
 ## Testing
 
@@ -192,6 +223,7 @@ Have them supply devops with a ruleset that we can inject into archive.
 After the ruleset is in archive, manually invoke the collation.
 This will enable you to test the archive routes deliver collated content.
 :bug: I suspect webview will not be able to render composite-pages without modifications.
+
 
 
 ## Ignoring
