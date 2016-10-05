@@ -24,3 +24,6 @@ It might be worth reading up on
 [upsert](https://www.postgresql.org/docs/9.5/static/sql-insert.html)
 (aka `insert ... on conflict ...`)
 functionilty in postgres.
+`ActiveRecord.import` supports this
+via 
+[`:on_duplicate_key_ignore`](https://github.com/zdennis/activerecord-import/blob/5721a12bd89871f5fac5bcb76e0cfb599eba4ee4/lib/activerecord-import/import.rb#L176-L178).
