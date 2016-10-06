@@ -43,11 +43,11 @@
     'course_status': {
       'type': 'object',
       'properties': {
-        'course_uuid':              {'$ref': '#standard_definitions/uuid'},
-        'course_is_known':          {'type': 'boolean'},
-        'current_preparation_uuid': {'$ref': '#standard_definitions/uuid'},
-        'current_ecosystem_status': {'$ref': '#definitions/ecosystem_status'},
-        'next_ecosystem_status':    {'$ref': '#definitions/ecosystem_status'},
+        'course_uuid':                        {'$ref': '#standard_definitions/uuid'},
+        'course_is_known':                    {'type': 'boolean'},
+        'current_ecosystem_preparation_uuid': {'$ref': '#standard_definitions/uuid'},
+        'current_ecosystem_status':           {'$ref': '#definitions/ecosystem_status'},
+        'next_ecosystem_status':              {'$ref': '#definitions/ecosystem_status'},
       },
       'required': ['course_uuid', 'course_is_known'],
       'additionalProperties': false,
@@ -55,9 +55,10 @@
     'ecosystem_status': {
       'type': 'object',
       'properties': {
-        'ecosystem_uuid':        {'$ref': '#standard_definitions/uuid'},
-        'ecosystem_is_known':    {'type': 'boolean'},
-        'ecosystem_is_prepared': {'type': 'boolean'},
+        'ecosystem_uuid':         {'$ref': '#standard_definitions/uuid'},
+        'ecosystem_is_known':     {'type': 'boolean'},
+        'ecosystem_is_prepared':  {'type': 'boolean'},
+        'precompute_is_complete': {'type': 'boolean'},
       },
       'required': ['ecosystem_uuid', 'ecosystem_is_known', 'ecosystem_is_prepared'],
       'additionalProperties': false,
