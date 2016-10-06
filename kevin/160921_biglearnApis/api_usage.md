@@ -30,6 +30,15 @@ References:
 * request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_create_ecosystem.md) for the `ecosystem` creation endpoint
 * request and response schemas for the `ecosystem` status query endpoint
 
+## Checking Course Ecosystem Status
+
+`Tutor` can query `Biglearn`
+to get the current `ecosystem` status
+for any `course`.
+
+References:
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_course_ecosystem_status.md) for the `course ecosystem` status endpoint
+
 ## Creating a Course
 
 Because every `course` must have an associated `ecosystem`,
