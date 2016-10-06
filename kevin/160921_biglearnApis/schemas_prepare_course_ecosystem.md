@@ -9,8 +9,10 @@
 
   'type': 'object',
   'properties': {
-    `perparation_uuid`: {'$ref': '#standard_definitions/uuid'},
-    `course_uuid': {'$ref': '#standard_definitions/uuid'},
+    'perparation_uuid':    {'$ref': '#standard_definitions/uuid'},
+    'course_uuid':         {'$ref': '#standard_definitions/uuid'},
+    'sequence_number':     {'$ref': '#standard_definitions/non_negative_integer'},
+    'next_ecosystem_uuid': {'$ref': '#standard_definitions/uuid'},
     'ecosystem_map': {
       'type': 'object',
       'properties': {
@@ -33,7 +35,7 @@
       'additionalProperties': false,
     },
   },
-  'required': ['preparation_uuid', 'course_uuid', 'ecosystem_map'],
+  'required': ['preparation_uuid', 'course_uuid', 'sequence_number', 'next_ecosystem_uuid'],
   'additionalProperties': false,
 
   'definitions': {
@@ -52,7 +54,7 @@
         'from_exercise_uuid':         {'$ref': '#standard_definitions/uuid'},
         'to_cnx_pagemodule_identity': {'$ref': '#standard_definitions/cnx_identity'},
       },
-      'required': ['from_exericise_uuid', 'to_cnx_pagemodule_identity'],
+      'required': ['from_exercise_uuid', 'to_cnx_pagemodule_identity'],
       'additionalProperties': false,
     },
   },
@@ -66,19 +68,12 @@
 
   'type': 'object',
   'properties': {
-    'prepare_status': {
+    'status': {
       'type': 'string',
-      'enum': [
-        'course_unknown',
-        'from_ecosystem_mismatch',
-        'to_ecosystem_unknown',
-        'pagemodule_mapping_error',
-        'exercise_mapping_error',
-        'accepted',
-      ],
+      'enum': ['accepted'],
     },
   },
-  'required': ['prepare_status'],
+  'required': ['status'],
   'additionalProperties': false,
 }
 ```
