@@ -306,9 +306,30 @@ References:
 
 ## Exercise Exclusions
 
+`Tutor` can send informaton 
+about manually-excluded `exercises`
+to `Biglearn` "periodically"
+(perhaps every few seconds, if anything has actually changed).
+
+In all cases,
+an "any version" exclusion
+will trump a "specific version" exclusion.
+
 ### Global Exclusions
 
+References:
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_excluded_exercises_global.md)
+
 ### Per-Course Exclusions
+
+References:
+* request and response [schemas](https://github.com/openstax/napkin-notes/blob/master/kevin/160921_biglearnApis/schemas_excluded_exercises_course.md)
+
+### Assigned Exercises
+
+`Biglearn` will automatically
+exclude not-yet-past-due `assignment` `exercises`
+when appropriate.
 
 ## Associating Students with Learners
 
