@@ -11,7 +11,15 @@ When proposing one, include the following next to your item
 1. link to slides or list-o-links with descriptions and link-to-recording-afterwards so someone else can listen in later.
 
 
-## Some Fodder to Start
+# Upcoming Talks
+
+- [knockout.js](https://knockoutjs.com) by RoyEJohnson ([Slides](https://docs.google.com/presentation/d/1XqYxSkoIFAUdkSfmFvHeD5zwqiI384sFitTe9UAkGgI/edit?usp=sharing))
+
+---
+
+# Some Fodder
+
+(if you want to give a talk but want some ideas on what to show)
 
 - Recurring: favorite libraries
     - ampersandjs.com
@@ -32,7 +40,3 @@ When proposing one, include the following next to your item
     - when is coverage useful and how should it be collected (ie QA would like it to be collected during the manual tests)
 - SASS vs LESS (organizing code for styling books)
 
-
-# Aug 26, 3pm : knockoutJS
-
-RoyEJohnson will talk about knockoutjs.com for ~15minutes with 15 minutes for Q & A. [Slides](https://docs.google.com/presentation/d/1XqYxSkoIFAUdkSfmFvHeD5zwqiI384sFitTe9UAkGgI/edit?usp=sharing)
