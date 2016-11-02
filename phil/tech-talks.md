@@ -39,4 +39,8 @@ When proposing one, include the following next to your item
     - when should something be a unit test, integration test, dev performance test
     - when is coverage useful and how should it be collected (ie QA would like it to be collected during the manual tests)
 - SASS vs LESS (organizing code for styling books)
-
+- Parallel computing basics/refresher (AKA how to use more of the hardware you already paid for):
+  - Multiple processes vs Multiple threads vs Hyperthreads (what are the differences, purposes, pros and cons)
+  - Native threads and processes (what makes them so hard to use)
+  - How web servers (like Rails) try to make multithreading work
+  - Some higher level abstractions (Actors and Reactors)
