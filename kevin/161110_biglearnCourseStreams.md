@@ -45,4 +45,23 @@ if the work itself conflicts with other transactions
 Only the update of the sequence number is serialized,
 and I believe that will allow plenty of performance margin.
 
-##
+There are some "large" events in `Tutor`
+(e.g., publishing an assignment),
+but these can [always?] be broken apart
+into collections of smaller events
+to avoid major blockage/conflicts.
+
+## Processing on Biglearn
+
+`Biglearn` will process a `Course`'s events in order,
+blocking if events are missing
+due to problems or out-of-order delivery.
+This means that the `Biglearn` results used by `Tutor`
+will be stale until the missing events are delivered.
+
+## Content Updates
+
+There will be a separate content event stream
+(to avoid duplication across all `Courses`).
+Content update events will be issued on a per-`Course` basis,
+and will block until any required but missing content stream messages have been delivered.
