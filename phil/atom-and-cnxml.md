@@ -8,9 +8,9 @@
 
 1. Start up atom
 1. Install the `linter-autocomplete-jing` package
-  1. Type <kbd>⌘</kbd>+<kbd>,</kbd> (for Mac) to open Settings (or click Atom, Preferences... in the menu bar)
-  1. Click _Install_ in the left-hand-side
-  1. Enter `linter-autocomplete-jing` and click _Install_
+  1. Type <kbd>⌘</kbd>+<kbd>,</kbd> (for Mac) to open Settings (or click **Atom**, **Preferences**... in the menu bar)
+  1. Click **Install** in the left-hand-side
+  1. Enter `linter-autocomplete-jing` and click **Install**
 1. Edit `~/.atom/config.cson` and add the following lines to the file
 1. Restart Atom
 1. Open an unzipped complete-zip. (I do `atom ~/Downloads/col1234_complete`)
