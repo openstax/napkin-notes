@@ -3,6 +3,7 @@
 1. Install https://atom.io
 1. Find and unzip the xml-catalog for cnxml0.7.
   - It should have a path and file named `cnxml/schema/rng/0.7/cnxml-jing.rng`
+  - **Note:** Remember the path to this file because you will need to provide it in the `~/.atom/config.cson`
 
 # Install
 
@@ -12,6 +13,7 @@
   1. Click **Install** in the left-hand-side
   1. Enter `linter-autocomplete-jing` and click **Install**
 1. Edit `~/.atom/config.cson` and add the following lines to the file
+  - **Note:** You need to change the path to the RNG file in the example below
 1. Restart Atom
 1. Open an unzipped complete-zip. (I do `atom ~/Downloads/col1234_complete`)
 1. Verify by opening an `index.cnxml` and typing in `<figure>` somewhere in the file. If it is a valid location then it should auto-add `id=""` for you
