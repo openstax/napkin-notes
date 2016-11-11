@@ -1,7 +1,8 @@
 # Preparation
 
 1. Install https://atom.io
-1. Find and unzip the xml-catalog for cnxml0.7.
+1. Get the cnxml RNG Schema files
+  - Run `git clone https://github.com/Connexions/cnxml /path/to/some/place/you/will/not/forget`
   - It should have a path and file named `cnxml/schema/rng/0.7/cnxml-jing.rng`
   - **Note:** Remember the path to this file because you will need to provide it in the `~/.atom/config.cson`
 
