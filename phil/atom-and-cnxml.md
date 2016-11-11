@@ -3,7 +3,7 @@
 1. Install https://atom.io
 1. Get the cnxml RNG Schema files
   - Run `git clone https://github.com/Connexions/cnxml /path/to/some/place/you/will/not/forget`
-  - It should have a path and file named `cnxml/schema/rng/0.7/cnxml-jing.rng`
+  - It should have a path and file named `cnxml/xml/cnxml/schema/rng/0.7/cnxml-jing.rng`
   - **Note:** Remember the path to this file because you will need to provide it in the `~/.atom/config.cson`
 
 # Install
@@ -49,7 +49,7 @@ Changes to `~/.atom/config.cson`:
           schemaProps: [
             {
               lang: "rng"
-              path: "/Users/phil/Downloads/xml-catalog/cnxml/schema/rng/0.7/cnxml-jing.rng"
+              path: "/Users/phil/Downloads/xml-catalog/cnxml/xml/cnxml/schema/rng/0.7/cnxml-jing.rng"
             }
           ]
       }
