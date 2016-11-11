@@ -2,12 +2,16 @@
 
 1. Install https://atom.io
 1. Get the cnxml RNG Schema files
-  - **From a terminal:** Run `git clone https://github.com/Connexions/cnxml ~/cnxml-for-jing`
-  - It should have a path and file named `cnxml/xml/cnxml/schema/rng/0.7/cnxml-jing.rng`
+  1. Download the most recent version from https://github.com/Connexions/cnxml/releases (click the "zip" link)
+    - It should be in your Download folder
+  1. Unzip the file
+  1. It should have created a folder named something like `cnxml-2.0.0` (with `/cnxml/xml/cnxml/schema/rng/0.7/cnxml-jing.rng` in it)
+  1. Rename the folder to be something you are unlikely to accidentally delete (like `cnxml-validation`)
+    - Remember the name for later when you are editing `~/.atom/config.cson`
 
 # Install
 
-1. Start up atom
+1. Start up Atom
 1. Install the `linter-autocomplete-jing` package
   1. Type <kbd>⌘</kbd>+<kbd>,</kbd> (for Mac) to open Settings (or click **Atom**, **Preferences...** in the menu bar)
   1. Click **Install** in the left-hand-side
@@ -48,7 +52,7 @@ Changes to `~/.atom/config.cson`:
           schemaProps: [
             {
               lang: "rng"
-              path: "~/cnxml-for-jing/cnxml/xml/cnxml/schema/rng/0.7/cnxml-jing.rng"
+              path: "~/Downloads/cnxml-validation/cnxml/xml/cnxml/schema/rng/0.7/cnxml-jing.rng"
             }
           ]
       }
