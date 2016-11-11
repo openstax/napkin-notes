@@ -48,7 +48,7 @@ Changes to `~/.atom/config.cson`:
           schemaProps: [
             {
               lang: "rng"
-              path: "/Users/phil/Downloads/xml-catalog/cnxml/xml/cnxml/schema/rng/0.7/cnxml-jing.rng"
+              path: "~/cnxml/cnxml/xml/cnxml/schema/rng/0.7/cnxml-jing.rng"
             }
           ]
       }
