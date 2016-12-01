@@ -131,4 +131,15 @@ Eventual consistency means that,
 if no new inputs to the system occur,
 all parts of the system will eventually reach consistent states.
 
+The amount of time needed to reach eventual consistency depends on 
+how many layers of events/commands are created,
+the command/event passing latency,
+and the time it takes aggregates and projections to process commands/events.
+
+### Idempotence
+
+It is provably impossible to achieve exactly-once delivery of messages in an asynchronous distributed system,
+but we have at-least-once delivery with de-duping as a workable fallback.
+In order to achieve the de-duping, however, 
+each command/event must be immutable and have a uuid.
 
