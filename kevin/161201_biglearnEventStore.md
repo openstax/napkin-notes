@@ -91,9 +91,9 @@ some_aggregate_root.store                                                  ## ne
 def load(stream_name, event_store: default_event_store)
     @loaded_from_stream_name = stream_name
     events = event_store.read_stream_events_forward(stream_name)
-    events.each do |event|
-      apply(event)
-    end
+    events.each do |event|                                        ## NOTE: applying events to an aggregate
+      apply(event)                                                ## only updates its state; side-effects only
+    end                                                           ## occur when new events are published
     @unpublished_events = nil
     self
   end
