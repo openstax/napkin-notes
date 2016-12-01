@@ -143,3 +143,129 @@ but we have at-least-once delivery with de-duping as a workable fallback.
 In order to achieve the de-duping, however, 
 each command/event must be immutable and have a uuid.
 
+## Code Flow
+
+### Controller
+
+```ruby
+class RostersController < ApplicationController
+  def enroll_student
+    cmd = Command::EnrollStudent.new(command_params)
+    execute(cmd)
+    head :ok  ## NOTE: ansynchronous
+  end
+  
+  def command_params
+    ## extract info from params
+  end
+end
+```
+
+```ruby
+module Command
+  module Execute
+    def execute(command, **args)
+      command.validate!
+      args = dependencies if args.empty?
+      handler_for(command).new(**args).call(command)
+    end
+
+    private
+    def handler_for(command)
+      {
+        Command::EnrollStudent      => CommandHandlers::EnrollStudent,
+        Command::DropStudent        => CommandHandlers::DropStudent,
+        Command::MoveStudent        => CommandHandlers::MoveStudent,
+      }.fetch(command.class)
+    end
+  end
+end
+```
+
+### Command Handler
+
+```ruby
+module Command
+  class Handler
+    def initialize(repository:, **_)
+      @repository = repository
+    end
+
+    protected
+    def with_aggregate(aggregate_id)
+      aggregate = build(aggregate_id)
+      yield aggregate
+      repository.store(aggregate)
+    end
+
+    private
+    attr_accessor :repository
+
+    def build(aggregate_id)
+      aggregate_class.new(aggregate_id).tap do |aggregate|
+        repository.load(aggregate)
+      end
+    end
+  end
+end
+```
+
+```ruby
+module CommandHandlers
+  class EnrollStudent < Command::Handler
+    def call(command)
+      with_aggregate(command.aggregate_id) do |order|
+        order.enroll_student(command.student_uuid, command.perioud_uuid)
+      end
+    end
+
+    private
+    def aggregate_class
+      Domain::Roster
+    end
+  end
+end
+```
+
+### Aggregate
+
+```ruby
+module Domain
+  class Order
+    include AggregateRoot::Base
+
+    def initialize(uuid = generate_uuid)
+      @uuid    = uuid
+      @periods = {}
+    end
+
+    def enroll_student(student_uuid, period_uuid)
+      if @periods[period_uuid].nil?
+        apply Events::UnknownPeriodError.new(data: { roster_uuid: @uuid, period_uuid: period_uuid } )
+      elsif @periods[period_uuid].contains(student_uuid)
+        apply Events::AlreadyEnrolled.new(data: ...)
+      else
+        apply Events::StudentEnrolled.new(data: {roster_uuid: @uuid, student_uuid: student_uuid, period_uuid: period_uuid})
+      end
+    end
+
+    def drop_student(...)
+    end
+
+    def move_student(...)
+    end
+
+    private
+
+    def apply_events_student_enrolled(event)
+      @periods[event.period_uuid].add_student(event.student_uuid)
+    end
+
+    def apply_events_student_dropped(event)
+    end
+
+    def apply_events_student_moved(event)
+    end
+  end
+end
+```
