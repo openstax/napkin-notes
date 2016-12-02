@@ -1,3 +1,47 @@
+## Overview
+
+We want to produce a system where:
+* adding new functionality does not break existing functionality
+* existing functionality is easy to test (and therefore change)
+* we can audit what happened (for internal or external reasons)
+* scaling is easy
+* development can be done in parallel
+* deployment is low-risk and low-downtime
+
+An event-driven, event-sourced architecture addresses all of these desires.
+Producers send commands (requests) to be handled by business logic.
+The business logic produces the appropriate events (facts)
+based on the state of the system and the incoming command.
+Consumers process the events and take appropriate action
+(note that a producer can also be a consumer).
+
+![simplified](https://github.com/openstax/napkin-notes/blob/master/kevin/simplified_overview.png)
+
+The key piece of technology required to implement this design is an event store which provides:
+* fast writing and reading of commands/events
+* high scalability and reliability
+* partitioning of commands/events into many small streams
+* language-neutral APIs
+
+![interations](https://github.com/openstax/napkin-notes/blob/master/kevin/event_store_interactions.png)
+
+By focusing on events (instead of state),
+components stay loosely-coupled 
+and their boundaries more naturally align with business needs.
+New components can be added,
+and old ones removed,
+with very well-defined risk 
+based on the number of downstream consumers of output command/event types.
+Each component can be tested
+using feeding it input commands/events
+and checking if its output commands/events are correct
+(sidenote: it's possible to create stong negative tests by asserting that an output command/event is _not_ seen).
+The event store also provides a permenant, ordered record of commands/events
+on a per-aggregate basis that can be used for debugging and auditing.
+
+The only coupling between components are the command/event schemas,
+and those can be published in a standard format like `json-schema`.
+
 ## Terminology
 
 ### Value
