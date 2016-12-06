@@ -12,6 +12,8 @@ Common tasks:
 - seeing what changed in the baked book as a result of recipe changes
 - how to debug things when they go wrong (ie telling easybake to only run a subset of passes and then output)
 
+See [cnx-rulesets/README.md](https://github.com/Connexions/cnx-recipes#readme) for current Workflow documentation and [cnx-rulesets/scripts directory](https://github.com/Connexions/cnx-recipes/tree/master/scripts) for the current common tasks
+
 
 ## As a developer I want documentation for extensions to CSS
 
@@ -23,21 +25,28 @@ Features:
 - declarations (`attr-*: val;`, `class: name;`, `content: val;`, `container: div;`, `move-to: bucketName;`, `copy-to: bucketName;`, `string-set: name val;`, `group-by: "span::attr(sortKey)";`, ...)
 - functions (`target-counter(...)`, `pending(bucketName)`, `content()`, `string(name)`, ...)
 
+See [cnx-easybake tests](https://github.com/Connexions/cnx-easybake/tree/master/cnxeasybake/tests/rulesets) for all the things that are supported.
+
 
 ## As a developer I want documentation for general recipe structure/mixins so I know how to tweak an existing recipe or write one from scratch
 
 This includes a high-level description of how the recipes work, an explanation of the passes and dependencies between all the mixins.
+
+See [rulesets readme](https://github.com/Connexions/cnx-recipes/tree/master/rulesets) for current version
 
 
 ## As a developer I want documentation for common design patterns used to I can quickly recognize these patterns
 
 An example would be: using `:deferred` to construct strings that are then passed elsewhere or relying on execution order and using `::after` to construct/copy elements
 
+[Click for proposal details](https://github.com/openstax/napkin-notes/blob/master/phil/2016-easybake-holiday.md#implicit-pass-numbers-using-after-move-selector)
 
 
 ## As a developer I want documentation for recipe scss/css files so I can read to understand why mixins and files are organized the way they are
 
 This would include adding sassdoc comments on mixins describing what they depend on and how they work as well as inline comments about why a possibly-confusing approach was used.
+
+See [cnx-recipes mixins](https://github.com/Connexions/cnx-recipes/tree/master/rulesets/common) files for which are documented.
 
 
 # Design (cognitive load)
@@ -50,6 +59,8 @@ Phil thinks that an expectation from CSS developers is that the rulesets operate
 Also, most languages come with a debugger but CSS+ does not, which makes it difficult to reason about what is happening.
 This results in very long wait times to bake a book and then infer what happened by slowly looking through an entire baked book to see what happened.
 
+[Click for proposal details](https://github.com/openstax/napkin-notes/blob/master/phil/2016-easybake-holiday.md#order-independent-attribute-modifiers)
+
 
 ## As a CSS developer I want less state to maintain in my head so I do not become scared of making changes
 
@@ -57,10 +68,13 @@ The CSS output from rulesets are like reading assembly code and trying to infer 
 A large source of this is from having multiple passes and buckets that get filled and emptied.
 Another source of this is not having Debugging tools to see the state of execution at some point.
 
+[Click for proposal details](https://github.com/openstax/napkin-notes/blob/master/phil/2016-easybake-holiday.md#implicit-pass-numbers-using-after-move-selector)
 
 ## As a maintainer reduce rulesets to a set of configuration options
 
 oer.exports suffers from bit-rot; old books are rarely touched and new advances/code-structure is not "backported" to those books, making them even more fragile.
+
+[Click here for proposal details](https://github.com/Connexions/cnx-recipes/pull/107)
 
 
 # Debugging
@@ -71,6 +85,8 @@ All programming languages have this feature; it is **the** go-to tool for debugg
 
 `cnx-easybake` currently prints out a log of everything that happens but that is useful for debugging easybake, not a ruleset.
 It is extremely useful for a developer to choose what messages to print and when.
+
+[Click here for proposal details](https://github.com/openstax/napkin-notes/blob/master/phil/2016-easybake-holiday.md#custom-console-logging-messages)
 
 
 ## As a developer I want to print the state of the executing program so I can see what is happening
