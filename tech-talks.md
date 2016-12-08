@@ -11,11 +11,11 @@ When proposing one, include the following next to your item
 1. link to slides or list-o-links with descriptions and link-to-recording-afterwards so someone else can listen in later.
 
 
-# Upcoming Talks
+# Talks
 
-- [knockout.js](https://knockoutjs.com) by RoyEJohnson ([Slides](https://docs.google.com/presentation/d/1XqYxSkoIFAUdkSfmFvHeD5zwqiI384sFitTe9UAkGgI/edit?usp=sharing))
-
-- [Tango with Django](https://www.djangoproject.com/) by Michael Harrison
+- Jan ??: [Tango with Django](https://www.djangoproject.com/) by Michael Harrison
+- Jan 13: Something about concurrency by Dantemss (please fill in, see fodder area below)
+- Dec 8: [knockout.js](https://knockoutjs.com) by RoyEJohnson ([Slides](https://docs.google.com/presentation/d/1XqYxSkoIFAUdkSfmFvHeD5zwqiI384sFitTe9UAkGgI/edit?usp=sharing))
 
 ---
 
@@ -23,13 +23,13 @@ When proposing one, include the following next to your item
 
 (if you want to give a talk but want some ideas on what to show)
 
-- Recurring: favorite libraries
+- favorite libraries
     - ampersandjs.com
     - github.com/avajs
     - [x] knockoutjs.com
     - github.com/maxogden/yo-yo
 - How to use Browser Performance tools (repaints)
-- Performance collection: (repaints, image/XHR requests). How to add it to integration tests & production 
+- Performance collection: (repaints, image/XHR requests). How to add it to integration tests & production
     - http://githubengineering.com/browser-monitoring-for-github-com/
 - Accessibility: how to get into normal ux/dev/qa process
 - HSTS preloading
