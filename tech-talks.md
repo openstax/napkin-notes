@@ -1,5 +1,7 @@
 # Tech Talks
 
+Add yours here by submitting a Pull Request!
+
 ## Guidelines:
 
 - 15 minutes to present
