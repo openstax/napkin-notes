@@ -15,6 +15,8 @@ When proposing one, include the following next to your item
 
 - [knockout.js](https://knockoutjs.com) by RoyEJohnson ([Slides](https://docs.google.com/presentation/d/1XqYxSkoIFAUdkSfmFvHeD5zwqiI384sFitTe9UAkGgI/edit?usp=sharing))
 
+- [Tango with Django](https://www.djangoproject.com/) by Michael Harrison
+
 ---
 
 # Some Fodder
