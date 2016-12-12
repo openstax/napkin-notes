@@ -205,3 +205,52 @@ Output HTML:
 ```
 
 </details>
+
+
+# Conditionally Create Elements `:has-pending(bucketName)`
+
+Currently we create end-of-chapter/book Pages for each book. But sometimes a chapter is missing one of these items (like no "Homework" problems for a chapter). This adds a selector to match only when a bucket is non-empty.
+
+<details>
+
+<summary>Click to show Example Input/Output HTML
+
+```css
+.homework-problem { move-to: homeworkBucket; }
+
+.chapter::afterX(1):has-pending(homeworkBucket)::before { content: "Homework Problems"; }
+.chapter::afterX(1):has-pending(homeworkBucket)         { content: pending(homeworkBucket); }
+```
+
+</summary>
+
+Input HTML:
+```html
+<body>
+  <div class="chapter">
+    <p class="homework-problem">What is 2+2?</p>
+    <p>Hello chapter with homework</p>
+  </div>
+  <div class="chapter">
+    <p>Hello chapter without homework</p>
+  </div>
+</body>
+```
+
+Output HTML:
+```html
+<body>
+  <div class="chapter">
+    <p>Hello chapter with homework</p>
+    <div>
+      <div>Homework Problems</div>
+      <p class="homework-problem">What is 2+2?</p>
+    </div>
+  </div>
+  <div class="chapter">
+    <p>Hello chapter without homework</p>
+  </div>
+</body>
+```
+
+</details>
