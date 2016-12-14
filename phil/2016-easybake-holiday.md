@@ -1,6 +1,6 @@
 # ⛄️ ❄️ 🏂  Advice on holiday work? 🏂 ❄️ ⛄️
 
-Over the holidays I would like to work on adding some features to reduce the amount of explicit state that needs to be kept in one's head when developing recipes (and make it more stateless like CSS is).
+Over the holidays I would like to work on adding some features to reduce the amount of explicit state that needs to be kept in one's head when developing recipes (and make it more stateless like CSS is). See [Example](https://github.com/Connexions/cnx-recipes/pull/112/commits/54d56faa4d5dedb3c7474ac6aff9620c994884cc)
 
 Based on patterns I've seen while looking through the existing recipes, the following are features I'm proposing to write (in roughly increasing difficulty):
 
