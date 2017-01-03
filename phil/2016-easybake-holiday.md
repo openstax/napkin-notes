@@ -8,6 +8,7 @@ Based on patterns I've seen while looking through the existing recipes, the foll
 1. Order-independent attribute modifiers (setting/removing `id/class/data-*` attributes)
 1. Implicit pass numbers (using `::after-move` selector)
 1. Nested `::outside` and numbered `::before(3)` selectors
+1. Source maps for raw and baked HTML files
 
 But before I start digging in the code I was wondering if folks had thoughts/pointers on how to approach these features and whether they thought these would be useful (preferably with the harder ones because they require changes to cssselect2 :smile:).
 
@@ -254,3 +255,14 @@ Output HTML:
 ```
 
 </details>
+
+
+# Source maps for raw and baked HTML files
+
+When a validation error occurs after baking a book it is difficult to find where in the initial Page the problem occurred.
+
+This would generate a source map file (equivalent to a Symbol Table for compiled programs) that would accompany both the Raw HTML file and the Baked HTML file so tools can refer to the _original_ place in HTML where the error occured.
+
+One example of this is broken inter-module links. It is sometimes not known until the end of the baking process that a link is invalid. This would help find the original source of the broken link.
+
+If a piece of HTML was injected as part of baking, the source map could even point to the CSS where it occurred.
