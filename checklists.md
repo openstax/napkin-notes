@@ -2,6 +2,7 @@
 
 - [ ] add `LICENSE.md` file
 - [ ] protect master branch
+  - **Note:** make sure you deselect "Restrict who can push to this branch"
 - [ ] add team (`all`)
 - [ ] add `CONTRIBUTING.md` which links to https://github.com/openstax/napkin-notes/blob/master/CONTRIBUTING.md
 - [ ] add `.travis.yml`
