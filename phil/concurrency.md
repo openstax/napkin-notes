@@ -28,9 +28,9 @@ Concurrency of a program depends on the programming language and the way it is c
 Only executing two different tasks simultaneously yields true parallelism.
 
 
-## Locks vs Channels
+## Locks vs Channels vs Callbacks
 
-Most of the gotcha's in concurrency arise from side-effects when changing data. After all, if computation happens but no one sees the results then it's like it didn't happen.
+Most of the gotcha's in concurrency arise from side-effects when changing data. After all, if computation happens but no one sees the results then it's like it didn't happen. There are several concepts (found in all languages) that help people reason about these gotchas:
 
 ### Locks
 
@@ -49,6 +49,12 @@ The channel abstraction allows 2 processes to communicate via a shared "channel"
 Pros: do not need to worry about locks
 Cons: the code is forced to constantly copy data back and forth (cannot share state)
 
+
+### Callbacks & Promises
+
+Callbacks are a way to say "do this other thing when you are done". This means that the code in the callback will be executed after the IO/network/async operation completes.
+
+A Promise is a way to encapsulate a piece of work without getting into "callback-hell" (or pyramid something-or-other)
 
 
 # Contrived Example
