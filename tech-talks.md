@@ -15,8 +15,10 @@ When proposing one, include the following next to your item
 
 # Talks
 
+- Mar ???: ??? by Amanda Shih
+- Feb ???: [Concurrency 2](https://github.com/openstax/napkin-notes/blob/concurrency-notes/phil/concurrency.md) by @philschatz
 - Jan ??: [Tango with Django](https://www.djangoproject.com/) by Michael Harrison
-- Jan 13: Something about concurrency by Dantemss (please fill in, see fodder area below)
+- Jan 19: Something about concurrency by Dantemss (please fill in, see fodder area below)
 - Dec 8: [knockout.js](https://knockoutjs.com) by RoyEJohnson ([Slides](https://docs.google.com/presentation/d/1XqYxSkoIFAUdkSfmFvHeD5zwqiI384sFitTe9UAkGgI/edit?usp=sharing))
 
 ---
