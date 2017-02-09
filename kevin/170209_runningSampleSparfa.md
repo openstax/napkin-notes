@@ -94,3 +94,8 @@ python ../sampling3/drew_analyze_W_d.py --TEST_GRADEBOOK_DIR gradebook_test/ --T
 ```
 
 There will be a file called `stats.txt` in the `OUTPUT_DIR` containing the full, training, and imputation results.
+
+
+## Other Stuff
+
+You can see the commands that are being run by `process_gradebook`.  They can be run individually if you want to experiment.
