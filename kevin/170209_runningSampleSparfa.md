@@ -37,8 +37,6 @@ You should be ready to rock now.
 
 ## Running the Tools on Artificial Data
 
-### Creating Artificial Data
-
 Create a working directory alongside the `sampling3` directory:
 
 ```
@@ -77,5 +75,22 @@ python ../sampling3/analyze_W_d.py --DATA_DIR data/ --GRADEBOOK_DIR gradebook/ -
 
 ## Using Live Data
 
-## Analyzing Results
+Create 80/20 training/testing gradebooks from the data:
 
+```
+python ../sampling3/drew_create_gradebooks_from_H_Y.py --H_FILENAME subj/Hphys_out.csv --Y_FILENAME subj/Yphys_out.csv --TEST_GRADEBOOK_DIR gradebook_test --TRAIN_GRADEBOOK_DIR gradebook_train --TRAIN_FRAC 0.8
+```
+
+Process the training gradebook:
+
+```
+python ../sampling3/process_gradebook.py --GRADEBOOK_DIR gradebook_train/ --OUTPUT_BASE_DIR phys_01 --NLQC 264 256 64 --NCPU 4 --NTIMES 4
+```
+
+Analyze the results:
+
+```
+python ../sampling3/drew_analyze_W_d.py --TEST_GRADEBOOK_DIR gradebook_test/ --TRAIN_GRADEBOOK_DIR gradebook_train/ --AGGREGATE_DIR phys_01/aggregates/final/ --OUTPUT_DIR analysis_01
+```
+
+There will be a file called `stats.txt` in the `OUTPUT_DIR` containing the full, training, and imputation results.
