@@ -6,7 +6,7 @@
 - [ ] add `CONTRIBUTING.md` which links to https://github.com/openstax/napkin-notes/blob/master/CONTRIBUTING.md
 - [ ] add `.travis.yml`
 - [ ] add Webhook for Travis-CI
-- [ ] add `.editorconfig` file (see [website](http://editorconfig.org) and https://atom.io [plugin](atom.io/packages/editorconfig)
+- [ ] add `.editorconfig` file (see [website](http://editorconfig.org) and [Atom.io plugin](https://atom.io/packages/editorconfig)
 
 
 # New Slack Channel
