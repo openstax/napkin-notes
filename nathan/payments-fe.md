@@ -20,6 +20,8 @@ That iframe will contain additional HTML & JS code.  It will be responsible for:
 
   * Integrating with Braintree's API to setup the embedded credit card iframe fields.
   * Capture address and other data that payments needs
-  * Submit the credit card charge to Braintree and obtain a token (nonce).
-  * Submitting the token and address information to payments service for charging
-  * send `postMessage` messages to the client-side library of the charge's success or failure via it's registered callback handlers.
+  * Trigger a submission of the credit card iframe's to Braintree and obtain a token (nonce).
+  * via XHR requests, send the token and address information to payments BE for charging
+  * Relay the charge's success or failure to the client-side library via `postMessage` messages
+    * The client-side library will then call the registered callback event handlers
+    * Eventually `destroy` will be called and the iframe removed
