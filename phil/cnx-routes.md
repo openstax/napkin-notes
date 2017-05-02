@@ -17,12 +17,28 @@ There are 4 types of identifiers used within https://cnx.org
 
 ### Sha hash
 
+These are used for identifying resources (ie images) and the hash is a hash of the bits in the resource file.
+
+
 ### UUID
+
+This is an identifier created either by the author or automatically by the Databse when publishing a new [Book](#book) or [Page](#page).
+
 
 ### Short UUID
 
+This is a computed string which is based on the first few bits of the UUID.
+
+It is used to reduce the length of URLs to a [Book](#book), [Page](#page), or eventually a Unit/Chapter.
+
 ### UUID and version
 
+A specific version of a [Book](#book) or [Page](#page) is identified by a `{UUID}@{VERSION}` string.
+
+- Page Version: the version is a natural number (`@123`) and increments when a Page is published (either content or metadata changes)
+- Book Version: the version is 2 numbers, `@{MAJOR}.{MINOR}`
+  - the `{MINOR}` number increments when a Page in the book changes
+  - the `{MAJOR}` number increments when the Book structure (adding/removing Pages or Chapters) or Book metadata changes
 
 
 ## Types
@@ -39,6 +55,9 @@ Content in cnx generally falls into 3 types:
 A Resource is typically an image that is included as part of a [Page](#page). It is referenced in a [Page](#page) as `<img src="../resources/${SHA}/${OPTIONAL_FRIENDLY_NAME}">` in the HTML contents.
 
 It is identified by a hash of its contents and may contain an optional filename.
+
+A consequence of using a hash is that Resources are replaced but never changed.
+
 
 Examples:
 
@@ -63,10 +82,12 @@ There are several variations of retrieving a Page but the URL format uses the fo
     - typically numbering elements like Figures or Exercises are dependent on which Book this Page is in
 - `IDENTIFIER` can be a [UUID](#uuid) or a [short UUID](#short-uuid) and may contain an optional `@{MAJOR_VERSION}` which indicates a particular version of the Page
 - `OPT_EXTENSION` indicates which format should be returned. Valid values are `.html` or `.json`
+  - If an extension is not provided, the `Accept:` header is used to determine which format to return.
 
 
 Examples:
 
+- https://archive.cnx.org/contents/1d1fd537-77fb-4eac-8a8a-60bbaa747b6d
 - https://archive.cnx.org/contents/1d1fd537-77fb-4eac-8a8a-60bbaa747b6d.html
 - https://archive.cnx.org/contents/1d1fd537-77fb-4eac-8a8a-60bbaa747b6d.json
 - https://archive.cnx.org/contents/1d1fd537-77fb-4eac-8a8a-60bbaa747b6d@3.html
@@ -84,11 +105,31 @@ And in the browser:
 - https://cnx.org/contents/Ax2o07Ul@9.74:HR_VN3f7@3
 - https://cnx.org/contents/031da8d3-b525-429c-80cf-6c8ed997733a@9.74:1d1fd537-77fb-4eac-8a8a-60bbaa747b6d
 
+
 ### Book
 
 https://cnx.org/contents/031da8d3-b525-429c-80cf-6c8ed997733a
 
-A book is the binding
+A Book is a tree which closely resembles the Table of Contents.
+
+- Leaf nodes **must** be [Page](#page)s
+  - These Pages end up being rendered as Preface, Chapter Sections, and Appendixes
+- Non-Leaf nodes end up being Units or Chapters, depending on the depth of the node
+
+Example structure
+```
+Physics Book
+- Preface (Page 1)
+- Unit 1
+  - Chapter 1
+    - (Page 2)
+    - (Page 3)
+  - Chapter 2
+    - (Page 4)
+    - (Page 5)
+- Appendix A (Page 6)
+- Appendix B (Page 7)
+```
 
 
 ## Retrieving Content
