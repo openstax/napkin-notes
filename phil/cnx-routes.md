@@ -2,7 +2,7 @@
 
 https://cnx.org APIs are split into 4 areas and documented in greater detail in each repository.
 
-You can retrieve published content using the [^cnx-archive] APIs (including search), and can change content using the [^cnx-publishing] APIs.
+You can retrieve published content using the [^cnx-archive] APIs (including search), and can change content using the [^cnx-publishing-api] APIs.
 
 Browser URLs are managed and documented in [^webview].
 
@@ -116,17 +116,18 @@ A Book is a tree which closely resembles the Table of Contents.
   - These Pages end up being rendered as Preface, Chapter Sections, and Appendixes
 - Non-Leaf nodes end up being Units or Chapters, depending on the depth of the node
 
-Example structure
+Example Book structure:
+
 ```
 Physics Book
 - Preface (Page 1)
 - Unit 1
   - Chapter 1
-    - (Page 2)
-    - (Page 3)
+    - Section 1.1 (Page 2)
+    - Section 1.2 (Page 3)
   - Chapter 2
-    - (Page 4)
-    - (Page 5)
+    - Section 2.1 (Page 4)
+    - Section 2.2 (Page 5)
 - Appendix A (Page 6)
 - Appendix B (Page 7)
 ```
@@ -134,26 +135,49 @@ Physics Book
 
 ## Retrieving Content
 
+Book content can be retrieved by:
+
+- Manually finding the book on https://cnx.org
+- Using the Search API
+
+Then, to retrieve the entire book, remove the Page ID in the URL and change the hostname from `cnx.org` to `archive.cnx.org`.
+
+As an example, https://cnx.org/contents/Ax2o07Ul@9.74:HR_VN3f7@3/Introduction-to-Science-and-th becomes https://archive.cnx.org/contents/Ax2o07Ul@9.74
 
 
 ### Individual Books and Pages
 
 
+
 ### Search
+
+
+### Redirects
+
+To handle the case of short UUIDs and optional version numbers several server redirects happen. To illustrate, we will use the following example:
+
+1. Browser requests [https://cnx.org/contents/{UUID}](https://cnx.org/contents/031da8d3-b525-429c-80cf-6c8ed997733a)
+1. JavaScript requests [https://archive.cnx.org/contents/{UUID}](https://archive.cnx.org/contents/031da8d3-b525-429c-80cf-6c8ed997733a)
+1. server redirects to [https://archive.cnx.org/contents/{UUID}@{VERSION}](https://archive.cnx.org/contents/031da8d3-b525-429c-80cf-6c8ed997733a@9.74)
+1. AJAX response contains the short UUID for the Book (`Ax2o07Ul`) and the Preface Page (`HR_VN3f7@3`)
+1. JavaScript requests the Preface Page with the book ID to get the correct context
+1. JavaScript changes the browser URL to [https://cnx.org/contents/{BOOK_SHORT_ID}@{VER}:{PAGE_SHORT_ID}@{VER}}/{TITLE_SLUG}](https://cnx.org/contents/Ax2o07Ul@9.74:HR_VN3f7@3/Introduction-to-Science-and-th)
 
 
 ## Publishing Content
 
-https://github.com/Connexions/cnx-publishing#http-api
+Publishing content requires POSTing a specially-formatted ePUB as a payload.
 
-## Browser Links
+This payload contains all the Books (usually 1), Pages, Resources, and metadata (like permissions).
 
-https://cnx.org/contents/031da8d3-b525-429c-80cf-6c8ed997733a redirects to https://cnx.org/contents/Ax2o07Ul@9.74:HR_VN3f7@3/Introduction-to-Science-and-th
+See the [^cnx-publishing-api] for more details on the format and URLs.
+
 
 
 
 [^cnx-archive]: https://github.com/Connexions/cnx-archive
 [^cnx-publishing]: https://github.com/Connexions/cnx-publishing
+[^cnx-publishing-api]: https://github.com/Connexions/cnx-publishing#http-api
 [^webview]: https://github.com/Connexions/webview
 
 
