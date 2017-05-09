@@ -54,7 +54,7 @@ Some schemas make use of
 [`#standard_definitions`](https://github.com/openstax/biglearn-api/blob/master/app/controllers/json_api_controller.rb#L112-L227)
 which is defined in the
 [`JsonApiController`](https://github.com/openstax/biglearn-api/blob/master/app/controllers/json_api_controller.rb#L3)
-base class.
+[base class](https://github.com/openstax/biglearn-api/blob/master/app/controllers/ecosystems_controller.rb#L1).
 
 Sometimes parts of the schema
 are defined elsewhere in the code
