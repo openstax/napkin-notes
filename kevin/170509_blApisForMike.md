@@ -113,7 +113,7 @@ def fetch_ecosystem_metadata():
         size = 3
     )
 
-    for metadata_response_chunk in chunks
+    for metadata_response_chunk in chunks:
         ecosystem_uuids = map(lambda xx: xx['uuid'], metadata_response_chunk)
 
         data = {
