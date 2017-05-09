@@ -110,7 +110,7 @@ def fetch_ecosystem_metadata():
 
     chunks = chunkify(
         lst  = metadata_response.json()['ecosystem_responses'],
-        size = 3
+        size = 1,
     )
 
     for metadata_response_chunk in chunks:
@@ -131,7 +131,7 @@ def fetch_ecosystem_metadata():
 
             data['ecosystem_event_requests'].append(event_request)
 
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
 
         chunk_response = requests.post(
             bl_api_base + '/fetch_ecosystem_events',
@@ -139,8 +139,11 @@ def fetch_ecosystem_metadata():
             data    = json.dumps(data),
         )
 
+        with open('ecosystem_{}.txt'.format(ecosystem_uuid), 'w') as fd:
+            pretty_str = json.dumps(chunk_response.json(), indent=4, sort_keys=True)
+            fd.write(pretty_str)
+
         import pdb; pdb.set_trace()
-        print(chunk_response)
 
 
 if __name__ == '__main__':
