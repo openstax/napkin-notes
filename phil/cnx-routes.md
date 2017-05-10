@@ -40,6 +40,10 @@ A specific version of a [Book](#book) or [Page](#page) is identified by a `{UUID
   - the `{MINOR}` number increments when a Page in the book changes
   - the `{MAJOR}` number increments when the Book structure (adding/removing Pages or Chapters) or Book metadata changes
 
+### Short UUID and version
+
+This is similar to [UUID and version](#uuid-and-version) except that a short UUID is used instead of a full UUID
+
 
 ## Types
 
@@ -108,13 +112,15 @@ And in the browser:
 
 ### Book
 
-https://cnx.org/contents/031da8d3-b525-429c-80cf-6c8ed997733a
-
 A Book is a tree which closely resembles the Table of Contents.
 
 - Leaf nodes **must** be [Page](#page)s
   - These Pages end up being rendered as Preface, Chapter Sections, and Appendixes
 - Non-Leaf nodes end up being Units or Chapters, depending on the depth of the node
+
+Example URL: https://cnx.org/contents/031da8d3-b525-429c-80cf-6c8ed997733a
+
+Example API URL: https://archive.cnx.org/contents/031da8d3-b525-429c-80cf-6c8ed997733a
 
 Example Book structure:
 
