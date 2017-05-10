@@ -8,12 +8,13 @@ Browser URLs are managed and documented in [^webview].
 
 ## Identifiers
 
-There are 4 types of identifiers used within https://cnx.org
+There are 5 types of identifiers used within https://cnx.org
 
-- sha hash
-- UUID
-- Short UUID
-- UUID and version
+- [sha hash](#sha-hash)
+- [UUID](#uuid)
+- [Short UUID](#short-uuid)
+- [UUID and version](#uuid-and-version)
+- [Short UUID and version](#short-uuid-and-version)
 
 ### Sha hash
 
@@ -49,9 +50,9 @@ This is similar to [UUID and version](#uuid-and-version) except that a short UUI
 
 Content in cnx generally falls into 3 types:
 
-- Resource
-- Page
-- Book
+- [Resource](#resource)
+- [Page](#page)
+- [Book](#book)
 - Special
 
 ### Resource
@@ -144,7 +145,7 @@ Physics Book
 Book content can be retrieved by:
 
 - Manually finding the book on https://cnx.org
-- Using the Search API
+- Using the [Search API](#search-api)
 
 Then, to retrieve the entire book, remove the Page ID in the URL and change the hostname from `cnx.org` to `archive.cnx.org`.
 
@@ -155,8 +156,14 @@ As an example, https://cnx.org/contents/Ax2o07Ul@9.74:HR_VN3f7@3/Introduction-to
 
 
 
-### Search
+### Search API
 
+This API is described in detail at [^cnx-archive-search-api].
+
+Basically, similar to GitHub search or other Google search, you can set filters by including a `?q=key:value+key2:value` in the querystring of https://archive.cnx.org/search?q= or https://cnx.org/search?q=. An example of some parameters include:
+
+- http://archive.cnx.org/search?q=Relativity
+- http://archive.cnx.org/search?q=Relativity+authorID:OpenStaxCollege+subject:"Science+and+Technology"
 
 ### Redirects
 
@@ -182,6 +189,7 @@ See the [^cnx-publishing-api] for more details on the format and URLs.
 
 
 [^cnx-archive]: https://github.com/Connexions/cnx-archive
+[^cnx-archive-search-api]: https://github.com/Connexions/cnx-archive/blob/master/docs/search_api_doc.rst
 [^cnx-publishing]: https://github.com/Connexions/cnx-publishing
 [^cnx-publishing-api]: https://github.com/Connexions/cnx-publishing#http-api
 [^webview]: https://github.com/Connexions/webview
