@@ -196,6 +196,31 @@ See the [^cnx-publishing-api] for more details on the format and URLs.
 
 
 ---
+---
+---
+---
+---
+---
+---
+---
+---
+
+Below be dragons
+
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+
 
 All the routes in https://cnx.org, https://archive.cnx.org, and CNX Publishing
 
