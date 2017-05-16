@@ -26,7 +26,7 @@ or for a specific calculation uuid.
 
 ### Which Data to Use
 
-#### Concepts
+#### Concepts (`C_ids`)
 
 In the past,
 concepts were derived
@@ -40,16 +40,6 @@ per `page-module`,
 and that concept's name
 will just be the `page-module` uuid.
 
-All of the information
-to map `exercises` to `page-modules`
-can be found in the information returned by `BL API`'s
-[ecosystem endponts](https://github.com/openstax/biglearn-api/blob/master/config/routes.rb#L2-L4).
-Examples of using these APIs
-can be found
-[here]()
-and
-[here]().
-
 The book `TOC`
 is represented by `book containers`
 (e.g., unit, chapter, page)
@@ -57,6 +47,49 @@ which can be
 [arbitrarily nested](https://github.com/openstax/biglearn-api/blob/master/app/controllers/ecosystems_controller.rb#L58-L61).
 A `page-module` is a `book container`
 that is parent to no other `book container`.
+
+The list of concepts for a given `ecosystem`
+contains the uuids of the leaf nodes
+of the `book container` tree.
+
+#### Questions (`Q_ids`)
+
+Each `ecosystem` contains a 
+[list](https://github.com/openstax/biglearn-api/blob/master/app/controllers/ecosystems_controller.rb#L76)
+of `exercises`.
+These `exercises` have versions,
+but for now we can ignore them
+and use the versionless 
+[`group uuid`](https://github.com/openstax/biglearn-api/blob/master/app/controllers/ecosystems_controller.rb#L121).
+
+The list of questions for a given `ecosystem`
+contains these versionless `group uuids`.
+
+#### Learners (`L_ids`)
+
+The `BL API` server
+[course event endpoint](https://github.com/openstax/biglearn-api/blob/master/config/routes.rb#L8)
+can be used to retrieve
+responses to questions
+(example [here](https://github.com/openstax/biglearn-sparfa-server/blob/klb_api_expers/examples/course_event_summary.py#L14-L17)).
+
+The list of questions for a given `ecosystem`
+contains all the `student uuids`
+for any `response`
+to any `exercise`
+associated with the given `ecosystem`.
+
+(In the future,
+if this gets too huge
+we might choose to sample it.)
+
+#### Hints (`hints`)
+
+All of the information
+to map `exercises` to `page-modules`
+can be found in the information returned by `BL API`'s
+[ecosystem endponts](https://github.com/openstax/biglearn-api/blob/master/config/routes.rb#L2-L4).
+
 Each `page-module` has associated 
 [`exercise pools`](https://github.com/openstax/biglearn-api/blob/master/app/controllers/ecosystems_controller.rb#L62-L66)
 which can be used to determine 
@@ -67,8 +100,20 @@ we can use every available exercise,
 so no need to worry about
 [assignment types](https://github.com/openstax/biglearn-api/blob/master/app/controllers/ecosystems_controller.rb#L93).
 
-Bottom line:
-the list of concepts for a given `ecosystem`
-are the uuids of the leaf nodes
-of the `book container` tree.
+The `hint` for each `exercise`
+is its associated `page-module uuid`
+in the given `ecosystem`.
 
+#### Responses (`responses`)
+
+Once we have the versionless `exercise group uuids`
+associate with a given `ecosystem`,
+
+TODO: do we need assignments to map trials to exercises?
+
+#### Cost Function (`cost_func`)
+
+We can choose whichever cost function we like.
+For now, let's use
+[Drew's](https://github.com/openstax/sparfa-sandbox/blob/master/klb_refactor/tests/test_sgd.py#L975-L980).
+(Eventually this option will be set internally.)
