@@ -106,10 +106,21 @@ in the given `ecosystem`.
 
 #### Responses (`responses`)
 
-Once we have the versionless `exercise group uuids`
-associate with a given `ecosystem`,
+Each response from the `BL API server`
+contains a `student uuid`,
+an `exercise uuid`,
+and a `sequence number`.
+For matrix calculation,
+we are interested in the _first_ `response`
+of each `learner`
+for each `exercise`
+associated with the given `ecosystem`.
 
-TODO: do we need assignments to map trials to exercises?
+Note that the `exercise uuid`
+in the `response` JSON
+is _versioned_,
+so it will need to be mapped
+to a _versionless_ `exercise group uuid`.
 
 #### Cost Function (`cost_func`)
 
