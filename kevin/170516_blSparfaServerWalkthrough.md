@@ -7,7 +7,7 @@ should poll the `BL Scheduler`'s
 [matrix update endpoint](https://github.com/openstax/biglearn-scheduler/blob/master/config/routes.rb#L5)
 at least once every 10 seconds or so.
 The endpoint will return
-a collection of `ecosystem` uuids,
+a collection of `ecosystem uuids`,
 and for each of those uuids
 SPARFA should be run.
 An example of using this endpoint
@@ -15,14 +15,18 @@ An example of using this endpoint
 
 ### Which Calculation to Run
 
-For each `ecosystem` uuid, we need to call
+For each `ecosystem uuid`, we need to call
 [this code](https://github.com/openstax/sparfa-sandbox/blob/master/klb_refactor/sgd/sparfa_algs.py#L261)
 to compute `W` and `d`
 and store them in the database.
 We need to be able to find 
 the latest `W`,`d`
-for a given `ecosystem` uuid
-or for a specific calculation uuid.
+for a given `ecosystem uuid`
+or for a specific `calculation uuid`.
+We only really need to store
+the non-zero matrix entries,
+but these matrices are relatively small
+so whatever works best is fine for now.
 
 ### Which Data to Use
 
@@ -38,7 +42,7 @@ Specificially,
 there will be one concept
 per `page-module`,
 and that concept's name
-will just be the `page-module` uuid.
+will just be the `page-module uuid`.
 
 The book `TOC`
 is represented by `book containers`
