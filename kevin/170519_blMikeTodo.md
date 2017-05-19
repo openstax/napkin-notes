@@ -6,7 +6,6 @@
 
 ## Courses
 * fetch course metadata from `BL API`
-* [filter courses]
 * fetch course events from `BL API`
 * store course events in db
 * automate bg job
