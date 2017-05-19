@@ -13,6 +13,7 @@
 
 ## Matrix Calcs
 * fetch calcs from `BL Scheduler`
+* [filter calcs]
 * fetch matrices, Cs, Qs from db
 * fetch responses from db
 * call matrix calc
@@ -22,6 +23,7 @@
 
 ## CLUE Calcs
 * fetch calcs from `BL Scheduler`
+* [filter calcs]
 * fetch `W`,`d`, Cs, Qs, hints, responses from db
 * call CLUE calc
 * update `BL Scheduler`
@@ -29,6 +31,7 @@
 
 ## PE Calcs
 * fetch calcs from `BL Scheduler`
+* [filter calcs]
 * fetch `W`,`d`, Cs, Qs, hints, responses from db
 * call PE calc
 * update `BL Scheduler`
