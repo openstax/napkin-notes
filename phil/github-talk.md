@@ -40,23 +40,27 @@ It's not just for code!
 # GitHub for devs
 
 - pushing branches (no one knows until you make a Pull Request)
-- Pull Requests
+- create **Pull Requests**
     - make sure the comments are about the code
-- Webhooks/CI triggers
+- about **Webhooks** and CI triggers
+    - runs when you push or create a Pull Request
     - not just for unit tests (deployable tarballs, updated style guides)
     - also tests as-if-the-commit-was-merged-to-master
-- try to increase Code Coverage
-- spend a little extra time to write Tests
+- spend a little extra time to write **Tests**
     - your future self will thank you
-- https://githubengineering.com/scripts-to-rule-them-all/
+- try to increase **Code Coverage**
+    - add the browser extension to add color to diffs, and see coverage for commits
+- [Provide/Update Scripts](https://githubengineering.com/scripts-to-rule-them-all/) to make it easy to get up and running
+- Link **Trello card** to the Pull Request
+    - just drag the PR URL on top of the trello card (in a different browser tab)
+    - [Example](https://github.com/openstax/os-webview/pull/890#issuecomment-303174234)
 - When to merge?
     - could be after QA reproduces the feature/fix
 - Hotfix procedure. Sometimes master has changed but you don't want to release it yet
     1. branch off the sha/tag and create a PR to master
     2. deploy the branch commit to production
     3. merge the PR
-- Link Trello card to the Pull Request
-    - just drag the PR URL on top of the trello card (in a different browser tab)
+    - [Example Steps](https://github.com/openstax/tutor-js/blob/master/CONTRIBUTING.md#creating-a-hotfix)
 
 
 ## Some suggestions
