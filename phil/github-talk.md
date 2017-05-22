@@ -39,11 +39,35 @@ It's not just for code!
 
 # GitHub for devs
 
-- pushing branches
-- Webhooks/CI triggers
+- pushing branches (no one knows until you make a Pull Request)
 - Pull Requests
+    - make sure the comments are about the code
+- Webhooks/CI triggers
+    - not just for unit tests (deployable tarballs, updated style guides)
+    - also tests as-if-the-commit-was-merged-to-master
+- try to increase Code Coverage
+- spend a little extra time to write Tests
+    - your future self will thank you
 - https://githubengineering.com/scripts-to-rule-them-all/
-- tags/releases
+- When to merge?
+    - could be after QA reproduces the feature/fix
+- Hotfix procedure. Sometimes master has changed but you don't want to release it yet
+    1. branch off the sha/tag and create a PR to master
+    2. deploy the branch commit to production
+    3. merge the PR
+- Link Trello card to the Pull Request
+    - just drag the PR URL on top of the trello card (in a different browser tab)
+
+
+## Some suggestions
+
+- Create Pull Requests **early** for a couple of reasons:
+    - reviews can be async
+    - lets people know what you are working on
+- Add a reviewer(s) so they get notified
+- Wait at least a few hours so people can comment/contribute before merging
+- `@mention` people that might be affected/interested (in the PR description)
+
 
 ---
 
@@ -59,3 +83,13 @@ Analogy: it is like a tree; new growth (commits) occurs at the leaves, branches 
     - **(wonky if other people edit the Pull Request)** - Phil doesn't like rebase
 
 - Try to make commits when the tests pass. Then later, it is easier to find when a bug occurred (by bisecting the commit history)
+
+
+# :squirrel:
+
+You made it this far! Have some links!
+
+- http://philschatz.com/windmill/
+- [Skipping Stones](http://www.puzzlescript.net/play.html?p=d6fd6fcf84de185e2584)
+- [Beam Islands](http://www.puzzlescript.net/play.html?p=11359118)
+- Message `@phil` in `#watercooler` for more (if that is your cup of :tea:)
