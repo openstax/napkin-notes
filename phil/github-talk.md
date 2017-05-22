@@ -85,9 +85,9 @@ Analogy: it is like a tree; new growth (commits) occurs at the leaves, branches 
 - Try to make commits when the tests pass. Then later, it is easier to find when a bug occurred (by bisecting the commit history)
 
 
-# :squirrel:
+# psst...
 
-You made it this far! Have some links!
+:squirrel: You made it this far! Have some links! :tada:
 
 - http://philschatz.com/windmill/
 - [Skipping Stones](http://www.puzzlescript.net/play.html?p=d6fd6fcf84de185e2584)
