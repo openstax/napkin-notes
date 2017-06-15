@@ -18,28 +18,41 @@ There are 5 types of identifiers used within https://cnx.org
 
 ### Sha hash
 
-These are used for identifying resources (ie images) and the hash is a hash of the bits in the resource file.
+These are used for identifying resources (_e.g._ images) and the value is an `sha1` hash, as provided by `sha1sum` of the resource file bits.
 
 
 ### UUID
 
-This is an identifier created either by the author or automatically by the Databse when publishing a new [Book](#book) or [Page](#page).
+This is an identifier that conforms to the `UUIDv4` format specification. It is created either by the author or automatically by the archive when publishing a new [Book](#book) or [Page](#page). Values provided by the author may be replaced at publish time, primarily to avoid collisions with existing values in the archive. These are guaranteed to remain stable, and refer to the same document over time (and usually over installs of the archive as well)
+
+#### Composite Object UUID
+
+A special subset of the [UUID](#uuid)s, this is an identifier that conforms to the `UUIDv5` specification. It is used for book components ([page](#page) or [chapter](#chapter)) that are not part of the book as published by the author, but that are created as part of the publishing/baking process: Composite Pages or Chapters.
+
+ It is formed based on the [UUID](#uuid) of its parent container ([Book](#book), [Unit](#unit), or [Chapter](#chapter)), and a semantic key. This allows these ids to remain relatively stable as the book is revised.
 
 
 ### Short UUID
 
-This is a computed string which is based on the first few bits of the UUID.
+This is a computed string which is based on the first few bits of the UUID. These are not guaranteed to be stable over all time, but we will strive to extend, rather than replace them.
 
-It is used to reduce the length of URLs to a [Book](#book), [Page](#page), or eventually a Unit/Chapter.
+It is used to reduce the length of URLs to a [Book](#book), [Page](#page), or Unit/Chapter.
 
 ### UUID and version
 
-A specific version of a [Book](#book) or [Page](#page) is identified by a `{UUID}@{VERSION}` string.
+A specific version of a [Book](#book) or [Page](#page) is identified by a `{UUID}@{VERSION}` string. In the code, this is often described as an `ident-hash`.
 
 - Page Version: the version is a natural number (`@123`) and increments when a Page is published (either content or metadata changes)
+
 - Book Version: the version is 2 numbers, `@{MAJOR}.{MINOR}`
   - the `{MINOR}` number increments when a Page in the book changes
-  - the `{MAJOR}` number increments when the Book structure (adding/removing Pages or Chapters) or Book metadata changes
+  - the `{MAJOR}` number increments when the Book structure (adding/removing Pages or Chapters) or Book metadata changes, _i.e._ the book _per se_ is republished.
+
+
+- Unit/Chapter Version: these track the Book Version for the book they are in. Note that this means that the minor version will increment if a page within this container changes, so there may be more than one minor version for different chapters in the same book, always equal to or less than the book's minor version.
+
+- Composite Object Version: these also track the version of their parent container, since they typically depend on the content of all the pages in that container.
+
 
 ### Short UUID and version
 
@@ -57,24 +70,27 @@ Content in cnx generally falls into 3 types:
 
 ### Resource
 
-A Resource is typically an image that is included as part of a [Page](#page). It is referenced in a [Page](#page) as `<img src="../resources/${SHA}/${OPTIONAL_FRIENDLY_NAME}">` in the HTML contents.
+A Resource is typically an image or other file that is included as part of a [Page](#page). An image is referenced in a [Page](#page) as `<img src="../resources/${SHA}/${OPTIONAL_FRIENDLY_NAME}">` in the HTML contents. Other resources may be offered for download, and would then be referenced with a similiar relative URL, as `<a href=../resources/${SHA}/${OPTIONAL_FRIENDLY_NAME}>displayed name</a>`
 
 It is identified by a hash of its contents and may contain an optional filename.
 
-A consequence of using a hash is that Resources are replaced but never changed.
+A consequence of using a hash is that Resources can be replaced but never changed.
 
 
 Examples:
 
 - https://cnx.org/resources/d47864c2ac77d80b1f2ff4c4c7f1b2059669e3e9
 - https://cnx.org/resources/d47864c2ac77d80b1f2ff4c4c7f1b2059669e3e9/Figure_01_00_01.jpg
+- https://cnx.org/8a8609226c03365e5af58e42f2a82902bf91087d/Practica_3.pdf
+- https://cnx.org/bc86ed52100c7bb021a90fef8f0bc21475dc15a2/rhymeworksheet.doc
 
-Resources are static and do not change. In order to replace an image, one has to edit the [Page](#page) and change the `<img src="..."/>` tag.
-
+Resources are static and do not change. In order to replace an image, one has to edit the [Page](#page) and change the `<img src="…"/>` or `<a href="…">` tag. A resource may be referenced from more than one page, but only needs to be uploaded once.
 
 ### Page
 
-A Page is the content of a book. It is smaller than a Chapter, typically a Book Section.
+A Page is part of the content of a book. It is smaller than a Chapter, typically presented as a Chapter Section. It is typically longer than a printed book page.
+
+[//]: # "RJR - rework to describe page and page-in-context, as well as composite pages"
 
 A Page is identified by a UUID, a version, and an optional [Book](#book) UUID.
 
