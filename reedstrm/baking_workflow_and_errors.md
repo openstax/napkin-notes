@@ -25,13 +25,13 @@ The state of baking of a given book will be available in the `/extras` page for 
 
  In addition, a global "state of baking" page will give an overview of all books and their current baked state. This may it in with the publishing administrative pages, under `/a` Again, any that are not current will have links  available to attempt re-baking.
 
-|    result     |    state      |  color/shape    |  emoji  |
-|:-------------:|:-------------:|:---------------:|:-------:|
-|  Done/Success | up_to_date    |  Green/circle   | check   |
-|  Pending      | stale_recipe  |  Yellow/square  | exclaim |
-|  Pending      | stale_content |  Yellow/square  | exclaim |
-|  Fallback     | stale_recipe  |  Red/triangle   |    X    |
-|  Fail         | stale_content |  Red/triangle   |    X    |
+|    result     |    state      |  color/shape    |  emoji             |
+|:-------------:|:-------------:|:---------------:|:------------------:|
+|  Done/Success | up_to_date    |  Green/circle   | :white_check_mark: / :heavy_check_mark: |
+|  Pending      | stale_recipe  |  Yellow/square  | :warning:          |
+|  Pending      | stale_content |  Yellow/square  | :warning:          |
+|  Fallback     | stale_recipe  |  Red/triangle   | :x:                |
+|  Fail         | stale_content |  Red/triangle   | :x:                |
 
 Pending conditions come about via injection of a new recipe (`stale_recipe`) or publishing of a new page version, causing book minor version rev (`stale_content`). Retransform of CNXML to HTML would also cause a `Pending/stale_content` state. These `pending` conditions are presumed to be resolved by an upcoming baking run.
 
