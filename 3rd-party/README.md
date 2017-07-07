@@ -5,6 +5,7 @@ Tools that other groups created for working with OpenStax textbooks and products
 ## Glossary generator
 Takes a CNX full-source CNXML module and generates an XML glossary for it. 
 Glossary generator https://danielrearden.neocities.org/glossary_generator.html
+Github repo https://github.com/danielrearden/openstax-glossary-generator
 
 ## Pressbooks OpenStax textbook importer
 A WordPress plugin that extends Pressbooks to let you import openly licensed books from OpenStax. One caveat with the plugin is that it’s only compatible with the latest development branch of PB and soon-to-be-released v4.0
