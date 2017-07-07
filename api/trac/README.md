@@ -13,4 +13,5 @@ All content that authors contribute to the Connexions global repository can be a
 == Software Architecture and Application Programming Interfaces ==
  * [XMLFormats Document XML Languages (CNXML, CollXML)](xmlformats.md)
  * [API/WebServices Web Services](webservices.md)
- * [OERPub/SWORD based module creation and Word document deposit] 
+ * [OERPub/SWORD based module creation and Word document deposit](sword.md)
+  
