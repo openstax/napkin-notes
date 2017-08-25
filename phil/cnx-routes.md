@@ -88,7 +88,7 @@ Resources are static and do not change. In order to replace an image, one has to
 
 ### Page
 
-A Page is part of the content of a book. It is smaller than a Chapter, typically presented as a Chapter Section. It is typically longer than a printed book page.
+A Page is part of the content of a book. It is smaller than a Chapter, typically presented as a Chapter Section. It is typically longer than a printed book page. In legacy code it is often referred to as a Module.
 
 [//]: # "RJR - rework to describe page and page-in-context, as well as composite pages"
 
@@ -133,6 +133,7 @@ A Book is a tree which closely resembles the Table of Contents.
 
 - Leaf nodes **must** be [Page](#page)s
   - These Pages end up being rendered as Preface, Chapter Sections, and Appendixes
+  - When a book is baked additional leaf nodes are created (referred to as `composite-page` in the HTML and in code)
 - Non-Leaf nodes end up being Units or Chapters, depending on the depth of the node
 
 Example URL: https://cnx.org/contents/031da8d3-b525-429c-80cf-6c8ed997733a
