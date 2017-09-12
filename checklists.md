@@ -5,11 +5,11 @@
   - **Note:** make sure you deselect "Restrict who can push to this branch"
 - [ ] add team (`all`)
 - [ ] add `CONTRIBUTING.md` which links to https://github.com/openstax/napkin-notes/blob/master/CONTRIBUTING.md
-- [ ] add `.travis.yml`
-- [ ] add Webhook for Travis-CI
-- [ ] add Webhook for https://codecov.io
 - [ ] add `./script/setup` and `./script/test` (optional) [Why do this?](https://githubengineering.com/scripts-to-rule-them-all/)
   - Examples: [1](https://github.com/Connexions/cnx-rulesets) [2](https://github.com/Connexions/cnx-easybake) [3](https://github.com/openstax/ostext-style-guide)
+- [ ] add `.travis.yml` (which runs `./script/test`)
+- [ ] add Webhook for Travis-CI
+- [ ] get Travis-CI to report to https://codecov.io
 - [ ] add `.editorconfig` file (see [website](http://editorconfig.org) and [Atom.io plugin](https://atom.io/packages/editorconfig)
 - [ ] create a `README.md`
 
