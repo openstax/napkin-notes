@@ -8,7 +8,7 @@
 - [ ] add `./script/setup` and `./script/test` (optional) [Why do this?](https://githubengineering.com/scripts-to-rule-them-all/)
   - Examples: [1](https://github.com/Connexions/cnx-rulesets) [2](https://github.com/Connexions/cnx-easybake) [3](https://github.com/openstax/ostext-style-guide)
 - [ ] add `.travis.yml` (which runs `./script/test`)
-- [ ] add Webhook for Travis-CI
+- [ ] add Travis-CI Integration (click **:gear: Settings** on the repository and then Integrations)
 - [ ] get Travis-CI to report to https://codecov.io
 - [ ] add `.editorconfig` file (see [website](http://editorconfig.org) and [Atom.io plugin](https://atom.io/packages/editorconfig)
 - [ ] create a `README.md`
