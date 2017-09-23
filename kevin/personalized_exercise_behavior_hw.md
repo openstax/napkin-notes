@@ -61,6 +61,13 @@ We need to consider that allowing students to "game" the PEs opens up the possib
 
 ## Drew/Lakshmi Notes
 
+One of the issues with the above approach is that students will
+be able to change their answers after a personalized question
+has been assigned to them based on their unlocked answers.
+
+In the interest of time, we can persist with the above approach
+for alpha.  This may not be a fruitful approach in the long term.
+
 ## The most useful / correct approach
 
 The above approach will use the responses that students have saved to
@@ -89,9 +96,9 @@ to complete the personalized problem.
 ## Alternatives
 
 There are several alternatives that we consider that would allow us to
-keep the same user workflow that we have established for alpha.
-However, these options carry with them a number of severe limtiations.
-We include these only for completeness:
+keep the same user workflow that we have established. However, these
+options carry with them a number of severe limtiations.  We include
+these only for completeness:
 
 
 ### Alternative 1
