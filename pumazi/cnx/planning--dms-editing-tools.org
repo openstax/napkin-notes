@@ -156,4 +156,4 @@ cnxml and collxml formats as well as the completezip structure validator.
 The other library is cnx-db, which will be used in the DMS press application
 as the database layer for committing the content into the archive.
 This library is shared between cnx-archive, cnx-publishing
-and now DMS Press.
+and now DMS Press. RJR concerned why DMS-Press needs DB access
