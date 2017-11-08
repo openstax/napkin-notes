@@ -1,7 +1,9 @@
 {
   "scripts": {
-    "build": "babel ./run.js",
-    "start": "babel ./run.js | node --"
+    "build": "babel ./repo-test.js",
+    "run-repo-test": "babel ./repo-test.js | node --",
+    "run-all-members": "babel ./all-members.js | node --",
+    "start": "babel ./repo-test.js | node --"
   },
   "dependencies": {
     "babel-cli": "^6.24.1",
