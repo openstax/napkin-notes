@@ -1,6 +1,6 @@
 const Octokat = require('octokat')
 const TOKEN = process.env['GH_TOKEN']
-const ORG_NAME = 'Connexions'
+const ORG_NAME = 'openstax'
 const ALL_TEAM = 'all'
 
 if (!TOKEN) { throw new Error('You must set the GH_TOKEN environment variable when using this') }
@@ -44,7 +44,7 @@ async function* doStuff() {
 
   console.log("Print out the report");
   // console.log(allMembersMap);
-  console.log(`GitHub Login	GitHub Team Membership	Specific Repository Permissions`);
+  console.log(`"GitHub Login", "GitHub Team Membership", "Specific Repository Permissions"`);
   Object.keys(allMembersMap).forEach((login) => {
     let {teams, repos} = allMembersMap[login]
     teams = teams || []

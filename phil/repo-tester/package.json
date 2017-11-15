@@ -3,6 +3,7 @@
     "build": "babel ./repo-test.js",
     "run-repo-test": "babel ./repo-test.js | node --",
     "run-all-members": "babel ./all-members.js | node --",
+    "run-all-repos": "babel ./all-repos.js | node --",
     "start": "babel ./repo-test.js | node --"
   },
   "dependencies": {
