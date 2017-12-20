@@ -1,3 +1,5 @@
+Test if I can commit directly to master branch.
+
 #!/bin/sh
 
 # Checkout and deploy a commit, PR (with/without merge to master built in), branch, manifest file, or enqueue a PDF.
