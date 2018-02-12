@@ -1,6 +1,7 @@
+require('dotenv').config()
 const Octokat = require('octokat')
 const TOKEN = process.env['GH_TOKEN']
-const ORG_NAME = 'openstax'
+const ORG_NAME = process.env['ORGANIZATION']
 const ALL_TEAM = 'all'
 
 if (!TOKEN) { throw new Error('You must set the GH_TOKEN environment variable when using this') }
