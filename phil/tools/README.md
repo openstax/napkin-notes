@@ -10,3 +10,5 @@ Misc repository-reporting scripts
 - `./script/all-members` reports which teams and any individual repositories that members have permissions on
 - `./script/repo-test` reports which repositories are missing information (like a README, Travis, `all` team permissions, etc)
 - `./script/all-repos` reports which repositories do not have the `all` team permissions
+
+The output is usually CSV (Comma Separated Values)
