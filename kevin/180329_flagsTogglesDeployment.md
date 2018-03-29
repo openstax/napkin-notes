@@ -34,7 +34,7 @@ thus avoiding "integration hell" on large features
 2. allow "dark releases", 
 where a feature is fully implemented and deployed, 
 but not enabled
-3. once activated in an environment (e.g., production), 
+3. once activated in an environment (e.g., `production`), 
 are (typically) never turned off - see also (4)
 4. are "short lived", 
 in the sense that once the feature is completed, 
