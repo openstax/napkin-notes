@@ -1,4 +1,4 @@
-## Brief Primer on SPARFA
+## Brief primer on SPARFA
 
 In what follows:
 * L = number of learners
@@ -20,7 +20,7 @@ of the conceptual content of each question
 with some sort of initial guess(es).
 This is where LOs come into play.
 
-## How Do LOs Get Assigned to Exercises?
+## How do LOs get assigned to exercises?
 
 LOs are added to exercises
 as specially-formatted tags
@@ -32,7 +32,7 @@ This happens when either
 (a) a new LO scheme is created and mapped to exercises
 (b) a better mapping between LOs and exercises is found.
 
-## LOs Passed From Tutor to Biglearn
+## LOs passed from Tutor to Biglearn
 
 To avoid having exercise and content edits
 go directly into production without any sort of review
@@ -83,3 +83,36 @@ Also, the current UX for Tutor
 only shows CLUEs on a per-`page-module` basis,
 so this arrangement packs the maximum amount of information
 into each display.
+
+## What if we Want to show CLUEs by LO?
+
+Currently, we show CLUE by `page-module`.
+If we wanted instead to show CLUE by LO,
+we'd need to do some work.
+
+First, we need to decide what "by LO" means.
+Most likely we mean "by some specific LO scheme"
+(e.g., AP LOs),
+but this needs to be explicitly stated.
+
+Secondly, we probably need to store this setting
+on a per-course basis,
+since different courses at different levels in different schools
+will probably prefer different LO schemes.
+
+Thirdly, Tutor would need to pass this information along to Biglearn.
+
+Fourth, Biglearn would need to construct 
+a per-course instance of the SPARFA matrices,
+since the concept list would vary on a per-course basis.
+(Steps for this are already being taken for unrealted reasons.)
+
+Fifth, we'd need to update the UX of Tutor
+to display CLUEs on a per-LO (of whatever scheme) basis.
+
+Lastly, we'd need to adjust the above steps
+if we intent to toggle between multiple CLUE displays
+(e.g., by `page-module`, by LO, by AP LO, etc.).
+
+In principle this can all be done,
+but it's not going to be trivial.
