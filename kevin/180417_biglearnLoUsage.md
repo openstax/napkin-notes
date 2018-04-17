@@ -28,9 +28,9 @@ by the Content team.
 Ultimately, some human has to decide which, if any, LOs
 apply to a particular exercise.
 Over time, the mapping between LOs and exercises can change.
-This happens when either
-(a) a new LO scheme is created and mapped to exercises
-(b) a better mapping between LOs and exercises is found.
+This happens when either:
+* a new LO scheme is created and mapped to exercises, or
+* a better mapping between LOs and exercises is found.
 
 ## LOs passed from Tutor to Biglearn
 
@@ -45,13 +45,15 @@ and act as the basis of Tutor and Biglearn processing.
 When Tutor creates an `ecosystem`,
 it extracts the LOs from the tags on each exercise.
 If an exercise has no LOs,
-Tutor assignes the associated book `page-module`
-as the exercise's LO.
+Tutor assigns the associated book `page-module`
+as that exercise's LO.
 (All exercises have at least one associated `page-module`.)
 
 Tutor 
 [passes](https://github.com/openstax/tutor-server/blob/c1bbc65a91188bd48b20e3e0b4a32930951540e8/lib/openstax/biglearn/api/real_client.rb#L136)
-all LOs of all types to Biglearn.
+all LOs of all types,
+as well as the associated `page-module(s)`,
+to Biglearn.
 
 ## LO Usage Inside Biglearn
 
