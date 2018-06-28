@@ -10,8 +10,12 @@
 - [ ] add `.travis.yml` (which runs `./script/test`)
 - [ ] add Travis-CI Integration (click **:gear: Settings** on the repository and then Integrations)
 - [ ] get Travis-CI to report to https://codecov.io
-- [ ] add `.editorconfig` file (see [website](http://editorconfig.org) and [Atom.io plugin](https://atom.io/packages/editorconfig)
 - [ ] create a `README.md`
+
+## Optional
+
+- [ ] add `.editorconfig` file (see [website](http://editorconfig.org) and [Atom.io plugin](https://atom.io/packages/editorconfig)
+- [ ] add `.pre-commit-config.yaml` (see https://github.com/Connexions/nebuchadnezzar/pull/68 for an example)
 
 
 # New Slack Channel
