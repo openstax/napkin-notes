@@ -37,7 +37,7 @@ but not enabled
 3. once activated in an environment (e.g., `production`), 
 are (typically) never turned off - see also (4)
 4. are "short lived", 
-in the sense that once the feature is completed, 
+in the sense that once the feature is released, 
 the flags are removed to avoid code clutter
 5. are needed for consistent UX when doing zero-downtime deployments
 
