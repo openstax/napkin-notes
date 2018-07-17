@@ -33,7 +33,7 @@ Feature **flags** separate deployment from release, and:
 thus avoiding "integration hell" on large features
 2. allow "dark releases", 
 where a feature is fully implemented and deployed, 
-but not enabled
+but not released
 3. once activated in an environment (e.g., `production`), 
 are (typically) never turned off - see also (4)
 4. are "short lived", 
