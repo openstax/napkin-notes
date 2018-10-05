@@ -129,7 +129,10 @@ async function* doStuff() {
 
   }
   console.log("Print out the report");
-  console.log(REPO_CHECKLISTS);
+  // console.log(REPO_CHECKLISTS);
+
+  console.log("Repos that have a script/setup:");
+  console.log(Object.keys(REPO_CHECKLISTS).filter(repoName => !REPO_CHECKLISTS[repoName].script_setup))
   // yield "done"
 }
 doStuff().next()

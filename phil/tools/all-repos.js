@@ -23,8 +23,9 @@ async function* doStuff() {
     if (reposInTheAllTeam.indexOf(repoName) >= 0) {
 
     } else {
-      console.log(`not in all: ${repoName}`);
+      console.log(`not in all: https://github.com/${ORG_NAME}/${repoName}`);
     }
+    // console.log(repoName)
   }
 
   // yield "done"
