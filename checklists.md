@@ -7,7 +7,7 @@
 - [ ] add `CONTRIBUTING.md` which links to https://github.com/openstax/napkin-notes/blob/master/CONTRIBUTING.md
 - [ ] add `./script/setup` and `./script/test` (optional) [Why do this?](https://githubengineering.com/scripts-to-rule-them-all/)
   - Examples: [1](https://github.com/Connexions/cnx-rulesets) [2](https://github.com/Connexions/cnx-easybake) [3](https://github.com/openstax/ostext-style-guide)
-- add CI (choose one or both)
+- [ ] add CI (choose one or both)
   - with travis
     - [ ] add `.travis.yml` (which runs `./script/test`)
     - [ ] add Travis-CI Integration (click **:gear: Settings** on the repository and then Integrations)
