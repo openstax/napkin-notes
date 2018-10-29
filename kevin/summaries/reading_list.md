@@ -23,6 +23,9 @@ that I have found particularly useful.
   has on data
   both *inside* and *outside*
   of the individual services.
+  Of particular interest
+  is the need for outside data
+  to be *stable* over time.
   
 ## Kafka
 
