@@ -16,6 +16,14 @@ that I have found particularly useful.
   but the book provides a supremely useful cross-cutting perspective on them.
   Worth its weight in gold.
 
+* [Data on the Outside versus Data on the Inside](http://cidrdb.org/cidr2005/papers/P12.pdf):
+  This classic paper by Pat Helland (at MicroSoft at the time)
+  discusses the far-reaching implications
+  that dividing a system into multiple indpendent services
+  has on data
+  both *inside* and *outside*
+  of the individual services.
+  
 ## Kafka
 
 * [Designing Event-Driven Systems](https://www.confluent.io/designing-event-driven-systems):
