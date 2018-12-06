@@ -52,3 +52,19 @@ that I have found particularly useful.
   This article is a follow-up to the first article,
   and explains more of the inner workings of the Kafka brokers and clients.
   
+## My Random Writeups
+
+* [CNX Envrinoments, Servers, Databases, and All That](https://docs.google.com/document/d/1Rz8wSqlf31zcxkqE-z9b-TQKRKZUpNNGwwTKWndvtoQ/edit#heading=h.moi11qb96kq5)
+
+* [How We Build Books](https://docs.google.com/document/d/11RVX535Gv1j09u0baT3yTUgHtTnBkssvEWCFsw8rPp4/edit?ts=5c001598#heading=h.vq6f0s8tqd8a)
+
+* [Thoughts on CNX](https://docs.google.com/document/d/1BnS8Nq0VMpINlOaCZSswGHPt6Mti0vMnVyjhd1W8vA0/edit#heading=h.dapdzt39oa6n)
+
+* [Kevin's CNX Guide](https://docs.google.com/document/d/1TJCae0LXebQ6AVnjvNN_gzmmFRFK1a2L10uDO1eiuH0/edit)
+
+* [Thoughts on Meetings](https://docs.google.com/document/d/1gbkZDNpxLc7kq_KMSfdGQo76Z-VRC1hBl7-jHbcwi0I/edit#heading=h.m9e9egqhpgmp)
+
+* [Thoughts on Types](https://docs.google.com/document/d/19uAwUUeWcUhwJ2g7iSe4cAUtBJMRP774b6RaSS5jQek/edit#heading=h.dbmxgio57kxr)
+
+* [Thoughts on Duplication](https://docs.google.com/document/d/172UO06P9mUNasS5NF21U_IoOPsCTx27dWRmE4JLIx60/edit#heading=h.xcc7lzkdn96e)
+
