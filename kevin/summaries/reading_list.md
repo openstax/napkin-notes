@@ -68,3 +68,4 @@ that I have found particularly useful.
 
 * [Thoughts on Duplication](https://docs.google.com/document/d/172UO06P9mUNasS5NF21U_IoOPsCTx27dWRmE4JLIx60/edit#heading=h.xcc7lzkdn96e)
 
+* [Thoughts on Designs](https://docs.google.com/document/d/1SGhrUz5wW_v_pFUq-GanSIpOjO3Cv-TpwXWStVG_sG4/edit#heading=h.rahrip9ehsns)
