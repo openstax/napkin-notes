@@ -34,6 +34,14 @@ We'll then copy that list to BL API and run:
 <array>.each{| cuuid, euuid| Course.where(uuid: cuuid, initial_ecosystem_uuid: nil).first!.update_attributes(initial_ecosystem_uuid: euuid) }
 ```
 
+Commands we ran:
+
+```ruby
+courses = Course.where({ initial_ecosystem_uuid: nil })
+mapping = {}
+courses.each{|c| mapping[c.uuid] = CourseEvent.where(course_uuid: c.uuid).create_course.last[:data]['ecosystem_uuid'] }
+courses.each{|c| c.update_attributes!( initial_ecosystem_uuid: mapping[c.uuid] ) }
+```
 
 ### further debugging:
 
