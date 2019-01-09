@@ -89,3 +89,22 @@ The courses were created from the 7th to the 18, with these timestamps:
 2018-12-18 09:00:10 -0600
 2018-12-18 10:00:10 -0600
 ```
+
+
+#### These courses are on api, but not present on scheduler:
+
+```ruby
+ ["3d935775-dad2-4227-afe3-6b4f03916acf", "b3536cc3-c335-487a-9364-25e54b11a360", "f257a78c-53b6-49be-aaef-6e6c6109332a", "955378bd-6f3e-4588-a1d0-79464c3c2fe8", "b04d127c-df09-4ece-bd5a-46120603be09", "063a775e-8bad-497d-a297-c502f7200fe8"]
+ ```
+
+Their Tutor course info:
+```ruby
+[
+ [4844, "Biology 2e with Courseware Preview"],
+ [4845, "Introduction to Sociology Fall 2018"],
+ [4846, "College Physics-1219"],
+ [4847, "Biology 2e-1219"],
+ [4848, "Biology 2e with Courseware Preview"],
+ [4849, "Introduction to Sociology 2e with Courseware Preview"]
+]
+```
