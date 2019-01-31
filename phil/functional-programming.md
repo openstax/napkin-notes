@@ -22,7 +22,14 @@ def reverse(A)
     return A
 ```
 </summary>
-No. because multiple calls result in different output. 2 calls to `reverse(A)` will yield the original `A`
+No. because multiple calls result in different output. For example:
+
+```
+animals = [ 'sparky', 'cleo' ]
+print(reverse(animals))     # [ 'cleo', 'sparky' ]
+print(reverse(animals))     # [ 'sparky', 'cleo' ]     Whaaa????
+```
+
 </details>
 
 <details>
@@ -39,6 +46,13 @@ def reverse(A)
 ```
 </summary>
 Yes. because multiple calls result in the same reversed array.
+
+```
+animals = [ 'sparky', 'cleo' ]
+print(reverse(animals))     # [ 'cleo', 'sparky' ]
+print(reverse(animals))     # [ 'cleo', 'sparky' ]
+```
+
 </details>
 
 <details>
