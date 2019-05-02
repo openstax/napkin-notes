@@ -65,8 +65,8 @@ def f(n)
 ```
 
 <details>
-<summary>Is it functional? (Click to show the answer)</summary>
-No. because multiple calls result in the same reversed array.
+<summary>Is the code above functional? (Click to show the answer)</summary>
+No. because a different value is returned each time this is function is called.
 </details>
 
 
