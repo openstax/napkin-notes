@@ -20,7 +20,7 @@ def reverse(A)
 ```
 
 <details>
-<summary>Is it functional? (Click to show the answer)</summary>
+<summary>Is the code above functional? (Click to show the answer)</summary>
 No. because multiple calls result in different output. For example:
 
 ```
@@ -31,6 +31,7 @@ print(reverse(animals))     # [ 'sparky', 'cleo' ]     Whaaa????
 
 </details>
 
+---
 
 ```
 def reverse(A)
@@ -44,7 +45,7 @@ def reverse(A)
 
 
 <details>
-<summary>Is it functional? (Click to show the answer)</summary>
+<summary>Is the code above functional? (Click to show the answer)</summary>
 
 Yes. because multiple calls result in the same reversed array.
 
@@ -56,6 +57,7 @@ print(reverse(animals))     # [ 'cleo', 'sparky' ]
 
 </details>
 
+---
 
 ```
 def f(n)
