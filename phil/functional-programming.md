@@ -110,7 +110,9 @@ def insertionSortFirstName(A)
     return A
 ```
 
-But now, if you need to sort by last name you would have to copy most of the code and change one line. Instead...
+But now, if you need to sort by last name you would have to copy most of the code and change one line (the line containing `.firstName`. 
+
+Instead, you can create a comparator function (`C`) that encapsulates the comparison and write a generic `insertionSort` that uses the comparator:
 
 
 ```
@@ -138,4 +140,4 @@ insertionSort(people, lastName)
 
 ## Thread Safety
 
-Maybe a topic for another time if there is interest. Many languages elide this problem by having a gigantic inefficient lock.
+Maybe a topic for another time if there is interest. Many languages like ruby/python/javascript elide this problem by having a gigantic inefficient lock.
