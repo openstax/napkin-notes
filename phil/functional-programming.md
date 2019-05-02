@@ -6,10 +6,7 @@ a.k.a. "Calling the same function with the same arguments multiple times yields 
 
 ## Quiz
 
-Which of these are functional?
-
-<details>
-<summary> Click to show the answer
+Which of these are functional (yes/no)?
 
 ```
 def reverse(A)
@@ -21,7 +18,9 @@ def reverse(A)
         A[x] = tmp
     return A
 ```
-</summary>
+
+<details>
+<summary>Is it functional? (Click to show the answer)</summary>
 No. because multiple calls result in different output. For example:
 
 ```
@@ -32,8 +31,6 @@ print(reverse(animals))     # [ 'sparky', 'cleo' ]     Whaaa????
 
 </details>
 
-<details>
-<summary> Click to show the answer
 
 ```
 def reverse(A)
@@ -44,7 +41,11 @@ def reverse(A)
         B[x] = A[i]
     return B
 ```
-</summary>
+
+
+<details>
+<summary>Is it functional? (Click to show the answer)</summary>
+
 Yes. because multiple calls result in the same reversed array.
 
 ```
@@ -55,14 +56,14 @@ print(reverse(animals))     # [ 'cleo', 'sparky' ]
 
 </details>
 
-<details>
-<summary> Click to show the answer
 
 ```
 def f(n)
     return random(n)
 ```
-</summary>
+
+<details>
+<summary>Is it functional? (Click to show the answer)</summary>
 No. because multiple calls result in the same reversed array.
 </details>
 
