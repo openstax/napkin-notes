@@ -57,6 +57,11 @@ that I have found particularly useful.
 * [Treaty of Orlando](https://www.researchgate.net/publication/2717911_A_Shared_View_of_Sharing_The_Treaty_of_Orlando):
   This paper explains the underlying principles of OOP
   in a language-agnostic manner.
+  
+* [SOLID, etc.](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
+  These are Uncle Bob's eleven(!) object-oriented software design principles.
+  Definitely worth knowing about, even if you're not heavy into OOP,
+  since they refer back to even more fundamental design concepts.
  
 ## My Random Writeups
 
