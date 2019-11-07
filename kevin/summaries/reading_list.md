@@ -51,7 +51,13 @@ that I have found particularly useful.
 * [Transactions in Apache Kafka](https://www.confluent.io/blog/transactions-apache-kafka/):
   This article is a follow-up to the first article,
   and explains more of the inner workings of the Kafka brokers and clients.
-  
+
+## Software Design
+
+* [Treaty of Orlando](https://www.researchgate.net/publication/2717911_A_Shared_View_of_Sharing_The_Treaty_of_Orlando):
+  This paper explains the underlying principles of OOP
+  in a language-agnostic manner.
+ 
 ## My Random Writeups
 
 * [CNX Envrinoments, Servers, Databases, and All That](https://docs.google.com/document/d/1Rz8wSqlf31zcxkqE-z9b-TQKRKZUpNNGwwTKWndvtoQ/edit#heading=h.moi11qb96kq5)
