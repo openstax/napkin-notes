@@ -15,11 +15,49 @@ We looked at 4 different approaches and wrote code for each. Here are our result
 
 ## Recipe
 
+Here is the idea:
+
 ```css
 [data-type="chapter"]:not(:nth-of-type(12)) { move-to: trash }
+
+body:deferred::after { 
+  content: clear(trash);
+}
 ```
 
 `easybake recipe.css data/{book}/collection.assembled.xhtml`
+
+
+Here is the actual code (in 1 bash script since it writes the recipe out to a file):
+
+```bash
+#!/bin/bash
+set -x
+
+#recipe
+
+# get book name and chapter number from user
+# create a temp file with the line of recipe instructions and chapter number inserted
+#delete the temp file
+#bake using the new file and the assembled 
+
+
+book_name=$1
+chapter_number=$2
+temp_recipe="./recipes/temp-${book_name}.css"
+chomped_baked_book="./data/${book_name}/collection.assembled.chomped.xhtml"
+assembled_book="./data/${book_name}/collection.assembled.xhtml"
+
+touch ${temp_recipe}
+
+echo "[data-type=\"chapter\"]:not(:nth-of-type(${chapter_number})) { move-to: trash } 
+body:deferred::after { 
+    content: clear(trash);
+  }" > ${temp_recipe}
+
+cnx-easybake -d ${temp_recipe} ${assembled_book} ${chomped_baked_book}
+mv ${chomped_baked_book} ${assembled_book}
+```
 
 
 ## JavaScript 0
