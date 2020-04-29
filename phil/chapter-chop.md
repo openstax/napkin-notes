@@ -73,26 +73,36 @@ chaptersToDelete.forEach(c => c.remove())
 
 
 ## JavaScript JSDOM
+One of the reasons we decided not to go with this version was that is was extremely slow to run. Unlike in the recipe or Python solution, JSDOM emulates a web browser and DOM elements in a browser are "bloated" with methods and other information that we don't need in this situation. 
 
 ```js
-const fs = require('fs')
+const fs = require('fs');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
+var xmlserializer = require('xmlserializer');
 
-chapterNum = process.argv[1]
+const bookName = process.argv[2];
+const chapterNum = process.argv[3];
 
-const fileContents = fs.readFileSync('data/{book}/collection.assembled.xhtml', 'utf8')
+const assembledBook = `data/${bookName}/collection.assembled.xhtml`;
 
-const dom = new JSDOM(fileContents);
+const assembledBookContents= fs.readFileSync(assembledBook , 'utf-8');
 
-dom.window.document.querySelectorAll('[data-type="chapter"]:not(:nth-of-type(12))')
+const dom = new JSDOM(assembledBookContents);
 
-chaptersToDelete.forEach(c => c.remove())
+const chaptersToDelete = dom.window.document.querySelectorAll(`[data-type="chapter"]:not(:nth-of-type(${chapterNum}))`);
 
-fs.writeFileSync('data/{book}/collection.assembled.xhtml', dom.window.document.outerHTML) // Gotcha . mayb need to find https://developer.mozilla.org/en-US/docs/Web/API/XMLSerializer in JSDom
+chaptersToDelete.forEach(chapter => {
+  chapter.remove();
+});
+
+let domString = s.serializeToString(dom);
+saveXML(domString);
+
+fs.writeFileSync(domString, assembledBook);
 ```
 
-`node thisfile.js data/{book}/collection.assembled.xhtml`
+`node thisfile.js data/{book}/collection.assembled.xhtml {chapterNum}`
 
 
 ## Broken: JavaScript XML parser
