@@ -294,10 +294,10 @@ Here are the types:
 ```typescript
 interface DomEl {
     // Replace anything that matches sel with the result of `cb()`
-    replace(sel: String, cb: CallbackFn): JsXEl
+    replace(sel: String, cb: CallbackFn)
     
     // Same as replace(...) but move the result into the bucket
-    replaceAndMove(b: Bucket, sel: String, cb: CallbackFn): JsxEl
+    replaceAndMove(b: Bucket, sel: String, cb: CallbackFn)
     
     // Creates a bucket that will be filled and must be used
     createBucket(): Bucket
@@ -317,8 +317,11 @@ interface DomEl {
 type CallbackFn = (this: DomEl) => void
 type TokenFn = () => string
 
-type Bucket = {} // Opaque; just a token/symbol for the user
 type Counter = {} // Opaque; just a token/symbol for the user
+
+interface Bucket {
+    dump(): Array<JsxEl>
+}
 
 interface JsxEl {
     constructor(el: DomEl, attributes: {}, children: Array<JsxEl>)
@@ -366,7 +369,7 @@ theDocument.replace(`body`, () => {
         <this>
             <div>
                 <title>Homework</title>
-                {...exercises}
+                {exerciseBucket.dump()}
             </div>
         </this>
     })
@@ -375,7 +378,7 @@ theDocument.replace(`body`, () => {
         {...this.children}
         <section>
             <title>Answers</title>
-            {...solutionBucket}
+            {solutionBucket.dump()}
         </section>
     </this>
 
