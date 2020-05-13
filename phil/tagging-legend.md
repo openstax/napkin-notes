@@ -215,3 +215,173 @@ To create the file we need the following pieces of information:
     </section>
 </article>
 ```
+
+---
+
+# Another Replacer Draft
+
+I was thinking about XSLT and how if you squint hard enough it looks like CSS with JSX inside:
+
+Add class "jam", wrap the contents with a "os-wrapper"
+
+```less
+.foo {
+    <this classAdd="jam">
+        <span class="os-wrapper">
+            {...this.children}
+        </span>
+    </this>
+}
+```
+
+Instead of manually keeping the recipe class name and the style class name in sync, we could do this which autogenerates the class names:
+
+
+```less
+.foo {
+    <this classAdd="jam">
+        <span style={color: blue}> // Or <span style={jamWrapper}> which is defined elsewhere
+            {...this.children}
+        </span>
+    </this>
+}
+```
+
+
+
+But after a few attempts to do something more complicated the limits of this syntax were starting to show...
+
+
+This moves the solution and adds a link back to the exercise (it explores nested selectors and using more CSS syntax like `var` and `content`)
+
+```less
+[data-type="exercise"] {
+    var linker: getLinkerToMe(this.attributes['id']);
+    content: <this>
+        <a href={linker.href}>{}
+    
+    [data-type="solution"] {
+        <this id={linker.id}>
+            {...this.children}
+        </this>
+    }
+}
+
+
+[data-type="chapter"] {
+
+    var exercises: replaceAndMove(`[data-type="exercise"]`)
+
+    <this>
+        <div>
+            <title>Homework</title>
+            {...exercises}
+        </div>
+    </this>
+
+}
+```
+
+
+## JSX, callbacks, and buckets
+
+This code seems like a good candidate for parallelization (& memoization).
+It follows the `describe(...)` and `it(...)` pattern of javascript unit tests which allows them to run in parallel (callbacks)
+
+
+Here are the types:
+
+```typescript
+interface DomEl {
+    // Replace anything that matches sel with the result of `cb()`
+    replace(sel: String, cb: CallbackFn): JsXEl
+    
+    // Same as replace(...) but move the result into the bucket
+    replaceAndMove(b: Bucket, sel: String, cb: CallbackFn): JsxEl
+    
+    // Creates a bucket that will be filled and must be used
+    createBucket(): Bucket
+    
+    // Creates a counter that resets at `this` and increments whenever `sel` occurs
+    createCounter(sel: String): Counter
+
+    // Determines the number that should be shown 
+    countOf(c: Coutner): TokenFn
+
+    // uses the id attribute to construct `#{this.attributes['id']}` or generates an id attribute if one does not exist
+    getHrefToMe(): String
+
+    find(sel: String): DomEl
+}
+
+type CallbackFn = (this: DomEl) => void
+type TokenFn = () => string
+
+type Bucket = {} // Opaque; just a token/symbol for the user
+type Counter = {} // Opaque; just a token/symbol for the user
+
+interface JsxEl {
+    constructor(el: DomEl, attributes: {}, children: Array<JsxEl>)
+}
+```
+
+The code below does the following:
+
+1. moves the exercises to the end of the chapter
+1. moves the solutions to the end of the book
+1. Numbers the exercise
+1. adds a link to the solution
+1. numbers the solution
+1. adds a link to the exercise
+
+
+```jsx
+theDocument.replace(`body`, () => {
+    const solutionBucket = this.createBucket()
+    const chapterCounter = this.createCounter(`[data-type="chapter"]`) // resets on `this` and increments on the selector
+    
+    this.replace(`[data-type="chapter"]`, () => {
+        const chToken = this.countOf(chapterCounter)
+        const exerciseBucket = this.createBucket()
+        const exerciseCounter = this.createCounter(`[data-type="exercise"]`)
+
+        this.replaceAndMove(exerciseBucket, `[data-type="exercise"]`, () => {
+            const exToken = this.countOf(exerciseCounter)
+            const toExercise = this.getHrefToMe() // uses the existing id attribute on `this` or autogenerates one
+            const toSolution = this.find(`[data-type="solution"]`).getHrefToMe()
+
+            this.replaceAndMove(solutionBucket, `[data-type="solution"]`, () => {
+                <this>
+                    <a href={toExercise}>{chToken}.{exToken}</a>
+                    {...this.children}
+                </this>
+            })
+
+            <this>
+                <a href={toSolution}>{chToken}.{exToken}</a>
+                {...this.children}
+            </this>
+        }))
+
+        <this>
+            <div>
+                <title>Homework</title>
+                {...exercises}
+            </div>
+        </this>
+    })
+
+    <this>
+        {...this.children}
+        <section>
+            <title>Answers</title>
+            {...solutionBucket}
+        </section>
+    </this>
+
+})
+```
+
+
+
+Thoughts: Can multiple selectors apply to an element? Every element should have 0 or 1 selector that apply to it. If > 1 applies, that is an error (can't parallelize easily... but it is possible)
