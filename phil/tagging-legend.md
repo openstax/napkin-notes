@@ -385,6 +385,65 @@ theDocument.replace(`body`, () => {
 })
 ```
 
+## XML Version
+
+This is an XML-only version of the recipe described above.
+
+```xml
+<r:root xmlns:r="urn:replacer-xml" xmlns="http://www.w3.org/1999/xhtml">
+
+    <r:replace selector="body">
+        <r:bucket name="solution"/>
+        <r:coutner name="chapterCounter" selector="[data-type='chapter']"/>
+        
+        <r:replace selector="[data-type='chapter']">
+            <r:token name="chToken" count-of="chapterCounter"/><!-- weird... come up wiith a better name -->
+            <r:bucket name="exercise"/>
+            <r:counter name="exerciseCounter" selector="[data-type='exercise']"/>
+
+            <r:replace move-to="exerciseBucket" selector="[data-type='exercise']">
+                <r:token name="exToken" count-of="exerciseCounter"/>
+                <r:href-to-me name="toExercise"/>
+                <r:variable name="toSolution">
+                    <r:find selector="[data-type='solution']">
+                        <r:href-to-me/>
+                    </r:find>
+                </r:variable>
+
+                <r:replace move-to="solutionBucket" selector="[data-type='solution']">
+                    <r:this>
+                        <a href="{toExercise}">{chToken}.{exToken}</a>
+                        <r:children/>
+                    </r:this>
+                </r:replace>
+
+                <r:this>
+                    <a href={toSolution}>{chToken}.{exToken}</a>
+                    <r:children/>
+                </r:this>
+            </r:replace>
+
+            <r:this>
+                <div>
+                    <title>Homework</title>
+                    {exerciseBucket.dump()}
+                </div>
+            </r:this>
+        </r:replace>
+
+        <r:this>
+            <r:children/>
+            <section>
+                <title>Answers</title>
+                {solutionBucket.dump()}
+            </section>
+        </r:this>
+
+    </r:replace>
+
+</r:root>
+```
+
 
 
 Thoughts: Can multiple selectors apply to an element? Every element should have 0 or 1 selector that apply to it. If > 1 applies, that is an error (can't parallelize easily... but it is possible)
