@@ -23,6 +23,8 @@ Below, I'm describing what is in the input files and what the output files shoul
 
 ## Input Files
 
+These are all human-edited "source of truth" files.
+
 ### Tagging legend
 
 This should **only** define any book-specific markup in the CNXML.
