@@ -18,8 +18,16 @@ Approach: Let's sculpt.
 
 # Spike idea
 
-Below, I'm describing what is in the input files and what the output files should contain
+Below, I'm describing what is in the input files and what the output files should contain.
 
+Currently, styling the content involves the following:
+
+- a Tagging Legend Spreadsheet ([example](https://docs.google.com/spreadsheets/d/1vW0EHvn8fZgvTxZIm9xQXsqsnIDcolqwt5rWKtx4JEY/edit#gid=255572881))
+- a Recipe ([example](https://github.com/openstax/cnx-recipes/blob/master/recipes/books/hs-physics/_config.scss))
+- a PDF CSS ([example](https://github.com/openstax/cnx-recipes/blob/master/styles/books/hs-physics/book.scss))
+
+These 3 things are kept in sync through popsicle sticks and duct tape, by humans.
+It would be much nicer if machines could tell us when things need to change or update them automatically.
 
 ## Input Files
 
