@@ -41,12 +41,18 @@ This should **only** define any book-specific markup in the CNXML.
 # File: physics.tagging
 
 # *************************
-# Notes can have "check-understanding" or "tip"
+# We define 2 Notes and a type of Exercise
 # *************************
-element note {
-    attribute class { "check-understanding" | "tip" }
+
+"checkUnderstanding" extends Note {
+    attribute class = "check-understanding"
 }
-element exercise {
+
+"tip" extends Note {
+    attribute class = "tip"
+}
+
+"homeworkProblems" extends Exercise {
     attribute class = "homework-problems"
 }
 ```
